@@ -79,7 +79,7 @@ questions:
 
   - id: ps-sensation-05
     usage: inline
-    topic: 6B
+    topic: 6A
     difficulty: core
     stem: |
       A patient who lost one eye in an accident is still able to judge distances reasonably well when driving. Which depth cue is no longer available to him?
@@ -118,7 +118,7 @@ questions:
 
   - id: ps-sensation-07
     usage: quiz
-    topic: 6B
+    topic: 6A
     difficulty: core
     stem: |
       Researchers raise kittens in a cylinder painted only with vertical stripes during the first months of life. As adults, the cats are tested with single-neuron recordings in primary visual cortex. Very few neurons respond to horizontal lines, and the cats behave as if they have difficulty seeing horizontal edges. These results best support which conclusion?
@@ -137,7 +137,7 @@ questions:
 
   - id: ps-sensation-08
     usage: quiz
-    topic: 6B
+    topic: 6A
     difficulty: core
     stem: |
       Infants who have recently begun crawling are placed on a thick glass table. Under one half, a checkerboard pattern sits directly beneath the glass; under the other half, the same pattern is several feet below. Most infants crawl across the shallow side toward their mother but refuse to cross the deep side, even when she calls them. Which conclusion is most justified?
@@ -156,7 +156,7 @@ questions:
 
   - id: ps-sensation-09
     usage: quiz
-    topic: 6B
+    topic: 6A
     difficulty: core
     stem: |
       Two groups of participants view the same ambiguous drawing, which can be seen either as a duck or as a rabbit. Before viewing it, one group reads a short story about farm birds and the other reads a story about a pet bunny. Most participants in the first group report seeing a duck, and most in the second report a rabbit. Which concept best explains this result?
@@ -327,7 +327,7 @@ questions:
 
   - id: ps-sensation-18
     usage: quiz
-    topic: 6B
+    topic: 6A
     difficulty: intro
     stem: |
       As a classroom door swings open, the image it casts on a student's retina changes from a rectangle to a narrowing trapezoid. The student nonetheless perceives a rectangular door throughout. This illustrates which concept?

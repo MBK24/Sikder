@@ -73,7 +73,7 @@ questions:
     explanation: |
       "Admittedly" is a concession keyword: the reviewer gives ground (the translation loses some deliberate roughness) and then pivots with "But" to the main claim that the translator's choices are defensible. The first sentence therefore concedes a limitation that the second sentence outweighs. Recognizing the concession-then-contrast pattern tells you the reviewer's overall verdict is positive but qualified.
     whyWrong:
-      A: "Wrong voice/weight: the concession is a minor point the reviewer outweighs; the central claim follows 'But' and is favorable."
+      A: "Opposite: the concession is a minor point the reviewer outweighs; the central claim follows 'But' and is favorable."
       C: "Out of scope: the excerpt says some readers will miss the roughness; it offers no evidence about what readers prefer."
       D: "Extreme: the reviewer accepts the concession as true ('some readers will miss that friction') rather than rejecting it."
 
@@ -88,9 +88,9 @@ questions:
 
       The author's attitude toward the early dialect surveys is best described as:
     choices:
-      A: "unqualified admiration"
-      B: "dismissive skepticism"
-      C: "reluctant indifference"
+      A: "unqualified admiration for their methods and results"
+      B: "dismissive skepticism about their lasting value"
+      C: "detached indifference to their methods and results"
       D: "appreciation tempered by awareness of their limits"
     answer: D
     explanation: |
@@ -258,7 +258,7 @@ questions:
     explanation: |
       The concluding paragraph states the thesis: documentation and revitalization "are less rivals than stages of a single project." Paragraph 3 supports it by showing that successful revitalization often drew on documentation, and paragraph 4 qualifies it by insisting that documentation serve community priorities. Choice C captures this complementary relationship.
     whyWrong:
-      A: "Wrong voice: this is the critics' position in paragraph 2, which the author says 'sets up a choice that communities themselves have often refused.'"
+      A: "Wrong voice: this is the critics' position in paragraph 2, which the author says 'sets up a choice that communities themselves have often refused to make.'"
       B: "Contradicts the passage: survival 'depends on whether people go on choosing to speak it'; a recorded language 'is not a living one.'"
       D: "Extreme: the author notes that formal elicitation misses conversational speech, but never says to abandon it."
 
@@ -318,7 +318,7 @@ questions:
     explanation: |
       Paragraph 3 rebuts the critics by claiming that successful revitalization programs "have frequently drawn on documentary materials." If almost none had done so, the main evidence that documentation and revitalization work together would collapse, and the critics' either/or framing would look more reasonable. A directly undermines the empirical premise of the author's reply.
     whyWrong:
-      B: "True but irrelevant: the author already accepts that speakers 'may never consult the result'; this does not touch paragraph 3's claim about revitalization programs."
+      B: "True but irrelevant: this echoes the critics' point that speakers 'may never consult the result'; it does not touch paragraph 3's claim about revitalization programs."
       C: "Too weak: the author says a grammar 'can become' the basis of a curriculum, which is compatible with its being hard for nonspecialists to read directly."
       D: "Consistent with the passage: the author agrees revitalization matters; evidence that teaching works does not show documentation is useless to it."
 
@@ -340,7 +340,7 @@ questions:
     whyWrong:
       A: "Opposite: the author notes formal elicitation misses conversational speech and praises researchers who accept slower, less publishable work."
       B: "False choice: the author argues against treating documentation and revitalization as alternatives, and the elders' speech may not wait."
-      D: "Opposite: storing records far away for outsiders echoes the critics' complaint that documentation treats speakers as mere 'sources of data.'"
+      D: "Opposite: storing records far away for outsiders echoes the critics' complaint about languages 'stored on a university server', and treats speakers as the author warns against, 'merely sources of data.'"
 
   # ---------- quiz: passage 4 (ethics) ----------
   - id: cars-structure-15

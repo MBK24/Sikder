@@ -121,7 +121,7 @@ questions:
       D: "an editor who corrects only clear copying errors in a manuscript and notes each change"
     answer: D
     explanation: |
-      The author's "disciplined restraint" has three parts: remove only what is confidently identified as later accretion, leave what is uncertain, and document each decision so it can be revisited. The editor in D corrects only clear errors (confident identification) and records each change (documentation and reversibility). The other choices each capture one of the two camps the author rejects.
+      The author's "disciplined restraint" has three parts: remove only what is confidently identified as later accretion, leave what is uncertain, and document each decision so it can be revisited. The editor in D corrects only clear errors (confident identification) and records each change (documentation and reversibility). The other choices each abandon that restraint: A and B change far more than can be confidently justified, and C refuses even clearly warranted changes.
     whyWrong:
       A: "Mirrors aggressive cleaning: changing everything to suit present tastes ignores the author's limit to confident identification."
       B: "Mirrors the intention camp: it aims to recover a lost original, which the author says is not the restorer's task."
@@ -155,13 +155,13 @@ questions:
     stem: |
       The passage identifies each of the following as a difficulty for one or both of the camps EXCEPT:
     choices:
-      A: "Solvents used in cleaning can damage the paint beneath the varnish."
+      A: "Few museums can afford the specialists a safe cleaning requires."
       B: "Original glazes can be hard to tell apart from later varnish."
       C: "Treating every effect of age as meaningful would preserve obvious damage."
       D: "No single principle can settle every restoration case in advance."
     answer: A
     explanation: |
-      Using the true/false method: B is in paragraph 2 (glazes "sit so close to the later varnish"), C is in paragraph 3 (flaking, fading and overpainting), and D is in paragraph 4 ("the hope that a single principle could settle every case"). Nothing in the passage mentions solvents. A may well be true of real restoration, but it is outside knowledge, so it is the exception.
+      Using the true/false method: B is in paragraph 2 (glazes "sit so close to the later varnish"), C is in paragraph 3 (flaking, fading and overpainting), and D is in paragraph 4 ("the hope that a single principle could settle every case"). Nothing in the passage mentions cost or staffing. A may well be true of real museums, but it is outside knowledge, so it is the exception.
     whyWrong:
       B: "Stated in paragraph 2 as the problem with 'the artist's intention' as a standard, so it is not the exception."
       C: "Stated in paragraph 3 as the reason the patina argument 'proves too much', so it is not the exception."
@@ -177,7 +177,7 @@ questions:
       The primary purpose of the passage is to:
     choices:
       A: "defend the early modern view that testimony requires independent confirmation"
-      B: "argue that relying well on testimony means weighing cues, not verifying or trusting by default"
+      B: "argue that testimony should be weighed by cues, not verified or trusted by default"
       C: "show that testimony is a basic source of knowledge on a level with perception"
       D: "explain why people today are more credulous than people in earlier periods"
     answer: B
@@ -218,7 +218,7 @@ questions:
     choices:
       A: "Residents of small towns report trusting their neighbors more than residents of large cities do."
       B: "Most people say that they check the source of a claim before accepting it from a stranger."
-      C: "In networks where false reports spread quickly, people who accepted reports by default held more false beliefs."
+      C: "Where false reports spread fast, people who accepted reports by default held more false beliefs."
       D: "People who were taught to evaluate sources as children are more skeptical of authority as adults."
     answer: C
     explanation: |
@@ -236,7 +236,7 @@ questions:
     stem: |
       A reader encounters a surprising claim about a new medical treatment in an online post. Which response best reflects the approach the author describes in paragraph 4?
     choices:
-      A: "Checking whether the claim fits known evidence, whether the author profits, and whether others confirm it"
+      A: "Asking whether the claim fits known evidence, whether its writer gains, and whether others agree"
       B: "Rejecting the claim until the reader can personally test the treatment and observe its effects"
       C: "Accepting the claim, since there is no specific reason to doubt the person who wrote the post"
       D: "Ignoring the claim, since testimony from strangers can never amount to genuine knowledge"
@@ -379,7 +379,7 @@ questions:
       The author would most likely agree that a retirement plan that requires workers to sign up actively:
     choices:
       A: "avoids influencing workers' choices because it presents no default"
-      B: "influences workers' choices just as an automatic enrollment plan does"
+      B: "still influences workers' choices, as an automatic enrollment plan does"
       C: "is more respectful of workers' agency than any form of default enrollment"
       D: "should be replaced by automatic enrollment in every workplace"
     answer: B
@@ -406,7 +406,7 @@ questions:
     explanation: |
       The author approves of a default "that people would endorse if they understood it, and that they can easily reverse." The clinic's arrangement is disclosed (transparency), likely serves patients' own interests, and is easy to undo. The other choices are concealed, self-serving, or rest on the "neutral presentation" fiction.
     whyWrong:
-      A: "Opposite: this is the author's own example of a nudge that serves the designer 'at the chooser's expense.'"
+      A: "Opposite: this matches the author's own example of a nudge that serves the designer 'at the chooser's expense.'"
       B: "Opposite: the arrangement is concealed and serves the store, which the author treats as manipulation."
       C: "Contradicts paragraph 3: a cafeteria 'must put something at eye level', so a ban cannot remove the influence."
 
@@ -418,7 +418,7 @@ questions:
     stem: |
       The author's argument in paragraph 3 that there is no neutral way to present choices is most similar to which of the following claims?
     choices:
-      A: "Every flat map distorts the globe somehow, so the question is which distortion suits a purpose."
+      A: "Every flat map distorts the globe, so the question is which distortion to accept."
       B: "Every photograph is taken by someone, so photographs cannot be used as evidence."
       C: "Every law restricts someone's freedom, so laws should be kept to a bare minimum."
       D: "Every translation loses something, so readers should learn the original languages."
@@ -440,7 +440,7 @@ questions:
     choices:
       A: "Automatic enrollment raises retirement savings participation even more than earlier studies estimated."
       B: "Workers who opt out of automatic enrollment tend to be younger than those who remain enrolled."
-      C: "Most workers enrolled by default, when asked later, say they had considered the plan and chose to stay."
+      C: "Most workers enrolled by default had reviewed the plan's terms and decided to stay in it."
       D: "Many employers adopt automatic enrollment mainly because it lowers the cost of administering the plan."
     answer: C
     explanation: |

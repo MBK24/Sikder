@@ -93,8 +93,8 @@ cards:
     tags: [traps]
 
   - id: cars-qtypes-fc-19
-    front: "Answers like \"trace the history of...\" when the passage takes a position, or that cover only one paragraph, show which trap?"
-    back: "Scope: the answer is too narrow (or misdescribes the passage's job). The correct main idea is supported by every paragraph."
+    front: "A main-idea choice accurately states the point of only one paragraph. Which trap is this?"
+    back: "Scope (too narrow). The correct main idea is supported by every paragraph."
     tags: [traps, scope]
 
   - id: cars-qtypes-fc-20

@@ -292,7 +292,7 @@ questions:
     whyWrong:
       A: 'Kinases add phosphates from ATP; phosphatases remove them by hydrolysis.'
       B: 'Phosphorylation activates some enzymes (glycogen phosphorylase) and inactivates others (glycogen synthase).'
-      D: 'Phosphorylation is reversed by phosphatases; only proteolytic activation, as of zymogens, is irreversible.'
+      D: 'Phosphorylation is reversed by phosphatases; proteolytic activation, as of zymogens, is the irreversible one.'
 
   - id: bb-enzymes-16
     usage: quiz

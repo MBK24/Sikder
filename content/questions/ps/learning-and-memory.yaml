@@ -3,7 +3,7 @@ questions:
   # ---------------------------------------------------------------- inline
   - id: ps-learning-01
     usage: inline
-    topic: 6B
+    topic: 7C
     difficulty: core
     stem: |
       A gentle touch to the siphon of an *Aplysia* produces a small gill-withdrawal reflex. After the researcher delivers a strong shock to the animal's tail, the same gentle siphon touch produces a much larger and longer withdrawal. Which process does this illustrate?
@@ -22,7 +22,7 @@ questions:
 
   - id: ps-learning-02
     usage: inline
-    topic: 6B
+    topic: 7C
     difficulty: core
     stem: |
       A patient receiving chemotherapy experiences nausea after each infusion. After several sessions, she begins to feel nauseated as soon as she walks into the clinic's waiting room. In this example, what is the waiting room?
@@ -99,7 +99,7 @@ questions:
   # ---------------------------------------------------------------- quiz
   - id: ps-learning-06
     usage: quiz
-    topic: 6B
+    topic: 7C
     difficulty: core
     stem: |
       Rats are allowed to drink sweetened water and are then exposed to a dose of radiation that makes them ill several hours later. A second group drinks plain water while a light flashes and a tone sounds, and receives the same radiation. Afterward, the first group strongly avoids sweetened water, but the second group shows little avoidance of the light and tone. Which concept best explains the difference between the groups?
@@ -118,7 +118,7 @@ questions:
 
   - id: ps-learning-07
     usage: quiz
-    topic: 6B
+    topic: 7C
     difficulty: core
     stem: |
       Three groups of rats explore the same complex maze once a day for 20 days. Group 1 always finds food in the goal box; Group 2 never does. Group 3 finds no food for the first 10 days and then finds food every day afterward. On day 12, Group 3 makes as few errors as Group 1. Which concept is best supported by these results?
@@ -197,7 +197,7 @@ questions:
     topic: 6B
     difficulty: core
     stem: |
-      Participants watch a short film of a car accident. Afterward, half are asked how fast the cars were going when they "bumped" each other, and half are asked how fast the cars were going when they "smashed into" each other. A week later, participants in the "smashed" group are more than twice as likely to report having seen broken glass, although no broken glass appeared in the film. Which phenomenon does this demonstrate?
+      Participants watch a short film of a car accident. Afterward, half are asked how fast the cars were going when they "hit" each other, and half are asked how fast the cars were going when they "smashed into" each other. A week later, participants in the "smashed" group are more than twice as likely to report having seen broken glass, although no broken glass appeared in the film. Which phenomenon does this demonstrate?
     choices:
       A: "Proactive interference"
       B: "Retrograde amnesia"
@@ -365,7 +365,7 @@ questions:
 
   - id: ps-learning-20
     usage: quiz
-    topic: 6B
+    topic: 7C
     difficulty: core
     stem: |
       A dog is conditioned to salivate to a tone that predicts food. The experimenter then presents the tone many times without food until the dog stops salivating to it. The next day, when the tone is presented again, the dog salivates, though less than before. What does this result most directly indicate?
