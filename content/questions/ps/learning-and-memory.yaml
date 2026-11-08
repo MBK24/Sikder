@@ -1,0 +1,383 @@
+chapter: learning-and-memory
+questions:
+  # ---------------------------------------------------------------- inline
+  - id: ps-learning-01
+    usage: inline
+    topic: 6B
+    difficulty: core
+    stem: |
+      A gentle touch to the siphon of an *Aplysia* produces a small gill-withdrawal reflex. After the researcher delivers a strong shock to the animal's tail, the same gentle siphon touch produces a much larger and longer withdrawal. Which process does this illustrate?
+    choices:
+      A: "Habituation"
+      B: "Sensitization"
+      C: "Classical conditioning"
+      D: "Sensory adaptation"
+    answer: B
+    explanation: |
+      Sensitization is an increase in response to a stimulus following exposure to a strong or noxious stimulus. The tail shock was never paired with the siphon touch in a predictive way; it simply heightened the reflex. In *Aplysia*, this works through serotonin released onto the sensory neuron's terminals, increasing neurotransmitter release.
+    whyWrong:
+      A: "Habituation is a decrease in response to a repeated harmless stimulus; here the response increased."
+      C: "Classical conditioning requires a neutral stimulus to be repeatedly paired with and predict an unconditioned stimulus."
+      D: "Sensory adaptation reduces receptor responsiveness, which would make the reflex smaller, not larger."
+
+  - id: ps-learning-02
+    usage: inline
+    topic: 6B
+    difficulty: core
+    stem: |
+      A patient receiving chemotherapy experiences nausea after each infusion. After several sessions, she begins to feel nauseated as soon as she walks into the clinic's waiting room. In this example, what is the waiting room?
+    choices:
+      A: "The unconditioned stimulus"
+      B: "The unconditioned response"
+      C: "The conditioned stimulus"
+      D: "The conditioned response"
+    answer: C
+    explanation: |
+      The chemotherapy drug naturally causes nausea, so it is the unconditioned stimulus and nausea after the infusion is the unconditioned response. The waiting room was originally neutral but, after repeated pairing with chemotherapy, now triggers nausea on its own. It is therefore the conditioned stimulus, and nausea in the waiting room is the conditioned response.
+    whyWrong:
+      A: "The chemotherapy drug is the unconditioned stimulus, because it produces nausea without any learning."
+      B: "A response is something the patient does or feels, such as nausea; the waiting room is a stimulus."
+      D: "The conditioned response is the nausea triggered by the waiting room, not the room itself."
+
+  - id: ps-learning-03
+    usage: inline
+    topic: 7C
+    difficulty: core
+    stem: |
+      A 16-year-old comes home an hour after curfew, and his parents take away his phone for the weekend. He is home on time for the next month. Which operant procedure did the parents use?
+    choices:
+      A: "Negative punishment"
+      B: "Negative reinforcement"
+      C: "Positive punishment"
+      D: "Positive reinforcement"
+    answer: A
+    explanation: |
+      A desirable stimulus (the phone) was removed, which makes the procedure negative, and the targeted behavior (coming home late) decreased, which makes it punishment. Removing something pleasant to reduce a behavior is negative punishment.
+    whyWrong:
+      B: "Negative reinforcement increases a behavior by removing something unpleasant; here a pleasant item was removed to decrease lateness."
+      C: "Positive punishment adds an unpleasant stimulus, such as extra chores; nothing was added here."
+      D: "Positive reinforcement adds a reward to increase a behavior; the parents removed something."
+
+  - id: ps-learning-04
+    usage: inline
+    topic: 7C
+    difficulty: core
+    stem: |
+      An eight-year-old watches an older gymnast perform a back handspring and is praised by the coach. The child paid close attention, can describe each step accurately, and very much wants to be praised too, but when he tries the move he cannot complete it. According to Bandura, which requirement for observational learning is not yet met?
+    choices:
+      A: "Attention"
+      B: "Retention"
+      C: "Motivation"
+      D: "Reproduction"
+    answer: D
+    explanation: |
+      Bandura described four requirements: attention, retention, reproduction and motivation. The child attended to the model, remembers the steps, and wants the reward, but lacks the physical ability to carry out the behavior. That is a failure of reproduction.
+    whyWrong:
+      A: "The child watched closely, so attention was present."
+      B: "He can describe every step, so the behavior was retained."
+      C: "He wants the coach's praise, which supplies motivation."
+
+  - id: ps-learning-05
+    usage: inline
+    topic: 6B
+    difficulty: core
+    stem: |
+      Participants must hold a string of seven digits in mind while simultaneously performing a second task. Their recall of the digits is worst when the second task requires them to repeat the word "the" aloud over and over, and much better when the second task requires them to track a moving dot on a screen. Which component of Baddeley's working memory model is most directly disrupted by the verbal task?
+    choices:
+      A: "The visuospatial sketchpad"
+      B: "The phonological loop"
+      C: "The episodic buffer"
+      D: "Sensory memory"
+    answer: B
+    explanation: |
+      Digits are typically held by subvocal rehearsal in the phonological loop. Repeating a word aloud occupies that same verbal subsystem, so it interferes with digit recall far more than a visual tracking task, which draws on the visuospatial sketchpad. This dual-task pattern is the main evidence that working memory has separate components.
+    whyWrong:
+      A: "The visuospatial sketchpad is engaged by the dot-tracking task, which caused little interference."
+      C: "The episodic buffer integrates information into episodes; it is not the store disrupted by verbal repetition."
+      D: "Sensory memory lasts only seconds or less and is not the store used to rehearse digits during a task."
+
+  # ---------------------------------------------------------------- quiz
+  - id: ps-learning-06
+    usage: quiz
+    topic: 6B
+    difficulty: core
+    stem: |
+      Rats are allowed to drink sweetened water and are then exposed to a dose of radiation that makes them ill several hours later. A second group drinks plain water while a light flashes and a tone sounds, and receives the same radiation. Afterward, the first group strongly avoids sweetened water, but the second group shows little avoidance of the light and tone. Which concept best explains the difference between the groups?
+    choices:
+      A: "Biological preparedness"
+      B: "Second-order conditioning"
+      C: "Spontaneous recovery"
+      D: "Stimulus generalization"
+    answer: A
+    explanation: |
+      Biological preparedness is the predisposition to learn associations that have historically aided survival. Illness is far more likely to come from something eaten than from a sight or sound, so rats readily associate taste with nausea, even after a single pairing and a delay of hours, but form weak associations between audiovisual cues and illness.
+    whyWrong:
+      B: "Second-order conditioning uses an already conditioned stimulus to condition a new one; neither group had a pre-established CS."
+      C: "Spontaneous recovery is the return of an extinguished response after rest; no extinction took place."
+      D: "Generalization is responding to stimuli similar to the CS; the study compares two different kinds of CS."
+
+  - id: ps-learning-07
+    usage: quiz
+    topic: 6B
+    difficulty: core
+    stem: |
+      Three groups of rats explore the same complex maze once a day for 20 days. Group 1 always finds food in the goal box; Group 2 never does. Group 3 finds no food for the first 10 days and then finds food every day afterward. On day 12, Group 3 makes as few errors as Group 1. Which concept is best supported by these results?
+    choices:
+      A: "Shaping through successive approximations"
+      B: "Insight learning"
+      C: "Latent learning"
+      D: "The partial reinforcement effect"
+    answer: C
+    explanation: |
+      Group 3 must have learned the layout of the maze during the unrewarded days, because its performance improved almost immediately once food was introduced. Learning that occurs without reinforcement and appears only when there is an incentive to show it is latent learning, which Tolman attributed to a cognitive map.
+    whyWrong:
+      A: "Shaping requires reinforcing successive approximations to a behavior; Group 3 received no reinforcement for 10 days."
+      B: "Insight learning is a sudden solution to a problem through reasoning, not knowledge acquired gradually during exploration."
+      D: "The partial reinforcement effect concerns resistance to extinction after intermittent reward, not rapid improvement after reward begins."
+
+  - id: ps-learning-08
+    usage: quiz
+    topic: 7C
+    difficulty: advanced
+    stem: |
+      Children watch a video in which an adult hits and kicks an inflatable doll. For some children, the adult is then scolded; for others, the adult is praised. In a later free-play session, children who saw the adult scolded imitate fewer aggressive acts. When all children are then offered stickers for showing what the adult did, both groups reproduce the aggressive acts equally well. What does this finding demonstrate?
+    choices:
+      A: "Vicarious punishment prevented the scolded-model group from learning the behavior."
+      B: "Aggression is primarily learned through classical conditioning."
+      C: "Children imitate models only when they personally receive reinforcement."
+      D: "Observed consequences affected performance of the behavior, not its acquisition."
+    answer: D
+    explanation: |
+      Once an incentive was offered, both groups reproduced the actions equally, so both had learned them. Seeing the model scolded reduced only the children's willingness to perform the behavior during free play. This is the learning–performance distinction in observational learning.
+    whyWrong:
+      A: "Equal reproduction with stickers shows that the scolded-model group had learned the behavior."
+      B: "The children learned voluntary actions by watching a model, not by pairing stimuli."
+      C: "During free play, children who saw the model praised imitated without receiving any reinforcement themselves."
+
+  - id: ps-learning-09
+    usage: quiz
+    topic: 7C
+    difficulty: core
+    stem: |
+      In the first phase of a study, one group of dogs can stop a series of shocks by pressing a panel, while a second group receives exactly the same shocks with no way to stop them. In the second phase, all dogs are placed in a box where jumping a low barrier ends the shock. The first group learns to jump quickly, but many dogs in the second group lie down and endure the shock. Which concept explains the second group's behavior?
+    choices:
+      A: "Extinction"
+      B: "Learned helplessness"
+      C: "Avoidance learning"
+      D: "Habituation"
+    answer: B
+    explanation: |
+      Learned helplessness occurs when exposure to uncontrollable aversive events leads an organism to stop trying to escape, even when escape becomes possible. Because both groups received the same shocks, the key variable was the lack of control, not the shock itself.
+    whyWrong:
+      A: "Extinction is the weakening of a learned response when reinforcement or the UCS is withheld; the second group never learned an escape response to begin with."
+      C: "Avoidance learning would mean acting to prevent the shock, which is what the second group failed to do."
+      D: "Habituation is a decreased response to a harmless repeated stimulus; shock is not harmless, and the dogs were not simply ignoring it."
+
+  - id: ps-learning-10
+    usage: quiz
+    topic: 6B
+    difficulty: core
+    stem: |
+      Scuba divers learn a list of words either on the beach or 20 feet underwater. Each diver is later tested either in the same setting or in the other one. Divers recall substantially more words when tested in the setting where they learned the list. Which concept best accounts for this result?
+    choices:
+      A: "Context-dependent memory"
+      B: "State-dependent memory"
+      C: "Mood-congruent memory"
+      D: "The serial position effect"
+    answer: A
+    explanation: |
+      Context-dependent memory is improved recall when the external environment at retrieval matches the environment at encoding. Features of the setting are encoded along with the words and later serve as retrieval cues, in keeping with the encoding specificity principle.
+    whyWrong:
+      B: "State-dependent memory concerns matching internal physiological states, such as intoxication, not the external setting."
+      C: "Mood-congruent memory involves recalling memories whose emotional tone matches current mood."
+      D: "The serial position effect describes better recall of items at the beginning and end of a list, not an effect of testing location."
+
+  - id: ps-learning-11
+    usage: quiz
+    topic: 6B
+    difficulty: core
+    stem: |
+      Participants watch a short film of a car accident. Afterward, half are asked how fast the cars were going when they "bumped" each other, and half are asked how fast the cars were going when they "smashed into" each other. A week later, participants in the "smashed" group are more than twice as likely to report having seen broken glass, although no broken glass appeared in the film. Which phenomenon does this demonstrate?
+    choices:
+      A: "Proactive interference"
+      B: "Retrograde amnesia"
+      C: "Decay of the memory trace"
+      D: "The misinformation effect"
+    answer: D
+    explanation: |
+      The misinformation effect is the incorporation of misleading information presented after an event into memory of the event. The wording of the question implied a violent collision, and participants later reconstructed the memory to include details consistent with that implication, showing that memory is reconstructive rather than a fixed recording.
+    whyWrong:
+      A: "Proactive interference is old information disrupting new learning; here, later information altered an earlier memory."
+      B: "Retrograde amnesia is the loss of memories formed before a brain injury, not the addition of false details."
+      C: "Decay predicts loss of details over time, not the appearance of details that were never present."
+
+  - id: ps-learning-12
+    usage: quiz
+    topic: 6B
+    difficulty: core
+    stem: |
+      Participants answer one of three questions about each word in a list: whether it is printed in capital letters, whether it rhymes with a target word, or whether it fits meaningfully into a sentence. They are not told to memorize the words. On a surprise recall test, words from the sentence condition are remembered best and words from the capital-letters condition are remembered worst. Which principle explains these results?
+    choices:
+      A: "The spacing effect"
+      B: "The self-reference effect"
+      C: "Levels of processing"
+      D: "Maintenance rehearsal"
+    answer: C
+    explanation: |
+      The levels-of-processing framework holds that deeper, meaning-based (semantic) processing produces more durable memories than shallow structural or phonemic processing. Judging whether a word fits a sentence requires thinking about its meaning, whereas judging letter case requires attention only to appearance.
+    whyWrong:
+      A: "The spacing effect concerns distributing study over time; timing was not manipulated."
+      B: "The self-reference effect requires relating words to oneself, which none of the three conditions asked participants to do."
+      D: "Maintenance rehearsal is simple repetition; participants were not rehearsing the words at all."
+
+  - id: ps-learning-13
+    usage: quiz
+    topic: 7C
+    difficulty: core
+    stem: |
+      A casino slot machine pays out after an unpredictable number of plays, averaging one win per 20 pulls. Compared with other reinforcement schedules, what pattern of behavior should this schedule produce?
+    choices:
+      A: "A scalloped pattern, with responding increasing just before each payout"
+      B: "A high, steady response rate that is very resistant to extinction"
+      C: "A slow, steady response rate that extinguishes quickly"
+      D: "Bursts of responding followed by long pauses after each payout"
+    answer: B
+    explanation: |
+      Reinforcement after an unpredictable number of responses is a variable-ratio schedule. Because each response could be the one that pays, it produces the highest, steadiest response rate of any schedule. Because rewards are unpredictable, it also takes a long time to detect that reinforcement has stopped, making behavior very resistant to extinction.
+    whyWrong:
+      A: "A scalloped pattern is characteristic of a fixed-interval schedule, where the timing of reinforcement is predictable."
+      C: "Slow, steady responding is typical of variable-interval schedules, and variable schedules resist extinction rather than extinguishing quickly."
+      D: "Pauses after each reinforcer are characteristic of fixed-ratio schedules."
+
+  - id: ps-learning-14
+    usage: quiz
+    topic: 7C
+    difficulty: core
+    stem: |
+      A professor gives a quiz every Friday. Records from the course's online practice system show that students complete very few practice problems on Saturdays and Sundays, and that the number rises steeply on Wednesdays and Thursdays. This pattern is most characteristic of which reinforcement schedule?
+    choices:
+      A: "Fixed interval"
+      B: "Fixed ratio"
+      C: "Variable interval"
+      D: "Variable ratio"
+    answer: A
+    explanation: |
+      The quizzes, and the reinforcement of a good grade for having studied, arrive at predictable times. A fixed-interval schedule produces a scalloped pattern: little responding right after reinforcement and accelerating responding as the next scheduled reinforcement approaches.
+    whyWrong:
+      B: "On a fixed-ratio schedule, reinforcement depends on the number of responses, not on the calendar."
+      C: "A variable-interval schedule, such as unannounced pop quizzes, would produce slow, steady studying rather than a scallop."
+      D: "A variable-ratio schedule produces high, steady responding, not responding that rises before a predictable date."
+
+  - id: ps-learning-15
+    usage: quiz
+    topic: 6B
+    difficulty: advanced
+    stem: |
+      Two groups of participants hear the same list of 15 unrelated words. Group 1 recalls the words immediately. Group 2 counts backward by threes for 30 seconds before recalling. Compared with Group 1, Group 2 recalls far fewer of the last few words on the list, but about the same number of the first few. Which conclusion is best supported?
+    choices:
+      A: "The primacy effect depends on short-term memory."
+      B: "Counting backward caused proactive interference with the early items."
+      C: "Items at the end of a list are encoded more deeply than items at the start."
+      D: "The recency effect depends on items still being held in short-term memory."
+    answer: D
+    explanation: |
+      Counting backward for 30 seconds displaces the contents of short-term memory. That eliminated the recency effect while leaving the primacy effect intact, showing that recall of the last items depends on short-term memory. Early items survive the delay because rehearsal has already transferred them to long-term memory.
+    whyWrong:
+      A: "The primacy effect was unchanged by the delay, which indicates that it depends on long-term memory."
+      B: "Recall of the early items was unaffected, so there is no evidence of interference with them."
+      C: "The last items were lost after a short delay, which suggests shallow, temporary storage rather than deep encoding."
+
+  - id: ps-learning-16
+    usage: quiz
+    topic: 6B
+    difficulty: core
+    stem: |
+      After moving to a new city, a woman memorizes her new street address. A few months later, when an old friend asks for her previous address, she has great difficulty recalling it, though she lived there for five years. Which form of forgetting is she experiencing?
+    choices:
+      A: "Proactive interference"
+      B: "Encoding failure"
+      C: "Retroactive interference"
+      D: "Source monitoring error"
+    answer: C
+    explanation: |
+      Retroactive interference occurs when newly learned information disrupts the recall of older information. Here, the new address is interfering with retrieval of the old one; the interference acts backward in time.
+    whyWrong:
+      A: "Proactive interference would be the old address disrupting her ability to learn or recall the new one."
+      B: "She used the old address for five years, so it was clearly encoded."
+      D: "A source monitoring error involves misattributing where a memory came from, not failing to retrieve it."
+
+  - id: ps-learning-17
+    usage: quiz
+    topic: 6B
+    difficulty: advanced
+    stem: |
+      A man suffers bilateral damage to the hippocampus during an episode of viral encephalitis. Over the next week, he practices a computer-based motor tracking task each day, and his speed and accuracy improve steadily. Each day, however, he insists he has never seen the task before. Which conclusion is best supported?
+    choices:
+      A: "Procedural memory can form without the hippocampus; new explicit memory cannot."
+      B: "The hippocampus is the permanent storage site for procedural memories."
+      C: "His retrograde amnesia has erased all memories formed before the illness."
+      D: "Damage to the hippocampus mainly impairs working memory rather than long-term memory."
+    answer: A
+    explanation: |
+      The patient's improving performance shows intact procedural (implicit) learning, while his lack of any recollection of the sessions shows that he cannot form new explicit memories. This dissociation, famously seen in patient H.M., indicates that the hippocampus is required to consolidate new declarative memories but not for skill learning, which depends on structures such as the cerebellum and basal ganglia.
+    whyWrong:
+      B: "His procedural learning succeeded despite hippocampal damage, so the hippocampus cannot be required for it."
+      C: "The scenario describes inability to remember new experiences, which is anterograde amnesia; it gives no information about older memories."
+      D: "He can follow and complete the task within each session, which requires working memory; the deficit is in forming lasting explicit memories."
+
+  - id: ps-learning-18
+    usage: quiz
+    topic: 6B
+    difficulty: advanced
+    stem: |
+      During induction of long-term potentiation in the hippocampus, NMDA receptors on the postsynaptic neuron open only under certain conditions. Which pair of conditions must be met for calcium to flow through these receptors?
+    choices:
+      A: "Serotonin must bind, and the presynaptic neuron must be hyperpolarized."
+      B: "Glutamate must bind, and postsynaptic depolarization must expel a magnesium block."
+      C: "Acetylcholine must bind, and calcium must first enter through AMPA receptors."
+      D: "GABA must bind, and the postsynaptic membrane must be hyperpolarized to remove a sodium block."
+    answer: B
+    explanation: |
+      The NMDA receptor is a glutamate-gated channel that is blocked by a magnesium ion at resting potential. Only when glutamate is bound and the postsynaptic membrane is already depolarized, usually by AMPA receptor activity, is the magnesium expelled so calcium can enter. This makes the NMDA receptor a coincidence detector for simultaneous presynaptic and postsynaptic activity.
+    whyWrong:
+      A: "Serotonin mediates sensitization in Aplysia, and NMDA receptor opening depends on postsynaptic depolarization, not presynaptic hyperpolarization."
+      C: "The ligand is glutamate, and AMPA receptors at these synapses mainly admit sodium, not calcium."
+      D: "GABA is inhibitory, and hyperpolarization strengthens the magnesium block rather than removing it."
+
+  - id: ps-learning-19
+    usage: quiz
+    topic: 6B
+    difficulty: core
+    stem: |
+      Healthy adults aged 70 to 80 and adults aged 20 to 30 study a list of unfamiliar names. Which result is most consistent with typical age-related changes in memory?
+    choices:
+      A: "Older adults perform worse than younger adults on both recall and recognition, by similar amounts."
+      B: "Older adults perform better than younger adults on free recall but worse on recognition."
+      C: "Older adults show no differences from younger adults on any memory measure."
+      D: "Older adults perform much worse on free recall but nearly as well on recognition."
+    answer: D
+    explanation: |
+      Normal aging impairs free recall of new episodic information more than recognition. Recognition provides the target as a cue, reducing the demand on self-initiated retrieval, which is most affected by age. This is why an older adult may struggle to produce a new acquaintance's name but can pick it out of a list.
+    whyWrong:
+      A: "The age difference is typically much larger for recall than for recognition."
+      B: "Free recall is the measure most impaired by aging, not one that improves."
+      C: "Healthy aging does produce measurable declines in episodic memory, especially recall."
+
+  - id: ps-learning-20
+    usage: quiz
+    topic: 6B
+    difficulty: core
+    stem: |
+      A dog is conditioned to salivate to a tone that predicts food. The experimenter then presents the tone many times without food until the dog stops salivating to it. The next day, when the tone is presented again, the dog salivates, though less than before. What does this result most directly indicate?
+    choices:
+      A: "The tone has become an unconditioned stimulus for salivation."
+      B: "The dog has generalized its conditioned response to other, similar tones."
+      C: "Extinction suppressed the response rather than erasing the original learning."
+      D: "The dog has undergone second-order conditioning to the tone."
+    answer: C
+    explanation: |
+      The reappearance of an extinguished conditioned response after a rest period is spontaneous recovery. It shows that extinction is new learning that inhibits the conditioned response, while the original CS–UCS association remains stored and can partially return.
+    whyWrong:
+      A: "The tone still produces salivation only because of its past pairing with food, so it remains a conditioned stimulus."
+      B: "Generalization involves responding to stimuli similar to the CS; the same tone was used throughout."
+      D: "Second-order conditioning requires pairing a new neutral stimulus with an established CS; no new stimulus was introduced."

@@ -1,0 +1,136 @@
+deck:
+  title: "Amino Acids"
+  description: "Names, abbreviations, side-chain classes, ionizable side chains and special properties of the 20 standard amino acids."
+cards:
+  - id: appendix-aminos-fc-01
+    front: "Which amino acid is achiral, and why?"
+    back: "Glycine (Gly, G). Its side chain is a single hydrogen, so its α-carbon has two identical substituents."
+    tags: [structure, stereochemistry]
+  - id: appendix-aminos-fc-02
+    front: "What are the one-letter codes for phenylalanine, tyrosine and tryptophan?"
+    back: "Phe = F, Tyr = Y, Trp = W."
+    tags: [abbreviations, aromatic]
+  - id: appendix-aminos-fc-03
+    front: "What are the one-letter codes for lysine and arginine?"
+    back: "Lys = K, Arg = R."
+    tags: [abbreviations, basic]
+  - id: appendix-aminos-fc-04
+    front: "What are the one-letter codes for aspartate, glutamate, asparagine and glutamine?"
+    back: "Asp = D, Glu = E, Asn = N, Gln = Q."
+    tags: [abbreviations]
+  - id: appendix-aminos-fc-05
+    front: "Which two amino acids have acidic side chains, and what charge do they carry at pH 7.4?"
+    back: "Aspartate and glutamate. Both are negatively charged (−1 side chain) at physiological pH."
+    tags: [acidic, charge]
+  - id: appendix-aminos-fc-06
+    front: "Which three amino acids have basic side chains?"
+    back: "Lysine, arginine and histidine."
+    tags: [basic]
+  - id: appendix-aminos-fc-07
+    front: "Why is histidine mostly uncharged at pH 7.4 even though it is classed as basic?"
+    back: "Its imidazole side chain has a pKa of about 6.0. At pH 7.4, above the pKa, most histidine side chains are deprotonated and neutral."
+    tags: [basic, pka, charge]
+  - id: appendix-aminos-fc-08
+    front: "Why is histidine so often found in enzyme active sites and protein buffers?"
+    back: "Its side-chain pKa (about 6.0) is close to physiological pH, so it can easily accept or donate a proton."
+    tags: [basic, pka]
+  - id: appendix-aminos-fc-09
+    front: "Which amino acid has the most basic side chain, and what group gives it that property?"
+    back: "Arginine, with a guanidinium group (side-chain pKa about 12.5)."
+    tags: [basic, pka]
+  - id: appendix-aminos-fc-10
+    front: "What is the approximate side-chain pKa of lysine?"
+    back: "About 10.5."
+    tags: [basic, pka]
+  - id: appendix-aminos-fc-11
+    front: "What are the approximate side-chain pKa values of cysteine and tyrosine?"
+    back: "Cysteine about 8.3; tyrosine about 10.1. Both are mostly protonated (neutral) at pH 7.4."
+    tags: [pka]
+  - id: appendix-aminos-fc-12
+    front: "Which two amino acids contain sulfur, and which one can form disulfide bonds?"
+    back: "Cysteine and methionine. Only cysteine (a thiol) forms disulfide bonds; methionine's sulfur is in a thioether."
+    tags: [sulfur]
+  - id: appendix-aminos-fc-13
+    front: "Which two amino acids are the classic α-helix breakers, and why?"
+    back: "Proline (rigid ring and no backbone N–H to donate a hydrogen bond) and glycine (too flexible)."
+    tags: [structure]
+  - id: appendix-aminos-fc-14
+    front: "What is unusual about proline's structure?"
+    back: "Its side chain bonds back to the backbone nitrogen, forming a ring and making its amino group a secondary amine."
+    tags: [structure]
+  - id: appendix-aminos-fc-15
+    front: "Which three amino acids have hydroxyl side chains that kinases can phosphorylate?"
+    back: "Serine, threonine and tyrosine."
+    tags: [hydroxyl, modification]
+  - id: appendix-aminos-fc-16
+    front: "Name the nine essential amino acids."
+    back: "Phe, Val, Thr, Trp, Ile, Met, His, Leu, Lys (PVT TIM HaLL)."
+    tags: [essential, nutrition]
+  - id: appendix-aminos-fc-17
+    front: "Which three amino acids are branched-chain amino acids?"
+    back: "Valine, leucine and isoleucine. All three are essential."
+    tags: [nonpolar, essential]
+  - id: appendix-aminos-fc-18
+    front: "Which two amino acids are purely ketogenic?"
+    back: "Leucine and lysine. They can't be converted into glucose."
+    tags: [metabolism]
+  - id: appendix-aminos-fc-19
+    front: "Which two standard amino acids have two chiral centers?"
+    back: "Isoleucine and threonine."
+    tags: [stereochemistry]
+  - id: appendix-aminos-fc-20
+    front: "Which standard amino acid has an R configuration at its α-carbon, and why?"
+    back: "L-cysteine. Its sulfur-containing side chain outranks the carboxyl group under the Cahn–Ingold–Prelog rules, flipping the descriptor even though it is still an L amino acid."
+    tags: [stereochemistry]
+  - id: appendix-aminos-fc-21
+    front: "Are asparagine and glutamine acidic?"
+    back: "No. They carry amide side chains, which are polar but uncharged at physiological pH."
+    tags: [polar]
+  - id: appendix-aminos-fc-22
+    front: "Which amino acid is the site of N-linked glycosylation?"
+    back: "Asparagine."
+    tags: [modification]
+  - id: appendix-aminos-fc-23
+    front: "Which amino acids absorb most strongly at 280 nm?"
+    back: "Tryptophan (strongest) and tyrosine. That's why A280 is used to estimate protein concentration."
+    tags: [aromatic, lab]
+  - id: appendix-aminos-fc-24
+    front: "Which amino acid is coded by the start codon AUG?"
+    back: "Methionine."
+    tags: [genetics]
+  - id: appendix-aminos-fc-25
+    front: "Tryptophan is the precursor of which signaling molecules?"
+    back: "Serotonin and melatonin (and the vitamin niacin)."
+    tags: [precursors]
+  - id: appendix-aminos-fc-26
+    front: "Tyrosine is the precursor of which molecules?"
+    back: "Catecholamines (dopamine, norepinephrine, epinephrine), thyroid hormones and melanin."
+    tags: [precursors]
+  - id: appendix-aminos-fc-27
+    front: "What substitution in β-globin causes sickle-cell disease?"
+    back: "Glutamate (charged) to valine (nonpolar) at position 6."
+    tags: [clinical]
+  - id: appendix-aminos-fc-28
+    front: "What are the approximate pKa values of the α-carboxyl and α-amino groups of a free amino acid?"
+    back: "α-carboxyl about 2; α-amino about 9–10."
+    tags: [pka]
+  - id: appendix-aminos-fc-29
+    front: "How do you calculate the pI of an amino acid with a neutral side chain?"
+    back: 'Average the α-carboxyl and α-amino pKa values. For glycine: $(2.3 + 9.6)/2 \approx 6.0$.'
+    tags: [pi]
+  - id: appendix-aminos-fc-30
+    front: "How do you calculate the pI of an acidic amino acid such as aspartate?"
+    back: 'Average the two lowest pKa values (α-carboxyl and side chain): $(1.9 + 3.7)/2 \approx 2.8$.'
+    tags: [pi, acidic]
+  - id: appendix-aminos-fc-31
+    front: "How do you calculate the pI of a basic amino acid such as lysine?"
+    back: 'Average the two highest pKa values (α-amino and side chain): $(9.0 + 10.5)/2 \approx 9.7$.'
+    tags: [pi, basic]
+  - id: appendix-aminos-fc-32
+    front: "If the pH is below an amino acid's pI, what is its net charge?"
+    back: "Net positive. Above the pI it is net negative; at the pI it has no net charge."
+    tags: [pi, charge]
+  - id: appendix-aminos-fc-33
+    front: "What form does a free amino acid mainly take at physiological pH?"
+    back: 'A zwitterion: a protonated amino group ($\ce{-NH3+}$) and a deprotonated carboxyl group ($\ce{-COO-}$).'
+    tags: [charge]

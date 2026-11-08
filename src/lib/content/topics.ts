@@ -1,0 +1,41 @@
+import type { PartCode } from "./schema";
+
+/** AAMC content categories (plus CARS skills). Seeded into the Topic table. */
+export const TOPICS: { code: string; part: Exclude<PartCode, "getting-started" | "appendix">; name: string }[] = [
+  { code: "1A", part: "bb", name: "Proteins and amino acids" },
+  { code: "1B", part: "bb", name: "Gene to protein" },
+  { code: "1C", part: "bb", name: "Heredity" },
+  { code: "1D", part: "bb", name: "Bioenergetics and metabolism" },
+  { code: "2A", part: "bb", name: "Cells and tissues" },
+  { code: "2B", part: "bb", name: "Prokaryotes and viruses" },
+  { code: "2C", part: "bb", name: "Cell division and differentiation" },
+  { code: "3A", part: "bb", name: "Nervous and endocrine systems" },
+  { code: "3B", part: "bb", name: "Organ systems" },
+  { code: "4A", part: "cp", name: "Motion, forces, work, and energy" },
+  { code: "4B", part: "cp", name: "Fluids and gas exchange" },
+  { code: "4C", part: "cp", name: "Electrochemistry and circuits" },
+  { code: "4D", part: "cp", name: "Light and sound" },
+  { code: "4E", part: "cp", name: "Atoms and nuclear decay" },
+  { code: "5A", part: "cp", name: "Water and solutions" },
+  { code: "5B", part: "cp", name: "Molecules and intermolecular forces" },
+  { code: "5C", part: "cp", name: "Separation and purification" },
+  { code: "5D", part: "cp", name: "Biologically relevant molecules" },
+  { code: "5E", part: "cp", name: "Thermodynamics and kinetics" },
+  { code: "6A", part: "ps", name: "Sensing the environment" },
+  { code: "6B", part: "ps", name: "Making sense of the environment" },
+  { code: "6C", part: "ps", name: "Responding to the world" },
+  { code: "7A", part: "ps", name: "Individual influences on behavior" },
+  { code: "7B", part: "ps", name: "Social influences on behavior" },
+  { code: "7C", part: "ps", name: "Attitude and behavior change" },
+  { code: "8A", part: "ps", name: "Self-identity" },
+  { code: "8B", part: "ps", name: "Social thinking" },
+  { code: "8C", part: "ps", name: "Social interactions" },
+  { code: "9A", part: "ps", name: "Social structure" },
+  { code: "9B", part: "ps", name: "Demographics" },
+  { code: "10A", part: "ps", name: "Social inequality" },
+  { code: "CARS-FC", part: "cars", name: "Foundations of comprehension" },
+  { code: "CARS-RWT", part: "cars", name: "Reasoning within the text" },
+  { code: "CARS-RBT", part: "cars", name: "Reasoning beyond the text" },
+];
+
+export const topicSlug = (code: string) => `aamc-${code.toLowerCase()}`;

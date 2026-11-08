@@ -1,0 +1,354 @@
+chapter: amino-acids-and-proteins
+questions:
+  # ---------------------------------------------------------------- inline
+  - id: bb-aminos-01
+    usage: inline
+    topic: 5D
+    difficulty: core
+    stem: |
+      Nearly every chiral amino acid in human proteins has an α carbon with the S configuration, but L-cysteine is R. Which statement best explains the difference?
+    choices:
+      A: 'Cysteine is incorporated into proteins as the D enantiomer.'
+      B: 'The thiol group makes the α carbon of cysteine achiral.'
+      C: 'Sulfur raises the side chain''s priority above the carboxyl group.'
+      D: 'The amino group of cysteine has lower priority than its carboxyl group.'
+    answer: C
+    explanation: |
+      CIP priorities are compared atom by atom. The carboxyl carbon is attached to (O, O, O), while cysteine's side-chain carbon is attached to (S, H, H). At the first point of difference, sulfur (atomic number 16) beats oxygen (8), so the side chain outranks the carboxyl group. The spatial arrangement is the same as in every other L amino acid, but the swapped priorities turn S into R.
+    whyWrong:
+      A: 'Cysteine in proteins is L, like every ribosomally incorporated amino acid; the R label comes from priorities, not a different arrangement.'
+      B: 'The α carbon of cysteine still has four different groups, so it remains a stereocenter.'
+      D: 'The amino nitrogen is still the highest-priority group; the change is between the carboxyl and the side chain.'
+
+  - id: bb-aminos-02
+    usage: inline
+    topic: 1A
+    difficulty: core
+    stem: |
+      A protein engineer wants two α helices of a secreted protein to be joined by a covalent bond at the point where they touch. Which pair of residues should be introduced at the two contacting positions?
+    choices:
+      A: 'Lysine and aspartate'
+      B: 'Serine and threonine'
+      C: 'Proline and glycine'
+      D: 'Cysteine and cysteine'
+    answer: D
+    explanation: |
+      Two cysteine thiols can be oxidized to a disulfide bond, a covalent S–S link. Secreted proteins sit in an oxidizing extracellular environment, where disulfides are stable, so a pair of cysteines is the standard way to engineer a covalent crosslink between two parts of a protein.
+    whyWrong:
+      A: 'Lysine and aspartate form a salt bridge, which is an ionic, noncovalent interaction.'
+      B: 'Serine and threonine hydroxyls can hydrogen-bond, but hydrogen bonds are noncovalent.'
+      C: 'Neither proline nor glycine forms crosslinks, and both tend to disrupt α helices.'
+
+  - id: bb-aminos-03
+    usage: inline
+    topic: 1A
+    difficulty: core
+    stem: |
+      Aspartic acid has pKa values of 1.88 (α-carboxyl), 3.65 (side-chain carboxyl) and 9.60 (α-amino). What is its isoelectric point?
+    choices:
+      A: '2.77'
+      B: '5.04'
+      C: '5.74'
+      D: '6.63'
+    answer: A
+    explanation: |
+      Fully protonated aspartic acid has a net charge of +1. Losing the α-carboxyl proton (pKa 1.88) gives the neutral form, and losing the side-chain proton (pKa 3.65) gives a net charge of −1. The neutral species lies between those two values, so pI = (1.88 + 3.65)/2 = 5.53/2 = 2.77.
+    whyWrong:
+      B: 'This is the average of all three pKa values, which has no physical meaning.'
+      C: 'This averages the α-carboxyl and α-amino pKa values, the shortcut for amino acids with neutral side chains.'
+      D: 'This averages the two highest pKa values, the shortcut for basic amino acids.'
+
+  - id: bb-aminos-04
+    usage: inline
+    topic: 1A
+    difficulty: core
+    stem: |
+      Which property of the peptide bond best explains why the carbonyl carbon, carbonyl oxygen, amide nitrogen, amide hydrogen and the two flanking α carbons all lie in one plane?
+    choices:
+      A: 'The amide nitrogen is sp³-hybridized, which fixes its bond angles.'
+      B: 'Nitrogen lone-pair resonance gives the C–N bond partial double-bond character.'
+      C: 'The carbonyl oxygen hydrogen-bonds to the N–H of the same peptide group.'
+      D: 'Steric repulsion between neighboring side chains blocks rotation about the C–N bond.'
+    answer: B
+    explanation: |
+      The amide nitrogen's lone pair is delocalized into the carbonyl, so the peptide bond is a resonance hybrid with roughly 40% double-bond character in the C–N bond. Double-bond character requires p-orbital overlap, which prevents rotation and holds all six atoms in a single plane.
+    whyWrong:
+      A: 'Resonance makes the amide nitrogen effectively sp² (trigonal planar), not sp³.'
+      C: 'The C=O and N–H of one peptide group point in opposite directions and do not hydrogen-bond to each other.'
+      D: 'Side-chain clashes limit rotation about the φ and ψ single bonds, not the C–N peptide bond.'
+
+  - id: bb-aminos-05
+    usage: inline
+    topic: 1A
+    difficulty: core
+    stem: |
+      Which statement best explains why burying leucine side chains in the core of a folded protein is thermodynamically favorable?
+    choices:
+      A: 'Leucine side chains form strong hydrogen bonds with each other in the core.'
+      B: 'Burial increases the conformational entropy of the polypeptide chain.'
+      C: 'Burial forms van der Waals contacts that make ΔH of folding strongly positive.'
+      D: 'Burial frees ordered water molecules, raising the entropy of the solvent.'
+    answer: D
+    explanation: |
+      Water around an exposed nonpolar side chain forms an ordered, cage-like shell, which lowers its entropy. When leucine side chains cluster in the core, that water is released into the bulk solvent and its entropy rises. This increase in solvent entropy (the hydrophobic effect) outweighs the loss of chain entropy, making ΔG of folding negative.
+    whyWrong:
+      A: 'Leucine has a hydrocarbon side chain with no hydrogen-bond donors or acceptors.'
+      B: 'Folding restricts the chain to essentially one conformation, so the chain''s own entropy decreases.'
+      C: 'A strongly positive ΔH would oppose folding; van der Waals contacts are favorable (negative ΔH) but modest.'
+
+  # ---------------------------------------------------------------- quiz
+  - id: bb-aminos-06
+    usage: quiz
+    topic: 1A
+    difficulty: intro
+    stem: |
+      A single point mutation converts a segment of a cytosolic enzyme from a regular α helix into an irregular loop. Which substitution is most likely responsible?
+    choices:
+      A: 'Alanine to proline'
+      B: 'Leucine to isoleucine'
+      C: 'Glutamate to aspartate'
+      D: 'Lysine to arginine'
+    answer: A
+    explanation: |
+      Proline is a helix breaker. Its ring locks rotation around the N–Cα bond, and once it is in a chain its nitrogen has no hydrogen to donate to the backbone hydrogen-bonding pattern of the helix. Alanine, by contrast, strongly favors helices, so replacing it with proline is the substitution most likely to disrupt one.
+    whyWrong:
+      B: 'Leucine and isoleucine are both nonpolar, branched residues, a conservative change unlikely to unravel a helix.'
+      C: 'Both are acidic residues with negative side chains; the change is conservative.'
+      D: 'Both are basic residues with positive side chains; the change is conservative.'
+
+  - id: bb-aminos-07
+    usage: quiz
+    topic: 1A
+    difficulty: core
+    stem: |
+      What is the approximate net charge of the tetrapeptide Glu–His–Lys–Asp at pH 7.4?
+    choices:
+      A: '−2'
+      B: '−1'
+      C: '0'
+      D: '+1'
+    answer: B
+    explanation: |
+      Count the ionizable groups. The N-terminal amine (+1) and the lysine side chain (+1) are protonated. The glutamate side chain (−1), the aspartate side chain (−1) and the C-terminal carboxyl (−1) are deprotonated. Histidine (pKa about 6.0) is only about 4% protonated at pH 7.4, so it contributes essentially 0. The total is +2 − 3 = −1.
+    whyWrong:
+      A: 'This result leaves out the positive charge on the N-terminal amino group.'
+      C: 'This counts histidine as +1, but at pH 7.4, well above its pKa of about 6, it is mostly neutral.'
+      D: 'This result leaves out the negative C-terminal carboxyl and one acidic side chain.'
+
+  - id: bb-aminos-08
+    usage: quiz
+    topic: 1A
+    difficulty: core
+    stem: |
+      A researcher loads a mixture of three proteins into a well at the center of a gel buffered at pH 7.0 and applies a voltage across it. Protein X has a pI of 4.8, protein Y a pI of 7.0, and protein Z a pI of 9.6. Assuming the proteins are not denatured, which result is expected?
+    choices:
+      A: 'X moves toward the cathode, Z toward the anode, and Y stays near the well.'
+      B: 'All three proteins move toward the anode at rates set by their masses.'
+      C: 'X moves toward the anode, Z toward the cathode, and Y stays near the well.'
+      D: 'X and Z both move toward the anode, and Y moves toward the cathode.'
+    answer: C
+    explanation: |
+      A protein in a buffer whose pH is above its pI is net negative; below its pI it is net positive. At pH 7.0, X (pI 4.8) is negative and migrates to the positive electrode (anode), Z (pI 9.6) is positive and migrates to the negative electrode (cathode), and Y (pI 7.0) has no net charge and stays near the well.
+    whyWrong:
+      A: 'This reverses the charges: a protein is negative when the pH is above its pI, so X is the one that moves toward the anode.'
+      B: 'Separation by mass alone requires SDS to give every protein a uniform negative charge; native proteins carry different charges.'
+      D: 'Z is positively charged at pH 7.0, and Y, at its pI, carries no net charge.'
+
+  - id: bb-aminos-09
+    usage: quiz
+    topic: 1A
+    difficulty: advanced
+    stem: |
+      A purified serum protein runs as a single band at 150 kDa on SDS-PAGE when no reducing agent is added. When the sample is first boiled with β-mercaptoethanol, the 150 kDa band disappears and two bands appear, at 50 kDa and 25 kDa. Staining shows the 50 kDa band contains about twice as much protein by mass as the 25 kDa band. Which conclusion is best supported?
+    choices:
+      A: 'β-Mercaptoethanol hydrolyzed two peptide bonds in a single 150 kDa chain.'
+      B: 'The subunits are held together only by hydrophobic interactions.'
+      C: 'The 150 kDa band reflects aggregation of smaller chains caused by SDS.'
+      D: 'It has two 50 kDa and two 25 kDa chains joined by disulfide bonds.'
+    answer: D
+    explanation: |
+      SDS alone disrupts noncovalent interactions, yet the protein stays at 150 kDa, so its chains must be held by covalent bonds that SDS cannot break. A reducing agent breaks disulfides and releases 50 and 25 kDa chains. Two 50 kDa chains (100 kDa) plus two 25 kDa chains (50 kDa) add to 150 kDa and give the observed 2:1 mass ratio. This is the structure of an IgG antibody.
+    whyWrong:
+      A: 'β-Mercaptoethanol reduces disulfide bonds; it does not hydrolyze peptide bonds.'
+      B: 'SDS would have separated subunits held only by hydrophobic interactions even without a reducing agent.'
+      C: 'SDS dissociates and unfolds proteins rather than aggregating them, and aggregation would not depend on a reducing agent.'
+
+  - id: bb-aminos-10
+    usage: quiz
+    topic: 1A
+    difficulty: intro
+    stem: |
+      Which treatment would change the primary structure of a purified protein?
+    choices:
+      A: 'Heating it to 90 °C for ten minutes'
+      B: 'Dissolving it in 8 M urea'
+      C: 'Incubating it with trypsin at pH 8'
+      D: 'Coating it with sodium dodecyl sulfate'
+    answer: C
+    explanation: |
+      Primary structure is the sequence of residues joined by peptide bonds. Trypsin, a protease, hydrolyzes peptide bonds on the C-terminal side of lysine and arginine, so it cuts the chain into fragments and changes the primary structure. The other treatments denature the protein by disrupting noncovalent interactions while leaving peptide bonds intact.
+    whyWrong:
+      A: 'Brief heating denatures a protein by disrupting noncovalent interactions, but it does not hydrolyze peptide bonds.'
+      B: 'Urea disrupts hydrogen bonds and hydrophobic interactions, leaving the sequence unchanged.'
+      D: 'SDS unfolds proteins by binding hydrophobic regions; it does not break covalent bonds.'
+
+  - id: bb-aminos-11
+    usage: quiz
+    topic: 1A
+    difficulty: advanced
+    stem: |
+      Ribonuclease A is unfolded in 8 M urea with β-mercaptoethanol. The β-mercaptoethanol is then removed while urea is still present, allowing the cysteines to oxidize, and the urea is removed afterward. The resulting enzyme has about 1% of normal activity. When a trace amount of β-mercaptoethanol is then added in the absence of urea, activity slowly rises to about 90% of normal. What best explains the recovery?
+    choices:
+      A: 'β-Mercaptoethanol catalyzes the formation of new peptide bonds in damaged chains.'
+      B: 'Trace reductant lets wrong disulfides break and re-form until native pairs form.'
+      C: 'β-Mercaptoethanol acts as a chaperone that supplies information about the native fold.'
+      D: 'β-Mercaptoethanol hydrolyzes misfolded molecules so that only native ones remain.'
+    answer: B
+    explanation: |
+      Oxidizing the cysteines while urea kept the chain unfolded paired them randomly, producing scrambled disulfides and an inactive enzyme. A small amount of reducing agent allows disulfide exchange: bonds repeatedly break and re-form. Without urea, the chain can explore conformations and settles into the most stable one, the native fold with its correct disulfides. The information came from the sequence, not the reagent.
+    whyWrong:
+      A: 'The peptide bonds were never broken, and a reducing agent cannot form them.'
+      C: 'β-Mercaptoethanol is a small reducing agent with no information about structure; the sequence specifies the fold.'
+      D: 'β-Mercaptoethanol is a reducing agent, not a protease, and discarding molecules could not raise activity from 1% to 90% of normal.'
+
+  - id: bb-aminos-12
+    usage: quiz
+    topic: 1A
+    difficulty: core
+    stem: |
+      An unknown amino acid is titrated from pH 1 with NaOH. The titration curve shows buffering plateaus centered at pH 2.2, 9.0 and 10.5, and the molecule reaches zero net charge only after 2.0 equivalents of base have been added. Which amino acid is it?
+    choices:
+      A: 'Glutamate'
+      B: 'Histidine'
+      C: 'Lysine'
+      D: 'Tyrosine'
+    answer: C
+    explanation: |
+      Three plateaus mean three ionizable groups. Needing two equivalents to reach zero net charge means the fully protonated molecule started at +2, so it has two positively charged groups when protonated. Lysine (α-amino and ε-amino groups) fits, and its pKa values of about 2.2, 9.0 and 10.5 match. Its pI would be (9.0 + 10.5)/2 = 9.75.
+    whyWrong:
+      A: 'Glutamate starts at +1 and is neutral after one equivalent; its side-chain plateau would be near pH 4, not 10.5.'
+      B: 'Histidine starts at +2, but its side-chain plateau would be near pH 6, not 10.5.'
+      D: 'Tyrosine starts at +1 and reaches zero net charge after only one equivalent, because its phenol is neutral when protonated.'
+
+  - id: bb-aminos-13
+    usage: quiz
+    topic: 1A
+    difficulty: intro
+    stem: |
+      In an α helix, the hydrogen bonds that stabilize the structure form between which groups?
+    choices:
+      A: 'Backbone C=O of residue n and backbone N–H of residue n + 4'
+      B: 'The side chains of residue n and residue n + 4'
+      C: 'Backbone N–H and C=O groups on adjacent, side-by-side strands'
+      D: 'The backbone C=O of residue n and the side chain of residue n + 3'
+    answer: A
+    explanation: |
+      Secondary structure is stabilized by hydrogen bonds between backbone atoms only. In an α helix, the carbonyl oxygen of each residue accepts a hydrogen bond from the amide N–H four residues further along the chain, so the bonds run roughly parallel to the helix axis.
+    whyWrong:
+      B: 'Hydrogen bonds between side chains are tertiary interactions; helix side chains point outward.'
+      C: 'Hydrogen bonds between adjacent strands describe a β-pleated sheet, not an α helix.'
+      D: 'Side chains do not form the regular hydrogen-bond pattern of a helix, and the spacing is four residues, not three.'
+
+  - id: bb-aminos-14
+    usage: quiz
+    topic: 1A
+    difficulty: core
+    stem: |
+      A sailor who has eaten no fresh fruit or vegetables for several months develops bleeding gums, easy bruising and wounds that fail to heal. The molecular defect most directly responsible involves which process?
+    choices:
+      A: 'Hydroxylation of proline and lysine residues in collagen'
+      B: 'Insertion of glycine at every third position of collagen'
+      C: 'Formation of disulfide crosslinks in α-keratin'
+      D: 'Folding of collagen chains into right-handed α helices'
+    answer: A
+    explanation: |
+      These are signs of scurvy, caused by vitamin C deficiency. Prolyl and lysyl hydroxylases need ascorbate to keep their iron cofactor reduced. Without hydroxyproline and hydroxylysine, collagen triple helices are less stable and crosslink poorly, weakening blood vessels, gums and healing tissue.
+    whyWrong:
+      B: 'Glycine is encoded by the collagen genes and does not depend on vitamin C; glycine substitutions cause osteogenesis imperfecta instead.'
+      C: 'Keratin disulfides affect hair and nails, not gums, vessels or wound healing, and do not require vitamin C.'
+      D: 'Individual collagen chains form left-handed helices that are not α helices, and vitamin C is not needed for that.'
+
+  - id: bb-aminos-15
+    usage: quiz
+    topic: 1A
+    difficulty: core
+    stem: |
+      An active-site histidine side chain has a pKa of 6.0. Approximately what fraction of these side chains is protonated at pH 7.0?
+    choices:
+      A: '1%'
+      B: '9%'
+      C: '50%'
+      D: '91%'
+    answer: B
+    explanation: |
+      By the Henderson–Hasselbalch equation, $[\text{His}]/[\text{HisH}^+] = 10^{7.0 - 6.0} = 10$. For every 10 deprotonated side chains there is 1 protonated one, so the protonated fraction is 1/(1 + 10) = 1/11, about 9%.
+    whyWrong:
+      A: 'One percent would require the pH to be two units above the pKa (a 100:1 ratio).'
+      C: 'Half the side chains are protonated only when pH equals pKa.'
+      D: 'This is the deprotonated fraction; above its pKa, a group is mostly deprotonated.'
+
+  - id: bb-aminos-16
+    usage: quiz
+    topic: 1A
+    difficulty: intro
+    stem: |
+      Which residue would most likely be found facing the lipid tails in the membrane-spanning α helix of an integral membrane protein?
+    choices:
+      A: 'Aspartate'
+      B: 'Lysine'
+      C: 'Glutamine'
+      D: 'Leucine'
+    answer: D
+    explanation: |
+      The interior of a lipid bilayer is a nonpolar hydrocarbon environment. Residues facing it must be hydrophobic, and leucine's branched hydrocarbon side chain is among the most common residues in transmembrane helices.
+    whyWrong:
+      A: 'Aspartate is negatively charged at physiological pH, and burying a charge in the bilayer is highly unfavorable.'
+      B: 'Lysine is positively charged at physiological pH, so it is found at membrane surfaces, not facing lipid tails.'
+      C: 'Glutamine is polar and hydrogen-bonds with water, so it prefers aqueous surfaces.'
+
+  - id: bb-aminos-17
+    usage: quiz
+    topic: 1A
+    difficulty: advanced
+    stem: |
+      Researchers measure the melting temperature (the temperature at which half the molecules are unfolded) of a small globular protein and three single-residue mutants.
+
+      | Protein | Melting temperature |
+      |---|---|
+      | Wild type | 62 °C |
+      | K12R | 62 °C |
+      | L78I | 60 °C |
+      | V45D | 41 °C |
+
+      Which conclusion about residue 45 in the wild-type protein is best supported?
+    choices:
+      A: 'It is buried in the hydrophobic core of the protein.'
+      B: 'It lies on the solvent-exposed surface of the protein.'
+      C: 'It forms a salt bridge with a lysine on the surface.'
+      D: 'It is part of a disulfide bond that crosslinks two strands.'
+    answer: A
+    explanation: |
+      Replacing valine with aspartate places a charged, strongly hydrophilic side chain where a nonpolar one was. That would be tolerated on the surface but is very destabilizing in the core, where the charge cannot be hydrated. The 21 °C drop, compared with almost no effect for the conservative K12R and L78I changes, indicates that valine 45 is buried in the hydrophobic core.
+    whyWrong:
+      B: 'A surface position would tolerate a charged residue, so the protein would not be so badly destabilized.'
+      C: 'Valine is nonpolar and cannot form a salt bridge in the wild-type protein.'
+      D: 'Only cysteine forms disulfide bonds, and residue 45 is valine in the wild type.'
+
+  - id: bb-aminos-18
+    usage: quiz
+    topic: 1A
+    difficulty: advanced
+    stem: |
+      Gel filtration under native conditions gives a mass of 120 kDa for a newly purified enzyme. On SDS-PAGE, with or without β-mercaptoethanol, the enzyme runs as a single band at 60 kDa. Which conclusion is best supported?
+    choices:
+      A: 'The enzyme is a single 120 kDa chain that SDS cleaves in half.'
+      B: 'The enzyme is a dimer of 60 kDa chains held by noncovalent interactions.'
+      C: 'The enzyme is a dimer of 60 kDa chains held together by disulfide bonds.'
+      D: 'The enzyme is a dimer of 30 kDa chains held by noncovalent interactions.'
+    answer: B
+    explanation: |
+      Native gel filtration measures the intact assembly, and SDS separates subunits held by noncovalent forces. A 120 kDa native mass and a 60 kDa SDS mass imply two 60 kDa subunits, which is quaternary structure. Because the band is at 60 kDa even without a reducing agent, no disulfides link the subunits; they are held noncovalently.
+    whyWrong:
+      A: 'SDS disrupts noncovalent interactions but does not hydrolyze peptide bonds.'
+      C: 'Disulfide-linked subunits would stay together at 120 kDa on SDS-PAGE without β-mercaptoethanol.'
+      D: 'SDS-PAGE shows the subunits are 60 kDa; a dimer of 30 kDa chains would have a native mass of only 60 kDa.'

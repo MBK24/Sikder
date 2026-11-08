@@ -309,6 +309,14 @@ model Verification {
   @@index([identifier])
 }
 
+/// Better Auth's database-backed rate limiter (auth endpoints).
+model RateLimit {
+  id          String @id @default(cuid())
+  key         String @unique
+  count       Int
+  lastRequest BigInt
+}
+
 // -----------------------------------------------------------------------------
 // Profile, badges
 // -----------------------------------------------------------------------------

@@ -1,0 +1,123 @@
+deck:
+  title: "Question Types and Elimination"
+  description: "Recognizing each CARS question type from its stem, how to attack it, and the six wrong-answer traps."
+cards:
+  - id: cars-qtypes-fc-01
+    front: "What is the four-step routine for every CARS question?"
+    back: "Classify the stem, return to the passage or map, predict an answer in your own words, then eliminate choices by naming their distortions."
+    tags: [method]
+
+  - id: cars-qtypes-fc-02
+    front: "\"The primary purpose of the passage is to...\": which question type is this, and what extra check does it need?"
+    back: "Main idea / primary purpose. Check the verb: an author taking a side is arguing, not merely describing."
+    tags: [question-types, comprehension]
+
+  - id: cars-qtypes-fc-03
+    front: "Stems beginning \"According to the passage...\" signal which question type?"
+    back: "Detail / retrieval. Find the sentence, reread it with its neighbors, and pick the closest paraphrase."
+    tags: [question-types, comprehension]
+
+  - id: cars-qtypes-fc-04
+    front: "On a definition-in-context question, what is the most common wrong answer?"
+    back: "The word's ordinary dictionary meaning. The author usually uses the word in a narrower or extended sense signaled nearby."
+    tags: [question-types, comprehension, traps]
+
+  - id: cars-qtypes-fc-05
+    front: "How large a step from the text should a correct CARS inference be?"
+    back: "A small one: something the author did not quite say but would have to accept. Test each choice by asking whether the author would object."
+    tags: [question-types, within-text]
+
+  - id: cars-qtypes-fc-06
+    front: "\"The author mentions X in order to...\": what does this question type ask, and what is its typical trap?"
+    back: "Function: why the detail is there (which claim it supports). The trap describes what the detail says instead of why it appears."
+    tags: [question-types, within-text, traps]
+
+  - id: cars-qtypes-fc-07
+    front: "How do you attack a tone or attitude question?"
+    back: "Collect the evaluative words and any concessions about the subject, then match both the direction (positive, negative, mixed) and the intensity."
+    tags: [question-types, comprehension]
+
+  - id: cars-qtypes-fc-08
+    front: "On a strengthen or weaken question, what should the best answer target?"
+    back: "The evidence or premise behind the claim, not the conclusion itself. Ask first: why does the author believe this?"
+    tags: [question-types, beyond-text]
+
+  - id: cars-qtypes-fc-09
+    front: "How do you approach a new-information or application question (\"Suppose that...\")?"
+    back: "State the author's principle in general terms, including its qualifications, then apply it to the new case as the author would."
+    tags: [question-types, beyond-text]
+
+  - id: cars-qtypes-fc-10
+    front: "How do you solve an analogy question?"
+    back: "Reduce the passage's relationship to an abstract structure, then find the choice with the same structure. Ignore surface similarity of topic."
+    tags: [question-types, beyond-text]
+
+  - id: cars-qtypes-fc-11
+    front: "Why predict an answer before reading the choices?"
+    back: "Distractors are built to sound reasonable in isolation. A prediction gives you a target to compare against, which is faster and more reliable."
+    tags: [method, prediction]
+
+  - id: cars-qtypes-fc-12
+    front: "What does a prediction look like for a strengthen/weaken question?"
+    back: "A description of what the right answer must do (e.g. \"something showing insiders' accounts are accurate\"), since the specific finding can't be predicted."
+    tags: [prediction]
+
+  - id: cars-qtypes-fc-13
+    front: "What are the six wrong-answer trap types? (Mnemonic: wrong answers aren't HONEST)"
+    back: "Half-right half-wrong, Opposite, Not in the passage (out of scope / outside knowledge), Extreme, Scope too broad or narrow, True but irrelevant."
+    tags: [traps, mnemonic]
+
+  - id: cars-qtypes-fc-14
+    front: "The author wrote \"often\"; a choice says \"always.\" Which trap is this?"
+    back: "Extreme language: the choice strengthens the author's qualified claim."
+    tags: [traps]
+
+  - id: cars-qtypes-fc-15
+    front: "A choice is true in the real world but never discussed in the passage. Which trap is this?"
+    back: "Out of scope / outside knowledge. On CARS, only what the passage supports counts."
+    tags: [traps]
+
+  - id: cars-qtypes-fc-16
+    front: "A choice accurately states the critics' view, but the question asks for the author's. Which trap is this?"
+    back: "Opposite (wrong voice). Check your map's voice tags before choosing."
+    tags: [traps, voices]
+
+  - id: cars-qtypes-fc-17
+    front: "Where does a half-right, half-wrong choice usually break?"
+    back: "At the joint, often after \"because\", \"since\" or \"and therefore.\" Read every word of the second half."
+    tags: [traps]
+
+  - id: cars-qtypes-fc-18
+    front: "A choice is supported by the passage but doesn't answer the question asked. Which trap is this?"
+    back: "True but irrelevant, e.g. describing what a detail says when the stem asks why it is there."
+    tags: [traps]
+
+  - id: cars-qtypes-fc-19
+    front: "Answers like \"trace the history of...\" when the passage takes a position, or that cover only one paragraph, show which trap?"
+    back: "Scope: the answer is too narrow (or misdescribes the passage's job). The correct main idea is supported by every paragraph."
+    tags: [traps, scope]
+
+  - id: cars-qtypes-fc-20
+    front: "What is the true/false method for EXCEPT and NOT questions?"
+    back: "Mark each choice T (supported) or F (not supported) on your noteboard. Three are T; choose the lone F."
+    tags: [except]
+
+  - id: cars-qtypes-fc-21
+    front: "On EXCEPT questions, what kind of choice is the usual right answer, and what is the subtle variant?"
+    back: "An out-of-scope statement. The variant is a statement that appears in the passage but in a different context, so it doesn't answer the stem."
+    tags: [except, traps]
+
+  - id: cars-qtypes-fc-22
+    front: "How do you handle a LEAST question (e.g. \"would LEAST weaken\")?"
+    back: "Rank the choices by how strongly each affects the claim and pick the weakest effect."
+    tags: [except]
+
+  - id: cars-qtypes-fc-23
+    front: "When should you flag a CARS question and move on?"
+    back: "If you are still split between two choices after about 90 seconds: pick the better one, flag it, and return only if time remains. Never leave a blank."
+    tags: [timing]
+
+  - id: cars-qtypes-fc-24
+    front: "When you have two finalists, how do you break the tie?"
+    back: "Compare them word by word. The difference is usually one word or clause, and that is where one of them distorts the passage."
+    tags: [method]

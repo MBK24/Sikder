@@ -1,0 +1,451 @@
+chapter: question-types-and-elimination
+passages:
+  - id: cars-qtypes-p1
+    title: "Cleaning the Past"
+    body: |
+      When a museum announces that a centuries-old painting has been cleaned, the reaction is often divided. Some viewers are delighted by colors that had been hidden for generations beneath yellowed varnish and grime; others feel that something has been stripped away. The dispute is usually framed as a contest between two camps: those who would return a work to the state its maker intended, and those who would preserve the marks that time has left on it. Each camp can point to cleanings that seem to vindicate it, and each has its celebrated disasters.
+
+      The first camp has the stronger intuitive appeal. A varnish that has darkened to the color of weak tea was no part of the painter's design, and to leave it in place is to let an accident of chemistry overrule a deliberate artistic choice. Yet "the artist's intention" is a more slippery standard than it appears. Painters frequently applied thin tinted glazes over their colors to soften or unify them, and these glazes sit so close to the later varnish that a restorer cannot always tell, even under magnification, where one ends and the other begins. An aggressive cleaning, undertaken in the name of the original, may remove part of it.
+
+      The second camp answers that the patina of age is itself part of a work's meaning. A painting that has passed through four centuries is not the object that left the studio, and pretending otherwise falsifies its history. This argument has real force, but it proves too much. If every alteration time produces is meaningful, then so are the flaking, the fading of unstable pigments and the overpainting by later hands, none of which even the most devoted advocate of patina would wish to keep in every case.
+
+      What both positions share is the hope that a single principle could settle every case in advance. Restoration rarely permits such comfort. Paintings differ in their materials, their histories and the damage they have suffered, and a rule that suits one may ruin another. The more defensible practice, I think, is one of disciplined restraint: removing what can be confidently identified as later accretion, leaving what cannot, and documenting each decision so that a future restorer, with better instruments, can revisit it. Such a practice will satisfy neither camp entirely. A restrained cleaning leaves some paintings looking neither new nor old, and visitors may find the result unsatisfying.
+
+      But the dissatisfaction is instructive. It reminds us that a restored painting is always a negotiation between the past and the present, and that the restorer's task is not to recover a lost original but to avoid making errors that cannot be undone. Reversibility, more than authenticity, may be the virtue the field most needs.
+
+  - id: cars-qtypes-p2
+    title: "Whose Categories?"
+    body: |
+      Anthropologists have long distinguished between describing a culture in its own terms and describing it in the analyst's. The first approach, often called emic, tries to reconstruct the distinctions that matter to the people being studied: how they themselves sort kin from strangers, the sacred from the ordinary, work from play. The second, called etic, applies categories devised by the observer, such as "household", "economy" or "religion", that are meant to permit comparison across societies. The terms derive from linguistics, where a parallel distinction separates the sounds that speakers of a language treat as different from the sounds an instrument can measure.
+
+      For much of the last century, the etic approach carried the prestige of science. If anthropology was to say anything general about human beings, it seemed, it needed a vocabulary that did not change every time the fieldworker moved to a new valley. Categories such as "kinship" and "economy" allowed researchers to set findings from distant continents side by side and to ask what, if anything, all societies share. Critics have since argued that this vocabulary was never as neutral as it claimed. "Religion", for example, took shape in European debates about churches and creeds; applied elsewhere, it can lead an observer to look for doctrine where people are chiefly concerned with practice, and to conclude that a community is "less religious" simply because its devotion does not take a familiar form.
+
+      The criticism is just, but its most enthusiastic proponents draw from it a conclusion it does not support. To say that outside categories distort is not to show that inside categories are transparent. People's own accounts of their lives are shaped by interest, by what they assume a visitor wants to hear, and by matters so habitual that they never think to mention them. A farmer may describe the division of labor in his village as a matter of custom while the village's land records suggest that it tracks wealth quite closely.
+
+      The more promising course is to treat the two vocabularies as checks on each other. An etic category is a hypothesis: it proposes that something called "household" in one place is comparable to something called by that name elsewhere. Emic description tests the hypothesis by asking whether the people concerned draw the line where the category assumes. When they do not, the category must be revised, though not abandoned, since without some shared terms comparison becomes impossible and anthropology dissolves into a collection of unrelated portraits.
+
+      This view asks more of the fieldworker than either alternative does, and it offers less certainty. But anthropology has never been a discipline that rewards certainty, and its best work has typically come from those willing to hold two ways of seeing in tension rather than resolve them prematurely.
+
+  - id: cars-qtypes-p3
+    title: "Taking Someone's Word"
+    body: |
+      Most of what any of us believes, we believe because someone told us. I have never measured the distance to the sun, observed a virus through a microscope, or witnessed the events recorded in the history of my own country, yet I hold beliefs about all of them with reasonable confidence. Philosophers have long been uneasy about this dependence. An influential tradition, stretching back to the early modern period, held that a rational person should accept testimony only when she has independent reason to think the speaker reliable: reason grounded, ultimately, in her own observation.
+
+      The demand has an admirable motive. It refuses to let authority substitute for evidence, and it reflects a justified suspicion of institutions that once required belief on command. But it is far more demanding than it first appears. To check a speaker's reliability, I must rely on my memory of past occasions when she was right, on the reports of others who vouch for her, and on background knowledge that I acquired, for the most part, from teachers and books. The independent reasons the tradition demands turn out to be shot through with testimony themselves.
+
+      Some philosophers have concluded from this that testimony is a basic source of knowledge, like perception: we are entitled to accept what we are told unless we have some specific reason for doubt. This position escapes the regress, but it is vulnerable to the opposite charge of credulity. A default of trust may serve well in a small community where liars are quickly exposed and reputations are hard to escape, and it matches how children learn, believing what they are told long before they could assess anyone's reliability; it serves less well in an environment where confident falsehoods circulate faster than corrections.
+
+      Neither picture, I suspect, describes how careful people actually reason. They do not verify every report, but neither do they accept reports indiscriminately. They attend to cues, such as whether a claim fits with what else they know, whether the speaker has anything to gain, and whether independent sources agree, and they adjust their trust accordingly. Such cues rarely amount to proof, and they can mislead. Yet they allow a person to be responsive to evidence about testimony without pretending to rebuild her knowledge from her own observations alone.
+
+      If this is right, the question is not whether we should depend on others for knowledge, since we cannot avoid doing so, but how to depend on them well. And that question is less about individual virtue than it may appear. The cues a careful listener relies on are more or less legible depending on the environment in which testimony circulates. Where sources are identified and disagreements are visible, they are easy to read; where they are hidden, even a conscientious listener is reduced to guessing.
+
+  - id: cars-qtypes-p4
+    title: "The View from a Single Village"
+    body: |
+      In the 1970s a number of historians began to write books of an unusual kind. Instead of tracing the development of nations, economies or ideas across centuries, they took as their subject a single village, a single trial, sometimes a single obscure person whose life happened to be recorded in unusual detail: a miller questioned by church authorities, say, or a peasant whose identity was disputed in court. The approach, which came to be called microhistory, was in part a reaction against a style of social history that described the past through long statistical series of prices, births and patterns of landholding.
+
+      The statistical historians had achieved a great deal. They had shown that the lives of ordinary people, long absent from histories of kings and battles, could be studied systematically, and that large forces shaped those lives in ways no individual could perceive. But the people in their tables rarely spoke; their beliefs, fears and quarrels appeared, if at all, only as aggregates. Microhistorians wanted to recover how particular individuals understood their world: what a miller made of the few books he happened to read, how a village interpreted a stranger's claims. Reducing such people to data points, they argued, risked describing the past in terms its inhabitants would not have recognized.
+
+      Critics replied that microhistory purchased vividness at the expense of significance. A single miller, however eloquent in the records, might be entirely unrepresentative, and a history built from exceptional cases could tell us only about exceptions. The objection is a fair one, and microhistorians did not always answer it well. Some of their books read as absorbing stories whose wider meaning the reader must take on faith. Others leaned so heavily on a single witness that the reader could not tell where the historian's interpretation ended and the record began.
+
+      The better practitioners, though, understood the objection differently. They did not claim that their subjects were typical. They argued instead that an unusual case, examined closely, can expose assumptions that ordinary cases leave unstated. When a court was forced to decide whether a returning man was really the husband who had left years earlier, it had to articulate what made a person recognizable (kinship, memory, bodily marks) in a way that routine life never required. The exceptional case is valuable not because it is representative but because it makes the normal visible.
+
+      This defense does not dissolve the tension between scale and detail; it relocates it. The microhistorian must still show that the assumptions a case reveals were widely shared rather than peculiar to the people involved, and for that she will often need precisely the kind of broad evidence her predecessors assembled. The two approaches, in other words, depend on each other more than their early polemics suggested.
+
+  - id: cars-qtypes-p5
+    title: "Arranging the Choice"
+    body: |
+      Governments and employers have increasingly discovered that the way options are presented can change what people choose without changing what they are permitted to choose. Enrolling workers in a retirement plan automatically, while allowing them to opt out, raises participation sharply compared with requiring them to sign up. Placing fruit at eye level in a cafeteria increases how much of it is eaten. Advocates call such arrangements nudges and defend them as a gentle form of help: no option is forbidden, and the chooser remains free to do as she likes. On this view, a nudge is a modest refinement of ordinary good design, no more sinister than a clearly labeled exit.
+
+      Critics see something more troubling. A nudge, they argue, works precisely because it bypasses deliberation. The worker enrolled by default has not decided to save; inertia has decided for her. To shape behavior by exploiting predictable lapses of attention is to treat people as objects to be steered rather than agents to be persuaded, and the fact that the steering is benevolent does not alter its character. Worse, a public that learns it has been nudged may come to distrust even well-intentioned institutions.
+
+      The objection is weightier than its opponents usually allow, but it rests on an assumption that does not survive scrutiny: that there is some neutral presentation from which a nudge departs. A cafeteria must put something at eye level; a retirement plan must have some default, even if the default is non-enrollment. Every arrangement of choices influences behavior, and declining to design one deliberately does not remove the influence. It merely leaves the influence to chance, or to whoever happened to arrange things first. Seen this way, the question is not whether to influence choices but which influences to accept and who should answer for them.
+
+      That reframing does not license every nudge. It does suggest that the critics' concern is better expressed as a demand for transparency and accountability than as a prohibition. A default that people would endorse if they understood it, and that they can easily reverse, respects their agency in a way that a concealed manipulation does not. Sometimes the same mechanism can serve either end. Where a nudge serves the designer's interests at the chooser's expense, as with a subscription that is easy to start and laborious to cancel, the critics' language of exploitation fits exactly.
+
+      The line between these cases will not always be clear, and reasonable people will draw it in different places. A default that one observer sees as a helpful convenience another will see as a quiet imposition. But it is a line worth drawing, and drawing it honestly requires abandoning the comforting fiction that choices can ever be presented without being shaped.
+
+questions:
+  # ---------- inline (passages A and B from the chapter) ----------
+  - id: cars-qtypes-01
+    usage: inline
+    topic: CARS-FC
+    difficulty: core
+    passage: cars-qtypes-p1
+    stem: |
+      In paragraph 3, the author says that the argument for preserving patina "proves too much." In context, this means that the argument:
+    choices:
+      A: "is supported by more evidence than the rival view"
+      B: "rests on a claim that no restorer could ever test"
+      C: "would justify conclusions its own advocates reject"
+      D: "exaggerates how much paintings change over time"
+    answer: C
+    explanation: |
+      The author explains the phrase immediately: if every alteration is meaningful, then so are flaking, fading and later overpainting, "none of which even the most devoted advocate of patina would wish to keep in every case." An argument that proves too much leads to conclusions that even its supporters would not accept. C is the meaning in context.
+    whyWrong:
+      A: "Dictionary-style misreading: 'proves too much' is a criticism, not praise for strong evidence."
+      B: "Out of scope: the author never says the claim is untestable; the problem is where it leads."
+      D: "Opposite: the author agrees that a four-century-old painting 'is not the object that left the studio.'"
+
+  - id: cars-qtypes-02
+    usage: inline
+    topic: CARS-RWT
+    difficulty: core
+    passage: cars-qtypes-p2
+    stem: |
+      The author describes a farmer who explains the village's division of labor as "a matter of custom" (paragraph 3) primarily in order to:
+    choices:
+      A: "illustrate that an insider's account can conceal what shapes his community"
+      B: "show that etic categories distort cultures more than emic accounts do"
+      C: "suggest that wealth is the main force behind every aspect of village life"
+      D: "support the critics' claim that outside categories reflect European debates"
+    answer: A
+    explanation: |
+      Paragraph 3 argues that "inside categories" are not "transparent" because people's accounts are shaped by interest and habit. The farmer is the example: his account (custom) diverges from what the land records suggest (wealth). The detail therefore supports the author's claim that emic description alone can mislead.
+    whyWrong:
+      B: "Opposite: the example shows a weakness of emic accounts, not of etic categories."
+      C: "Too broad: the records suggest that one division of labor tracks wealth; the author makes no claim about every aspect of village life."
+      D: "Wrong paragraph: the critics' point about European debates is in paragraph 2; the farmer example answers the critics' overreach."
+
+  - id: cars-qtypes-03
+    usage: inline
+    topic: CARS-RBT
+    difficulty: core
+    passage: cars-qtypes-p1
+    stem: |
+      The restoration practice the author recommends is most similar to the practice of:
+    choices:
+      A: "a publisher who modernizes all the spelling in an old text so that it reads smoothly today"
+      B: "an architect who rebuilds a ruined tower exactly as it appears in one surviving drawing"
+      C: "a curator who leaves every crack and stain on an old manuscript entirely untouched"
+      D: "an editor who corrects only clear copying errors in a manuscript and notes each change"
+    answer: D
+    explanation: |
+      The author's "disciplined restraint" has three parts: remove only what is confidently identified as later accretion, leave what is uncertain, and document each decision so it can be revisited. The editor in D corrects only clear errors (confident identification) and records each change (documentation and reversibility). The other choices each capture one of the two camps the author rejects.
+    whyWrong:
+      A: "Mirrors aggressive cleaning: changing everything to suit present tastes ignores the author's limit to confident identification."
+      B: "Mirrors the intention camp: it aims to recover a lost original, which the author says is not the restorer's task."
+      C: "Mirrors the patina camp: keeping every effect of age is what the author says 'proves too much.'"
+
+  - id: cars-qtypes-04
+    usage: inline
+    topic: CARS-RWT
+    difficulty: core
+    passage: cars-qtypes-p2
+    stem: |
+      The author would most likely agree with which of the following statements? (As you eliminate, name the trap type in each wrong choice.)
+    choices:
+      A: "Etic categories should be abandoned, because they inevitably distort the cultures they describe."
+      B: "Comparative categories should be kept but revised where local distinctions do not fit them."
+      C: "Emic description provides an accurate and undistorted picture of a culture's own concerns."
+      D: "Anthropology became more scientific once it began relying on emic description instead."
+    answer: B
+    explanation: |
+      Paragraph 4 says an etic category "must be revised, though not abandoned, since without some shared terms comparison becomes impossible." Choice B paraphrases that claim. It also fits the author's overall position that the two vocabularies should be "checks on each other."
+    whyWrong:
+      A: "Opposite and extreme: the author explicitly says categories should not be abandoned, and 'inevitably' overstates the critics' point."
+      C: "Opposite: paragraph 3 argues that 'inside categories' are not 'transparent.'"
+      D: "Out of scope/distortion: the passage links scientific prestige to the etic approach and never claims a shift made the field more scientific."
+
+  - id: cars-qtypes-05
+    usage: inline
+    topic: CARS-FC
+    difficulty: core
+    passage: cars-qtypes-p1
+    stem: |
+      The passage identifies each of the following as a difficulty for one or both of the camps EXCEPT:
+    choices:
+      A: "Solvents used in cleaning can damage the paint beneath the varnish."
+      B: "Original glazes can be hard to tell apart from later varnish."
+      C: "Treating every effect of age as meaningful would preserve obvious damage."
+      D: "No single principle can settle every restoration case in advance."
+    answer: A
+    explanation: |
+      Using the true/false method: B is in paragraph 2 (glazes "sit so close to the later varnish"), C is in paragraph 3 (flaking, fading and overpainting), and D is in paragraph 4 ("the hope that a single principle could settle every case"). Nothing in the passage mentions solvents. A may well be true of real restoration, but it is outside knowledge, so it is the exception.
+    whyWrong:
+      B: "Stated in paragraph 2 as the problem with 'the artist's intention' as a standard, so it is not the exception."
+      C: "Stated in paragraph 3 as the reason the patina argument 'proves too much', so it is not the exception."
+      D: "Stated in paragraph 4 as the flaw both positions share, so it is not the exception."
+
+  # ---------- quiz: passage 3 (philosophy of testimony) ----------
+  - id: cars-qtypes-06
+    usage: quiz
+    topic: CARS-FC
+    difficulty: core
+    passage: cars-qtypes-p3
+    stem: |
+      The primary purpose of the passage is to:
+    choices:
+      A: "defend the early modern view that testimony requires independent confirmation"
+      B: "argue that relying well on testimony means weighing cues, not verifying or trusting by default"
+      C: "show that testimony is a basic source of knowledge on a level with perception"
+      D: "explain why people today are more credulous than people in earlier periods"
+    answer: B
+    explanation: |
+      The author rejects the early modern demand for independent verification (paragraph 2) and the opposite view that trust is the default (paragraph 3), then proposes a middle course in which careful people "attend to cues" and "adjust their trust accordingly" (paragraph 4). The conclusion recasts the question as "how to depend on them well." B captures this argument and its verb, "argue."
+    whyWrong:
+      A: "Opposite: the author says the demand 'is far more demanding than it first appears' and that its reasons are 'shot through with testimony.'"
+      C: "Wrong voice: this is the view of 'some philosophers' in paragraph 3, which the author says is vulnerable to the charge of credulity."
+      D: "Out of scope: the passage compares environments, not historical periods, and makes no claim that people today are more credulous."
+
+  - id: cars-qtypes-07
+    usage: quiz
+    topic: CARS-RWT
+    difficulty: core
+    passage: cars-qtypes-p3
+    stem: |
+      Based on paragraph 2, the author would most likely describe the requirement that testimony be accepted only with independent confirmation as:
+    choices:
+      A: "well motivated and easily satisfied by a careful person"
+      B: "a demand that only trained philosophers are able to meet"
+      C: "poorly motivated, since it reflects an outdated distrust of institutions"
+      D: "well motivated but impossible to meet without relying on testimony itself"
+    answer: D
+    explanation: |
+      The author grants the requirement "an admirable motive" (it resists authority substituting for evidence) and then argues that checking a speaker's reliability itself depends on memory, others' reports and knowledge learned from teachers and books. "The independent reasons the tradition demands turn out to be shot through with testimony themselves." D captures both the praise and the problem.
+    whyWrong:
+      A: "Half-right: the motive is praised, but the author says the demand is 'far more demanding than it first appears.'"
+      B: "Distortion: the problem applies to everyone; nothing suggests philosophers can escape it."
+      C: "Opposite: the author calls the suspicion of such institutions 'justified' and the motive 'admirable.'"
+
+  - id: cars-qtypes-08
+    usage: quiz
+    topic: CARS-RBT
+    difficulty: advanced
+    passage: cars-qtypes-p3
+    stem: |
+      Which of the following findings, if true, would most strengthen the author's claim in paragraph 3 that a default of trust "serves less well" in some environments?
+    choices:
+      A: "Residents of small towns report trusting their neighbors more than residents of large cities do."
+      B: "Most people say that they check the source of a claim before accepting it from a stranger."
+      C: "In networks where false reports spread quickly, people who accepted reports by default held more false beliefs."
+      D: "People who were taught to evaluate sources as children are more skeptical of authority as adults."
+    answer: C
+    explanation: |
+      The claim is comparative and conditional: default trust works worse where "confident falsehoods circulate faster than corrections." C supplies direct evidence for exactly that condition, linking default acceptance to more false beliefs in a fast-spreading environment. The other choices concern how much people trust or say they trust, not whether default trust performs badly in such environments.
+    whyWrong:
+      A: "True but irrelevant: levels of trust in different places say nothing about whether default trust leads to error."
+      B: "Irrelevant self-report: what people say they do does not show default trust fails in fast-spreading environments."
+      D: "Out of scope: childhood training and attitudes toward authority do not bear on the claim about environments."
+
+  - id: cars-qtypes-09
+    usage: quiz
+    topic: CARS-RBT
+    difficulty: core
+    passage: cars-qtypes-p3
+    stem: |
+      A reader encounters a surprising claim about a new medical treatment in an online post. Which response best reflects the approach the author describes in paragraph 4?
+    choices:
+      A: "Checking whether the claim fits known evidence, whether the author profits, and whether others confirm it"
+      B: "Rejecting the claim until the reader can personally test the treatment and observe its effects"
+      C: "Accepting the claim, since there is no specific reason to doubt the person who wrote the post"
+      D: "Ignoring the claim, since testimony from strangers can never amount to genuine knowledge"
+    answer: A
+    explanation: |
+      Paragraph 4 lists the cues careful people use: "whether a claim fits with what else they know, whether the speaker has anything to gain, and whether independent sources agree." Choice A applies all three to the new case. The other choices each correspond to a view the author rejects or to an extreme the author never endorses.
+    whyWrong:
+      B: "Opposite: this is the early modern demand for verification by one's own observation, which the author argues cannot be met."
+      C: "Wrong voice: this is the default-trust view of paragraph 3, which the author says risks credulity."
+      D: "Extreme: the author says we 'cannot avoid' depending on testimony and asks only how to do so well."
+
+  - id: cars-qtypes-10
+    usage: quiz
+    topic: CARS-FC
+    difficulty: intro
+    passage: cars-qtypes-p3
+    stem: |
+      According to the passage, the cues a careful listener relies on are:
+    choices:
+      A: "a reliable form of proof once they are applied consistently"
+      B: "useful only in small communities where liars are exposed"
+      C: "a substitute for background knowledge learned from teachers"
+      D: "easier or harder to read depending on how testimony circulates"
+    answer: D
+    explanation: |
+      The final paragraph states that the cues "are more or less legible depending on the environment in which testimony circulates," easy to read where sources are identified and hard where they are hidden. D paraphrases this. Paragraph 4 also says the cues "rarely amount to proof."
+    whyWrong:
+      A: "Contradicts paragraph 4: the cues 'rarely amount to proof, and they can mislead.'"
+      B: "Wrong referent: small communities are mentioned in connection with default trust, not with cues."
+      C: "Distortion: one cue is whether a claim 'fits with what else they know', so the cues use background knowledge rather than replace it."
+
+  # ---------- quiz: passage 4 (microhistory) ----------
+  - id: cars-qtypes-11
+    usage: quiz
+    topic: CARS-FC
+    difficulty: core
+    passage: cars-qtypes-p4
+    stem: |
+      Which of the following best expresses the main idea of the passage?
+    choices:
+      A: "Microhistory replaced statistical social history because it gave ordinary people a voice."
+      B: "Microhistory fails as history because its subjects are unrepresentative of their societies."
+      C: "Close study of unusual cases can reveal unstated assumptions, but it still needs broad evidence."
+      D: "Statistical history is superior to microhistory because it captures large social forces."
+    answer: C
+    explanation: |
+      The author presents microhistory's origins, concedes the critics' objection is "fair", defends the best microhistories on the ground that an exceptional case "makes the normal visible", and concludes that this defense still requires the broad evidence of statistical history: "The two approaches... depend on each other." C captures both the defense and its limit.
+    whyWrong:
+      A: "Distortion: the passage calls microhistory a 'reaction against' statistical history, not its replacement, and stresses their interdependence."
+      B: "Wrong voice: this is the critics' objection, which the author says the better practitioners answered."
+      D: "Half-right: the author credits statistical history with revealing large forces but never ranks it above microhistory."
+
+  - id: cars-qtypes-12
+    usage: quiz
+    topic: CARS-RWT
+    difficulty: core
+    passage: cars-qtypes-p4
+    stem: |
+      The author discusses the court that had to decide whether a returning man "was really the husband who had left years earlier" primarily in order to:
+    choices:
+      A: "show that court records are the most reliable sources available to microhistorians"
+      B: "illustrate how an exceptional case can force people to state what they normally assume"
+      C: "concede that some microhistories are absorbing stories without wider significance"
+      D: "demonstrate that the people of the period could not reliably recognize one another"
+    answer: B
+    explanation: |
+      The example follows the claim that "an unusual case, examined closely, can expose assumptions that ordinary cases leave unstated." The court "had to articulate what made a person recognizable... in a way that routine life never required." The example therefore illustrates the better practitioners' defense of microhistory.
+    whyWrong:
+      A: "Out of scope: the passage does not rank sources by reliability."
+      C: "Wrong paragraph: that concession comes in paragraph 3; the court example belongs to the reply in paragraph 4."
+      D: "Distortion: the case shows what people assumed about recognition, not that recognition generally failed."
+
+  - id: cars-qtypes-13
+    usage: quiz
+    topic: CARS-FC
+    difficulty: core
+    passage: cars-qtypes-p4
+    stem: |
+      In the context of the passage, the claim that the exceptional case "makes the normal visible" (paragraph 4) most nearly means that such a case:
+    choices:
+      A: "brings to light assumptions that everyday life ordinarily takes for granted"
+      B: "shows that ordinary people were more unusual than historians had believed"
+      C: "proves that the community's customs were typical of the wider society"
+      D: "allows historians to observe daily routines that were otherwise unrecorded"
+    answer: A
+    explanation: |
+      The preceding sentences explain that an unusual case "can expose assumptions that ordinary cases leave unstated", such as what made a person recognizable, which "routine life never required" anyone to articulate. To make the normal visible is to surface those taken-for-granted assumptions.
+    whyWrong:
+      B: "Distortion: the point is about revealing ordinary assumptions, not about ordinary people being unusual."
+      C: "Opposite: the author says the better practitioners 'did not claim that their subjects were typical', and paragraph 5 says typicality still has to be shown."
+      D: "Too literal: 'visible' refers to unstated assumptions, not to routines being directly recorded."
+
+  - id: cars-qtypes-14
+    usage: quiz
+    topic: CARS-RBT
+    difficulty: advanced
+    passage: cars-qtypes-p4
+    stem: |
+      Which of the following findings would most weaken the defense of microhistory presented in paragraph 4?
+    choices:
+      A: "Many microhistories became popular with general readers as well as with historians."
+      B: "Some statistical histories also drew on detailed records of individual trials."
+      C: "The miller studied in one microhistory read far more books than most people of his time."
+      D: "Courts in unusual cases usually invented new criteria rather than stating existing ones."
+    answer: D
+    explanation: |
+      The defense depends on the premise that when an exceptional case forces people to explain themselves, they articulate assumptions they already held. If courts usually invented new criteria, then exceptional cases would reveal improvisation, not "the normal", and the defense would lose its foundation. D attacks the premise directly.
+    whyWrong:
+      A: "True but irrelevant: popularity says nothing about whether exceptional cases reveal shared assumptions."
+      B: "Irrelevant: overlap in sources between approaches does not affect the logic of the defense."
+      C: "Consistent with the passage: the defense explicitly grants that subjects may be atypical, so evidence of atypicality does not weaken it."
+
+  - id: cars-qtypes-15
+    usage: quiz
+    topic: CARS-RWT
+    difficulty: core
+    passage: cars-qtypes-p4
+    stem: |
+      The passage suggests each of the following about the statistical social historians EXCEPT that they:
+    choices:
+      A: "showed that ordinary lives could be studied systematically"
+      B: "revealed large forces that individuals could not perceive"
+      C: "relied on evidence that was frequently fabricated or unreliable"
+      D: "produced work that microhistorians may still need to draw on"
+    answer: C
+    explanation: |
+      Applying true/false: A and B are stated in paragraph 2 ("could be studied systematically"; "large forces shaped those lives in ways no individual could perceive"). D is the point of paragraph 5, where the microhistorian "will often need precisely the kind of broad evidence her predecessors assembled." Nothing suggests the statistical evidence was fabricated or unreliable, so C is the exception.
+    whyWrong:
+      A: "Stated in paragraph 2, so it is not the exception."
+      B: "Stated in paragraph 2, so it is not the exception."
+      D: "Supported by paragraph 5, so it is not the exception."
+
+  # ---------- quiz: passage 5 (ethics of nudging) ----------
+  - id: cars-qtypes-16
+    usage: quiz
+    topic: CARS-RWT
+    difficulty: core
+    passage: cars-qtypes-p5
+    stem: |
+      The author would most likely agree that a retirement plan that requires workers to sign up actively:
+    choices:
+      A: "avoids influencing workers' choices because it presents no default"
+      B: "influences workers' choices just as an automatic enrollment plan does"
+      C: "is more respectful of workers' agency than any form of default enrollment"
+      D: "should be replaced by automatic enrollment in every workplace"
+    answer: B
+    explanation: |
+      Paragraph 3 says that "a retirement plan must have some default, even if the default is non-enrollment," and that "every arrangement of choices influences behavior." Requiring active sign-up is simply the non-enrollment default, so on the author's view it influences choices too. B follows directly.
+    whyWrong:
+      A: "Opposite: this is the assumption of a 'neutral presentation' that the author says 'does not survive scrutiny.'"
+      C: "Unsupported: the author judges defaults by transparency and reversibility, not by whether they require action."
+      D: "Extreme: the author says the reframing 'does not license every nudge' and recommends no universal policy."
+
+  - id: cars-qtypes-17
+    usage: quiz
+    topic: CARS-RBT
+    difficulty: core
+    passage: cars-qtypes-p5
+    stem: |
+      Based on the passage, which arrangement would the author consider most acceptable?
+    choices:
+      A: "A free trial that converts silently to a paid plan and can be canceled only by phone"
+      B: "A store that hides cheaper products on high shelves without disclosing its reasons"
+      C: "A ban on cafeterias placing any food at eye level, to avoid influencing diners"
+      D: "A clinic that books follow-up visits by default, says so, and allows cancellation in one step"
+    answer: D
+    explanation: |
+      The author approves of a default "that people would endorse if they understood it, and that they can easily reverse." The clinic's arrangement is disclosed (transparency), likely serves patients' own interests, and is easy to undo. The other choices are concealed, self-serving, or rest on the "neutral presentation" fiction.
+    whyWrong:
+      A: "Opposite: this is the author's own example of a nudge that serves the designer 'at the chooser's expense.'"
+      B: "Opposite: the arrangement is concealed and serves the store, which the author treats as manipulation."
+      C: "Contradicts paragraph 3: a cafeteria 'must put something at eye level', so a ban cannot remove the influence."
+
+  - id: cars-qtypes-18
+    usage: quiz
+    topic: CARS-RBT
+    difficulty: advanced
+    passage: cars-qtypes-p5
+    stem: |
+      The author's argument in paragraph 3 that there is no neutral way to present choices is most similar to which of the following claims?
+    choices:
+      A: "Every flat map distorts the globe somehow, so the question is which distortion suits a purpose."
+      B: "Every photograph is taken by someone, so photographs cannot be used as evidence."
+      C: "Every law restricts someone's freedom, so laws should be kept to a bare minimum."
+      D: "Every translation loses something, so readers should learn the original languages."
+    answer: A
+    explanation: |
+      The author's structure is: some influence is unavoidable, so the real question is which influence to accept and who answers for it. A has exactly this shape: some distortion is unavoidable, so the question is which distortion to choose. The other choices begin with a similar "unavoidable" premise but draw a conclusion of avoidance or rejection, which the author's argument does not do.
+    whyWrong:
+      B: "Different conclusion: it treats unavoidable influence as disqualifying, whereas the author says we must choose among influences."
+      C: "Different conclusion: it urges minimizing the influence, while the author says declining to design merely leaves influence to chance."
+      D: "Different conclusion: it tries to escape the problem, while the author says there is no escape and asks which option to accept."
+
+  - id: cars-qtypes-19
+    usage: quiz
+    topic: CARS-RBT
+    difficulty: advanced
+    passage: cars-qtypes-p5
+    stem: |
+      Which of the following findings would most undermine the critics' argument as presented in paragraph 2?
+    choices:
+      A: "Automatic enrollment raises retirement savings participation even more than earlier studies estimated."
+      B: "Workers who opt out of automatic enrollment tend to be younger than those who remain enrolled."
+      C: "Most workers enrolled by default, when asked later, say they had considered the plan and chose to stay."
+      D: "Many employers adopt automatic enrollment mainly because it lowers the cost of administering the plan."
+    answer: C
+    explanation: |
+      The critics' argument rests on the premise that a nudge "bypasses deliberation", so that "inertia has decided" for the default-enrolled worker. If most such workers actually deliberated and chose to remain, that premise fails for the critics' own central example. C attacks the reason behind the critics' conclusion.
+    whyWrong:
+      A: "Irrelevant to the critique: greater effectiveness says nothing about whether deliberation was bypassed and might even suggest inertia is powerful."
+      B: "True but irrelevant: the age of those who opt out does not show whether those who stay deliberated."
+      D: "Supports the critics, if anything: it suggests nudges can serve the designer's interests, which the critics would call exploitation."

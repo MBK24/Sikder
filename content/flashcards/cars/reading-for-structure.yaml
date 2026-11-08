@@ -1,0 +1,118 @@
+deck:
+  title: "Reading for Structure"
+  description: "CARS format, the three skill areas, structural keywords, voices, tone and finding the main idea."
+cards:
+  - id: cars-structure-fc-01
+    front: "How many questions, minutes and passages are in the CARS section?"
+    back: "53 questions in 90 minutes, across about 9 passages of roughly 500–600 words each."
+    tags: [format]
+
+  - id: cars-structure-fc-02
+    front: "About how much time should one CARS passage and its questions take?"
+    back: "About 10 minutes, including reading, mapping and answering."
+    tags: [format, timing]
+
+  - id: cars-structure-fc-03
+    front: "What are the three CARS skill areas and their approximate weights?"
+    back: "Foundations of Comprehension (about 30%), Reasoning Within the Text (about 30%), Reasoning Beyond the Text (about 40%)."
+    tags: [skills]
+
+  - id: cars-structure-fc-04
+    front: "What does a Reasoning Beyond the Text question ask you to do?"
+    back: "Apply the passage's ideas to a new situation, or judge how new information would affect the author's claims."
+    tags: [skills]
+
+  - id: cars-structure-fc-05
+    front: "Which two broad fields supply CARS passages?"
+    back: "The humanities and the social sciences, in roughly equal proportion. No natural-science passages appear."
+    tags: [format]
+
+  - id: cars-structure-fc-06
+    front: "When the passage conflicts with what you know from outside, which wins on CARS?"
+    back: "The passage. Answer according to what the author says, not whether the author is right about the world."
+    tags: [strategy]
+
+  - id: cars-structure-fc-07
+    front: "What is the difference between a paragraph's topic and its purpose label?"
+    back: "The topic is what it is about (\"varnish\"); the purpose is what it does for the argument (\"author's evidence: varnish was never intended\"). Questions mostly test purpose."
+    tags: [mapping]
+
+  - id: cars-structure-fc-08
+    front: "Name the common verbs used for paragraph purpose labels."
+    back: "Introduces, claims, supports, objects, concedes, rebuts, qualifies, concludes."
+    tags: [mapping]
+
+  - id: cars-structure-fc-09
+    front: "Why tag each view in your map with its owner (author, critics, tradition)?"
+    back: "Many wrong answers state a view accurately but attribute it to the author when the author presented it in order to reject it."
+    tags: [mapping, voices]
+
+  - id: cars-structure-fc-10
+    front: "Which phrases most reliably mark the author's own voice?"
+    back: "First-person markers such as \"I want to suggest\", \"I think\", \"it seems to me\" and \"in my view\". They often state the thesis."
+    tags: [voices]
+
+  - id: cars-structure-fc-11
+    front: "Contrast keywords (but, yet, however, although, still): what should you do when you see one?"
+    back: "Slow down and expect a change of direction. The idea after the contrast word usually matters more and is often the author's view."
+    tags: [keywords]
+
+  - id: cars-structure-fc-12
+    front: "Give four concession keywords."
+    back: "Admittedly, granted, to be sure, of course (also \"it is true that\", \"there is truth in\")."
+    tags: [keywords]
+
+  - id: cars-structure-fc-13
+    front: "What does the pattern \"Admittedly X... but Y\" tell you about the author's attitude toward X?"
+    back: "Partial agreement: the author grants X has merit, then explains why it does not settle the matter. It is not wholesale rejection."
+    tags: [keywords, tone]
+
+  - id: cars-structure-fc-14
+    front: "Which keyword family marks claims the author thinks are established, and why are they prime question targets?"
+    back: "Conclusion keywords (therefore, thus, hence, so, then). They state what the argument is for, which many questions test."
+    tags: [keywords]
+
+  - id: cars-structure-fc-15
+    front: "In \"Fidelity, then, is better understood as...\", what is the word \"then\" doing?"
+    back: "It is a logical conclusion marker, often introducing the author's summary of the whole argument near the end of a passage."
+    tags: [keywords]
+
+  - id: cars-structure-fc-16
+    front: "What is the mnemonic for the six keyword families?"
+    back: "C-C-E-C-C-E: Contrast, Continuation, Evidence, Conclusion, Concession, Emphasis."
+    tags: [keywords, mnemonic]
+
+  - id: cars-structure-fc-17
+    front: "The author wrote that districts \"have coincided with\" rising rents. Why is an answer saying the author thinks designation causes rising rents wrong?"
+    back: "It converts a correlation the author reported cautiously into a causal claim the author declined to make. The answer overstates the author's conviction."
+    tags: [tone, conviction]
+
+  - id: cars-structure-fc-18
+    front: "Rank these qualifiers from weakest to strongest: must, may, usually."
+    back: "May (tentative), usually (moderate), must (strong)."
+    tags: [conviction]
+
+  - id: cars-structure-fc-19
+    front: "What kinds of tone words usually appear in correct CARS tone answers?"
+    back: "Measured ones: qualified approval, cautious skepticism, respectful disagreement, ambivalence. Extreme tones (contempt, unreserved praise) are rarely right."
+    tags: [tone]
+
+  - id: cars-structure-fc-20
+    front: "Where does the main idea of a CARS passage usually appear?"
+    back: "At the end of the first paragraph (often after a contrast word), in the final paragraph, or spread across the passage."
+    tags: [main-idea]
+
+  - id: cars-structure-fc-21
+    front: "What four tests should a one-sentence main idea pass?"
+    back: "It is the author's view; every paragraph supports it; it claims nothing the passage does not; and it keeps the author's qualifiers."
+    tags: [main-idea]
+
+  - id: cars-structure-fc-22
+    front: "How do you tell whether a main-idea statement is too narrow or too broad?"
+    back: "Too narrow if some paragraph has no relation to it; too broad if it makes claims no paragraph supports."
+    tags: [main-idea, scope]
+
+  - id: cars-structure-fc-23
+    front: "When reviewing a missed CARS question, what three questions should you ask?"
+    back: "What did the correct answer depend on? Was that relationship in my map? What made the wrong answer attractive (which trap type)?"
+    tags: [practice]

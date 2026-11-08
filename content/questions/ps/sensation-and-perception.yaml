@@ -1,0 +1,364 @@
+chapter: sensation-and-perception
+questions:
+  # ---------------------------------------------------------------- inline
+  - id: ps-sensation-01
+    usage: inline
+    topic: 6A
+    difficulty: core
+    stem: |
+      In a weight-discrimination task, a participant holding a 200 g weight can just detect that a second weight is heavier when it weighs 206 g. According to Weber's law, what is the smallest increase this participant should be able to detect when the starting weight is 600 g?
+    choices:
+      A: "6 g"
+      B: "12 g"
+      C: "18 g"
+      D: "24 g"
+    answer: C
+    explanation: |
+      The JND for the 200 g weight is 6 g, so the Weber fraction is $k = 6/200 = 0.03$. Weber's law holds that $\Delta I / I$ stays constant, so for a 600 g weight the JND is $0.03 \times 600\ \text{g} = 18\ \text{g}$. Tripling the starting intensity triples the just-noticeable difference.
+    whyWrong:
+      A: "This carries the original 6 g JND over unchanged; Weber's law says the JND is a constant proportion, not a constant amount."
+      B: "This doubles the JND, but the starting weight tripled, so the JND must triple as well."
+      D: "This quadruples the JND, which would correspond to an 800 g starting weight."
+
+  - id: ps-sensation-02
+    usage: inline
+    topic: 6A
+    difficulty: core
+    stem: |
+      A hospital tells its radiologists that missing a tumor on a screening scan is far more costly than ordering an unnecessary follow-up test. According to signal detection theory, if the radiologists' ability to distinguish tumors from normal tissue does not change, how should their decisions change?
+    choices:
+      A: "Both hits and false alarms will increase."
+      B: "Hits will increase and false alarms will decrease."
+      C: "Both misses and false alarms will increase."
+      D: "Correct rejections will increase and misses will decrease."
+    answer: A
+    explanation: |
+      The new instructions change the payoffs, not the stimulus, so they shift the radiologists' response criterion rather than their sensitivity. A more liberal criterion means saying "tumor present" more often whenever there is doubt. That produces more hits on real tumors but also more false alarms on normal scans, with fewer misses and fewer correct rejections.
+    whyWrong:
+      B: "More hits with fewer false alarms is the signature of improved sensitivity, which the question rules out."
+      C: "A liberal criterion reduces misses; misses and false alarms move in opposite directions when only the criterion shifts."
+      D: "Saying 'yes' more often reduces correct rejections, which require saying 'no' on normal scans."
+
+  - id: ps-sensation-03
+    usage: inline
+    topic: 6A
+    difficulty: core
+    stem: |
+      A patient with a growing pituitary tumor notices that she keeps bumping into door frames on both sides. The tumor is compressing the optic chiasm from below. Which visual deficit is most likely?
+    choices:
+      A: "Complete blindness in one eye"
+      B: "Loss of the left visual field in both eyes"
+      C: "Loss of the nasal visual field in both eyes"
+      D: "Loss of the temporal visual field in both eyes"
+    answer: D
+    explanation: |
+      At the optic chiasm, only fibers from the nasal half of each retina cross. Because the lens inverts the image, the nasal retina receives light from the temporal (outer) visual field. Compressing the chiasm destroys these crossing fibers, producing bitemporal hemianopia, a loss of peripheral vision on both sides that fits bumping into door frames.
+    whyWrong:
+      A: "Monocular blindness results from damage to one optic nerve, before the chiasm."
+      B: "Losing the same half-field in both eyes (homonymous hemianopia) results from damage behind the chiasm, such as to one optic tract or occipital lobe."
+      C: "The nasal visual fields are carried by temporal retinal fibers, which do not cross and are spared by midline compression."
+
+  - id: ps-sensation-04
+    usage: inline
+    topic: 6A
+    difficulty: core
+    stem: |
+      After years of working beside loud machinery, a factory worker has lost hair cells near the base of the cochlea, close to the oval window. According to place theory, which change in hearing is most likely?
+    choices:
+      A: "Reduced ability to hear low-pitched sounds"
+      B: "Reduced ability to hear high-pitched sounds"
+      C: "Reduced ability to localize sounds between the two ears"
+      D: "Reduced ability to sense rotational head movement"
+    answer: B
+    explanation: |
+      The basilar membrane is narrow and stiff at its base and wide and flexible at its apex. High-frequency sounds produce maximal vibration near the base, so losing hair cells there selectively impairs hearing of high-pitched sounds. This pattern is typical of noise-induced and age-related hearing loss.
+    whyWrong:
+      A: "Low frequencies peak near the apex of the cochlea, far from the oval window."
+      C: "Sound localization depends on comparing input from the two ears in the superior olive, not on one region of the cochlea."
+      D: "Rotational movement is sensed by the semicircular canals, not by cochlear hair cells."
+
+  - id: ps-sensation-05
+    usage: inline
+    topic: 6B
+    difficulty: core
+    stem: |
+      A patient who lost one eye in an accident is still able to judge distances reasonably well when driving. Which depth cue is no longer available to him?
+    choices:
+      A: "Linear perspective"
+      B: "Motion parallax"
+      C: "Retinal disparity"
+      D: "Interposition"
+    answer: C
+    explanation: |
+      Retinal disparity depends on comparing the slightly different images that the two eyes receive, so it requires binocular vision. Linear perspective, motion parallax and interposition are monocular cues that remain available with one eye, which is why the patient can still judge distance reasonably well.
+    whyWrong:
+      A: "Converging parallel lines can be seen with one eye; linear perspective is a monocular cue."
+      B: "Motion parallax depends on movement relative to objects, not on having two eyes."
+      D: "Seeing one object block another requires only one eye."
+
+  # ---------------------------------------------------------------- quiz
+  - id: ps-sensation-06
+    usage: quiz
+    topic: 6A
+    difficulty: advanced
+    stem: |
+      Participants in a darkened room report whether a faint flash appeared on each trial; on half the trials no flash is shown. In one session they earn a bonus for every correct detection with no penalty for errors. In another session they lose money for every "yes" on a trial with no flash. The flash intensity is identical in both sessions. Compared with the penalty session, the bonus session shows more hits and more false alarms, while $d'$ is unchanged. Which conclusion is best supported?
+    choices:
+      A: "The bonus improved participants' sensory sensitivity to the flash."
+      B: "The bonus made participants' response criterion more liberal."
+      C: "The penalty lowered participants' absolute threshold for light."
+      D: "The penalty produced sensory adaptation to the flash."
+    answer: B
+    explanation: |
+      Hits and false alarms rose together while sensitivity ($d'$) stayed the same, which is the signature of a criterion shift. The bonus made saying "yes" attractive, so participants adopted a more liberal criterion and reported a flash more often whenever they were unsure. The stimulus and the observers' sensory ability did not change.
+    whyWrong:
+      A: "Improved sensitivity would raise hits while lowering false alarms, and $d'$ would increase."
+      C: "A lower absolute threshold would mean better detection, but the penalty session produced fewer hits."
+      D: "Sensory adaptation reflects reduced receptor response to a constant stimulus and would not depend on monetary payoffs."
+
+  - id: ps-sensation-07
+    usage: quiz
+    topic: 6B
+    difficulty: core
+    stem: |
+      Researchers raise kittens in a cylinder painted only with vertical stripes during the first months of life. As adults, the cats are tested with single-neuron recordings in primary visual cortex. Very few neurons respond to horizontal lines, and the cats behave as if they have difficulty seeing horizontal edges. These results best support which conclusion?
+    choices:
+      A: "Orientation-selective neurons are absent at birth and develop only through adult learning."
+      B: "Retinal rods require horizontal stimulation to regenerate their pigment."
+      C: "Opponent-process cells in the lateral geniculate nucleus encode line orientation."
+      D: "Early visual experience shapes the development of cortical feature detectors."
+    answer: D
+    explanation: |
+      Neurons in V1 act as feature detectors tuned to particular orientations. Depriving the kittens of horizontal input during a sensitive period left few neurons responsive to that orientation, showing that early experience shapes how these detectors develop. This is a critical-period effect, which is why the deprivation occurred early in life.
+    whyWrong:
+      A: "The study manipulated early experience, not adult learning, and does not show that detectors are absent at birth."
+      B: "Rod pigment regeneration depends on darkness and retinal chemistry, not on line orientation."
+      C: "Opponent-process coding concerns color, not the orientation of lines."
+
+  - id: ps-sensation-08
+    usage: quiz
+    topic: 6B
+    difficulty: core
+    stem: |
+      Infants who have recently begun crawling are placed on a thick glass table. Under one half, a checkerboard pattern sits directly beneath the glass; under the other half, the same pattern is several feet below. Most infants crawl across the shallow side toward their mother but refuse to cross the deep side, even when she calls them. Which conclusion is most justified?
+    choices:
+      A: "Depth perception is present by the age at which infants can crawl."
+      B: "Depth perception is entirely innate and requires no visual experience."
+      C: "Infants rely mainly on binocular cues and cannot use monocular cues."
+      D: "Infants avoid the deep side because of conditioned fear from previous falls."
+    answer: A
+    explanation: |
+      This is the visual cliff design. Refusing to cross the deep side shows that infants perceive depth by the time they crawl. Because crawling infants already have months of visual experience, the study alone cannot establish that depth perception is innate or rule out a role for learning.
+    whyWrong:
+      B: "Crawling infants have already had months of visual experience, so the study cannot separate innate from learned contributions."
+      C: "Nothing in the design isolates binocular from monocular cues."
+      D: "The study provides no evidence of prior falls or conditioning; it tests perception of depth."
+
+  - id: ps-sensation-09
+    usage: quiz
+    topic: 6B
+    difficulty: core
+    stem: |
+      Two groups of participants view the same ambiguous drawing, which can be seen either as a duck or as a rabbit. Before viewing it, one group reads a short story about farm birds and the other reads a story about a pet bunny. Most participants in the first group report seeing a duck, and most in the second report a rabbit. Which concept best explains this result?
+    choices:
+      A: "Bottom-up processing"
+      B: "Perceptual constancy"
+      C: "Perceptual set"
+      D: "Sensory adaptation"
+    answer: C
+    explanation: |
+      The sensory input was identical for both groups; only their expectations differed. A perceptual set is a predisposition, created by context or expectation, to perceive a stimulus in a particular way. This is top-down processing shaping the interpretation of an ambiguous figure.
+    whyWrong:
+      A: "Bottom-up processing is driven by the stimulus itself, which was the same for both groups."
+      B: "Perceptual constancy keeps an object looking stable across changes in viewing conditions; it does not explain different interpretations of the same picture."
+      D: "Sensory adaptation reduces receptor response to a constant stimulus and would not depend on the story read beforehand."
+
+  - id: ps-sensation-10
+    usage: quiz
+    topic: 6A
+    difficulty: core
+    stem: |
+      Participants stare at the center of a solid blue square for 60 seconds and then shift their gaze to a plain white wall. Most report briefly seeing a yellow square. Which theory best accounts for this observation?
+    choices:
+      A: "Trichromatic theory"
+      B: "Opponent-process theory"
+      C: "Place theory"
+      D: "Gate control theory"
+    answer: B
+    explanation: |
+      Opponent-process theory proposes that color is coded in opposing pairs, including blue versus yellow. Prolonged staring fatigues the blue-signaling side of the pair, so when the eyes then view white light, the opposing yellow signal briefly dominates and produces a negative afterimage.
+    whyWrong:
+      A: "Trichromatic theory describes three cone types and color mixing but does not predict complementary afterimages."
+      C: "Place theory explains pitch coding along the basilar membrane, not color."
+      D: "Gate control theory concerns modulation of pain signals in the spinal cord."
+
+  - id: ps-sensation-11
+    usage: quiz
+    topic: 6A
+    difficulty: core
+    stem: |
+      A researcher records from a single thermoreceptor in a volunteer's forearm while a warm metal plate is held at a constant temperature against the skin. The receptor fires rapidly at first, then its firing rate falls steadily over the next minute, and the volunteer reports that the plate feels less warm. Which phenomenon is being recorded?
+    choices:
+      A: "Sensory adaptation"
+      B: "Habituation"
+      C: "Perceptual constancy"
+      D: "Signal detection"
+    answer: A
+    explanation: |
+      The decline occurs in the receptor's own firing rate while the stimulus stays constant, which defines sensory adaptation. It takes place at the level of the receptor and lets the nervous system emphasize changes in stimulation rather than steady states.
+    whyWrong:
+      B: "Habituation is a learned decrease in a behavioral response produced in the central nervous system, not a decrease in receptor firing."
+      C: "Perceptual constancy maintains a stable perception despite a changing stimulus; here the stimulus is constant and perception changes."
+      D: "Signal detection theory describes decisions about whether a faint stimulus is present, not declining responses to a strong one."
+
+  - id: ps-sensation-12
+    usage: quiz
+    topic: 6A
+    difficulty: intro
+    stem: |
+      Where does mechanical energy from sound waves first get converted into a change in membrane potential?
+    choices:
+      A: "In the tympanic membrane, as it vibrates in response to air pressure"
+      B: "In the ossicles, as they transmit vibration to the oval window"
+      C: "In the semicircular canals, as endolymph deflects the cupula"
+      D: "In the hair cells of the organ of Corti, as their stereocilia bend"
+    answer: D
+    explanation: |
+      Transduction is the conversion of a physical stimulus into a receptor potential. In hearing, this happens when movement of the basilar membrane bends the stereocilia of hair cells in the organ of Corti, opening mechanically gated channels that depolarize the cell. Earlier structures only transmit and amplify the mechanical vibration.
+    whyWrong:
+      A: "The eardrum vibrates mechanically but contains no receptor cells that change membrane potential."
+      B: "The ossicles amplify and transmit vibration; they do not transduce it."
+      C: "The semicircular canals transduce rotational head movement, not sound."
+
+  - id: ps-sensation-13
+    usage: quiz
+    topic: 6A
+    difficulty: core
+    stem: |
+      A patient has a small stroke that damages the thalamus. Which sense is LEAST likely to be disrupted at the level of its initial relay to the cortex?
+    choices:
+      A: "Vision"
+      B: "Hearing"
+      C: "Smell"
+      D: "Taste"
+    answer: C
+    explanation: |
+      Olfactory signals travel from the olfactory bulb directly to the olfactory (piriform) cortex and limbic structures such as the amygdala, without an obligatory relay in the thalamus. Vision, hearing, taste and touch all pass through thalamic nuclei on their way to primary sensory cortex.
+    whyWrong:
+      A: "Visual signals relay through the lateral geniculate nucleus of the thalamus."
+      B: "Auditory signals relay through the medial geniculate nucleus of the thalamus."
+      D: "Taste signals relay through the thalamus on their way to the gustatory cortex."
+
+  - id: ps-sensation-14
+    usage: quiz
+    topic: 6A
+    difficulty: core
+    stem: |
+      Compared with cones, rods allow vision in much dimmer light but provide poorer visual acuity. Which feature of retinal organization best explains both differences?
+    choices:
+      A: "Many rods converge on each ganglion cell, pooling signals but losing location."
+      B: "Rods are concentrated in the fovea, where incoming light is focused most sharply."
+      C: "Rods contain three different pigments, which together absorb more wavelengths of light."
+      D: "Rods depolarize in light, while cones hyperpolarize."
+    answer: A
+    explanation: |
+      Many rods feed into a single ganglion cell. Their weak signals add together, so the ganglion cell can fire in dim light, but the brain cannot tell which rod was stimulated, which lowers acuity. Cones in the fovea often connect one-to-one, preserving detail but requiring more light.
+    whyWrong:
+      B: "The fovea contains only cones; rods are concentrated in the periphery."
+      C: "Rods contain a single pigment, rhodopsin; cones come in three types."
+      D: "Both rods and cones hyperpolarize in response to light."
+
+  - id: ps-sensation-15
+    usage: quiz
+    topic: 6A
+    difficulty: advanced
+    stem: |
+      A drug blocks the enzyme phosphodiesterase in rod photoreceptors. Compared with untreated rods, how would treated rods respond when a flash of light is presented?
+    choices:
+      A: "They would depolarize more strongly, increasing glutamate release."
+      B: "They would hyperpolarize more strongly, because more cGMP-gated channels close."
+      C: "They would fire larger action potentials along the optic nerve."
+      D: "They would show little hyperpolarization, because cGMP levels would remain high."
+    answer: D
+    explanation: |
+      In phototransduction, activated rhodopsin activates transducin, which activates phosphodiesterase to break down cGMP. Falling cGMP closes sodium channels and hyperpolarizes the rod. If phosphodiesterase is blocked, cGMP stays high, the channels stay open, and light produces little or no hyperpolarization.
+    whyWrong:
+      A: "Rods never depolarize in response to light; at most, blocking phosphodiesterase keeps them at their resting, depolarized dark state."
+      B: "Channel closure requires breakdown of cGMP, which the drug prevents."
+      C: "Photoreceptors produce graded potentials, not action potentials, and they are not the cells whose axons form the optic nerve."
+
+  - id: ps-sensation-16
+    usage: quiz
+    topic: 6A
+    difficulty: core
+    stem: |
+      A child spins rapidly in a desk chair for 30 seconds and then stops abruptly. She reports that the room seems to be turning in the opposite direction. Which mechanism best explains her sensation?
+    choices:
+      A: "Otoliths in the utricle shift because of gravity."
+      B: "Endolymph in the semicircular canals keeps moving and deflects the cupula."
+      C: "Hair cells at the apex of the cochlea fire in response to low frequencies."
+      D: "Proprioceptors in the neck signal a change in head position."
+    answer: B
+    explanation: |
+      The semicircular canals detect rotational acceleration. During sustained spinning, the endolymph catches up with the canal walls. When the chair stops, the fluid's inertia keeps it moving, bending the cupula in the opposite direction and creating the sensation of spinning the other way.
+    whyWrong:
+      A: "Otolith organs detect linear acceleration and head tilt, not rotation."
+      C: "Cochlear hair cells transduce sound, not head movement."
+      D: "Her head position did not change relative to her body, and neck proprioceptors would not produce a spinning sensation."
+
+  - id: ps-sensation-17
+    usage: quiz
+    topic: 6A
+    difficulty: core
+    stem: |
+      After banging his shin on a table, a man rubs the area vigorously and reports that the pain eases. According to gate control theory, why does rubbing help?
+    choices:
+      A: "Rubbing releases histamine, which desensitizes nociceptors in the skin."
+      B: "Rubbing activates C fibers, which inhibit A-delta fibers in the thalamus."
+      C: "Touch fibers excite inhibitory interneurons in the spinal cord's dorsal horn."
+      D: "Rubbing increases blood flow, which washes pain-producing chemicals out of the cortex."
+    answer: C
+    explanation: |
+      Gate control theory proposes a gate in the dorsal horn of the spinal cord. Input from large-diameter fibers carrying touch and pressure excites inhibitory interneurons that reduce transmission of pain signals from small-diameter fibers, partially closing the gate before the signal ascends to the brain.
+    whyWrong:
+      A: "Histamine promotes inflammation and itch; it does not explain the immediate relief from rubbing."
+      B: "C fibers carry slow, aching pain, and the gate is located in the spinal cord, not the thalamus."
+      D: "Pain-producing chemicals act at the injury site, and the theory concerns spinal gating, not blood flow."
+
+  - id: ps-sensation-18
+    usage: quiz
+    topic: 6B
+    difficulty: intro
+    stem: |
+      As a classroom door swings open, the image it casts on a student's retina changes from a rectangle to a narrowing trapezoid. The student nonetheless perceives a rectangular door throughout. This illustrates which concept?
+    choices:
+      A: "Shape constancy"
+      B: "Size constancy"
+      C: "The Gestalt principle of closure"
+      D: "Motion parallax"
+    answer: A
+    explanation: |
+      Shape constancy is the tendency to perceive an object as keeping its shape even when its retinal image changes because of viewing angle. The brain uses context about the door's orientation to perceive a stable rectangle.
+    whyWrong:
+      B: "Size constancy concerns perceived size as distance changes, not perceived shape as orientation changes."
+      C: "Closure is filling in gaps to see a complete figure; the door is fully visible."
+      D: "Motion parallax is a depth cue based on the observer's own movement."
+
+  - id: ps-sensation-19
+    usage: quiz
+    topic: 6A
+    difficulty: advanced
+    stem: |
+      Recordings from the auditory nerve show that, as a group, its fibers produce action potentials synchronized to each cycle of a 3,000 Hz tone, even though no individual fiber fires more than about 1,000 times per second. Which idea best explains this finding?
+    choices:
+      A: "Place theory"
+      B: "Weber's law"
+      C: "Feature detection"
+      D: "The volley principle"
+    answer: D
+    explanation: |
+      The volley principle proposes that groups of neurons fire in staggered rotation, each responding to only some cycles of the sound wave. Together their combined output matches the stimulus frequency, extending temporal coding beyond the firing limit of any single neuron.
+    whyWrong:
+      A: "Place theory codes pitch by the location of maximal vibration on the basilar membrane, not by synchronized firing."
+      B: "Weber's law describes the proportional size of just-noticeable differences."
+      C: "Feature detection refers to neurons tuned to specific stimulus features, such as line orientation in visual cortex."

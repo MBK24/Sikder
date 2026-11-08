@@ -1,0 +1,464 @@
+---
+title: "Atoms and Periodic Trends"
+summary: "How protons, neutrons and electrons are arranged, how unstable nuclei decay, how electrons fill orbitals, and why size, ionization energy and electronegativity change predictably across the periodic table."
+estReadMinutes: 28
+difficulty: core
+access: free
+status: published
+aamc: ["4E", "5B"]
+---
+
+Every question on the Chemical and Physical Foundations section eventually comes back to atoms. Why does a potassium channel let $\ce{K+}$ through but block the smaller $\ce{Na+}$? Why does iron carry oxygen only in its $+2$ state? Why can a hospital inject a radioactive sugar into a patient and photograph a tumor? Each answer depends on how an atom's particles are arranged and how its electrons behave.
+
+This chapter builds that picture from the inside out. We start with the nucleus and the ways it can fall apart, move outward to the electrons and the quantum rules that govern them, and finish with the periodic table, where a single idea, effective nuclear charge, explains nearly every trend the exam asks about. Along the way we keep returning to biology, because the MCAT almost never asks about an atom in isolation. It asks about an atom inside a neuron, a red blood cell or a PET scanner.
+
+## Inside the Atom
+
+An atom is mostly empty space. A tiny, dense nucleus holds nearly all of the mass, and a much larger cloud of electrons determines the atom's size and chemistry. The nucleus is roughly $10^{-15}$ m across, while the whole atom is around $10^{-10}$ m, a ratio of about one hundred thousand.
+
+### Protons, Neutrons and Electrons
+
+| Particle | Charge | Mass (amu) | Where it lives |
+|---|---|---|---|
+| Proton | $+1$ ($+1.602 \times 10^{-19}$ C) | 1.007 | Nucleus |
+| Neutron | 0 | 1.009 | Nucleus |
+| Electron | $-1$ ($-1.602 \times 10^{-19}$ C) | 0.000549 (about 1/1836 of a proton) | Orbitals around the nucleus |
+
+The **atomic number** $Z$ is the number of protons, and it defines the element. Change the proton count and you have changed the element; nothing else does that. The **mass number** $A$ is the total count of protons plus neutrons (together called nucleons), so the neutron number is $N = A - Z$. In isotope notation, the mass number sits at the upper left and the atomic number at the lower left: $\ce{^{14}_{6}C}$ has 6 protons and 8 neutrons.
+
+A neutral atom has as many electrons as protons. An **ion** has gained or lost electrons, never protons. The calcium ion $\ce{^{40}_{20}Ca^2+}$ therefore has 20 protons, 20 neutrons and 18 electrons.
+
+### Isotopes
+
+**Isotopes** are atoms of the same element with different numbers of neutrons. Hydrogen has three: protium ($\ce{^1H}$, no neutrons), deuterium ($\ce{^2H}$, one neutron) and tritium ($\ce{^3H}$, two neutrons, radioactive). Because isotopes have the same number of protons and electrons, they have essentially the same chemistry. An enzyme cannot tell carbon-14 from carbon-12 in a glucose molecule, and that indifference is exactly what makes isotopes useful as biological tracers.
+
+### Atomic Mass Versus Mass Number
+
+The **mass number** is a whole number that belongs to one specific isotope. The **atomic mass** (also called atomic weight) printed on the periodic table is a weighted average over all naturally occurring isotopes, expressed in atomic mass units. One amu is defined as exactly one twelfth of the mass of a carbon-12 atom, and an element's atomic mass in amu is numerically equal to its molar mass in grams per mole.
+
+**Worked example.** Natural chlorine is 75.8% chlorine-35 (34.97 amu) and 24.2% chlorine-37 (36.97 amu). What is its atomic mass?
+
+$$
+\bar{m} = (0.758)(34.97) + (0.242)(36.97) = 26.51 + 8.95 = 35.45\ \text{amu}
+$$
+
+The answer lands near 35 because the lighter isotope is three times as common. On the exam you can often estimate instead: three parts 35 to one part 37 gives roughly 35.5.
+
+### Binding Energy and the Mass Defect
+
+A nucleus weighs slightly less than the separate protons and neutrons that make it up. This missing mass, the **mass defect**, has been converted into the **binding energy** that holds the nucleus together, according to $E = mc^2$. A convenient conversion is that 1 amu of mass corresponds to 931.5 MeV of energy.
+
+For helium-4, two protons and two neutrons have a combined mass of about $2(1.0073) + 2(1.0087) = 4.0320$ amu, but the helium-4 nucleus weighs 4.0015 amu. The defect is 0.0305 amu, or about 28 MeV of binding energy. Binding energy per nucleon is highest for nuclei near iron, which is why fusion of very light nuclei and fission of very heavy nuclei both release energy: each moves toward the iron region.
+
+The **strong nuclear force** holds the nucleus together, acting between nucleons over very short distances and overwhelming the repulsion between protons. Neutrons add attraction without adding repulsion, so heavier nuclei need proportionally more of them to stay stable.
+
+<Callout type="trap" title="Mass number is not atomic mass">
+
+A question that says "an atom of chlorine has a mass number of 35.45" is wrong by construction. Mass numbers are always integers and refer to a single isotope. If an answer choice asks you to count neutrons using 35.45, subtract the atomic number from the isotope's mass number instead (for chlorine-37, $37 - 17 = 20$ neutrons).
+
+</Callout>
+
+## Nuclear Decay
+
+Some combinations of protons and neutrons are unstable. These nuclei spontaneously emit particles or energy and transform into more stable ones. Each decay mode changes $A$ and $Z$ in a characteristic way, and the MCAT expects you to apply those changes quickly.
+
+### The Five Decay Modes
+
+| Decay | What is emitted or absorbed | Change in $A$ | Change in $Z$ | Example |
+|---|---|---|---|---|
+| Alpha ($\alpha$) | Helium nucleus, $\ce{^{4}_{2}He}$ | $-4$ | $-2$ | $\ce{^{238}_{92}U -> ^{234}_{90}Th + ^{4}_{2}He}$ |
+| Beta-minus ($\beta^-$) | Electron and antineutrino | 0 | $+1$ | $\ce{^{14}_{6}C -> ^{14}_{7}N + ^{0}_{-1}e}$ |
+| Beta-plus ($\beta^+$) | Positron and neutrino | 0 | $-1$ | $\ce{^{18}_{9}F -> ^{18}_{8}O + ^{0}_{+1}e}$ |
+| Electron capture | An inner electron is absorbed | 0 | $-1$ | $\ce{^{125}_{53}I + ^{0}_{-1}e -> ^{125}_{52}Te}$ |
+| Gamma ($\gamma$) | High-energy photon | 0 | 0 | $\ce{^{99m}_{43}Tc -> ^{99}_{43}Tc + \gamma}$ |
+
+Each mode has a simple story.
+
+- **Alpha decay**: a heavy nucleus ejects a helium-4 nucleus, losing two protons and two neutrons.
+- **Beta-minus decay**: a neutron turns into a proton and an electron, and the electron is ejected along with an antineutrino. $Z$ goes up by one.
+- **Beta-plus decay** (positron emission): a proton turns into a neutron and a positron, the electron's antimatter partner. $Z$ goes down by one.
+- **Electron capture**: the nucleus absorbs one of its own inner electrons, which combines with a proton to make a neutron. The net change matches positron emission.
+- **Gamma emission**: a nucleus in an excited state (the "m," for metastable, in technetium-99m) drops to a lower energy state and releases a photon. Its identity does not change. Gamma rays often accompany the other modes.
+
+Penetrating power runs the other way from mass. Alpha particles are stopped by paper or the outer layer of skin, though an alpha emitter that is inhaled or swallowed does severe damage. Beta particles are stopped by a few millimeters of aluminum or plastic. Uncharged gamma rays require thick lead or concrete.
+
+### Predicting the Decay Mode
+
+You can usually predict how a nucleus will decay from its neutron-to-proton ratio.
+
+- **Too many neutrons** (neutron-rich): beta-minus decay converts a neutron into a proton. Carbon-14 and tritium are examples.
+- **Too many protons** (neutron-poor): positron emission or electron capture converts a proton into a neutron. Fluorine-18 is an example.
+- **Very heavy nuclei** (roughly $Z$ greater than 83): alpha decay sheds mass efficiently. Uranium, radium and radon decay this way.
+
+### Balancing Nuclear Equations
+
+Nuclear equations obey two bookkeeping rules: the mass numbers on each side must add up to the same total, and so must the atomic numbers.
+
+**Worked example.** Uranium-238 eventually decays to lead-206. How many alpha and beta-minus decays occur along the way?
+
+Only alpha decay changes the mass number, and each one removes 4. The mass number falls by $238 - 206 = 32$, so there must be $32 / 4 = 8$ alpha decays.
+
+Eight alpha decays would lower $Z$ by $8 \times 2 = 16$, from 92 to 76. Lead has $Z = 82$, which is 6 higher than 76. Each beta-minus decay raises $Z$ by one, so there must be **6 beta-minus decays**.
+
+$$
+\ce{^{238}_{92}U -> ^{206}_{82}Pb + 8\ ^{4}_{2}He + 6\ ^{0}_{-1}e}
+$$
+
+Check: mass, $238 = 206 + 32 + 0$. Charge, $92 = 82 + 16 - 6$. Both balance.
+
+### Half-Life
+
+Radioactive decay is a **first-order process**: the rate is proportional to the number of undecayed nuclei, so a fixed fraction decays per unit time no matter how much is present. The **half-life**, $t_{1/2}$, is the time for half of a sample to decay. After $n$ half-lives, the fraction remaining is
+
+$$
+\frac{N}{N_0} = \left(\frac{1}{2}\right)^{n}, \qquad n = \frac{t}{t_{1/2}}
+$$
+
+Equivalently, $N = N_0 e^{-kt}$ with decay constant $k = \ln 2 / t_{1/2} \approx 0.693 / t_{1/2}$. Taking the natural log gives $\ln N = \ln N_0 - kt$, a straight line with slope $-k$. If a passage shows a semi-log plot of activity against time, a straight line tells you the process is first-order, and the slope gives you the half-life. Half-life does not depend on temperature, pressure, concentration or the chemical compound the atom sits in.
+
+**Worked example 1.** A dose of fluorine-18 ($t_{1/2} \approx 110$ minutes) has an activity of 400 MBq at 8:00. What is its activity at 11:40?
+
+The elapsed time is 220 minutes, which is exactly two half-lives. The activity is $400 \times \tfrac{1}{2} \times \tfrac{1}{2} = 100$ MBq.
+
+**Worked example 2.** A thyroid sample's activity falls from 80 kBq to 5 kBq in 32 days. What is the half-life, and which isotope is it likely to be?
+
+The ratio is $5 / 80 = 1/16 = (1/2)^4$, so four half-lives passed in 32 days and $t_{1/2} = 8$ days. That matches iodine-131, a beta-minus emitter used to treat hyperthyroidism and thyroid cancer.
+
+**Worked example 3.** A wooden tool contains one eighth of the carbon-14 found in living wood. Carbon-14 has a half-life of about 5,730 years. How old is the tool?
+
+One eighth is $(1/2)^3$, so three half-lives have passed: $3 \times 5730 \approx 17{,}000$ years.
+
+### Radioactive Tracers in Medicine
+
+**Positron emission tomography** (PET) is a direct application of beta-plus decay. The most common tracer is $\ce{^{18}F}$-fluorodeoxyglucose (FDG), a glucose analog in which fluorine-18 replaces one hydroxyl group. Cells take up FDG through glucose transporters, and hexokinase phosphorylates it. The phosphorylated product cannot continue through glycolysis and is trapped in the cell, so tissues that consume a lot of glucose (the brain, the heart, and many tumors) accumulate the tracer.
+
+When fluorine-18 emits a positron, the positron travels a millimeter or so before meeting an electron. The two annihilate, converting their mass into two gamma photons of 511 keV each, emitted in nearly opposite directions. A ring of detectors around the patient records pairs of photons that arrive at the same moment, and a computer traces each pair back along a line to locate the source.
+
+Technetium-99m, a gamma emitter with a six-hour half-life, is the workhorse of nuclear imaging. Iodine-131 concentrates in the thyroid because the gland actively takes up iodide to build its hormones. In the lab, phosphorus-32 and sulfur-35 label DNA and protein respectively, the logic behind the Hershey–Chase experiment.
+
+<Callout type="high-yield" title="Decay at a glance">
+
+- Alpha: $A - 4$, $Z - 2$. Beta-minus: $Z + 1$. Beta-plus and electron capture: $Z - 1$. Gamma: no change.
+- Count alpha decays from the change in mass number first, then use beta decays to fix the atomic number.
+- Half-life math on the MCAT nearly always uses whole numbers of half-lives. Convert the time into a count of half-lives before you do anything else.
+
+</Callout>
+
+<Question id="cp-atoms-01" />
+
+## The Bohr Model and Light
+
+In 1913 Niels Bohr proposed that the electron in a hydrogen atom can occupy only certain circular orbits, each with a fixed energy. The model is incomplete (it fails for atoms with more than one electron), but it captures the idea that matters most for the MCAT: **electron energies are quantized**.
+
+### Quantized Energy Levels
+
+In Bohr's model, the energy of the hydrogen electron in level $n$ is
+
+$$
+E_n = -\frac{13.6\ \text{eV}}{n^2} \qquad (n = 1, 2, 3, \ldots)
+$$
+
+The negative sign means the electron is bound: it would take energy to free it. The **ground state** ($n = 1$) is the lowest and most negative energy level, at $-13.6$ eV. Higher levels, called **excited states**, crowd closer together as $n$ grows and approach zero, the energy of an electron that has just escaped. The ionization energy of hydrogen is therefore 13.6 eV, the energy needed to move the electron from $n = 1$ to $n = \infty$.
+
+### Absorption and Emission
+
+An electron moves between levels by absorbing or emitting a photon whose energy exactly matches the gap:
+
+$$
+\Delta E = hf = \frac{hc}{\lambda}
+$$
+
+Here $h = 6.626 \times 10^{-34}$ J·s is Planck's constant, $f$ is frequency, $c = 3.00 \times 10^8$ m/s is the speed of light, and $\lambda$ is wavelength. Energy and frequency rise together; energy and wavelength move in opposite directions.
+
+- **Absorption**: the electron jumps to a higher level by taking in a photon of exactly the right energy. Light of other energies passes through, producing dark lines in an absorption spectrum.
+- **Emission**: the electron falls to a lower level and releases a photon. Because only certain gaps exist, each element emits a unique set of wavelengths, its **line spectrum**. Flame tests rely on this: sodium's bright yellow-orange glow comes from an emission line near 589 nm.
+
+**Worked example.** What wavelength of light does hydrogen emit when its electron falls from $n = 3$ to $n = 2$?
+
+$$
+\Delta E = 13.6\ \text{eV}\left(\frac{1}{2^2} - \frac{1}{3^2}\right) = 13.6\left(\frac{5}{36}\right) \approx 1.89\ \text{eV}
+$$
+
+Using the shortcut $hc \approx 1240$ eV·nm,
+
+$$
+\lambda = \frac{hc}{\Delta E} = \frac{1240\ \text{eV·nm}}{1.89\ \text{eV}} \approx 656\ \text{nm}
+$$
+
+That is red light, the brightest visible line of hydrogen. Transitions that end at $n = 2$ fall in the visible range (the Balmer series). Transitions that end at $n = 1$ are much larger; the drop from $n = 2$ to $n = 1$ releases 10.2 eV, an ultraviolet photon near 122 nm.
+
+The same physics underlies **fluorescence**, used in microscopy and in tags such as green fluorescent protein. A molecule absorbs a photon, loses a little energy as heat while excited, and then emits a photon of lower energy and longer wavelength.
+
+### The Photoelectric Effect
+
+When light strikes a metal surface, it can knock electrons loose, but only if each photon carries at least a minimum energy called the **work function**, $\Phi$. Any extra energy becomes the electron's kinetic energy:
+
+$$
+KE_{\text{max}} = hf - \Phi
+$$
+
+**Worked example.** Ultraviolet light of wavelength 200 nm strikes a metal with a work function of 4.3 eV. What is the maximum kinetic energy of the ejected electrons?
+
+The photon energy is $1240 / 200 = 6.2$ eV, so $KE_{\text{max}} = 6.2 - 4.3 = 1.9$ eV.
+
+The photoelectric effect showed that light comes in packets. Below the threshold frequency, no electrons are ejected however bright the light. Above it, making the light brighter increases the *number* of photons and therefore the number of ejected electrons, but not the kinetic energy of each one. Only raising the frequency does that.
+
+<Callout type="mnemonic" title="Carry 1240">
+
+Memorize $hc \approx 1240$ eV·nm. It turns every photon problem into one division: a 620 nm photon carries 2 eV, a 400 nm photon about 3.1 eV, and a 124 nm photon 10 eV. If you need joules instead, $1\ \text{eV} = 1.6 \times 10^{-19}$ J.
+
+</Callout>
+
+<Question id="cp-atoms-02" />
+
+## Quantum Numbers
+
+Bohr's single number $n$ is not enough to describe electrons in real atoms. The quantum mechanical model replaces orbits with **orbitals**, regions of space where an electron is likely to be found. We cannot pin down an electron's exact path, because the **Heisenberg uncertainty principle** says that position and momentum cannot both be known precisely at the same time. What we can specify is the electron's "address," given by four quantum numbers.
+
+| Symbol | Name | Allowed values | What it describes |
+|---|---|---|---|
+| $n$ | Principal | $1, 2, 3, \ldots$ | Shell; overall size and energy |
+| $l$ | Azimuthal (angular momentum) | $0$ to $n - 1$ | Subshell shape: $l = 0, 1, 2, 3$ are s, p, d, f |
+| $m_l$ | Magnetic | $-l$ to $+l$, integers | Orientation of the orbital in space |
+| $m_s$ | Spin | $+\tfrac{1}{2}$ or $-\tfrac{1}{2}$ | Direction of the electron's spin |
+
+Several counting rules fall out of this table.
+
+- A subshell with quantum number $l$ contains $2l + 1$ orbitals: one s orbital, three p, five d, seven f.
+- Each orbital holds at most two electrons, so a subshell holds $2(2l + 1)$ electrons: 2, 6, 10 and 14.
+- Shell $n$ contains $n^2$ orbitals and up to $2n^2$ electrons. The third shell holds 18.
+
+The **Pauli exclusion principle** states that no two electrons in the same atom can share all four quantum numbers. Two electrons in one orbital already share $n$, $l$ and $m_l$, so they must have opposite spins. That is why an orbital holds two electrons and not three.
+
+**Worked example.** How many electrons in a single atom can have $n = 3$ and $l = 2$?
+
+These are the 3d orbitals. With $l = 2$, $m_l$ can be $-2, -1, 0, +1, +2$: five orbitals, each holding two electrons, for 10 electrons.
+
+<Callout type="trap" title="Check the ranges in order">
+
+To decide whether a set of quantum numbers is allowed, check each number against the one before it. The set $(n, l, m_l, m_s) = (2, 2, 0, +\tfrac{1}{2})$ fails because $l$ must be less than $n$, so there is no 2d subshell. The set $(3, 1, -2, -\tfrac{1}{2})$ fails because $m_l$ can only range from $-1$ to $+1$ when $l = 1$.
+
+</Callout>
+
+## Electron Configurations
+
+An **electron configuration** lists which subshells an atom's electrons occupy. Three rules determine the ground-state configuration.
+
+### The Aufbau Principle
+
+Electrons fill the lowest-energy subshells first. In multi-electron atoms, subshell energy depends on both $n$ and $l$, and a useful guide is the $n + l$ rule: the lower $n + l$ fills first, and if two subshells tie, the one with lower $n$ fills first. That gives the familiar order
+
+$$
+1s \to 2s \to 2p \to 3s \to 3p \to 4s \to 3d \to 4p \to 5s \to 4d \to 5p \to 6s \to 4f \to 5d \to 6p
+$$
+
+You do not need to memorize the list. Read it off the periodic table: the s-block is the two left columns, the p-block the six right columns, the d-block the ten-column middle, and the f-block the two detached rows. The d-block in row 4 is the 3d subshell, one shell behind the row number.
+
+A few examples:
+
+- Sulfur ($Z = 16$): $1s^2\,2s^2\,2p^6\,3s^2\,3p^4$, written in noble-gas shorthand as $[\ce{Ne}]\,3s^2\,3p^4$.
+- Iron ($Z = 26$): $[\ce{Ar}]\,4s^2\,3d^6$.
+- Bromine ($Z = 35$): $[\ce{Ar}]\,4s^2\,3d^{10}\,4p^5$, with seven valence electrons in the $n = 4$ shell.
+
+**Valence electrons** are those in the outermost shell (plus, for transition metals, the d electrons just below). They do the chemistry.
+
+### Hund's Rule and Magnetism
+
+When electrons enter a set of orbitals with equal energy, such as the three 2p orbitals, they occupy separate orbitals with parallel spins before any of them pair up. Electrons repel each other, and spreading out lowers that repulsion. Nitrogen ($2p^3$) therefore has three unpaired electrons, one in each p orbital, while oxygen ($2p^4$) must pair two of its four 2p electrons and has two unpaired.
+
+An atom or ion with one or more unpaired electrons is **paramagnetic** and is drawn into a magnetic field. One with every electron paired is **diamagnetic** and is weakly repelled.
+
+### Exceptions: Chromium and Copper
+
+Half-filled and completely filled d subshells carry extra stability. Two elements in the first transition row borrow an electron from 4s to reach one of those arrangements:
+
+- Chromium is $[\ce{Ar}]\,4s^1\,3d^5$, not $[\ce{Ar}]\,4s^2\,3d^4$. Six unpaired electrons, a half-filled d subshell.
+- Copper is $[\ce{Ar}]\,4s^1\,3d^{10}$, not $[\ce{Ar}]\,4s^2\,3d^9$. A filled d subshell.
+
+Molybdenum, directly below chromium, and silver and gold, below copper, follow the same pattern. These are the exceptions the MCAT tests.
+
+### Ions of Transition Metals
+
+Forming a cation removes electrons from the subshell with the **highest $n$** first, not from the subshell that filled last. For transition metals that means the 4s electrons leave before any 3d electrons. Once the 3d orbitals are occupied, they sit lower in energy than 4s, and the 4s electrons are farther from the nucleus on average.
+
+| Species | Configuration | Unpaired electrons |
+|---|---|---|
+| Fe | $[\ce{Ar}]\,4s^2\,3d^6$ | 4 |
+| $\ce{Fe^2+}$ | $[\ce{Ar}]\,3d^6$ | 4 |
+| $\ce{Fe^3+}$ | $[\ce{Ar}]\,3d^5$ | 5 |
+| $\ce{Cu+}$ | $[\ce{Ar}]\,3d^{10}$ | 0 |
+| $\ce{Cu^2+}$ | $[\ce{Ar}]\,3d^9$ | 1 |
+| $\ce{Zn^2+}$ | $[\ce{Ar}]\,3d^{10}$ | 0 |
+
+(These counts assume free ions. Ligands in a protein can change how d electrons pair, a topic beyond the MCAT.)
+
+Anions simply add electrons into the next available orbital. Chloride, $\ce{Cl-}$, is $[\ce{Ne}]\,3s^2\,3p^6$, the same configuration as argon. Species with identical configurations are called **isoelectronic**: $\ce{Na+}$, $\ce{Mg^2+}$, $\ce{F-}$ and $\ce{O^2-}$ all share neon's configuration.
+
+<Callout type="high-yield" title="First in, first out? No.">
+
+Transition metals fill 4s before 3d, but they also *lose* 4s before 3d. $\ce{Fe^2+}$ is $[\ce{Ar}]\,3d^6$, never $[\ce{Ar}]\,4s^2\,3d^4$. This single rule answers a surprising number of configuration questions.
+
+</Callout>
+
+<Callout type="connection" title="Iron in hemoglobin" to="/bb/amino-acids-and-proteins">
+
+Each heme group in hemoglobin holds an iron ion surrounded by four nitrogen atoms of a porphyrin ring. A fifth position is occupied by a histidine side chain from the protein (the proximal histidine), and the sixth position is where oxygen binds. Only ferrous iron, $\ce{Fe^2+}$, binds $\ce{O2}$ reversibly. When iron is oxidized to ferric $\ce{Fe^3+}$, the result is methemoglobin, which cannot carry oxygen. The difference between the two is a single 3d electron.
+
+</Callout>
+
+<Question id="cp-atoms-03" />
+
+## Effective Nuclear Charge and Shielding
+
+Every periodic trend in the next section follows from one quantity: the **effective nuclear charge**, $Z_{\text{eff}}$, the net positive charge a valence electron actually feels.
+
+A valence electron is attracted by all $Z$ protons in the nucleus, but the electrons between it and the nucleus repel it and partly cancel that pull. This partial cancellation is called **shielding**. A rough estimate is
+
+$$
+Z_{\text{eff}} \approx Z - S
+$$
+
+where $S$ is the number of core (inner-shell) electrons. Core electrons shield valence electrons well because they sit between them and the nucleus. Electrons in the same shell shield each other poorly because they are, on average, the same distance out.
+
+Two consequences matter.
+
+1. **Across a period**, each step adds one proton and one electron to the same shell. The added electron barely shields its neighbors, so $Z_{\text{eff}}$ on the valence electrons climbs steadily from left to right. By the crude estimate, sodium's valence electron feels about $11 - 10 = +1$ and chlorine's valence electrons feel about $17 - 10 = +7$. More careful calculations give roughly $+2.5$ and $+6$, but the direction is the same.
+2. **Down a group**, $Z_{\text{eff}}$ changes only modestly, because the extra protons are matched by an extra filled shell of core electrons. What changes a lot is $n$: valence electrons occupy a higher shell that extends much farther from the nucleus. Distance wins.
+
+So remember the pair: **across a period, $Z_{\text{eff}}$ rises; down a group, the shell number rises.** Almost everything else follows.
+
+<Callout type="note" title="Coulomb's law is underneath it all">
+
+The attraction between the nucleus and a valence electron scales like $Z_{\text{eff}}/r^2$. Larger effective charge pulls harder; larger distance weakens the pull. Every trend question can be answered by asking which of those two factors is changing more.
+
+</Callout>
+
+## Periodic Trends
+
+The periodic table arranges elements by atomic number into **periods** (rows) and **groups** (columns). Elements in the same group share a valence configuration and so behave similarly. Metals, which tend to lose electrons, occupy the left and center; nonmetals, which tend to gain or share them, occupy the upper right; and a staircase of **metalloids** (boron, silicon, germanium, arsenic, antimony, tellurium) separates them.
+
+### Atomic and Ionic Radius
+
+**Atomic radius decreases across a period and increases down a group.** Across a period, rising $Z_{\text{eff}}$ pulls the same shell inward. Down a group, each new shell sits farther out. The largest atoms are at the bottom left (cesium, francium); the smallest at the top right (helium, fluorine).
+
+Ions follow two more rules. A **cation is smaller** than its parent atom, because it has lost electrons (often an entire shell) and the remaining electrons feel more nuclear charge per electron. An **anion is larger** than its parent atom, because added electrons increase repulsion and spread the cloud out.
+
+For an **isoelectronic series**, all species have the same electrons, so the one with the most protons pulls them in tightest:
+
+| Ion | Protons | Electrons | Approximate radius (pm) |
+|---|---|---|---|
+| $\ce{O^2-}$ | 8 | 10 | 140 |
+| $\ce{F-}$ | 9 | 10 | 133 |
+| $\ce{Na+}$ | 11 | 10 | 102 |
+| $\ce{Mg^2+}$ | 12 | 10 | 72 |
+
+Ionic size matters in physiology. Potassium channels pass $\ce{K+}$ (about 138 pm) roughly a thousand times more readily than the smaller $\ce{Na+}$ (about 102 pm). An ion must shed its shell of water to enter the channel's narrow selectivity filter, which is lined with backbone carbonyl oxygens spaced to stand in for the water around a $\ce{K+}$ ion. A $\ce{Na+}$ ion is too small to contact all of them at once, so the energy it pays to shed its water is not repaid.
+
+### Ionization Energy
+
+The **first ionization energy** (IE) is the energy required to remove the most loosely held electron from a gaseous atom: $\ce{X(g) -> X+(g) + e-}$. It is always positive (endothermic). **Ionization energy increases across a period and decreases down a group**, the mirror image of the radius trend. Electrons that are closer to the nucleus and feel a larger $Z_{\text{eff}}$ are harder to remove. Noble gases have the highest ionization energies in each period, and helium (2,372 kJ/mol) has the highest of all.
+
+Period 2 shows the general climb and two small exceptions:
+
+| Element | Li | Be | B | C | N | O | F | Ne |
+|---|---|---|---|---|---|---|---|---|
+| First IE (kJ/mol) | 520 | 900 | 801 | 1086 | 1402 | 1314 | 1681 | 2081 |
+
+- **Boron is lower than beryllium.** Boron's outermost electron is in a 2p orbital, which is higher in energy and partly shielded by the 2s electrons. It is easier to remove than one of beryllium's 2s electrons.
+- **Oxygen is lower than nitrogen.** Nitrogen's three 2p electrons are all unpaired. Oxygen's fourth 2p electron must pair up with another in the same orbital, and the extra repulsion makes it easier to remove.
+
+The same dips appear in period 3 (aluminum below magnesium, sulfur below phosphorus).
+
+**Successive ionization energies** reveal how many valence electrons an atom has. Each electron removed is harder to remove than the last, but there is a huge jump when you break into a filled core shell. Sodium's first IE is 496 kJ/mol and its second is 4,562 kJ/mol, more than nine times larger, because the second electron would come from the neon core. That is why sodium forms $\ce{Na+}$ and never $\ce{Na^2+}$.
+
+### Electron Affinity
+
+**Electron affinity** (EA) is the energy change when a gaseous atom gains an electron: $\ce{X(g) + e- -> X-(g)}$. For most elements this releases energy. Sign conventions vary, so think in terms of energy *released*: a "more favorable" electron affinity gives off more energy.
+
+Electron affinity generally becomes more favorable across a period, peaking at the halogens, which need just one electron to complete their p subshell. It generally becomes less favorable down a group, though less regularly than the other trends. Noble gases, and elements with filled or half-filled subshells such as beryllium, magnesium and nitrogen, have unfavorable or near-zero electron affinities because the added electron would have to enter a higher-energy subshell or pair up.
+
+One exception is worth knowing: **chlorine releases more energy than fluorine** on gaining an electron (about 349 versus 328 kJ/mol). Fluorine is so small that an added electron crowds into a compact 2p subshell already holding seven electrons, and the repulsion offsets some of the attraction.
+
+### Electronegativity
+
+**Electronegativity** is an atom's ability to attract shared electrons in a chemical bond. Because it describes atoms in bonds rather than isolated atoms, it is the trend that matters most for molecules (AAMC category 5B). On the Pauling scale, **electronegativity increases across a period and decreases down a group**. Fluorine is the most electronegative element (3.98), followed by oxygen (3.44), chlorine (3.16) and nitrogen (3.04). Carbon is 2.55 and hydrogen 2.20. The alkali metals sit near the bottom, with cesium at 0.79. Noble gases are usually left off the scale because they rarely form bonds.
+
+The difference in electronegativity between two bonded atoms predicts the bond's character:
+
+| Electronegativity difference | Bond type | Example |
+|---|---|---|
+| Less than about 0.5 | Nonpolar covalent | C–H (0.35) |
+| About 0.5 to 1.7 | Polar covalent | O–H (1.24), N–H (0.84) |
+| Greater than about 1.7 | Ionic | Na–Cl (2.23) |
+
+These cutoffs are guidelines, not sharp boundaries, but the biological payoff is enormous. Because O–H and N–H bonds are strongly polar, their partially positive hydrogens form hydrogen bonds with lone pairs on other oxygen and nitrogen atoms. Those bonds give water its unusual properties, hold DNA's strands together, and stabilize protein secondary structure. Nearly nonpolar C–H bonds are why lipid tails avoid water.
+
+### Summary of the Trends
+
+| Property | Across a period (left to right) | Down a group | Main reason |
+|---|---|---|---|
+| Atomic radius | Decreases | Increases | $Z_{\text{eff}}$ rises across; new shells down |
+| First ionization energy | Increases | Decreases | Tighter hold on closer electrons |
+| Electron affinity (energy released) | Generally increases | Generally decreases | Same, with more exceptions |
+| Electronegativity | Increases | Decreases | Same; describes atoms in bonds |
+| Metallic character | Decreases | Increases | Ease of losing electrons |
+
+<Callout type="mnemonic" title="Two arrows and FONCl">
+
+Picture an arrow pointing to fluorine in the upper right. Ionization energy, electron affinity and electronegativity all grow in the direction of that arrow. Atomic radius and metallic character grow the opposite way, toward francium in the lower left. For the most electronegative elements, remember **FONCl** (F, O, N, Cl). Strictly, chlorine (3.16) edges out nitrogen (3.04), but N, O and F are the three that form hydrogen bonds.
+
+</Callout>
+
+<Question id="cp-atoms-04" />
+
+## Groups the MCAT Cares About
+
+Because elements in a group share a valence configuration, a handful of groups can be learned as families. For each, know the valence configuration, the typical ion, and at least one biological role.
+
+### Alkali Metals (Group 1)
+
+Lithium, sodium, potassium, rubidium, cesium and francium have a single $ns^1$ valence electron. With the lowest ionization energies in each period, they lose that electron easily to form $+1$ ions and are among the most reactive metals. They react with water to produce hydrogen gas and a strong base, more violently as you go down the group:
+
+$$
+\ce{2Na(s) + 2H2O(l) -> 2NaOH(aq) + H2(g)}
+$$
+
+Hydrogen sits above group 1 because of its $1s^1$ configuration, but it is a nonmetal. In the body, $\ce{Na+}$ and $\ce{K+}$ are the main cations of the extracellular and intracellular fluids. Extracellular $\ce{Na+}$ is about 145 mM and intracellular about 10 to 15 mM; $\ce{K+}$ is about 4 mM outside and about 140 mM inside. The $\ce{Na+}/\ce{K+}$-ATPase maintains these gradients by pumping three $\ce{Na+}$ out and two $\ce{K+}$ in for each ATP hydrolyzed. Neurons spend those gradients to fire action potentials: sodium rushes in to depolarize the membrane, and potassium flows out to repolarize it.
+
+### Alkaline Earth Metals (Group 2)
+
+Beryllium, magnesium, calcium, strontium, barium and radium have an $ns^2$ configuration and form $+2$ ions. They are reactive, though less so than group 1, because removing two electrons costs more energy.
+
+Calcium is one of biology's most important signals. The cytosol keeps free $\ce{Ca^2+}$ near $10^{-7}$ M (about 100 nM), while extracellular fluid holds roughly 1 to 2 mM, a gradient of about ten-thousand-fold. Opening calcium channels therefore floods the cytosol with $\ce{Ca^2+}$ in milliseconds. That surge triggers neurotransmitter release at synapses, binds troponin to start skeletal muscle contraction, and activates calmodulin-dependent enzymes. Calcium phosphate, as hydroxyapatite, is the mineral of bone and teeth.
+
+Magnesium is a cofactor for hundreds of enzymes; most cellular ATP exists as a $\ce{Mg^2+}$-ATP complex. Group membership also explains toxicity. Radioactive strontium-90 behaves chemically like calcium, so it is deposited in bone, where it irradiates the marrow for years.
+
+### Halogens (Group 17)
+
+Fluorine, chlorine, bromine and iodine have an $ns^2\,np^5$ configuration, one electron short of a noble gas. They have the most favorable electron affinities and high electronegativities, so they readily form $-1$ ions (halides). The elements exist as diatomic molecules whose physical state changes down the group as London dispersion forces grow: $\ce{F2}$ and $\ce{Cl2}$ are gases at room temperature, $\ce{Br2}$ is a liquid, and $\ce{I2}$ is a solid.
+
+Chloride is the most abundant extracellular anion, and the GABA-A receptor in the brain is a chloride channel whose opening inhibits neurons. Iodine is built into the thyroid hormones $T_3$ and $T_4$. Fluoride substitutes into tooth enamel to form fluorapatite, which resists acid better than hydroxyapatite.
+
+### The Oxygen Group (Group 16)
+
+Oxygen, sulfur and selenium have an $ns^2\,np^4$ configuration and commonly form $-2$ ions or two covalent bonds. Oxygen is the final electron acceptor of the electron transport chain, and sulfur in cysteine side chains forms the disulfide bridges that stabilize many extracellular proteins.
+
+### Noble Gases (Group 18)
+
+Helium, neon, argon, krypton, xenon and radon have completely filled valence shells ($ns^2\,np^6$, or $1s^2$ for helium). They have the highest ionization energies in their periods, little tendency to gain electrons, and very low reactivity. Radon, produced by the decay of uranium in soil, is an alpha emitter. Because it is a gas, it can be inhaled, and it is the second leading cause of lung cancer after smoking.
+
+### Transition Metals (Groups 3–12)
+
+The transition metals fill d orbitals. Because their 4s and 3d electrons are close in energy, many show several **oxidation states**: iron as $+2$ and $+3$, copper as $+1$ and $+2$. That makes them ideal for electron transfer; the iron of cytochromes and the copper of cytochrome c oxidase pass electrons down the electron transport chain by cycling between states.
+
+Partly filled d subshells also make many transition metal compounds **colored**, because gaps between d orbitals in a complex match visible photons, and **paramagnetic**, because of unpaired d electrons. Zinc(II), with a filled $3d^{10}$ subshell, is colorless and diamagnetic.
+
+Transition metal ions are also good **Lewis acids**: they accept electron pairs from ligands. Proteins bind them through side chains such as histidine, cysteine, aspartate and glutamate, and enzymes use the bound metal to position substrates or to make bound water more acidic.
+
+<Callout type="connection" title="Metal ions as enzyme cofactors" to="/bb/enzymes-and-kinetics">
+
+Carbonic anhydrase, which interconverts $\ce{CO2}$ and bicarbonate in red blood cells, holds a $\ce{Zn^2+}$ ion bound by three histidines. The zinc acts as a Lewis acid, pulling electron density away from a bound water molecule so that it loses a proton near neutral pH and becomes a zinc-bound hydroxide, a strong enough nucleophile to attack $\ce{CO2}$. The general idea that a metal cofactor can tune the reactivity of its surroundings is developed in the chapter on enzymes.
+
+</Callout>
+
+<Question id="cp-atoms-05" />

@@ -1,0 +1,124 @@
+deck:
+  title: "Acids and Bases"
+  description: "Definitions, pH math, acid strength, buffers, blood pH and titrations."
+cards:
+  - id: cp-acids-fc-01
+    front: "How do the Brønsted–Lowry and Lewis definitions of an acid differ?"
+    back: "A Brønsted–Lowry acid donates a proton. A Lewis acid accepts an electron pair."
+    tags: [definitions]
+  - id: cp-acids-fc-02
+    front: "How does a conjugate acid–base pair differ?"
+    back: "By exactly one proton (and one unit of charge)."
+    tags: [definitions]
+  - id: cp-acids-fc-03
+    front: "Which direction does an acid–base equilibrium favor?"
+    back: "Formation of the weaker acid and the weaker base."
+    tags: [definitions]
+  - id: cp-acids-fc-04
+    front: "What does amphoteric mean? Give three biological examples."
+    back: 'Able to act as an acid or a base. Examples: water, $\ce{HCO3-}$, $\ce{H2PO4-}$, amino acids.'
+    tags: [definitions, amphoteric]
+  - id: cp-acids-fc-05
+    front: "What is the value of Kw at 25 °C?"
+    back: '$K_w = [\ce{H3O+}][\ce{OH-}] = 1.0 \times 10^{-14}$'
+    tags: [water]
+  - id: cp-acids-fc-06
+    front: "How does Kw change as temperature rises, and why?"
+    back: "It increases, because autoionization is endothermic. Pure water at 37 °C has pH about 6.8 but is still neutral."
+    tags: [water, thermodynamics]
+  - id: cp-acids-fc-07
+    front: "What three logarithms should you memorize for MCAT pH math?"
+    back: 'log 2 = 0.30, log 3 = 0.48, log 5 = 0.70'
+    tags: [ph-math]
+  - id: cp-acids-fc-08
+    front: 'If $[\ce{H3O+}] = a \times 10^{-b}$, what is the pH?'
+    back: '$\text{pH} = b - \log a$, which always falls between $b - 1$ and $b$.'
+    tags: [ph-math]
+  - id: cp-acids-fc-09
+    front: "What is the hydronium concentration of blood at pH 7.40?"
+    back: '$4.0 \times 10^{-8}$ M (40 nM)'
+    tags: [ph-math, blood]
+  - id: cp-acids-fc-10
+    front: "Which six acids are strong in water?"
+    back: 'HCl, HBr, HI, $\ce{HNO3}$, $\ce{H2SO4}$ (first proton), $\ce{HClO4}$'
+    tags: [strong-acids]
+  - id: cp-acids-fc-11
+    front: "What is the shortcut for the hydronium concentration of a weak acid solution?"
+    back: '$[\ce{H3O+}] \approx \sqrt{K_a C}$, valid when less than about 5% of the acid ionizes.'
+    tags: [weak-acids]
+  - id: cp-acids-fc-12
+    front: "How are Ka and Kb related for a conjugate pair?"
+    back: '$K_a \times K_b = K_w$, so $\text{p}K_a + \text{p}K_b = 14$ at 25 °C.'
+    tags: [weak-acids]
+  - id: cp-acids-fc-13
+    front: "Does a smaller pKa mean a stronger or weaker acid?"
+    back: "Stronger. Each pKa unit is a tenfold change in Ka."
+    tags: [weak-acids]
+  - id: cp-acids-fc-14
+    front: "Why is HF a weak acid even though fluorine is the most electronegative element?"
+    back: "The H–F bond is very strong, and the small fluoride ion concentrates its charge. Down a group, size outweighs electronegativity."
+    tags: [acid-strength]
+  - id: cp-acids-fc-15
+    front: "Why are carboxylic acids much more acidic than alcohols?"
+    back: "The carboxylate conjugate base is stabilized by resonance over two oxygens (pKa about 4–5 vs about 16)."
+    tags: [acid-strength]
+  - id: cp-acids-fc-16
+    front: "How do electronegative substituents near a carboxyl group affect its pKa?"
+    back: "They lower it by inductive withdrawal; the effect adds with more substituents and fades with distance."
+    tags: [acid-strength]
+  - id: cp-acids-fc-17
+    front: "Which amino acid side chain has a pKa closest to physiological pH?"
+    back: "Histidine (about 6.0), which is why it often shuttles protons in enzyme active sites."
+    tags: [acid-strength, amino-acids]
+  - id: cp-acids-fc-18
+    front: "What are the three pKa values of phosphoric acid?"
+    back: "About 2.15, 7.20 and 12.35"
+    tags: [polyprotic]
+  - id: cp-acids-fc-19
+    front: "Is a solution of NH4Cl acidic, basic or neutral?"
+    back: 'Acidic: $\ce{NH4+}$ is the conjugate acid of a weak base and donates protons to water.'
+    tags: [salts]
+  - id: cp-acids-fc-20
+    front: "State the Henderson–Hasselbalch equation."
+    back: '$\text{pH} = \text{p}K_a + \log\dfrac{[\ce{A-}]}{[\ce{HA}]}$'
+    tags: [buffers]
+  - id: cp-acids-fc-21
+    front: "Over what pH range does a buffer work effectively?"
+    back: 'About $\text{p}K_a \pm 1$'
+    tags: [buffers]
+  - id: cp-acids-fc-22
+    front: "What sets a buffer's capacity, as opposed to its pH?"
+    back: "The absolute concentrations of the weak acid and its conjugate base. The pH depends only on their ratio."
+    tags: [buffers]
+  - id: cp-acids-fc-23
+    front: "Write the Henderson–Hasselbalch equation for the blood bicarbonate buffer."
+    back: '$\text{pH} = 6.1 + \log\dfrac{[\ce{HCO3-}]}{0.03 \times P_{\ce{CO2}}}$'
+    tags: [blood]
+  - id: cp-acids-fc-24
+    front: "What are normal arterial pH, PCO2 and bicarbonate values?"
+    back: "pH 7.35–7.45, PCO2 35–45 mmHg, bicarbonate 22–26 mM"
+    tags: [blood]
+  - id: cp-acids-fc-25
+    front: "What is the normal ratio of bicarbonate to dissolved CO2 in arterial blood?"
+    back: '20 to 1 ($24 / 1.2$), giving pH $6.1 + \log 20 = 7.40$'
+    tags: [blood]
+  - id: cp-acids-fc-26
+    front: "How does the body compensate for a metabolic acidosis?"
+    back: "The lungs hyperventilate to lower PCO2, within minutes to hours."
+    tags: [blood, compensation]
+  - id: cp-acids-fc-27
+    front: "How does the body compensate for a respiratory acidosis?"
+    back: "The kidneys retain bicarbonate and excrete H+, over several days."
+    tags: [blood, compensation]
+  - id: cp-acids-fc-28
+    front: "What is the pH at the half-equivalence point of a weak acid titration?"
+    back: '$\text{pH} = \text{p}K_a$'
+    tags: [titration]
+  - id: cp-acids-fc-29
+    front: "Is the equivalence point of a weak acid titrated with strong base above, below or at pH 7?"
+    back: "Above 7, because the conjugate base hydrolyzes and produces hydroxide."
+    tags: [titration]
+  - id: cp-acids-fc-30
+    front: "How do you choose an indicator for a titration?"
+    back: 'Pick one whose color-change range (about $\text{p}K_{\text{In}} \pm 1$) brackets the equivalence-point pH.'
+    tags: [titration]

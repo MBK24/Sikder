@@ -1,0 +1,124 @@
+deck:
+  title: "Amino Acids and Proteins"
+  description: "Codes and side-chain classes for all twenty amino acids, plus charge, pI, the peptide bond, protein structure, folding and denaturation."
+cards:
+  - id: bb-aminos-fc-01
+    front: 'Glycine: three-letter code, one-letter code and side-chain class?'
+    back: 'Gly, G. Nonpolar. Its side chain is H, so it is achiral and the most flexible residue (turns, every third residue of collagen).'
+    tags: [codes, nonpolar]
+  - id: bb-aminos-fc-02
+    front: 'Alanine: three-letter code, one-letter code and side-chain class?'
+    back: 'Ala, A. Nonpolar (methyl side chain). A strong helix former.'
+    tags: [codes, nonpolar]
+  - id: bb-aminos-fc-03
+    front: 'Valine: three-letter code, one-letter code and side-chain class?'
+    back: 'Val, V. Nonpolar (branched isopropyl side chain).'
+    tags: [codes, nonpolar]
+  - id: bb-aminos-fc-04
+    front: 'Leucine: three-letter code, one-letter code and side-chain class?'
+    back: 'Leu, L. Nonpolar (branched isobutyl side chain). Common in hydrophobic cores and transmembrane helices.'
+    tags: [codes, nonpolar]
+  - id: bb-aminos-fc-05
+    front: 'Isoleucine: three-letter code, one-letter code and side-chain class?'
+    back: 'Ile, I. Nonpolar (branched). Has a second stereocenter in its side chain.'
+    tags: [codes, nonpolar]
+  - id: bb-aminos-fc-06
+    front: 'Proline: three-letter code, one-letter code and side-chain class?'
+    back: 'Pro, P. Nonpolar. Its side chain bonds back to the backbone nitrogen, making a rigid ring and a helix breaker.'
+    tags: [codes, nonpolar]
+  - id: bb-aminos-fc-07
+    front: 'Methionine: three-letter code, one-letter code and side-chain class?'
+    back: 'Met, M. Nonpolar (thioether). Encoded by the start codon AUG, so it is the first residue of new chains.'
+    tags: [codes, nonpolar]
+  - id: bb-aminos-fc-08
+    front: 'Phenylalanine: three-letter code, one-letter code and side-chain class?'
+    back: 'Phe, F. Aromatic (benzyl ring), strongly hydrophobic. Precursor of tyrosine.'
+    tags: [codes, aromatic]
+  - id: bb-aminos-fc-09
+    front: 'Tyrosine: three-letter code, one-letter code and side-chain class?'
+    back: 'Tyr, Y. Aromatic, with a phenol OH (side-chain pKa about 10). Phosphorylated by tyrosine kinases.'
+    tags: [codes, aromatic]
+  - id: bb-aminos-fc-10
+    front: 'Tryptophan: three-letter code, one-letter code and side-chain class?'
+    back: 'Trp, W. Aromatic (indole double ring), the largest side chain. Absorbs strongly near 280 nm.'
+    tags: [codes, aromatic]
+  - id: bb-aminos-fc-11
+    front: 'Serine: three-letter code, one-letter code and side-chain class?'
+    back: 'Ser, S. Polar uncharged (OH). Site of phosphorylation and the nucleophile in serine proteases.'
+    tags: [codes, polar]
+  - id: bb-aminos-fc-12
+    front: 'Threonine: three-letter code, one-letter code and side-chain class?'
+    back: 'Thr, T. Polar uncharged (OH). Phosphorylation site; has a second stereocenter.'
+    tags: [codes, polar]
+  - id: bb-aminos-fc-13
+    front: 'Cysteine: three-letter code, one-letter code and side-chain class?'
+    back: 'Cys, C. Polar uncharged (thiol, pKa about 8.3). Two cysteines oxidize to form a disulfide bond (cystine).'
+    tags: [codes, polar]
+  - id: bb-aminos-fc-14
+    front: 'Asparagine: three-letter code, one-letter code and side-chain class?'
+    back: 'Asn, N. Polar uncharged (amide). Attachment site for N-linked glycosylation.'
+    tags: [codes, polar]
+  - id: bb-aminos-fc-15
+    front: 'Glutamine: three-letter code, one-letter code and side-chain class?'
+    back: 'Gln, Q. Polar uncharged (amide). Carries nitrogen through the blood.'
+    tags: [codes, polar]
+  - id: bb-aminos-fc-16
+    front: 'Aspartate: three-letter code, one-letter code and side-chain class?'
+    back: 'Asp, D. Acidic (carboxylate, pKa about 3.9). Negative at pH 7.4.'
+    tags: [codes, acidic]
+  - id: bb-aminos-fc-17
+    front: 'Glutamate: three-letter code, one-letter code and side-chain class?'
+    back: 'Glu, E. Acidic (carboxylate, pKa about 4.2). Negative at pH 7.4; the main excitatory neurotransmitter.'
+    tags: [codes, acidic]
+  - id: bb-aminos-fc-18
+    front: 'Lysine: three-letter code, one-letter code and side-chain class?'
+    back: 'Lys, K. Basic (primary amine, pKa about 10.5). Positive at pH 7.4; pI about 9.7.'
+    tags: [codes, basic]
+  - id: bb-aminos-fc-19
+    front: 'Arginine: three-letter code, one-letter code and side-chain class?'
+    back: 'Arg, R. Basic (guanidinium, pKa about 12.5), the most basic side chain. Positive at pH 7.4.'
+    tags: [codes, basic]
+  - id: bb-aminos-fc-20
+    front: 'Histidine: three-letter code, one-letter code and side-chain class?'
+    back: 'His, H. Basic (imidazole, pKa about 6.0). Mostly neutral at pH 7.4; used in buffering, acid–base catalysis and metal binding.'
+    tags: [codes, basic]
+  - id: bb-aminos-fc-21
+    front: 'Which chiral L amino acid has an R α carbon, and why?'
+    back: 'Cysteine. Sulfur in its side chain outranks the oxygens of the carboxyl group under CIP rules, flipping the priority order.'
+    tags: [stereochemistry]
+  - id: bb-aminos-fc-22
+    front: 'How do you calculate the pI of an acidic amino acid such as glutamate?'
+    back: 'Average the two lowest pKa values (α-carboxyl and side chain), the two that bracket the neutral form. For glutamate, (2.19 + 4.25)/2 = 3.22.'
+    tags: [pI]
+  - id: bb-aminos-fc-23
+    front: 'How do you calculate the pI of a basic amino acid such as lysine?'
+    back: 'Average the two highest pKa values (α-amino and side chain). For lysine, (8.95 + 10.53)/2 = 9.74.'
+    tags: [pI]
+  - id: bb-aminos-fc-24
+    front: 'Why is the peptide bond planar, with no rotation about the C–N bond?'
+    back: 'Resonance delocalizes the nitrogen lone pair into the carbonyl, giving the C–N bond partial (about 40%) double-bond character.'
+    tags: [peptide-bond]
+  - id: bb-aminos-fc-25
+    front: 'Is peptide bond hydrolysis in water thermodynamically favorable? Why are proteins stable anyway?'
+    back: 'Yes, hydrolysis has a negative ΔG. Proteins persist because the uncatalyzed reaction has a very high activation energy, so it is extremely slow.'
+    tags: [peptide-bond]
+  - id: bb-aminos-fc-26
+    front: 'Which interactions stabilize secondary structure?'
+    back: 'Hydrogen bonds between backbone C=O and N–H groups only. In an α helix, the C=O of residue n bonds to the N–H of residue n + 4.'
+    tags: [structure]
+  - id: bb-aminos-fc-27
+    front: 'What is the main thermodynamic driving force for protein folding?'
+    back: 'The hydrophobic effect: burying nonpolar side chains releases ordered water, increasing the entropy of the solvent.'
+    tags: [folding]
+  - id: bb-aminos-fc-28
+    front: 'What did Anfinsen''s ribonuclease experiment show?'
+    back: 'A denatured, reduced protein refolds to its active native structure on its own, so the amino acid sequence contains the information for the 3-D fold.'
+    tags: [folding]
+  - id: bb-aminos-fc-29
+    front: 'What level of protein structure survives denaturation by heat, urea or SDS?'
+    back: 'Primary structure. Denaturants disrupt noncovalent interactions but do not hydrolyze peptide bonds.'
+    tags: [denaturation]
+  - id: bb-aminos-fc-30
+    front: 'Why does scurvy weaken connective tissue?'
+    back: 'Vitamin C is needed by the hydroxylases that make hydroxyproline and hydroxylysine in collagen. Without them the triple helix is unstable and poorly crosslinked.'
+    tags: [collagen]

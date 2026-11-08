@@ -1,0 +1,362 @@
+chapter: acids-and-bases
+questions:
+  - id: cp-acids-01
+    usage: inline
+    topic: 5A
+    difficulty: core
+    stem: |
+      In the active site of carbonic anhydrase, a $\ce{Zn^2+}$ ion binds the oxygen atom of a water molecule. The bound water then loses a proton far more easily than free water does. In binding the water, $\ce{Zn^2+}$ acts as a:
+    choices:
+      A: "Brønsted–Lowry acid, because it donates a proton to the water"
+      B: "Lewis base, because it donates an electron pair to the oxygen"
+      C: "Lewis acid, because it accepts an electron pair from the oxygen"
+      D: "Arrhenius base, because it releases hydroxide ions into solution"
+    answer: C
+    explanation: |
+      The zinc ion has empty orbitals and accepts a lone pair from water's oxygen, forming a coordinate bond. An electron-pair acceptor is a Lewis acid. By pulling electron density away from the oxygen, the zinc weakens the O–H bonds, which is why the bound water gives up a proton near neutral pH.
+    whyWrong:
+      A: "Zn2+ has no proton to donate, so it cannot be a Brønsted–Lowry acid."
+      B: "The lone pair comes from water's oxygen; zinc receives it rather than donating one."
+      D: "Zinc does not release hydroxide; the hydroxide forms when bound water loses a proton and stays on the zinc."
+
+  - id: cp-acids-02
+    usage: inline
+    topic: 5A
+    difficulty: intro
+    stem: |
+      What is the pH of a $2.0 \times 10^{-3}$ M solution of nitric acid? ($\log 2 = 0.30$)
+    choices:
+      A: "2.70"
+      B: "3.30"
+      C: "2.30"
+      D: "11.30"
+    answer: A
+    explanation: |
+      Nitric acid is strong, so $[\ce{H3O+}] = 2.0 \times 10^{-3}$ M. Then $\text{pH} = 3 - \log 2 = 3 - 0.30 = 2.70$. As a check, the concentration lies between $10^{-3}$ and $10^{-2}$ M, so the pH must lie between 2 and 3.
+    whyWrong:
+      B: "This adds log 2 instead of subtracting it, putting the pH above 3 for a concentration greater than 0.001 M."
+      C: "This subtracts log 5 (0.70) rather than log 2."
+      D: "This is 14 minus the correct pH, which would be the pH of a base at this concentration."
+
+  - id: cp-acids-03
+    usage: inline
+    topic: 5A
+    difficulty: core
+    stem: |
+      Which of the following compounds is the strongest acid in water?
+    choices:
+      A: "Ethanol, $\\ce{CH3CH2OH}$"
+      B: "Phenol, $\\ce{C6H5OH}$"
+      C: "Acetic acid, $\\ce{CH3COOH}$"
+      D: "Trichloroacetic acid, $\\ce{Cl3CCOOH}$"
+    answer: D
+    explanation: |
+      The strongest acid has the most stable conjugate base. Carboxylate ions are stabilized by resonance over two oxygens, so both carboxylic acids are far stronger than ethanol or phenol. Trichloroacetic acid adds three electronegative chlorines that withdraw electron density by induction, further stabilizing the anion and lowering the $\text{p}K_a$ to about 0.7, versus 4.74 for acetic acid.
+    whyWrong:
+      A: "Ethanol's conjugate base has its charge localized on one oxygen; its pKa is about 16."
+      B: "Phenoxide is stabilized by resonance into the ring, but phenol (pKa about 10) is still much weaker than a carboxylic acid."
+      C: "Acetic acid has resonance stabilization but lacks the inductive pull of the three chlorines."
+
+  - id: cp-acids-04
+    usage: inline
+    topic: 5A
+    difficulty: core
+    stem: |
+      A patient with long-standing chronic obstructive pulmonary disease (COPD) has the following arterial blood values: pH 7.31, $P_{\ce{CO2}}$ = 60 mmHg, $[\ce{HCO3-}]$ = 29 mM. Which interpretation is best supported?
+    choices:
+      A: "Metabolic acidosis with respiratory compensation"
+      B: "Respiratory acidosis with partial renal compensation"
+      C: "Respiratory alkalosis with renal compensation"
+      D: "Metabolic alkalosis with respiratory compensation"
+    answer: B
+    explanation: |
+      The pH is below 7.35, so the patient is acidemic. The $P_{\ce{CO2}}$ is high (normal 35–45 mmHg), which explains the acidosis: a respiratory acidosis from hypoventilation. Bicarbonate is above its normal range of 22–26 mM, showing that the kidneys have retained base to push the ratio back toward 20. The pH is still low, so compensation is partial. Check: $6.1 + \log(29 / 1.8) \approx 6.1 + \log 16.1 \approx 7.31$.
+    whyWrong:
+      A: "Metabolic acidosis would show low bicarbonate, but bicarbonate here is elevated."
+      C: "The pH is below normal, so this is an acidosis, not an alkalosis."
+      D: "Elevated bicarbonate would fit metabolic alkalosis, but the pH is low, so the high CO2 is the primary problem."
+
+  - id: cp-acids-05
+    usage: inline
+    topic: 5A
+    difficulty: core
+    stem: |
+      A student titrates 20.0 mL of an unknown weak monoprotic acid with 0.100 M NaOH. The equivalence point is reached at 20.0 mL of base, and the pH after 10.0 mL of base is 4.2. What is the $\text{p}K_a$ of the acid?
+    choices:
+      A: "2.1"
+      B: "4.2"
+      C: "8.4"
+      D: "9.8"
+    answer: B
+    explanation: |
+      After 10.0 mL, half of the acid has been converted to its conjugate base, so $[\ce{HA}] = [\ce{A-}]$. The Henderson–Hasselbalch log term is then zero, and $\text{pH} = \text{p}K_a = 4.2$.
+    whyWrong:
+      A: "There is no reason to halve the pH; at half-equivalence the pH equals the pKa directly."
+      C: "Doubling the pH has no basis in the Henderson–Hasselbalch equation."
+      D: "9.8 is the pKb of the conjugate base (14 − 4.2), not the pKa of the acid."
+
+  - id: cp-acids-06
+    usage: quiz
+    topic: 5A
+    difficulty: intro
+    stem: |
+      What is the conjugate base of dihydrogen phosphate, $\ce{H2PO4-}$?
+    choices:
+      A: '$\ce{HPO4^2-}$'
+      B: '$\ce{H3PO4}$'
+      C: '$\ce{PO4^3-}$'
+      D: '$\ce{HPO4-}$'
+    answer: A
+    explanation: |
+      A conjugate base differs from its acid by exactly one proton. Removing one $\ce{H+}$ from $\ce{H2PO4-}$ removes one hydrogen and one unit of positive charge, giving $\ce{HPO4^2-}$.
+    whyWrong:
+      B: "H3PO4 has one more proton; it is the conjugate acid of H2PO4−."
+      C: "PO4 3− differs by two protons, so it is not a conjugate pair with H2PO4−."
+      D: "Removing a proton removes positive charge, so the charge must go from 1− to 2−."
+
+  - id: cp-acids-07
+    usage: quiz
+    topic: 5E
+    difficulty: core
+    stem: |
+      At 37 °C, $K_w = 2.4 \times 10^{-14}$, and the pH of pure water is about 6.8. Pure water at 37 °C is best described as:
+    choices:
+      A: "acidic, because its pH is below 7"
+      B: "basic, because its hydroxide concentration has increased"
+      C: "neutral, because its hydronium and hydroxide concentrations are equal"
+      D: "acidic, because warming shifts autoionization toward hydronium only"
+    answer: C
+    explanation: |
+      Neutrality means $[\ce{H3O+}] = [\ce{OH-}]$. Autoionization produces the two ions in equal amounts at any temperature. Because the reaction is endothermic, warming increases $K_w$ and raises both concentrations equally (to about $1.6 \times 10^{-7}$ M each), so the pH falls but the water stays neutral.
+    whyWrong:
+      A: "pH 7 marks neutrality only at 25 °C; at 37 °C the neutral point is about 6.8."
+      B: "Hydroxide rises, but hydronium rises by exactly the same amount."
+      D: "Each autoionization event makes one hydronium and one hydroxide, so they cannot change separately."
+
+  - id: cp-acids-08
+    usage: quiz
+    topic: 5A
+    difficulty: core
+    stem: |
+      What is the pH of a 0.010 M solution of a weak monoprotic acid with $K_a = 1.0 \times 10^{-6}$?
+    choices:
+      A: "2.0"
+      B: "3.0"
+      C: "6.0"
+      D: "4.0"
+    answer: D
+    explanation: |
+      For a weak acid, $[\ce{H3O+}] \approx \sqrt{K_a C} = \sqrt{(1.0 \times 10^{-6})(0.010)} = \sqrt{1.0 \times 10^{-8}} = 1.0 \times 10^{-4}$ M, so the pH is 4.0. Only 1% of the acid ionizes, so the approximation is valid.
+    whyWrong:
+      A: "This treats the acid as strong and fully dissociated."
+      B: "This does not follow from the square-root shortcut; it would require 10% ionization."
+      C: "This is the pKa. pH equals pKa only when the acid and its conjugate base are present in equal amounts."
+
+  - id: cp-acids-09
+    usage: quiz
+    topic: 5A
+    difficulty: intro
+    stem: |
+      Ammonia has $K_b = 1.8 \times 10^{-5}$ ($\text{p}K_b = 4.74$) at 25 °C. What is the $\text{p}K_a$ of the ammonium ion?
+    choices:
+      A: "4.74"
+      B: "9.26"
+      C: "7.00"
+      D: "18.74"
+    answer: B
+    explanation: |
+      For a conjugate pair, $K_a \times K_b = K_w$, so $\text{p}K_a + \text{p}K_b = 14$ at 25 °C. The $\text{p}K_a$ of ammonium is $14 - 4.74 = 9.26$.
+    whyWrong:
+      A: "This is the pKb of ammonia, not the pKa of its conjugate acid."
+      C: "Neutral pH has nothing to do with the pKa of a particular acid."
+      D: "The pKa and pKb add to 14; they are not added to 14."
+
+  - id: cp-acids-10
+    usage: quiz
+    topic: 5A
+    difficulty: core
+    stem: |
+      Which 0.10 M aqueous solution has the highest pH?
+    choices:
+      A: '$\ce{NaCl}$'
+      B: '$\ce{NH4Cl}$'
+      C: '$\ce{CH3COONa}$'
+      D: '$\ce{FeCl3}$'
+    answer: C
+    explanation: |
+      Sodium acetate is the salt of a weak acid and a strong base. The acetate ion accepts a proton from water and releases hydroxide, giving a basic solution (pH about 8.9 at this concentration). The other three solutions are neutral or acidic.
+    whyWrong:
+      A: "Neither Na+ nor Cl− hydrolyzes, so NaCl solution is neutral."
+      B: "NH4+ is a weak acid, so ammonium chloride solution is acidic."
+      D: "Hydrated Fe3+ is small and highly charged and makes its bound water release protons, so the solution is acidic."
+
+  - id: cp-acids-11
+    usage: quiz
+    topic: 5A
+    difficulty: core
+    stem: |
+      Inside cells, phosphate buffers pH through the pair $\ce{H2PO4-}$/$\ce{HPO4^2-}$ ($\text{p}K_a = 7.2$). At pH 7.4, what is the approximate ratio $[\ce{HPO4^2-}]/[\ce{H2PO4-}]$? ($10^{0.2} \approx 1.6$)
+    choices:
+      A: "1.6"
+      B: "0.63"
+      C: "0.20"
+      D: "1.0"
+    answer: A
+    explanation: |
+      By Henderson–Hasselbalch, $\log([\ce{HPO4^2-}]/[\ce{H2PO4-}]) = \text{pH} - \text{p}K_a = 7.4 - 7.2 = 0.2$, so the ratio is $10^{0.2} \approx 1.6$. Because the pH is above the $\text{p}K_a$, the deprotonated form is the more abundant one.
+    whyWrong:
+      B: "This is the inverted ratio, acid over base."
+      C: "0.2 is the logarithm of the ratio, not the ratio itself."
+      D: "A ratio of 1 occurs only when pH equals pKa."
+
+  - id: cp-acids-12
+    usage: quiz
+    topic: 5A
+    difficulty: core
+    stem: |
+      A 1.0 L buffer contains 0.10 mol acetic acid and 0.10 mol sodium acetate ($\text{p}K_a = 4.74$). What is the pH after 0.010 mol of solid NaOH is dissolved in it? ($\log(11/9) \approx 0.09$)
+    choices:
+      A: "4.65"
+      B: "4.74"
+      C: "12.00"
+      D: "4.83"
+    answer: D
+    explanation: |
+      Hydroxide reacts completely with acetic acid: $\ce{CH3COOH + OH- -> CH3COO- + H2O}$. Acetic acid falls to 0.09 mol and acetate rises to 0.11 mol. Then $\text{pH} = 4.74 + \log(0.11/0.09) \approx 4.74 + 0.09 = 4.83$.
+    whyWrong:
+      A: "This is the result for adding 0.010 mol of strong acid; base should raise the pH."
+      B: "The buffer resists change, but adding base still shifts the ratio slightly toward acetate."
+      C: "This would be the pH of 0.010 M NaOH in unbuffered water."
+
+  - id: cp-acids-13
+    usage: quiz
+    topic: 5A
+    difficulty: advanced
+    stem: |
+      A 19-year-old with type 1 diabetes arrives at the emergency department breathing deeply and rapidly. Arterial blood shows pH 7.29, $P_{\ce{CO2}}$ = 30 mmHg and $[\ce{HCO3-}]$ = 14 mM. Which interpretation is correct?
+    choices:
+      A: "Respiratory acidosis with renal compensation"
+      B: "Metabolic alkalosis with respiratory compensation"
+      C: "Metabolic acidosis with respiratory compensation"
+      D: "Respiratory alkalosis with renal compensation"
+    answer: C
+    explanation: |
+      The low pH means acidemia, and the low bicarbonate (normal 22–26 mM) shows that acid has consumed base: a metabolic acidosis, here from ketoacids. The low $P_{\ce{CO2}}$ is the lungs' compensation; hyperventilation blows off $\ce{CO2}$ to raise the bicarbonate-to-$\ce{CO2}$ ratio back toward 20. Check: $6.1 + \log(14/0.9) = 6.1 + \log 15.6 \approx 7.29$.
+    whyWrong:
+      A: "Respiratory acidosis requires a high CO2, but CO2 is low here."
+      B: "The pH is low, so the primary disorder is an acidosis."
+      D: "Low CO2 alone would raise the pH; here the pH is low, so the CO2 change is compensation."
+
+  - id: cp-acids-14
+    usage: quiz
+    topic: 5A
+    difficulty: advanced
+    stem: |
+      A patient has been vomiting for three days and has lost a large volume of gastric acid. Which set of arterial values is most consistent with this history?
+    choices:
+      A: 'pH 7.30, $P_{\ce{CO2}}$ 30 mmHg, $[\ce{HCO3-}]$ 14 mM'
+      B: 'pH 7.50, $P_{\ce{CO2}}$ 48 mmHg, $[\ce{HCO3-}]$ 36 mM'
+      C: 'pH 7.50, $P_{\ce{CO2}}$ 30 mmHg, $[\ce{HCO3-}]$ 22 mM'
+      D: 'pH 7.30, $P_{\ce{CO2}}$ 55 mmHg, $[\ce{HCO3-}]$ 26 mM'
+    answer: B
+    explanation: |
+      Losing HCl leaves behind excess bicarbonate, a metabolic alkalosis. The lungs compensate by hypoventilating, which raises $P_{\ce{CO2}}$. Choice B shows high pH, high bicarbonate and a mildly elevated $P_{\ce{CO2}}$, and it is internally consistent: $6.1 + \log(36 / 1.44) = 6.1 + \log 25 \approx 7.50$.
+    whyWrong:
+      A: "Low pH and low bicarbonate describe a metabolic acidosis, the opposite of acid loss."
+      C: "High pH with low CO2 and normal bicarbonate is a respiratory alkalosis, as from hyperventilation."
+      D: "Low pH with high CO2 is a respiratory acidosis, as from hypoventilation."
+
+  - id: cp-acids-15
+    usage: quiz
+    topic: 5A
+    difficulty: advanced
+    stem: |
+      The imidazole side chain of a histidine residue has a $\text{p}K_a$ of about 6.0. At pH 7.4, approximately what fraction of these side chains are protonated? ($10^{1.4} \approx 25$)
+    choices:
+      A: "4%"
+      B: "50%"
+      C: "96%"
+      D: "0.04%"
+    answer: A
+    explanation: |
+      Henderson–Hasselbalch gives $[\text{base}]/[\text{acid}] = 10^{7.4 - 6.0} = 10^{1.4} \approx 25$. For every protonated side chain there are about 25 deprotonated ones, so the protonated fraction is $1/26 \approx 4\%$. Because the pH is above the $\text{p}K_a$, most histidines are neutral.
+    whyWrong:
+      B: "Half protonation happens only when pH equals pKa (6.0)."
+      C: "This is the deprotonated fraction; above its pKa a group is mostly deprotonated."
+      D: "This would require a pH more than three units above the pKa, not 1.4."
+
+  - id: cp-acids-16
+    usage: quiz
+    topic: 5A
+    difficulty: core
+    stem: |
+      A lab measures the lactic acid content of a muscle extract by titrating it with 0.050 M NaOH. The expected equivalence-point pH is about 8.3. Which indicator is the best choice?
+    choices:
+      A: "Methyl orange (transition pH 3.1–4.4)"
+      B: "Methyl red (transition pH 4.4–6.2)"
+      C: "Bromothymol blue (transition pH 6.0–7.6)"
+      D: "Phenolphthalein (transition pH 8.2–10.0)"
+    answer: D
+    explanation: |
+      An indicator should change color over a range that brackets the equivalence point. Titrating a weak acid with a strong base gives a basic equivalence point, because the conjugate base (lactate) hydrolyzes. Phenolphthalein's transition, from about 8.2 to 10.0, matches the expected pH of 8.3.
+    whyWrong:
+      A: "Methyl orange changes color in acidic solution, long before the weak acid is neutralized."
+      B: "Methyl red suits weak base–strong acid titrations, whose equivalence points are acidic."
+      C: "Bromothymol blue would change near pH 7, before the true equivalence point of a weak acid."
+
+  - id: cp-acids-17
+    usage: quiz
+    topic: 5A
+    difficulty: core
+    stem: |
+      Fluorine is more electronegative than chlorine, yet HF is a weak acid while HCl is a strong acid. Which statement best explains this?
+    choices:
+      A: "Fluoride is larger than chloride and spreads its charge more widely."
+      B: "Fluorine's electronegativity makes the H–F bond nonpolar."
+      C: "The H–F bond is stronger, and fluoride's charge sits on a small atom."
+      D: "Fluorine has fewer valence electrons than chlorine does."
+    answer: C
+    explanation: |
+      Down a group, atomic size outweighs electronegativity. The short H–F bond is much stronger than H–Cl, and the small fluoride ion concentrates its negative charge in a tiny volume, making it a less stable conjugate base. Chloride is larger and spreads the charge over more space, so HCl dissociates completely.
+    whyWrong:
+      A: "Fluoride is smaller than chloride, not larger."
+      B: "H–F is one of the most polar bonds known; high electronegativity makes it more polar, not less."
+      D: "Fluorine and chlorine are both halogens with seven valence electrons."
+
+  - id: cp-acids-18
+    usage: quiz
+    topic: 5A
+    difficulty: advanced
+    stem: |
+      A student dilutes hydrochloric acid until its concentration is $1.0 \times 10^{-8}$ M. What is the approximate pH of the resulting solution at 25 °C?
+    choices:
+      A: "8.00"
+      B: "6.98"
+      C: "7.00"
+      D: "6.00"
+    answer: B
+    explanation: |
+      At such a low concentration, water's own autoionization (about $10^{-7}$ M hydronium) dominates. The added acid contributes a little extra, so the total hydronium is slightly above $10^{-7}$ M (about $1.05 \times 10^{-7}$ M) and the pH is slightly below 7, about 6.98. Adding acid to water can never make it basic.
+    whyWrong:
+      A: "Taking −log of the acid concentration alone ignores water's hydronium and wrongly gives a basic pH."
+      C: "The added acid, though small, still raises hydronium above its value in pure water."
+      D: "This would require 10⁻⁶ M hydronium, far more than the acid and water supply together."
+
+  - id: cp-acids-19
+    usage: quiz
+    topic: 5A
+    difficulty: intro
+    stem: |
+      Which of the following species is amphoteric in water?
+    choices:
+      A: '$\ce{HCO3-}$'
+      B: '$\ce{CO3^2-}$'
+      C: '$\ce{NH4+}$'
+      D: '$\ce{Cl-}$'
+    answer: A
+    explanation: |
+      Bicarbonate can donate a proton to become carbonate or accept one to become carbonic acid, so it can act as either an acid or a base. Intermediate forms of polyprotic acids are amphoteric for exactly this reason.
+    whyWrong:
+      B: "Carbonate has no proton to donate, so it can act only as a base."
+      C: "Ammonium has no lone pair to accept another proton, so it acts only as an acid."
+      D: "Chloride is the conjugate base of a strong acid and has essentially no acidic or basic behavior in water."

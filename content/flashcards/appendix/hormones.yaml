@@ -1,0 +1,164 @@
+deck:
+  title: "Hormones"
+  description: "Sources, chemical classes, targets, effects and regulation of the hormones the MCAT tests."
+cards:
+  - id: appendix-hormones-fc-01
+    front: "Where are the receptors for peptide hormones, and how do they usually signal?"
+    back: "On the cell surface. They usually act through second messengers such as cAMP, IP₃/DAG or Ca²⁺, or through receptor tyrosine kinases."
+    tags: [mechanism, peptide]
+  - id: appendix-hormones-fc-02
+    front: "Where are the receptors for steroid hormones, and how do they act?"
+    back: "Inside the cell (cytoplasm or nucleus). The hormone–receptor complex binds DNA and changes gene transcription."
+    tags: [mechanism, steroid]
+  - id: appendix-hormones-fc-03
+    front: "Which amine hormones behave like steroids, and which behave like peptides?"
+    back: "Thyroid hormones (T₃/T₄) behave like steroids, with nuclear receptors. Catecholamines (epinephrine, norepinephrine) behave like peptides, with cell-surface receptors."
+    tags: [mechanism, amine]
+  - id: appendix-hormones-fc-04
+    front: "Why do steroid hormones need carrier proteins in the blood?"
+    back: "They are lipid-soluble and poorly soluble in plasma, so they travel bound to proteins such as albumin or sex hormone–binding globulin."
+    tags: [mechanism, steroid]
+  - id: appendix-hormones-fc-05
+    front: "Which seven hormones does the anterior pituitary release?"
+    back: "FSH, LH, ACTH, TSH, prolactin, endorphins and growth hormone (FLAT PEG)."
+    tags: [anterior-pituitary]
+  - id: appendix-hormones-fc-06
+    front: "Which anterior pituitary hormones are tropic?"
+    back: "FSH, LH, ACTH and TSH. They act on other endocrine glands."
+    tags: [anterior-pituitary]
+  - id: appendix-hormones-fc-07
+    front: "Which hypothalamic signal inhibits prolactin release?"
+    back: "Dopamine (prolactin-inhibiting hormone)."
+    tags: [hypothalamus, anterior-pituitary]
+  - id: appendix-hormones-fc-08
+    front: "What does somatostatin from the hypothalamus inhibit?"
+    back: "Growth hormone release (and TSH release) from the anterior pituitary."
+    tags: [hypothalamus]
+  - id: appendix-hormones-fc-09
+    front: "Through which hormone does growth hormone produce many of its growth-promoting effects?"
+    back: "Insulin-like growth factor 1 (IGF-1), made mainly by the liver."
+    tags: [anterior-pituitary]
+  - id: appendix-hormones-fc-10
+    front: "Where are ADH and oxytocin made, and where are they released?"
+    back: "Made in the hypothalamus (supraoptic and paraventricular nuclei); stored in and released from the posterior pituitary."
+    tags: [posterior-pituitary]
+  - id: appendix-hormones-fc-11
+    front: "How does ADH concentrate urine?"
+    back: "It causes aquaporins to be inserted into collecting-duct cells, so more water is reabsorbed."
+    tags: [posterior-pituitary, kidney]
+  - id: appendix-hormones-fc-12
+    front: "What are the two main stimuli for ADH release?"
+    back: "High plasma osmolarity (sensed by hypothalamic osmoreceptors) and low blood volume or pressure (sensed by baroreceptors)."
+    tags: [posterior-pituitary]
+  - id: appendix-hormones-fc-13
+    front: "Which hormone produces milk, and which ejects it?"
+    back: "Prolactin (anterior pituitary) stimulates milk production; oxytocin (posterior pituitary) causes milk ejection."
+    tags: [anterior-pituitary, posterior-pituitary]
+  - id: appendix-hormones-fc-14
+    front: "Which hormone is the classic example of positive feedback during labor?"
+    back: "Oxytocin. Cervical stretch increases oxytocin release, which strengthens contractions, which stretch the cervix further."
+    tags: [posterior-pituitary, feedback]
+  - id: appendix-hormones-fc-15
+    front: "What are the main effects of T₃ and T₄?"
+    back: "They raise basal metabolic rate and heat production, and they are needed for normal growth and nervous-system development."
+    tags: [thyroid]
+  - id: appendix-hormones-fc-16
+    front: "Which cells make calcitonin, and what does it do to blood calcium?"
+    back: "Parafollicular (C) cells of the thyroid. Calcitonin lowers blood Ca²⁺, mainly by inhibiting osteoclasts."
+    tags: [thyroid, calcium]
+  - id: appendix-hormones-fc-17
+    front: "What stimulates PTH release, and what are its three main effects?"
+    back: "Low blood Ca²⁺. PTH increases bone resorption, increases Ca²⁺ reabsorption (and phosphate excretion) in the kidney, and activates vitamin D in the kidney."
+    tags: [parathyroid, calcium]
+  - id: appendix-hormones-fc-18
+    front: "What does calcitriol (active vitamin D) do?"
+    back: "It increases intestinal absorption of calcium and phosphate."
+    tags: [kidney, calcium]
+  - id: appendix-hormones-fc-19
+    front: "Which hormones does each zone of the adrenal cortex make, from outside to inside?"
+    back: "Zona glomerulosa: mineralocorticoids (aldosterone). Zona fasciculata: glucocorticoids (cortisol). Zona reticularis: androgens. Salt, sugar, sex."
+    tags: [adrenal-cortex]
+  - id: appendix-hormones-fc-20
+    front: "What does aldosterone do in the kidney?"
+    back: "It increases Na⁺ reabsorption and K⁺ and H⁺ secretion in the distal tubule and collecting duct, raising blood volume and pressure."
+    tags: [adrenal-cortex, kidney]
+  - id: appendix-hormones-fc-21
+    front: "What are the two main stimuli for aldosterone release?"
+    back: "Angiotensin II and high blood K⁺."
+    tags: [adrenal-cortex]
+  - id: appendix-hormones-fc-22
+    front: "What are the main effects of cortisol?"
+    back: "It raises blood glucose (gluconeogenesis), breaks down protein and fat, and suppresses inflammation and immune responses."
+    tags: [adrenal-cortex]
+  - id: appendix-hormones-fc-23
+    front: "A tumor secretes excess cortisol independently of ACTH. What happens to CRH and ACTH levels?"
+    back: "Both fall, because high cortisol suppresses the hypothalamus and anterior pituitary by negative feedback."
+    tags: [adrenal-cortex, feedback]
+  - id: appendix-hormones-fc-24
+    front: "What stimulates the adrenal medulla to release epinephrine?"
+    back: "Preganglionic sympathetic neurons, which release acetylcholine onto the medulla's chromaffin cells."
+    tags: [adrenal-medulla]
+  - id: appendix-hormones-fc-25
+    front: "Which pancreatic islet cells make insulin, glucagon and somatostatin?"
+    back: "β cells make insulin, α cells make glucagon and δ cells make somatostatin."
+    tags: [pancreas]
+  - id: appendix-hormones-fc-26
+    front: "How does insulin lower blood glucose?"
+    back: "It increases glucose uptake into skeletal muscle and adipose tissue (via GLUT4) and promotes glycogen, fat and protein synthesis."
+    tags: [pancreas]
+  - id: appendix-hormones-fc-27
+    front: "Which organ does glucagon mainly act on, and what does it do there?"
+    back: "The liver. It stimulates glycogenolysis and gluconeogenesis, raising blood glucose."
+    tags: [pancreas]
+  - id: appendix-hormones-fc-28
+    front: "Which cells make testosterone, and which pituitary hormone stimulates them?"
+    back: "Leydig cells of the testes, stimulated by LH."
+    tags: [gonads]
+  - id: appendix-hormones-fc-29
+    front: "What does inhibin do, and which cells make it?"
+    back: "It inhibits FSH release. It is made by Sertoli cells in the testes and granulosa cells in the ovaries."
+    tags: [gonads, feedback]
+  - id: appendix-hormones-fc-30
+    front: "What triggers the mid-cycle LH surge?"
+    back: "A sustained high level of estrogen, which switches estrogen's feedback on the hypothalamus and pituitary from negative to positive."
+    tags: [gonads, feedback]
+  - id: appendix-hormones-fc-31
+    front: "What does progesterone do, and what produces it after ovulation?"
+    back: "It maintains the endometrium and prepares it for implantation. After ovulation it comes from the corpus luteum (later, in pregnancy, the placenta)."
+    tags: [gonads]
+  - id: appendix-hormones-fc-32
+    front: "What is the function of hCG in early pregnancy?"
+    back: "It maintains the corpus luteum, so progesterone production continues until the placenta takes over."
+    tags: [gonads, placenta]
+  - id: appendix-hormones-fc-33
+    front: "What stimulates erythropoietin (EPO) release, and where is it made?"
+    back: "Low tissue oxygen (hypoxia). It is made mainly by the kidney."
+    tags: [kidney]
+  - id: appendix-hormones-fc-34
+    front: "Which cells release renin, and what does renin do?"
+    back: "Juxtaglomerular cells of the kidney. Renin cleaves angiotensinogen to angiotensin I, which ACE converts to angiotensin II."
+    tags: [kidney]
+  - id: appendix-hormones-fc-35
+    front: "What stimulates ANP release, and what are its effects?"
+    back: "Atrial stretch from high blood volume. ANP increases Na⁺ and water excretion, dilates vessels and inhibits renin, aldosterone and ADH, lowering blood pressure."
+    tags: [heart]
+  - id: appendix-hormones-fc-36
+    front: "What does melatonin regulate, and what suppresses its release?"
+    back: "Circadian rhythms and sleep. Light suppresses its release (via the suprachiasmatic nucleus); it rises in darkness."
+    tags: [pineal]
+  - id: appendix-hormones-fc-37
+    front: "What does gastrin do, and what cells release it?"
+    back: "It stimulates HCl secretion by parietal cells and gastric motility. It is released by G cells of the stomach."
+    tags: [gi]
+  - id: appendix-hormones-fc-38
+    front: "What stimulates secretin release, and what is its main effect?"
+    back: "Acid entering the duodenum. Secretin stimulates the pancreas to secrete bicarbonate."
+    tags: [gi]
+  - id: appendix-hormones-fc-39
+    front: "What stimulates CCK release, and what are its main effects?"
+    back: "Fats and proteins in the small intestine. CCK causes gallbladder contraction, pancreatic enzyme secretion and satiety."
+    tags: [gi]
+  - id: appendix-hormones-fc-40
+    front: "Which hormones increase hunger and which signal long-term fullness?"
+    back: "Ghrelin (from the stomach) increases hunger; leptin (from adipose tissue) reduces appetite."
+    tags: [gi, appetite]

@@ -1,0 +1,367 @@
+---
+title: "High-Yield Equations"
+summary: "Every equation the MCAT expects you to know or recognize, grouped by topic, with variables, units and a note on when to reach for each one."
+estReadMinutes: 25
+difficulty: core
+access: premium
+status: published
+aamc: ["4A", "4B", "4C", "4D", "4E", "5A", "5E"]
+---
+
+The MCAT gives you no equation sheet, so the equations in this appendix are ones you should be able to write from memory, or at least recognize instantly when a passage supplies them. They are grouped by topic. Each table lists the equation, its variables and SI units, and the kind of question where it usually appears.
+
+Two habits make these equations far more useful. First, check units: if an answer's units don't work out, the answer is wrong. Second, reason with proportionalities. Many MCAT questions ask what happens to one quantity when another doubles, and you can answer those without a calculation by reading the exponents straight off the equation. There is no calculator on the exam, so practice estimating with rounded numbers, for example $g \approx 10\ \text{m/s}^2$.
+
+## Constants and Conversions
+
+| Quantity | Value | Notes |
+|---|---|---|
+| Acceleration due to gravity | $g \approx 9.8\ \text{m/s}^2$ | Round to $10\ \text{m/s}^2$ for estimates |
+| Speed of light in vacuum | $c = 3.00 \times 10^8\ \text{m/s}$ | |
+| Planck's constant | $h = 6.63 \times 10^{-34}\ \text{J·s}$ | $hc \approx 1240\ \text{eV·nm}$ |
+| Elementary charge | $e = 1.60 \times 10^{-19}\ \text{C}$ | $1\ \text{eV} = 1.60 \times 10^{-19}\ \text{J}$ |
+| Coulomb's constant | $k = \dfrac{1}{4\pi\varepsilon_0} = 8.99 \times 10^9\ \text{N·m}^2/\text{C}^2$ | |
+| Permittivity of free space | $\varepsilon_0 = 8.85 \times 10^{-12}\ \text{C}^2/(\text{N·m}^2)$ | |
+| Universal gravitational constant | $G = 6.67 \times 10^{-11}\ \text{N·m}^2/\text{kg}^2$ | |
+| Avogadro's number | $N_A = 6.02 \times 10^{23}\ \text{mol}^{-1}$ | |
+| Gas constant | $R = 8.314\ \text{J/(mol·K)} = 0.0821\ \text{L·atm/(mol·K)}$ | Use the J version with energy, the L·atm version with $PV = nRT$ in liters and atm |
+| Boltzmann constant | $k_B = 1.38 \times 10^{-23}\ \text{J/K}$ | $k_B = R/N_A$ |
+| Faraday constant | $F \approx 96{,}485\ \text{C/mol e}^-$ | Charge on one mole of electrons; often rounded to $10^5$ |
+| Density of water | $1000\ \text{kg/m}^3 = 1\ \text{g/cm}^3 = 1\ \text{g/mL}$ | |
+| Atmospheric pressure | $1\ \text{atm} = 101.3\ \text{kPa} = 760\ \text{mmHg} = 760\ \text{torr}$ | |
+| Speed of sound in air | About $343\ \text{m/s}$ at 20 °C | Faster in liquids, fastest in solids |
+| Temperature | $T(\text{K}) = T(^\circ\text{C}) + 273.15$; $T(^\circ\text{F}) = \tfrac{9}{5}T(^\circ\text{C}) + 32$ | Gas laws and thermodynamics always use kelvin |
+| Energy | $1\ \text{cal} = 4.184\ \text{J}$; $1\ \text{Cal (food)} = 1\ \text{kcal}$ | |
+| Molar volume of an ideal gas at STP | $22.4\ \text{L/mol}$ | STP: 0 °C (273 K) and 1 atm |
+| Handy logarithms | $\log 2 \approx 0.30$, $\log 3 \approx 0.48$, $\ln 2 \approx 0.693$, $\ln 10 \approx 2.303$ | For pH and half-life estimates |
+
+### SI prefixes
+
+| Prefix | Symbol | Factor | Prefix | Symbol | Factor |
+|---|---|---|---|---|---|
+| giga | G | $10^9$ | centi | c | $10^{-2}$ |
+| mega | M | $10^6$ | milli | m | $10^{-3}$ |
+| kilo | k | $10^3$ | micro | μ | $10^{-6}$ |
+| deci | d | $10^{-1}$ | nano | n | $10^{-9}$ |
+| | | | pico | p | $10^{-12}$ |
+
+## Kinematics
+
+These four equations apply only when acceleration is **constant**. Choose the one that leaves out the quantity you neither know nor need.
+
+| Equation | Variables & units | When to use |
+|---|---|---|
+| $v = v_0 + at$ | $v$, $v_0$: final and initial velocity (m/s); $a$: acceleration (m/s²); $t$: time (s) | Finding final velocity or time; no displacement given |
+| $\Delta x = v_0 t + \tfrac{1}{2}at^2$ | $\Delta x$: displacement (m) | Displacement after a given time; final velocity not given |
+| $v^2 = v_0^2 + 2a\Delta x$ | as above | No time given, such as stopping distance or the speed of an object dropped from a height |
+| $\Delta x = \tfrac{1}{2}(v_0 + v)t$ | as above | Acceleration not given |
+| $\bar v = \dfrac{\Delta x}{\Delta t}$ | $\bar v$: average velocity (m/s) | Average velocity; average speed uses total distance instead of displacement |
+| $v_x = v_0\cos\theta$, $v_{0y} = v_0\sin\theta$ | $\theta$: launch angle above horizontal | Splitting a projectile's launch velocity into components |
+| $v_y = v_0\sin\theta - gt$ | $g$: 9.8 m/s² | Vertical velocity of a projectile; $v_y = 0$ at the peak |
+| $t_\text{flight} = \dfrac{2v_0\sin\theta}{g}$ | | Time of flight, launch and landing at the same height |
+| $R = \dfrac{v_0^2 \sin 2\theta}{g}$ | $R$: horizontal range (m) | Range on level ground; maximum at $\theta = 45^\circ$; complementary angles give equal ranges |
+| $H = \dfrac{v_0^2\sin^2\theta}{2g}$ | $H$: maximum height (m) | Peak height of a projectile |
+
+<Callout type="trap" title="Horizontal and vertical are independent">
+In projectile motion, gravity acts only vertically. Ignoring air resistance, horizontal velocity stays constant throughout the flight, and a ball dropped from a table hits the floor at the same moment as one launched horizontally from the same height.
+</Callout>
+
+## Forces and Momentum
+
+| Equation | Variables & units | When to use |
+|---|---|---|
+| $F_\text{net} = ma$ | $F$: force (N = kg·m/s²); $m$: mass (kg) | Newton's second law; any problem with forces and acceleration |
+| $W = mg$ | $W$: weight (N) | Weight; don't confuse it with mass |
+| $f_s \le \mu_s N$; $f_k = \mu_k N$ | $\mu_s$, $\mu_k$: coefficients of static and kinetic friction (unitless); $N$: normal force (N) | Friction; usually $\mu_s \gt \mu_k$, so it takes more force to start an object moving than to keep it moving |
+| $F_\parallel = mg\sin\theta$; $N = mg\cos\theta$ | $\theta$: incline angle | Objects on an incline with no other perpendicular forces |
+| $a_c = \dfrac{v^2}{r}$; $F_c = \dfrac{mv^2}{r}$ | $r$: radius (m) | Uniform circular motion; centripetal force points toward the center |
+| $F_g = \dfrac{Gm_1m_2}{r^2}$ | $r$: center-to-center distance (m) | Gravitational attraction; inverse-square |
+| $F = -kx$ | $k$: spring constant (N/m); $x$: displacement from equilibrium (m) | Hooke's law; the restoring force opposes displacement |
+| $\tau = rF\sin\theta$ | $\tau$: torque (N·m); $r$: lever arm (m); $\theta$: angle between $r$ and $F$ | Rotational equilibrium: seesaws, the forearm as a lever |
+| $\Sigma F = 0$ and $\Sigma \tau = 0$ | | Translational and rotational equilibrium |
+| $p = mv$ | $p$: momentum (kg·m/s) | Momentum is conserved in all collisions when no external force acts |
+| $J = F\Delta t = \Delta p$ | $J$: impulse (N·s) | Collisions; why air bags reduce force by increasing collision time |
+| $m_1v_1 + m_2v_2 = (m_1 + m_2)v_f$ | | Perfectly inelastic collision (objects stick); kinetic energy is not conserved |
+| $\Sigma p_i = \Sigma p_f$ and $\Sigma KE_i = \Sigma KE_f$ | | Elastic collision; both momentum and kinetic energy are conserved |
+
+## Work, Energy and Power
+
+| Equation | Variables & units | When to use |
+|---|---|---|
+| $W = Fd\cos\theta$ | $W$: work (J = N·m); $d$: displacement (m); $\theta$: angle between $F$ and $d$ | Work by a force; zero if the force is perpendicular to motion |
+| $KE = \tfrac{1}{2}mv^2$ | $KE$: kinetic energy (J) | Doubling speed quadruples kinetic energy |
+| $PE_g = mgh$ | $h$: height above a reference (m) | Gravitational potential energy near Earth's surface |
+| $PE_s = \tfrac{1}{2}kx^2$ | | Elastic potential energy in a spring |
+| $W_\text{net} = \Delta KE$ | | Work–energy theorem |
+| $KE_i + PE_i = KE_f + PE_f$ | | Conservation of mechanical energy when only conservative forces act |
+| $W_\text{nc} = \Delta KE + \Delta PE$ | $W_\text{nc}$: work by nonconservative forces, such as friction | Energy lost to friction or air resistance |
+| $P = \dfrac{W}{t} = \dfrac{\Delta E}{t}$ | $P$: power (W = J/s) | Rate of doing work or using energy |
+| $P = Fv$ | | Power at constant velocity, such as pushing a cart steadily |
+| $MA = \dfrac{F_\text{out}}{F_\text{in}}$ | $MA$: mechanical advantage (unitless) | Pulleys, levers, ramps; they reduce force, not work |
+| $\text{efficiency} = \dfrac{W_\text{out}}{W_\text{in}} \times 100\%$ | | Real machines, efficiency less than 100% |
+
+## Fluids
+
+| Equation | Variables & units | When to use |
+|---|---|---|
+| $\rho = \dfrac{m}{V}$ | $\rho$: density (kg/m³); $V$: volume (m³) | Density; also used to find mass from volume |
+| $SG = \dfrac{\rho}{\rho_\text{water}}$ | $SG$: specific gravity (unitless) | Comparing density to water; $SG \lt 1$ floats in water |
+| $P = \dfrac{F}{A}$ | $P$: pressure (Pa = N/m²); $A$: area (m²) | Definition of pressure |
+| $P = P_0 + \rho g h$ | $P_0$: pressure at the surface (Pa); $h$: depth (m) | Absolute pressure at depth; depends only on depth, not container shape |
+| $P_\text{gauge} = P - P_\text{atm}$ | | Gauge pressure, such as blood pressure or tire pressure; equals $\rho g h$ for an open container |
+| $F_b = \rho_\text{fluid} V_\text{sub} g$ | $V_\text{sub}$: submerged volume (m³) | Archimedes' principle; buoyant force equals the weight of fluid displaced |
+| $\dfrac{V_\text{sub}}{V_\text{total}} = \dfrac{\rho_\text{object}}{\rho_\text{fluid}}$ | | Fraction of a floating object below the surface |
+| $\dfrac{F_1}{A_1} = \dfrac{F_2}{A_2}$ | | Pascal's principle; hydraulic lifts |
+| $Q = Av$ and $A_1 v_1 = A_2 v_2$ | $Q$: volumetric flow rate (m³/s); $v$: flow speed (m/s) | Continuity equation for incompressible fluid; flow speeds up in narrow sections |
+| $P + \tfrac{1}{2}\rho v^2 + \rho g h = \text{constant}$ | | Bernoulli's equation for ideal flow; faster flow means lower pressure (Venturi effect) |
+| $v = \sqrt{2gh}$ | $h$: height of fluid above the opening (m) | Torricelli's law; speed of fluid leaving a hole in a tank |
+| $Q = \dfrac{\pi r^4 \Delta P}{8 \eta L}$ | $\eta$: viscosity (Pa·s); $L$: tube length (m); $r$: radius (m) | Poiseuille's law for viscous flow in a tube; flow depends on $r^4$ |
+| $\Delta P = QR$ | $R$: resistance to flow | The circulatory analogue of Ohm's law; $R \propto \eta L / r^4$ |
+
+<Callout type="high-yield" title="The fourth power of the radius">
+Under Poiseuille flow, halving a vessel's radius at the same pressure difference cuts flow to $\left(\tfrac{1}{2}\right)^4 = \tfrac{1}{16}$ of the original. That's why small changes in arteriolar diameter control blood flow so powerfully, and why the MCAT likes asking about vasoconstriction.
+</Callout>
+
+## Electrostatics and Circuits
+
+### Electrostatics and magnetism
+
+| Equation | Variables & units | When to use |
+|---|---|---|
+| $F = \dfrac{kq_1q_2}{r^2}$ | $q$: charge (C); $r$: distance (m) | Coulomb's law; inverse-square, like gravity |
+| $E = \dfrac{F}{q} = \dfrac{kQ}{r^2}$ | $E$: electric field (N/C = V/m); $Q$: source charge | Field from a point charge; field points away from positive charges |
+| $F = qE$ | | Force on a charge in a field |
+| $V = \dfrac{kQ}{r}$ | $V$: electric potential (V = J/C) | Potential from a point charge; a scalar, so potentials from several charges add directly |
+| $U = \dfrac{kq_1q_2}{r} = qV$ | $U$: electric potential energy (J) | Energy of a pair of charges or of a charge at a potential |
+| $\Delta V = Ed$ | $d$: distance along the field (m) | Uniform field, such as between parallel plates or across a membrane |
+| $W = q\Delta V$ | | Work done moving a charge through a potential difference |
+| $p = qd$ | $p$: dipole moment (C·m) | Electric dipoles, such as polar molecules |
+| $F = qvB\sin\theta$ | $B$: magnetic field (T); $v$: velocity (m/s) | Force on a moving charge; zero for motion parallel to $B$ (direction by the right-hand rule) |
+| $F = ILB\sin\theta$ | $I$: current (A); $L$: wire length (m) | Force on a current-carrying wire |
+| $B = \dfrac{\mu_0 I}{2\pi r}$ | $\mu_0 = 4\pi \times 10^{-7}\ \text{T·m/A}$ | Magnetic field around a long straight wire |
+
+### Circuits
+
+| Equation | Variables & units | When to use |
+|---|---|---|
+| $I = \dfrac{Q}{t}$ | $I$: current (A = C/s) | Definition of current |
+| $V = IR$ | $R$: resistance (Ω) | Ohm's law |
+| $R = \dfrac{\rho L}{A}$ | $\rho$: resistivity (Ω·m); $L$: length (m); $A$: cross-sectional area (m²) | Resistance of a wire; longer and thinner means more resistance |
+| $P = IV = I^2R = \dfrac{V^2}{R}$ | $P$: power (W) | Power dissipated by a resistor |
+| $R_\text{eq} = R_1 + R_2 + \cdots$ | | Resistors in series; same current through each |
+| $\dfrac{1}{R_\text{eq}} = \dfrac{1}{R_1} + \dfrac{1}{R_2} + \cdots$ | | Resistors in parallel; same voltage across each; $R_\text{eq}$ is less than the smallest resistor |
+| $\Sigma I_\text{in} = \Sigma I_\text{out}$ | | Kirchhoff's junction rule (conservation of charge) |
+| $\Sigma \Delta V = 0$ around a loop | | Kirchhoff's loop rule (conservation of energy) |
+| $C = \dfrac{Q}{V}$ | $C$: capacitance (F = C/V) | Definition of capacitance |
+| $C = \dfrac{\kappa\varepsilon_0 A}{d}$ | $\kappa$: dielectric constant (unitless); $A$: plate area (m²); $d$: plate separation (m) | Parallel-plate capacitor; a dielectric increases capacitance |
+| $U = \tfrac{1}{2}CV^2 = \tfrac{1}{2}QV = \dfrac{Q^2}{2C}$ | $U$: stored energy (J) | Energy stored in a capacitor, such as a defibrillator |
+| $C_\text{eq} = C_1 + C_2 + \cdots$ | | Capacitors in **parallel** (opposite of resistors) |
+| $\dfrac{1}{C_\text{eq}} = \dfrac{1}{C_1} + \dfrac{1}{C_2} + \cdots$ | | Capacitors in **series** |
+| $\tau = RC$ | $\tau$: time constant (s) | Charging and discharging of RC circuits, including membrane models |
+
+## Light and Optics
+
+| Equation | Variables & units | When to use |
+|---|---|---|
+| $c = f\lambda$ | $f$: frequency (Hz); $\lambda$: wavelength (m) | Converting between frequency and wavelength for light |
+| $E = hf = \dfrac{hc}{\lambda}$ | $E$: photon energy (J or eV) | Photon energy; shorter wavelength means higher energy |
+| $KE_\text{max} = hf - \phi$ | $\phi$: work function (J or eV) | Photoelectric effect; no electrons are emitted below the threshold frequency |
+| $n = \dfrac{c}{v}$ | $n$: index of refraction (unitless, at least 1); $v$: speed of light in the medium | Light slows in denser media; frequency stays the same, wavelength shortens |
+| $n_1\sin\theta_1 = n_2\sin\theta_2$ | $\theta$: angle from the normal | Snell's law; light bends toward the normal when entering a higher-$n$ medium |
+| $\sin\theta_c = \dfrac{n_2}{n_1}$ | $\theta_c$: critical angle; requires $n_1 \gt n_2$ | Total internal reflection, as in fiber optics and endoscopes |
+| $\dfrac{1}{f} = \dfrac{1}{o} + \dfrac{1}{i}$ | $f$: focal length (m); $o$: object distance; $i$: image distance | Thin lenses and mirrors |
+| $m = -\dfrac{i}{o} = \dfrac{h_i}{h_o}$ | $m$: magnification (unitless) | Image size and orientation; negative $m$ means inverted |
+| $f = \dfrac{R}{2}$ | $R$: radius of curvature (m) | Spherical mirrors |
+| $P = \dfrac{1}{f}$ | $P$: power (diopters, with $f$ in meters) | Corrective lenses; powers of lenses in contact add |
+| $d\sin\theta = m\lambda$ | $d$: slit separation (m); $m$: integer order | Bright fringes in double-slit interference and diffraction gratings |
+| $a\sin\theta = m\lambda$ | $a$: slit width (m); $m$: nonzero integer | **Dark** fringes in single-slit diffraction |
+| $I = I_0\cos^2\theta$ | $\theta$: angle between polarizer axes | Malus's law for polarized light |
+
+### Sign conventions for mirrors and lenses
+
+| Quantity | Positive when | Negative when |
+|---|---|---|
+| $f$ | Converging: concave mirror, convex lens | Diverging: convex mirror, concave lens |
+| $i$ | Real image: in front of a mirror, behind a lens | Virtual image: behind a mirror, in front of a lens |
+| $m$ | Upright image | Inverted image |
+
+<Callout type="mnemonic" title="Real is inverted">
+For a single mirror or lens, real images are always inverted and virtual images are always upright. A diverging lens or convex mirror alone always produces a virtual, upright, reduced image.
+</Callout>
+
+## Sound and Waves
+
+| Equation | Variables & units | When to use |
+|---|---|---|
+| $v = f\lambda$ | $v$: wave speed (m/s) | Any wave; speed depends on the medium, not on frequency |
+| $T = \dfrac{1}{f}$; $\omega = 2\pi f$ | $T$: period (s); $\omega$: angular frequency (rad/s) | Period and frequency conversions |
+| $v = \sqrt{\dfrac{T}{\mu}}$ | $T$: string tension (N); $\mu$: linear mass density (kg/m) | Waves on a string |
+| $I = \dfrac{P}{A} = \dfrac{P}{4\pi r^2}$ | $I$: intensity (W/m²) | Intensity from a point source falls off as $1/r^2$ |
+| $\beta = 10\log\dfrac{I}{I_0}$ | $\beta$: sound level (dB); $I_0 = 10^{-12}\ \text{W/m}^2$ | Each +10 dB is a tenfold increase in intensity |
+| $f' = f\,\dfrac{v \pm v_o}{v \mp v_s}$ | $v$: speed of sound; $v_o$: observer speed; $v_s$: source speed | Doppler effect; use the **top** signs when the observer or source moves **toward** the other |
+| $f_\text{beat} = \lvert f_1 - f_2 \rvert$ | | Beats between two close frequencies |
+| $\lambda_n = \dfrac{2L}{n}$; $f_n = \dfrac{nv}{2L}$ ($n = 1, 2, 3, \ldots$) | $L$: length (m); $n$: harmonic number | Standing waves on a string fixed at both ends, or in a pipe open at both ends |
+| $\lambda_n = \dfrac{4L}{n}$; $f_n = \dfrac{nv}{4L}$ ($n = 1, 3, 5, \ldots$) | | Pipe closed at one end; odd harmonics only |
+| $T = 2\pi\sqrt{\dfrac{m}{k}}$ | | Period of a mass on a spring |
+| $T = 2\pi\sqrt{\dfrac{L}{g}}$ | $L$: pendulum length (m) | Period of a simple pendulum (small angles); independent of mass |
+
+## Thermodynamics
+
+| Equation | Variables & units | When to use |
+|---|---|---|
+| $\Delta U = Q - W$ | $\Delta U$: change in internal energy (J); $Q$: heat added to the system; $W$: work done **by** the system | First law (physics convention). Chemistry often writes $\Delta U = q + w$, with $w$ the work done **on** the system. |
+| $W = P\Delta V$ | $P$: pressure (Pa); $\Delta V$ (m³) | Work by a gas at constant pressure; on a P–V graph, work is the area under the curve |
+| $Q = mc\Delta T$ | $c$: specific heat (J/(kg·K) or J/(g·°C)); water: $c \approx 4.18\ \text{J/(g·°C)}$ | Heating without a phase change; calorimetry |
+| $Q = mL$ | $L$: latent heat (J/kg) | Phase changes; temperature is constant during the change |
+| $\Delta L = \alpha L_0 \Delta T$ | $\alpha$: coefficient of linear expansion (1/K) | Thermal expansion of solids |
+| $\Delta V = \beta V_0 \Delta T$ | $\beta$: coefficient of volume expansion (1/K) | Thermal expansion of liquids and solids |
+| $\Delta S = \dfrac{q_\text{rev}}{T}$ | $\Delta S$: entropy change (J/K) | Entropy change for a reversible process, such as melting at the melting point |
+| $\Delta G = \Delta H - T\Delta S$ | $\Delta G$: Gibbs free energy (J or kJ/mol); $T$ in K | Spontaneity: $\Delta G \lt 0$ is spontaneous |
+| $\Delta G^\circ = -RT\ln K$ | $K$: equilibrium constant | Linking free energy and equilibrium; $K \gt 1$ means $\Delta G^\circ \lt 0$ |
+| $\Delta G = \Delta G^\circ + RT\ln Q$ | $Q$: reaction quotient | Free energy under nonstandard conditions; zero at equilibrium |
+| $\Delta H^\circ_\text{rxn} = \Sigma \Delta H^\circ_f(\text{products}) - \Sigma \Delta H^\circ_f(\text{reactants})$ | $\Delta H^\circ_f$: standard enthalpy of formation (kJ/mol) | Hess's law with formation enthalpies; elements in standard state have $\Delta H^\circ_f = 0$ |
+| $\Delta H \approx \Sigma(\text{bonds broken}) - \Sigma(\text{bonds formed})$ | Bond dissociation enthalpies (kJ/mol) | Estimating reaction enthalpy from bond energies; note the reversed order compared with formation enthalpies |
+
+### Signs of ΔH and ΔS
+
+| $\Delta H$ | $\Delta S$ | Spontaneous? |
+|---|---|---|
+| Negative | Positive | At all temperatures |
+| Positive | Negative | At no temperature |
+| Negative | Negative | At low temperatures |
+| Positive | Positive | At high temperatures |
+
+## Chemistry: Gases
+
+| Equation | Variables & units | When to use |
+|---|---|---|
+| $PV = nRT$ | $P$ (atm or Pa); $V$ (L or m³); $n$ (mol); $T$ (K) | Ideal gas law; match units of $R$ to units of $P$ and $V$ |
+| $\dfrac{P_1V_1}{T_1} = \dfrac{P_2V_2}{T_2}$ | | Combined gas law, fixed amount of gas |
+| $P_1V_1 = P_2V_2$ | | Boyle's law (constant $n$, $T$); breathing mechanics |
+| $\dfrac{V_1}{T_1} = \dfrac{V_2}{T_2}$ | | Charles's law (constant $n$, $P$) |
+| $\dfrac{P_1}{T_1} = \dfrac{P_2}{T_2}$ | | Gay-Lussac's law (constant $n$, $V$) |
+| $\dfrac{V_1}{n_1} = \dfrac{V_2}{n_2}$ | | Avogadro's law (constant $P$, $T$) |
+| $P_\text{total} = P_1 + P_2 + \cdots$; $P_i = X_i P_\text{total}$ | $X_i$: mole fraction | Dalton's law of partial pressures, such as the partial pressure of $\ce{O2}$ in air |
+| $\dfrac{r_1}{r_2} = \sqrt{\dfrac{M_2}{M_1}}$ | $r$: effusion rate; $M$: molar mass (g/mol) | Graham's law; lighter gases effuse faster |
+| $KE_\text{avg} = \tfrac{3}{2}k_BT$ | | Average kinetic energy per molecule depends only on temperature |
+| $v_\text{rms} = \sqrt{\dfrac{3RT}{M}}$ | $M$: molar mass in **kg/mol** | Root-mean-square speed of gas molecules |
+| $C = k_H P$ | $C$: dissolved gas concentration; $k_H$: Henry's law constant; $P$: partial pressure of the gas | Gas solubility, such as $\ce{CO2}$ in soda or $\ce{N2}$ in divers' blood |
+| $\left(P + \dfrac{an^2}{V^2}\right)(V - nb) = nRT$ | $a$: intermolecular attraction; $b$: molecular volume | Real gases (van der Waals); deviations at high pressure and low temperature |
+
+## Chemistry: Solutions
+
+| Equation | Variables & units | When to use |
+|---|---|---|
+| $M = \dfrac{\text{mol solute}}{\text{L solution}}$ | $M$: molarity (mol/L) | Concentration for most calculations |
+| $m = \dfrac{\text{mol solute}}{\text{kg solvent}}$ | $m$: molality (mol/kg) | Colligative properties (temperature-independent) |
+| $X_A = \dfrac{n_A}{n_\text{total}}$ | $X$: mole fraction (unitless) | Raoult's law, partial pressures |
+| $M_1V_1 = M_2V_2$ | | Dilutions |
+| $\Delta T_b = iK_b m$ | $i$: van 't Hoff factor; $K_b$: ebullioscopic constant (°C·kg/mol) | Boiling point elevation |
+| $\Delta T_f = iK_f m$ | $K_f$: cryoscopic constant (°C·kg/mol) | Freezing point depression; road salt, antifreeze |
+| $\Pi = iMRT$ | $\Pi$: osmotic pressure (atm); $T$ in K | Osmosis across cell membranes; IV fluids and red blood cells |
+| $P_A = X_A P_A^\circ$ | $P_A^\circ$: vapor pressure of pure solvent | Raoult's law; a nonvolatile solute lowers vapor pressure |
+| For $\ce{A_xB_y(s) <=> xA + yB}$: $K_{sp} = [\text{A}]^x[\text{B}]^y$ | $K_{sp}$: solubility product | Solubility; precipitation occurs when $Q \gt K_{sp}$ |
+| $\%\ \text{by mass} = \dfrac{\text{mass solute}}{\text{mass solution}} \times 100\%$ | | Percent composition |
+
+<Callout type="note" title="The van 't Hoff factor">
+$i$ is the number of particles a solute produces when it dissolves: about 1 for glucose, 2 for $\ce{NaCl}$, 3 for $\ce{CaCl2}$. Colligative properties depend on the number of dissolved particles, not on their identity.
+</Callout>
+
+## Chemistry: Acids and Bases
+
+| Equation | Variables & units | When to use |
+|---|---|---|
+| $\text{pH} = -\log[\ce{H+}]$; $\text{pOH} = -\log[\ce{OH-}]$ | Concentrations in mol/L | Converting between concentration and pH |
+| $K_w = [\ce{H+}][\ce{OH-}] = 1.0 \times 10^{-14}$ | At 25 °C | Autoionization of water; $K_w$ increases with temperature |
+| $\text{pH} + \text{pOH} = 14$ | At 25 °C | Converting between pH and pOH |
+| $K_a = \dfrac{[\ce{H+}][\ce{A-}]}{[\ce{HA}]}$; $\text{p}K_a = -\log K_a$ | | Acid strength; a lower p$K_a$ means a stronger acid |
+| $K_a \times K_b = K_w$; $\text{p}K_a + \text{p}K_b = 14$ | For a conjugate acid–base pair at 25 °C | Relating an acid to its conjugate base |
+| $\text{pH} = \text{p}K_a + \log\dfrac{[\ce{A-}]}{[\ce{HA}]}$ | | Henderson–Hasselbalch; buffers, amino-acid charge, blood pH |
+| $[\ce{H+}] \approx \sqrt{K_a C}$ | $C$: initial acid concentration (M) | pH of a weak acid solution when ionization is small |
+| $n_\text{acid} = n_\text{base}$ at equivalence | For monoprotic acid and base: $M_aV_a = M_bV_b$ | Titrations |
+| $\text{pH} = \text{p}K_a$ at half-equivalence | | Reading p$K_a$ off a titration curve; buffering is strongest here |
+| $\text{pH} \approx b - \log a$ for $[\ce{H+}] = a \times 10^{-b}$ | | Estimating pH without a calculator; pH lies between $b - 1$ and $b$ |
+
+<Callout type="high-yield" title="Buffer ratio shortcut">
+Each tenfold change in $[\ce{A-}]/[\ce{HA}]$ shifts the pH by one unit. When pH is one unit above the p$K_a$, the ratio is 10:1; when it is two units below, the ratio is 1:100. A buffer works best within about one pH unit of its p$K_a$.
+</Callout>
+
+## Chemistry: Kinetics and Equilibrium
+
+| Equation | Variables & units | When to use |
+|---|---|---|
+| $\text{rate} = k[\text{A}]^m[\text{B}]^n$ | $k$: rate constant; $m$, $n$: orders, found **experimentally** | Rate laws; overall order is $m + n$ |
+| $[\text{A}] = [\text{A}]_0 - kt$ | | Zero-order integrated rate law; rate independent of concentration, as with a saturated enzyme |
+| $\ln[\text{A}] = \ln[\text{A}]_0 - kt$ | | First-order integrated rate law; radioactive decay, drug elimination |
+| $\dfrac{1}{[\text{A}]} = \dfrac{1}{[\text{A}]_0} + kt$ | | Second-order integrated rate law |
+| $t_{1/2} = \dfrac{\ln 2}{k} \approx \dfrac{0.693}{k}$ | | First-order half-life; independent of starting concentration |
+| $N = N_0\left(\tfrac{1}{2}\right)^{t/t_{1/2}}$ | $N$: amount remaining | Radioactive decay and first-order elimination after a whole number of half-lives |
+| $k = Ae^{-E_a/RT}$ | $A$: frequency factor; $E_a$: activation energy (J/mol) | Arrhenius equation; higher $T$ or lower $E_a$ gives larger $k$ |
+| For $a\text{A} + b\text{B} \rightleftharpoons c\text{C} + d\text{D}$: $K_{eq} = \dfrac{[\text{C}]^c[\text{D}]^d}{[\text{A}]^a[\text{B}]^b}$ | Exclude pure solids and pure liquids | Equilibrium constant; coefficients become exponents (unlike rate laws) |
+| $Q$ has the same form as $K$ | Using current, not equilibrium, concentrations | $Q \lt K$: reaction proceeds forward; $Q \gt K$: proceeds in reverse |
+| $K_p = K_c(RT)^{\Delta n}$ | $\Delta n$: moles of gaseous products minus gaseous reactants | Converting between pressure and concentration equilibrium constants |
+| $v_0 = \dfrac{V_\text{max}[\text{S}]}{K_m + [\text{S}]}$ | $V_\text{max}$: maximum velocity; $K_m$: substrate concentration at half $V_\text{max}$ | Michaelis–Menten enzyme kinetics |
+| $\dfrac{1}{v_0} = \dfrac{K_m}{V_\text{max}}\cdot\dfrac{1}{[\text{S}]} + \dfrac{1}{V_\text{max}}$ | y-intercept $1/V_\text{max}$; x-intercept $-1/K_m$; slope $K_m/V_\text{max}$ | Lineweaver–Burk plots; identifying inhibitor types |
+| $k_\text{cat} = \dfrac{V_\text{max}}{[\text{E}]_T}$ | $k_\text{cat}$: turnover number (s⁻¹); $[\text{E}]_T$: total enzyme | Turnover; catalytic efficiency is $k_\text{cat}/K_m$ |
+
+<Callout type="connection" title="Enzyme kinetics in depth" to="/bb/enzymes-and-kinetics">
+Michaelis–Menten and Lineweaver–Burk analysis, including how competitive, noncompetitive and uncompetitive inhibitors change $K_m$ and $V_\text{max}$, are covered in full in the enzymes chapter.
+</Callout>
+
+## Chemistry: Electrochemistry
+
+| Equation | Variables & units | When to use |
+|---|---|---|
+| $E^\circ_\text{cell} = E^\circ_\text{cathode} - E^\circ_\text{anode}$ | Standard **reduction** potentials (V) | Cell potential; positive for galvanic (spontaneous) cells |
+| $\Delta G^\circ = -nFE^\circ_\text{cell}$ | $n$: moles of electrons transferred; $F$: Faraday constant | Linking cell potential and spontaneity; $E^\circ \gt 0$ means $\Delta G^\circ \lt 0$ |
+| $E = E^\circ - \dfrac{RT}{nF}\ln Q$ | | Nernst equation, nonstandard conditions |
+| $E = E^\circ - \dfrac{0.0592\ \text{V}}{n}\log Q$ | At 25 °C | Nernst equation in base-10 form; concentration cells |
+| $E^\circ_\text{cell} = \dfrac{RT}{nF}\ln K$ | | Relating standard cell potential to the equilibrium constant |
+| $n_{e^-} = \dfrac{It}{F}$ | $I$: current (A); $t$: time (s) | Electrolysis: moles of electrons passed |
+| $m = \dfrac{ItM}{nF}$ | $M$: molar mass (g/mol); $n$: electrons per ion | Mass of metal deposited in electrolysis |
+| $E_\text{ion} = \dfrac{61.5\ \text{mV}}{z}\log\dfrac{[\text{ion}]_\text{out}}{[\text{ion}]_\text{in}}$ | $z$: ion charge; at 37 °C | Equilibrium (Nernst) potential of an ion across a cell membrane |
+
+| | Galvanic (voltaic) cell | Electrolytic cell |
+|---|---|---|
+| Spontaneous? | Yes ($\Delta G \lt 0$, $E_\text{cell} \gt 0$) | No ($\Delta G \gt 0$, $E_\text{cell} \lt 0$; needs external power) |
+| Anode | Oxidation; negative electrode | Oxidation; positive electrode |
+| Cathode | Reduction; positive electrode | Reduction; negative electrode |
+| Electron flow | Anode to cathode | Anode to cathode |
+
+<Callout type="mnemonic" title="An Ox, Red Cat">
+Oxidation happens at the **an**ode and reduction at the **cat**hode, in every kind of cell. Only the signs of the electrodes change between galvanic and electrolytic cells.
+</Callout>
+
+## Atomic and Nuclear
+
+| Equation | Variables & units | When to use |
+|---|---|---|
+| $E = mc^2$ | $m$: mass defect (kg) | Nuclear binding energy; energy released in fission and fusion |
+| $E_n = -\dfrac{13.6\ \text{eV}}{n^2}$ | $n$: principal quantum number | Energy levels of the hydrogen atom |
+| $\Delta E = hf = \dfrac{hc}{\lambda}$ | | Energy of a photon absorbed or emitted in an electron transition |
+| $\lambda = \dfrac{h}{mv}$ | $\lambda$: de Broglie wavelength (m) | Wave behavior of particles, such as electron microscopy |
+
+## Statistics and Research Methods
+
+| Equation | Variables & units | When to use |
+|---|---|---|
+| $\bar x = \dfrac{\Sigma x_i}{n}$ | $\bar x$: mean; $n$: sample size | Central tendency; the median is more robust to outliers and skew |
+| $s = \sqrt{\dfrac{\Sigma (x_i - \bar x)^2}{n - 1}}$ | $s$: sample standard deviation | Spread of data around the mean |
+| $z = \dfrac{x - \mu}{\sigma}$ | $\mu$: population mean; $\sigma$: population standard deviation | How many standard deviations a value lies from the mean |
+| 68%, 95%, 99.7% within 1, 2, 3 SD | | Normal distribution (empirical rule) |
+| $SE = \dfrac{s}{\sqrt n}$ | $SE$: standard error of the mean | Precision of a sample mean; quadrupling $n$ halves $SE$ |
+| $\bar x \pm 1.96\,SE$ | | Approximate 95% confidence interval for a mean |
+| $\text{power} = 1 - \beta$ | $\alpha$: probability of a Type I error (false positive), often 0.05; $\beta$: probability of a Type II error (false negative) | Study design; larger samples increase power |
+| $-1 \le r \le 1$; $r^2$ = proportion of variance explained | $r$: correlation coefficient | Strength and direction of a linear relationship; correlation is not causation |
+| $\text{sensitivity} = \dfrac{TP}{TP + FN}$ | $TP$, $FN$: true positives, false negatives | Ability of a test to detect disease; high sensitivity helps rule a disease **out** |
+| $\text{specificity} = \dfrac{TN}{TN + FP}$ | $TN$, $FP$: true negatives, false positives | Ability of a test to identify healthy people; high specificity helps rule a disease **in** |
+| $PPV = \dfrac{TP}{TP + FP}$; $NPV = \dfrac{TN}{TN + FN}$ | Positive and negative predictive value | Probability that a positive (or negative) result is correct; depends on prevalence |
+| $\text{prevalence} = \dfrac{\text{existing cases}}{\text{total population}}$ | At one point in time | Disease burden |
+| $\text{incidence} = \dfrac{\text{new cases}}{\text{population at risk}}$ | Over a period of time | Risk of developing a disease |
+| $RR = \dfrac{a/(a+b)}{c/(c+d)}$ | 2×2 table: $a$, $b$ = exposed with and without outcome; $c$, $d$ = unexposed with and without outcome | Relative risk in cohort studies |
+| $OR = \dfrac{a/b}{c/d} = \dfrac{ad}{bc}$ | Same 2×2 table | Odds ratio in case–control studies |
+| $p + q = 1$; $p^2 + 2pq + q^2 = 1$ | $p$, $q$: allele frequencies | Hardy–Weinberg equilibrium; $2pq$ is the carrier frequency |
+
+<Callout type="trap" title="A p-value is not the probability the hypothesis is true">
+A p-value is the probability of seeing results at least as extreme as those observed, assuming the null hypothesis is true. A p-value below α lets you reject the null hypothesis. It doesn't tell you the size or importance of an effect, and a nonsignificant result doesn't prove the null hypothesis.
+</Callout>

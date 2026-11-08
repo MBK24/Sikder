@@ -1,0 +1,538 @@
+---
+title: "Acids and Bases"
+summary: "Acid–base definitions, pH arithmetic without a calculator, what makes an acid strong, buffers and the Henderson–Hasselbalch equation, blood pH and its compensation, and how to read a titration curve."
+estReadMinutes: 26
+difficulty: core
+access: premium
+status: published
+aamc: ["5A", "5E"]
+---
+
+Blood pH is held between 7.35 and 7.45. Drift a few tenths outside that window and enzymes misfold, oxygen delivery falters and the heart's rhythm becomes unstable. The chemistry that keeps that number steady (weak acids, their conjugate bases, and the equilibria between them) is the subject of this chapter, and it is one of the most heavily tested topics in the Chemical and Physical Foundations section.
+
+We begin with what acids and bases are, move to the arithmetic of pH, and then ask why some acids are strong and others weak, a question whose answer explains the behavior of every ionizable amino acid side chain. The second half of the chapter is about control: buffers, the bicarbonate system that protects your blood, and titration curves, which show buffering in action. Every calculation here can be done without a calculator, and we show the shortcuts that make that possible.
+
+## Three Definitions of Acids and Bases
+
+Chemists use three definitions, each broader than the last. The MCAT expects you to switch among them depending on the question.
+
+### Arrhenius Acids and Bases
+
+An **Arrhenius acid** increases the concentration of $\ce{H+}$ in water, and an **Arrhenius base** increases the concentration of $\ce{OH-}$. Hydrochloric acid and sodium hydroxide fit neatly. The definition is limited to aqueous solutions, and it cannot explain why ammonia, which contains no hydroxide, makes water basic.
+
+In water, a bare proton never floats free. It attaches to a water molecule to form **hydronium**, $\ce{H3O+}$. Writing $\ce{H+}$ is a convenient shorthand, and the two notations mean the same thing in this chapter.
+
+### Brønsted–Lowry Acids and Bases
+
+A **Brønsted–Lowry acid** is a proton donor, and a **Brønsted–Lowry base** is a proton acceptor. This is the definition you will use most often. Ammonia now makes sense: it accepts a proton from water.
+
+$$
+\ce{NH3 + H2O <=> NH4+ + OH-}
+$$
+
+Every Brønsted–Lowry reaction involves two **conjugate acid–base pairs**, which differ by exactly one proton. When an acid donates its proton, what remains is its **conjugate base**; when a base accepts a proton, it becomes its **conjugate acid**. In the reaction above, $\ce{NH4+}$ is the conjugate acid of $\ce{NH3}$, and $\ce{OH-}$ is the conjugate base of $\ce{H2O}$.
+
+The strength of an acid and its conjugate base are inversely related. Hydrochloric acid gives up its proton completely, so chloride has essentially no tendency to take one back; it is a negligibly weak base. Acetic acid holds its proton more tightly, so acetate is a meaningful weak base. Acid–base equilibria always favor formation of the *weaker* acid and the *weaker* base.
+
+### Lewis Acids and Bases
+
+A **Lewis acid** is an electron-pair acceptor, and a **Lewis base** is an electron-pair donor. Every Brønsted–Lowry base is also a Lewis base, because accepting a proton means donating a lone pair to it. The Lewis definition goes further and covers reactions with no proton at all.
+
+The classic example is boron trifluoride, which has an empty orbital and accepts a lone pair from ammonia to form a coordinate covalent bond. In biology, Lewis acids are usually metal ions. $\ce{Mg^2+}$ coordinates the phosphate oxygens of ATP, $\ce{Fe^2+}$ in heme accepts electron pairs from nitrogen atoms and from $\ce{O2}$, and $\ce{Zn^2+}$ in many enzymes accepts electron density from water.
+
+### Amphoteric Species
+
+An **amphoteric** species can act as either an acid or a base. Those that do so by donating or accepting protons are also called amphiprotic. Water is the most important example: it accepts a proton from $\ce{HCl}$ and donates one to $\ce{NH3}$.
+
+Any intermediate form of a polyprotic acid is amphoteric too. Bicarbonate can accept a proton to become carbonic acid or donate one to become carbonate. Dihydrogen phosphate, $\ce{H2PO4-}$, sits between phosphoric acid and hydrogen phosphate. Amino acids are amphoteric because they carry both an acidic carboxyl group and a basic amino group. Some metal hydroxides, such as $\ce{Al(OH)3}$ and $\ce{Zn(OH)2}$, dissolve in both strong acid and strong base.
+
+<Callout type="trap" title="Lewis, not Brønsted">
+
+If a question describes a metal ion "activating" water or binding a substrate's lone pair, the metal is a **Lewis acid**. It is not a Brønsted–Lowry acid, because it has no proton to donate. Answer choices that call $\ce{Zn^2+}$ or $\ce{Mg^2+}$ a "proton donor" are wrong.
+
+</Callout>
+
+<Question id="cp-acids-01" />
+
+## The Autoionization of Water
+
+Even perfectly pure water contains a few ions, because water molecules occasionally transfer a proton to one another:
+
+$$
+\ce{H2O + H2O <=> H3O+ + OH-}
+$$
+
+The equilibrium constant for this reaction is the **ion product of water**, $K_w$. (Pure liquid water is left out of the expression, as pure liquids always are.)
+
+$$
+K_w = [\ce{H3O+}][\ce{OH-}] = 1.0 \times 10^{-14} \quad \text{at } 25\ ^\circ\text{C}
+$$
+
+In pure water at 25 °C, $[\ce{H3O+}] = [\ce{OH-}] = 1.0 \times 10^{-7}$ M. The product $K_w$ holds in *every* aqueous solution, not just pure water: add acid and $[\ce{OH-}]$ must fall to compensate.
+
+### Kw Depends on Temperature
+
+Like every equilibrium constant, $K_w$ changes with temperature. Autoionization breaks bonds and is **endothermic**, so by Le Châtelier's principle, heating pushes the equilibrium to the right and increases $K_w$. At body temperature (37 °C), $K_w$ is about $2.4 \times 10^{-14}$, and the pH of pure water is about 6.8.
+
+That water is still **neutral**. Neutral means $[\ce{H3O+}] = [\ce{OH-}]$, not "pH equals 7." The number 7 is just the neutral point at 25 °C.
+
+<Callout type="trap" title="Hot water is not acidic">
+
+A question may tell you that pure water at some higher temperature has a pH below 7 and ask whether it is acidic. It is not. Both ion concentrations rose by the same amount, so the solution is still neutral. Only the reference point moved.
+
+</Callout>
+
+## Calculating pH and pOH
+
+Because hydronium concentrations span many powers of ten, we measure them on a logarithmic scale:
+
+$$
+\text{pH} = -\log[\ce{H3O+}] \qquad \text{pOH} = -\log[\ce{OH-}]
+$$
+
+Taking the negative log of $K_w$ gives a relationship that holds at 25 °C:
+
+$$
+\text{pH} + \text{pOH} = 14
+$$
+
+Each unit of pH is a tenfold change in hydronium concentration. A solution at pH 3 has ten times the $[\ce{H3O+}]$ of one at pH 4 and a thousand times that of one at pH 6. At 25 °C, a pH below 7 is acidic and a pH above 7 is basic.
+
+### Log Tricks for Mental Math
+
+The MCAT gives you no calculator, so memorize three logarithms and one rule.
+
+| Number | log |
+|---|---|
+| 2 | 0.30 |
+| 3 | 0.48 |
+| 5 | 0.70 |
+
+**Rule:** if $[\ce{H3O+}] = a \times 10^{-b}$ with $a$ between 1 and 10, then $\text{pH} = b - \log a$. The pH always lands between $b - 1$ and $b$.
+
+**Worked example 1.** What is the pH of a solution with $[\ce{H3O+}] = 3.0 \times 10^{-4}$ M?
+
+$$
+\text{pH} = 4 - \log 3 = 4 - 0.48 = 3.52
+$$
+
+Sanity check: the concentration lies between $10^{-4}$ and $10^{-3}$, so the pH must lie between 3 and 4. It does.
+
+**Worked example 2.** Normal arterial blood has a pH of 7.40. What is its hydronium concentration?
+
+Reverse the rule. A pH of 7.40 is $8 - 0.60$, so $[\ce{H3O+}] = 10^{0.60} \times 10^{-8}$. Since $\log 4 = 2 \log 2 = 0.60$, $10^{0.60} = 4$:
+
+$$
+[\ce{H3O+}] = 4.0 \times 10^{-8}\ \text{M} = 40\ \text{nM}
+$$
+
+That is a remarkably small number. Blood's hydronium concentration is several million times lower than its sodium concentration, which is one reason it must be so carefully buffered.
+
+**Worked example 3.** What is the pH of 0.020 M $\ce{NaOH}$?
+
+Sodium hydroxide dissociates completely, so $[\ce{OH-}] = 2.0 \times 10^{-2}$ M and $\text{pOH} = 2 - 0.30 = 1.70$. Then $\text{pH} = 14 - 1.70 = 12.30$.
+
+### Dilution and the Water Floor
+
+Diluting a strong acid tenfold raises its pH by one unit. That rule fails as you approach neutrality, because water's own ions start to matter. A $1.0 \times 10^{-8}$ M solution of $\ce{HCl}$ does not have a pH of 8. Water already supplies about $10^{-7}$ M hydronium, and adding a little more acid can only lower the pH, to about 6.98. No amount of dilution turns an acid into a base.
+
+<Callout type="high-yield" title="Pick the pH range before you calculate">
+
+When answer choices are close together, bracket the answer first. For $[\ce{H3O+}] = 6 \times 10^{-5}$ M, the pH must be between 4 and 5, and closer to 4 because 6 is larger than 3.16 (the midpoint on a log scale). Bracketing often eliminates three choices without any further math.
+
+</Callout>
+
+<Question id="cp-acids-02" />
+
+## Strong and Weak Acids and Bases
+
+### Strong Acids and Bases
+
+A **strong acid** dissociates essentially completely in water, so $[\ce{H3O+}]$ equals the acid's initial concentration. The ones to know are hydrochloric ($\ce{HCl}$), hydrobromic ($\ce{HBr}$), hydroiodic ($\ce{HI}$), nitric ($\ce{HNO3}$), sulfuric ($\ce{H2SO4}$, first proton only) and perchloric ($\ce{HClO4}$).
+
+The common **strong bases** are the hydroxides of group 1 ($\ce{LiOH}$, $\ce{NaOH}$, $\ce{KOH}$) and the heavier group 2 hydroxides ($\ce{Ca(OH)2}$, $\ce{Sr(OH)2}$, $\ce{Ba(OH)2}$). Note that one mole of $\ce{Ca(OH)2}$ releases two moles of $\ce{OH-}$.
+
+### Weak Acids and Ka
+
+A **weak acid** dissociates only partly, and an equilibrium is established:
+
+$$
+\ce{HA + H2O <=> H3O+ + A-} \qquad K_a = \frac{[\ce{H3O+}][\ce{A-}]}{[\ce{HA}]}
+$$
+
+The **acid dissociation constant** $K_a$ measures how far the reaction proceeds. A larger $K_a$ means a stronger acid. Chemists usually report $\text{p}K_a = -\log K_a$, and a *smaller* $\text{p}K_a$ means a *stronger* acid. Each unit of $\text{p}K_a$ is a factor of ten in $K_a$.
+
+Because $K_a$ is an equilibrium constant, it connects to thermodynamics: $\Delta G^\circ = -RT \ln K_a = 2.303\,RT \cdot \text{p}K_a$. At 25 °C, each unit of $\text{p}K_a$ corresponds to about 5.7 kJ/mol of standard free energy. Any weak acid ($K_a$ less than 1, so a positive $\text{p}K_a$) therefore has a positive $\Delta G^\circ$ of dissociation: under standard conditions, dissociation is not favored.
+
+**Worked example.** What is the pH of 0.10 M acetic acid ($K_a = 1.8 \times 10^{-5}$)?
+
+Let $x = [\ce{H3O+}] = [\ce{A-}]$ at equilibrium. Then
+
+$$
+K_a = \frac{x^2}{0.10 - x} \approx \frac{x^2}{0.10}
+$$
+
+The approximation (dropping $x$ in the denominator) works when $x$ is less than about 5% of the starting concentration, which is almost always true for weak acids on the MCAT.
+
+$$
+x = \sqrt{(1.8 \times 10^{-5})(0.10)} = \sqrt{1.8 \times 10^{-6}} \approx 1.3 \times 10^{-3}\ \text{M}
+$$
+
+$$
+\text{pH} = 3 - \log 1.3 \approx 3 - 0.11 = 2.89
+$$
+
+(Carrying more digits gives 2.87; either rounds to 2.9.) Only about 1.3% of the acetic acid molecules are ionized. The general shortcut is $[\ce{H3O+}] \approx \sqrt{K_a C}$, or equivalently $\text{pH} \approx \tfrac{1}{2}(\text{p}K_a - \log C)$.
+
+### Weak Bases and Kb
+
+Weak bases accept protons from water, with a **base dissociation constant** $K_b$:
+
+$$
+\ce{B + H2O <=> BH+ + OH-} \qquad K_b = \frac{[\ce{BH+}][\ce{OH-}]}{[\ce{B}]}
+$$
+
+Ammonia ($K_b = 1.8 \times 10^{-5}$) and amines are the typical examples. The same square-root shortcut gives $[\ce{OH-}]$, from which you find pOH and then pH. For 0.10 M ammonia, $[\ce{OH-}] \approx 1.3 \times 10^{-3}$ M, so the pOH is about 2.9 and the pH about 11.1.
+
+### Ka × Kb = Kw
+
+For any conjugate pair, multiplying the two equilibrium constants cancels everything except water's ions:
+
+$$
+K_a \times K_b = K_w \qquad \text{p}K_a + \text{p}K_b = 14 \quad (\text{at } 25\ ^\circ\text{C})
+$$
+
+This is the quantitative form of "strong acid, weak conjugate base." Acetic acid has $\text{p}K_a = 4.74$, so acetate has $\text{p}K_b = 9.26$. Ammonia has $\text{p}K_b = 4.74$, so ammonium has $\text{p}K_a = 9.26$.
+
+<Callout type="mnemonic" title="Small pKa, strong acid">
+
+Think of $\text{p}K_a$ as a "proton grip" score: the lower the number, the weaker the grip, and the more readily the acid lets go. Strong acids have negative $\text{p}K_a$ values. Carboxylic acids sit around 4 to 5, ammonium ions around 9 to 10, and alcohols around 16.
+
+</Callout>
+
+## What Makes an Acid Strong
+
+An acid's strength depends on two things: how easily the $\ce{H-A}$ bond breaks, and how stable the conjugate base $\ce{A-}$ is once it has the electrons. Most questions turn on the second factor. **Anything that stabilizes the negative charge on the conjugate base makes the acid stronger.**
+
+### Bond Strength and Atom Size
+
+Down a group, size dominates. The hydrogen halides become stronger acids as you go down: HF ($\text{p}K_a \approx 3.2$) is weak, while HCl, HBr and HI are all strong. Larger atoms form longer, weaker bonds to hydrogen, and they spread the negative charge of the anion over a larger volume. This is why HF is weak *despite* fluorine being the most electronegative element.
+
+### Electronegativity
+
+Across a period, where atoms are similar in size, electronegativity dominates. A more electronegative atom holds a negative charge more comfortably, so acidity increases from left to right:
+
+$$
+\ce{CH4} \lt \ce{NH3} \lt \ce{H2O} \lt \ce{HF}
+$$
+
+Methane ($\text{p}K_a \approx 50$) is not acidic in any practical sense, while HF is a weak but real acid.
+
+### Resonance
+
+A conjugate base that can spread its charge over several atoms by resonance is more stable. Compare three compounds with an O–H bond:
+
+| Compound | $\text{p}K_a$ | Charge on the conjugate base |
+|---|---|---|
+| Ethanol | about 16 | Localized on one oxygen |
+| Phenol | about 10 | Delocalized into the aromatic ring |
+| Acetic acid | 4.74 | Shared equally between two oxygens |
+
+The carboxylate ion's two equivalent resonance structures make carboxylic acids about a hundred billion times more acidic than ordinary alcohols.
+
+### Induction
+
+Electronegative atoms near the acidic group pull electron density through the sigma bonds, stabilizing the conjugate base. The effect adds up with more substituents and fades with distance.
+
+| Acid | $\text{p}K_a$ |
+|---|---|
+| Acetic acid, $\ce{CH3COOH}$ | 4.74 |
+| Chloroacetic acid, $\ce{ClCH2COOH}$ | 2.9 |
+| Dichloroacetic acid, $\ce{Cl2CHCOOH}$ | 1.3 |
+| Trichloroacetic acid, $\ce{Cl3CCOOH}$ | 0.7 |
+
+The same idea explains oxyacids. Among the chlorine oxyacids, each added oxygen withdraws more electron density and offers more resonance to the anion: hypochlorous acid, HClO, has a $\text{p}K_a$ of about 7.5, while chloric ($\ce{HClO3}$) and perchloric ($\ce{HClO4}$) acids are strong.
+
+### Ionizable Amino Acid Side Chains
+
+These principles explain the $\text{p}K_a$ values of amino acid side chains, the numbers that decide which residues carry charge in a protein.
+
+| Group | Approximate $\text{p}K_a$ | Charged form |
+|---|---|---|
+| α-carboxyl | 2 | $\ce{R-COO-}$ |
+| Aspartate side chain | 3.9 | $\ce{R-COO-}$ |
+| Glutamate side chain | 4.1 | $\ce{R-COO-}$ |
+| Histidine imidazole | 6.0 | Protonated ring (+) |
+| Cysteine thiol | 8.3 | $\ce{R-S-}$ |
+| α-amino | 9 to 10 | $\ce{R-NH3+}$ |
+| Tyrosine phenol | 10.1 | $\ce{R-O-}$ |
+| Lysine amine | 10.5 | $\ce{R-NH3+}$ |
+| Arginine guanidinium | 12.5 | Protonated (+) |
+
+Exact values vary a little between sources and shift by several units inside proteins. Each one follows from the factors above. Aspartate and glutamate are carboxylic acids, stabilized by resonance. Tyrosine is a phenol. Arginine's guanidinium ion is a very weak acid because its positive charge is spread by resonance over three nitrogens, which makes the protonated form unusually stable. Cysteine's thiol is more acidic than serine's alcohol (about 13) because sulfur is larger than oxygen, the same size effect that makes HCl stronger than HF.
+
+<Callout type="connection" title="Side chains and the pH of a protein's world" to="/bb/amino-acids-and-proteins">
+
+At pH 7.4, aspartate and glutamate are negatively charged, lysine and arginine are positively charged, and histidine, with a $\text{p}K_a$ near 6, is the residue that can switch between states near physiological pH. That is why histidine so often shuttles protons in enzyme active sites, and why the local environment, which can raise or lower a side chain's $\text{p}K_a$, matters so much to catalysis. Charge states, isoelectric points and their role in protein structure are developed in the B/B chapter on amino acids.
+
+</Callout>
+
+<Question id="cp-acids-03" />
+
+## Polyprotic Acids and Salts
+
+### Polyprotic Acids
+
+A **polyprotic acid** can donate more than one proton, and it does so one step at a time, each with its own $K_a$. Phosphoric acid has three:
+
+$$
+\ce{H3PO4 <=> H+ + H2PO4-} \quad \text{p}K_{a1} = 2.15
+$$
+
+$$
+\ce{H2PO4- <=> H+ + HPO4^2-} \quad \text{p}K_{a2} = 7.20
+$$
+
+$$
+\ce{HPO4^2- <=> H+ + PO4^3-} \quad \text{p}K_{a3} = 12.35
+$$
+
+Each successive proton is harder to remove, because it must leave a species that is already negatively charged. The constants typically differ by several powers of ten, so at any pH only one or two forms are present in significant amounts. Near pH 7.4 the dominant forms are $\ce{H2PO4-}$ and $\ce{HPO4^2-}$, which is why phosphate is the main buffer inside cells.
+
+Carbonic acid is diprotic, with $\text{p}K_{a1} \approx 6.4$ and $\text{p}K_{a2} \approx 10.3$. (In plasma at 37 °C, the apparent first $\text{p}K_a$ used for the blood buffer is 6.1, as we will see.) Sulfuric acid is strong for its first proton, but the second dissociation ($\ce{HSO4-}$, $\text{p}K_a \approx 2$) is weak.
+
+### Salts and Hydrolysis
+
+A **salt** forms when an acid and a base neutralize each other. Whether a salt solution is acidic, basic or neutral depends on whether its ions react with water, a process called **hydrolysis**.
+
+| Salt is made from | Example | Ion that hydrolyzes | Solution |
+|---|---|---|---|
+| Strong acid + strong base | $\ce{NaCl}$, $\ce{KNO3}$ | Neither | Neutral |
+| Strong acid + weak base | $\ce{NH4Cl}$ | $\ce{NH4+}$ donates a proton | Acidic |
+| Weak acid + strong base | $\ce{CH3COONa}$ | $\ce{CH3COO-}$ accepts a proton | Basic |
+| Weak acid + weak base | $\ce{CH3COONH4}$ | Both | Compare $K_a$ with $K_b$ |
+
+The conjugate base of a strong acid ($\ce{Cl-}$, $\ce{NO3-}$) and the cation of a strong base ($\ce{Na+}$, $\ce{K+}$) are spectators. Small, highly charged metal ions such as $\ce{Fe^3+}$ and $\ce{Al^3+}$ make water acidic: they pull electron density from the water molecules bound to them, so those waters release protons more easily.
+
+**Worked example.** What is the pH of 0.10 M sodium acetate? (Acetic acid $K_a = 1.8 \times 10^{-5}$.)
+
+Acetate is a weak base. Its $K_b$ is
+
+$$
+K_b = \frac{K_w}{K_a} = \frac{1.0 \times 10^{-14}}{1.8 \times 10^{-5}} \approx 5.6 \times 10^{-10}
+$$
+
+$$
+[\ce{OH-}] \approx \sqrt{(5.6 \times 10^{-10})(0.10)} = \sqrt{5.6 \times 10^{-11}} \approx 7.5 \times 10^{-6}\ \text{M}
+$$
+
+So $\text{pOH} \approx 6 - \log 7.5 \approx 5.13$, and $\text{pH} \approx 8.87$. A solution containing only the conjugate base of a weak acid is mildly basic, a fact that reappears at the equivalence point of a titration.
+
+<Callout type="high-yield" title="Predicting salt pH in one step">
+
+Ask which parent was weak. A weak parent leaves behind an ion that reacts with water, and that ion sets the pH: the conjugate of a weak base makes the solution acidic, and the conjugate of a weak acid makes it basic. If both parents were strong, the solution is neutral.
+
+</Callout>
+
+## Buffers and the Henderson–Hasselbalch Equation
+
+A **buffer** resists changes in pH when small amounts of acid or base are added. It contains a weak acid and its conjugate base in comparable amounts. Each partner neutralizes one kind of threat:
+
+$$
+\ce{A- + H3O+ -> HA + H2O} \qquad \ce{HA + OH- -> A- + H2O}
+$$
+
+Added strong acid is converted into the weak acid, and added strong base is converted into the weak conjugate base. The pH changes only slightly, because the ratio of $\ce{A-}$ to $\ce{HA}$ changes only slightly.
+
+### The Equation
+
+Rearranging the $K_a$ expression and taking the negative log of both sides gives the **Henderson–Hasselbalch equation**:
+
+$$
+\text{pH} = \text{p}K_a + \log\frac{[\ce{A-}]}{[\ce{HA}]}
+$$
+
+Three consequences are worth memorizing.
+
+- When $[\ce{A-}] = [\ce{HA}]$, the log term is zero and $\text{pH} = \text{p}K_a$.
+- Each tenfold change in the ratio shifts the pH by one unit. A ratio of 10 gives $\text{pH} = \text{p}K_a + 1$; a ratio of 0.1 gives $\text{p}K_a - 1$.
+- If the pH is below the $\text{p}K_a$, the protonated form dominates; if it is above, the deprotonated form dominates.
+
+A buffer works best within about one pH unit of its $\text{p}K_a$, where both partners are present in meaningful amounts. Its **buffer capacity**, the amount of acid or base it can absorb, depends on the absolute concentrations: a buffer with 1.0 M of each partner absorbs ten times as much as one with 0.10 M of each, even though both have the same pH.
+
+### Worked Examples
+
+**Worked example 1: pH of a buffer.** A solution contains 0.20 M acetic acid and 0.10 M sodium acetate. What is its pH?
+
+$$
+\text{pH} = 4.74 + \log\frac{0.10}{0.20} = 4.74 + \log 0.5 = 4.74 - 0.30 = 4.44
+$$
+
+**Worked example 2: designing a buffer.** You need an acetate buffer at pH 5.04. What ratio of acetate to acetic acid should you use?
+
+$$
+\log\frac{[\ce{A-}]}{[\ce{HA}]} = 5.04 - 4.74 = 0.30 \quad\Rightarrow\quad \frac{[\ce{A-}]}{[\ce{HA}]} = 10^{0.30} = 2
+$$
+
+Two parts acetate to one part acetic acid.
+
+**Worked example 3: adding strong acid.** One liter of buffer contains 0.10 mol acetic acid and 0.10 mol acetate (pH 4.74). What is the pH after 0.010 mol of $\ce{HCl}$ is added?
+
+The strong acid reacts completely with acetate: acetate falls to 0.09 mol and acetic acid rises to 0.11 mol. Because both are in the same volume, you can use moles directly in the ratio.
+
+$$
+\text{pH} = 4.74 + \log\frac{0.09}{0.11} \approx 4.74 + \log 0.82 \approx 4.74 - 0.09 = 4.65
+$$
+
+The pH dropped by only 0.09. The same 0.010 mol of $\ce{HCl}$ in a liter of pure water would give $[\ce{H3O+}] = 0.010$ M and a pH of 2.00, a drop of five units.
+
+<Callout type="trap" title="Use the ratio after the reaction">
+
+When strong acid or base is added to a buffer, first let it react completely, then plug the *new* amounts into Henderson–Hasselbalch. Students who add the strong acid to the numerator, or who forget to change both partners, get the direction right but the number wrong.
+
+</Callout>
+
+## The Bicarbonate Buffer and Blood pH
+
+The most important buffer in your blood connects three equilibria, linking dissolved carbon dioxide to hydronium:
+
+$$
+\ce{CO2(g) <=> CO2(aq) + H2O <=> H2CO3 <=> H+ + HCO3-}
+$$
+
+Carbonic anhydrase in red blood cells speeds the hydration of $\ce{CO2}$ to carbonic acid by a factor of millions. Because carbonic acid is present only in tiny amounts and is in rapid equilibrium with dissolved $\ce{CO2}$, physiologists fold the two together and write the Henderson–Hasselbalch equation in terms of the partial pressure of carbon dioxide:
+
+$$
+\text{pH} = 6.1 + \log\frac{[\ce{HCO3-}]}{0.03 \times P_{\ce{CO2}}}
+$$
+
+Here 6.1 is the apparent $\text{p}K_a$ at body temperature, $[\ce{HCO3-}]$ is in mM, $P_{\ce{CO2}}$ is in mmHg, and 0.03 mM/mmHg is the solubility of $\ce{CO2}$ in plasma.
+
+**Worked example: normal blood.** Normal arterial blood has $[\ce{HCO3-}] = 24$ mM and $P_{\ce{CO2}} = 40$ mmHg.
+
+$$
+\text{pH} = 6.1 + \log\frac{24}{0.03 \times 40} = 6.1 + \log\frac{24}{1.2} = 6.1 + \log 20 = 6.1 + 1.30 = 7.40
+$$
+
+The ratio of bicarbonate to dissolved $\ce{CO2}$ is 20 to 1. Memorize that ratio: it is the whole story of blood pH.
+
+### Why a pKa of 6.1 Works at pH 7.4
+
+By the rule of thumb, a buffer with a $\text{p}K_a$ of 6.1 should be poor at pH 7.4. It works because blood is an **open system**. The acid half of the pair, $\ce{CO2}$, is controlled by the lungs, which can change ventilation within minutes. The base half, $\ce{HCO3-}$, is controlled by the kidneys, which reabsorb or excrete bicarbonate and secrete $\ce{H+}$ over hours to days. Neither partner is stuck in a closed flask, so the body can reset the ratio whenever it drifts.
+
+### Acid–Base Disorders and Compensation
+
+Normal arterial values are pH 7.35 to 7.45, $P_{\ce{CO2}}$ 35 to 45 mmHg, and $[\ce{HCO3-}]$ 22 to 26 mM. A pH below 7.35 is **acidemia** and above 7.45 is **alkalemia**. Disorders are named for their cause: **respiratory** disorders start with a change in $P_{\ce{CO2}}$, and **metabolic** disorders start with a change in $[\ce{HCO3-}]$.
+
+| Disorder | Primary change | Typical causes | Compensation |
+|---|---|---|---|
+| Respiratory acidosis | $P_{\ce{CO2}}$ rises | Hypoventilation: COPD, opioid overdose | Kidneys retain $\ce{HCO3-}$ (days) |
+| Respiratory alkalosis | $P_{\ce{CO2}}$ falls | Hyperventilation: anxiety, high altitude | Kidneys excrete $\ce{HCO3-}$ (days) |
+| Metabolic acidosis | $[\ce{HCO3-}]$ falls | Diabetic ketoacidosis, lactic acidosis, severe diarrhea | Hyperventilation lowers $P_{\ce{CO2}}$ (minutes to hours) |
+| Metabolic alkalosis | $[\ce{HCO3-}]$ rises | Prolonged vomiting, excess antacid | Hypoventilation raises $P_{\ce{CO2}}$ |
+
+Compensation always pushes the *other* variable in the *same* direction as the primary change, so that the ratio moves back toward 20. It brings the pH toward normal but does not usually restore it completely, and it never overshoots.
+
+**Worked example: diabetic ketoacidosis.** A patient with untreated type 1 diabetes has $[\ce{HCO3-}] = 12$ mM and is breathing deeply and rapidly, with $P_{\ce{CO2}} = 25$ mmHg. What is the arterial pH, and what would it be without the respiratory response?
+
+$$
+\text{pH} = 6.1 + \log\frac{12}{0.03 \times 25} = 6.1 + \log\frac{12}{0.75} = 6.1 + \log 16 = 6.1 + 1.20 = 7.30
+$$
+
+Ketoacids consumed bicarbonate, a metabolic acidosis. The deep, rapid breathing (called Kussmaul respirations) blew off $\ce{CO2}$ as partial compensation. Without it, at a normal $P_{\ce{CO2}}$ of 40 mmHg, the ratio would be $12 / 1.2 = 10$ and the pH would be $6.1 + 1.0 = 7.10$, far more dangerous.
+
+**Worked example: acute hypoventilation.** After an opioid overdose, a patient's $P_{\ce{CO2}}$ rises to 60 mmHg before the kidneys have had time to respond ($[\ce{HCO3-}]$ still 24 mM).
+
+$$
+\text{pH} = 6.1 + \log\frac{24}{1.8} = 6.1 + \log 13.3 \approx 6.1 + 1.12 = 7.22
+$$
+
+This is an acute respiratory acidosis. Over the next several days, the kidneys would raise plasma bicarbonate to bring the pH back toward normal.
+
+<Callout type="connection" title="Le Châtelier at the alveolus">
+
+The bicarbonate system is the cleanest example of Le Châtelier's principle in physiology. In the tissues, $\ce{CO2}$ produced by metabolism pushes the equilibrium toward $\ce{H+}$ and $\ce{HCO3-}$; the extra $\ce{H+}$ also lowers hemoglobin's affinity for oxygen (the Bohr effect), helping to unload $\ce{O2}$ where it is needed. In the lungs, exhaling $\ce{CO2}$ pulls the equilibrium the other way. The same reasoning about shifting equilibria returns in the upcoming chapter on kinetics and equilibrium.
+
+</Callout>
+
+<Question id="cp-acids-04" />
+
+## Titration Curves
+
+In a **titration**, a solution of known concentration (the titrant) is added gradually to an unknown until the reaction between them is complete. Plotting pH against volume of titrant added gives a **titration curve**, whose shape reveals the strength and number of acidic protons in the sample.
+
+Two points on every curve deserve names. The **equivalence point** is where moles of added base exactly equal moles of acidic protons originally present. The **end point** is where an indicator changes color; a well-chosen indicator makes the two nearly coincide. At equivalence,
+
+$$
+n_{\text{acid}} \times (\text{protons per acid}) = n_{\text{base}} \times (\text{OH}^- \text{ per base})
+$$
+
+For a monoprotic acid and NaOH, that is simply $M_a V_a = M_b V_b$.
+
+### Strong Acid with Strong Base
+
+Titrate 25.0 mL of 0.100 M $\ce{HCl}$ with 0.100 M $\ce{NaOH}$. The curve starts at pH 1.00 and rises slowly, because each addition removes only a small fraction of a large supply of $\ce{H3O+}$. Near 25.0 mL the curve shoots almost vertically through several pH units. At the equivalence point the solution contains only $\ce{NaCl}$ and water, so **the pH is 7.00**. Beyond it, excess hydroxide pushes the pH toward 13.
+
+### Weak Acid with Strong Base
+
+Titrate 25.0 mL of 0.100 M acetic acid with 0.100 M $\ce{NaOH}$. Four regions tell the story.
+
+1. **Start.** Only weak acid is present, so the pH is about 2.9, higher than for a strong acid at the same concentration.
+2. **Buffer region.** Each addition of base converts some $\ce{HA}$ to $\ce{A-}$, and the mixture is a buffer. The curve is flat here.
+3. **Half-equivalence point** (12.5 mL). Exactly half of the acid has been converted, so $[\ce{HA}] = [\ce{A-}]$ and by Henderson–Hasselbalch, $\text{pH} = \text{p}K_a = 4.74$. This is the point of maximum buffering, where the curve is flattest, and it is how $\text{p}K_a$ values are measured experimentally.
+4. **Equivalence point** (25.0 mL). All of the acid has become acetate, now at $0.00250\ \text{mol} / 0.0500\ \text{L} = 0.0500$ M. Acetate is a weak base, so
+
+$$
+[\ce{OH-}] = \sqrt{(5.6 \times 10^{-10})(0.050)} \approx 5.3 \times 10^{-6}\ \text{M}, \quad \text{pOH} \approx 5.28, \quad \text{pH} \approx 8.72
+$$
+
+**For a weak acid titrated with a strong base, the equivalence point is above pH 7.** The steep jump is also shorter than in a strong–strong titration, because the curve starts higher.
+
+### Weak Base with Strong Acid
+
+The mirror-image case gives a curve that falls from basic to acidic. Titrating ammonia with $\ce{HCl}$, the half-equivalence point has $\text{pH} = \text{p}K_a$ of ammonium (9.26), and at equivalence the solution contains ammonium chloride, so **the equivalence point is below pH 7** (about 5.3 at typical concentrations).
+
+| Titration | Equivalence point pH | Why |
+|---|---|---|
+| Strong acid + strong base | 7 | Only spectator ions remain |
+| Weak acid + strong base | Above 7 | Conjugate base hydrolyzes |
+| Weak base + strong acid | Below 7 | Conjugate acid hydrolyzes |
+
+### Polyprotic Acids and Amino Acids
+
+A polyprotic acid shows one buffer region and one equivalence point for each proton whose $\text{p}K_a$ values are well separated. Titrating 25.0 mL of 0.100 M $\ce{H3PO4}$ with 0.100 M NaOH gives a first equivalence point at 25.0 mL and a second at 50.0 mL, with half-equivalence plateaus at pH 2.15 and 7.20. (The third proton, with a $\text{p}K_a$ of 12.35, is so weakly acidic that its equivalence point is barely visible in water.)
+
+Amino acids titrate the same way. Glycine, fully protonated at low pH, has two ionizable groups: the carboxyl ($\text{p}K_a \approx 2.3$) and the amino group ($\text{p}K_a \approx 9.6$). Halfway between them, at the first equivalence point, glycine exists almost entirely as the neutral zwitterion. That pH is the **isoelectric point**:
+
+$$
+\text{pI} = \frac{\text{p}K_{a1} + \text{p}K_{a2}}{2} = \frac{2.3 + 9.6}{2} \approx 6.0
+$$
+
+### Choosing an Indicator
+
+An **indicator** is itself a weak acid whose protonated and deprotonated forms have different colors:
+
+$$
+\ce{HIn <=> H+ + In-}
+$$
+
+It changes color over roughly $\text{p}K_{\text{In}} \pm 1$. Choose an indicator whose color change brackets the expected equivalence point.
+
+| Indicator | Approximate transition range | Good for |
+|---|---|---|
+| Methyl orange | pH 3.1 to 4.4 | Weak base with strong acid |
+| Methyl red | pH 4.4 to 6.2 | Weak base with strong acid |
+| Bromothymol blue | pH 6.0 to 7.6 | Strong acid with strong base |
+| Phenolphthalein | pH 8.2 to 10.0 (colorless to pink) | Weak acid with strong base |
+
+Because the vertical region of a strong–strong titration is so tall, almost any of these indicators works for it in practice.
+
+<Callout type="high-yield" title="Two points to locate on any curve">
+
+- **Half-equivalence point:** $\text{pH} = \text{p}K_a$. Read the $\text{p}K_a$ straight off the flattest part of the curve.
+- **Equivalence point:** the midpoint of the steepest rise. Its pH is 7 only for strong–strong titrations; above 7 for a weak acid, below 7 for a weak base.
+- Count equivalence points to count acidic protons. Equal volumes between successive equivalence points confirm a polyprotic acid.
+
+</Callout>
+
+<Question id="cp-acids-05" />

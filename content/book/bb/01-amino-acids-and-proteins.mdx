@@ -1,0 +1,368 @@
+---
+title: "Amino Acids and Proteins"
+summary: "How twenty small molecules, joined by a single kind of bond, fold into the working machinery of the cell: side-chain chemistry, charge and pI, the peptide bond, the four levels of structure, folding, and denaturation."
+estReadMinutes: 26
+difficulty: core
+access: free
+status: published
+aamc: ["1A", "5D"]
+---
+
+Almost everything a cell does, it does with proteins. Enzymes, ion channels, antibodies and the fibers that hold tendon together are all built from the same twenty building blocks, joined end to end by the same kind of covalent bond. What makes one protein a digestive enzyme and another a collagen fiber is the order of those building blocks and the three-dimensional shape that order forces the chain to adopt.
+
+This chapter starts with a single amino acid and works upward: its stereochemistry, its side chain, and how its charge changes with pH. Then we join amino acids into peptides, fold the peptides into proteins, and take the proteins apart again through denaturation. The MCAT tests this material both as recall (which residue forms disulfide bonds?) and as reasoning about an unfamiliar protein in a passage (why does this mutation disrupt it?). Both rest on the foundation built here.
+
+## Amino Acid Structure and Stereochemistry
+
+### The Alpha Carbon
+
+Every standard amino acid shares one core. A central carbon, the **alpha (α) carbon**, is bonded to an amino group, a carboxyl group, a hydrogen atom and a variable **side chain**, written R. The carbon adjacent to a carbonyl is called the α carbon, and because the amino group sits on it, these molecules are α-amino acids.
+
+The side chain is the only part that differs among the twenty, so it determines everything distinctive about a residue: size, polarity, charge and reactivity. When amino acids link into a chain, the amino and carboxyl groups are used up in peptide bonds and the side chains project from a repeating backbone. A protein's chemistry is therefore mostly the chemistry of its side chains.
+
+Proline bends the template. Its side chain loops back and bonds to the α-amino nitrogen, forming a five-membered ring, so proline's nitrogen is a secondary amine. That quirk explains most of proline's unusual behavior in proteins.
+
+### L and D Configurations
+
+Because the α carbon carries four different groups, it is a chiral center in nineteen of the twenty amino acids. The exception is **glycine**, whose side chain is a second hydrogen, so glycine is achiral. Threonine and isoleucine each have a second stereocenter in their side chains.
+
+Biochemists describe amino acid stereochemistry with the D/L system, which relates each molecule to glyceraldehyde. Draw a Fischer projection with the carboxyl group at the top and the side chain at the bottom. If the amino group points left, the amino acid is L; if it points right, it is D. Ribosomes in every known organism use L amino acids exclusively. For a three-dimensional drawing, use the "CORN" rule: with the α hydrogen pointing toward you, if **CO**OH, **R** and **N**H₂ read clockwise, the amino acid is L.
+
+D amino acids do occur in biology, mostly outside ribosomal synthesis. Bacteria build D-alanine and D-glutamate into the peptidoglycan of their cell walls, which helps those walls resist proteases that evolved to cut L chains.
+
+The MCAT also expects you to translate between D/L and the Cahn–Ingold–Prelog R/S system. For most amino acids, priorities around the α carbon run amino nitrogen, then carboxyl carbon, then side-chain carbon, then hydrogen, and every chiral L amino acid works out to **S**, with one exception. In **cysteine**, the side chain $\ce{-CH2SH}$ attaches through a carbon bearing sulfur. Comparing the carboxyl carbon (attached to O, O, O) with the side-chain carbon (attached to S, H, H), sulfur's higher atomic number wins at the first point of difference. The priority order flips, and L-cysteine is **R**, even though its atoms are arranged in space exactly like every other L amino acid.
+
+<Callout type="trap" title="Three naming systems that don't agree">
+
+D/L compares an arrangement to glyceraldehyde. R/S comes from CIP priority rules. (+)/(−) is the measured direction a solution rotates plane-polarized light. None predicts the others: some L amino acids are dextrorotatory and some levorotatory, and L-cysteine is R while the other chiral L amino acids are S. Eliminate any choice claiming that "L amino acids rotate light to the left."
+
+</Callout>
+
+<Question id="bb-aminos-01" />
+
+## The Twenty Side Chains
+
+You need to recognize all twenty amino acids by name, three-letter code and one-letter code, and to know each side chain's class. The practical skill is looking at a residue and predicting whether it will sit in a protein's hydrophobic core, on its watery surface, or in a salt bridge. The standard scheme has five groups, based on behavior in water at physiological pH (about 7.4).
+
+| Amino acid | 3-letter | 1-letter | Class | What to remember |
+|---|---|---|---|---|
+| Glycine | Gly | G | Nonpolar | H as side chain; achiral; most flexible |
+| Alanine | Ala | A | Nonpolar | Methyl side chain |
+| Valine | Val | V | Nonpolar | Branched |
+| Leucine | Leu | L | Nonpolar | Branched |
+| Isoleucine | Ile | I | Nonpolar | Branched; second stereocenter |
+| Proline | Pro | P | Nonpolar | Ring to backbone N; breaks helices |
+| Methionine | Met | M | Nonpolar | Thioether; first residue (AUG start codon) |
+| Phenylalanine | Phe | F | Aromatic | Benzyl ring; very hydrophobic |
+| Tyrosine | Tyr | Y | Aromatic | Phenol OH; can be phosphorylated |
+| Tryptophan | Trp | W | Aromatic | Indole double ring; largest side chain |
+| Serine | Ser | S | Polar uncharged | OH; phosphorylation; protease nucleophile |
+| Threonine | Thr | T | Polar uncharged | OH; second stereocenter |
+| Cysteine | Cys | C | Polar uncharged | Thiol; forms disulfide bonds |
+| Asparagine | Asn | N | Polar uncharged | Amide; N-linked glycosylation site |
+| Glutamine | Gln | Q | Polar uncharged | Amide; carries nitrogen in blood |
+| Aspartate | Asp | D | Acidic | Carboxylate; negative at pH 7.4 |
+| Glutamate | Glu | E | Acidic | Carboxylate; negative; neurotransmitter |
+| Lysine | Lys | K | Basic | Primary amine; positive at pH 7.4 |
+| Arginine | Arg | R | Basic | Guanidinium; most basic side chain |
+| Histidine | His | H | Basic | Imidazole, pKa near 6; buffers and catalyzes |
+
+### Nonpolar and Aromatic Side Chains
+
+Glycine, alanine, valine, leucine, isoleucine, proline and methionine have side chains built almost entirely of carbon and hydrogen. They cluster in the interior of water-soluble proteins and line the membrane-spanning segments of integral membrane proteins, facing the lipid tails. Two of them have outsized structural roles.
+
+- **Glycine** is the smallest and most flexible residue. It can adopt backbone angles that would cause steric clashes for any other residue, so it is common in tight turns. In collagen, every third residue must be glycine, because nothing larger fits in the center of the triple helix.
+- **Proline** is the most rigid. Its ring locks rotation around its N–Cα bond, and once proline is in a chain its nitrogen has no hydrogen to donate. Both features disrupt the hydrogen-bonding pattern of an α helix, so proline is a **helix breaker**, found instead at bends and in collagen.
+
+The aromatic residues phenylalanine, tyrosine and tryptophan carry large, flat rings. Phenylalanine is thoroughly hydrophobic; tyrosine's hydroxyl and tryptophan's ring N–H make them somewhat more polar. Tyrosine and tryptophan absorb ultraviolet light near 280 nm, which is how laboratories estimate protein concentration. Tyrosine's hydroxyl is the target of receptor tyrosine kinases, and tyrosine is the precursor of the catecholamines and thyroid hormones; tryptophan is the precursor of serotonin.
+
+### Polar Uncharged Side Chains
+
+Serine, threonine, asparagine, glutamine and cysteine hydrogen-bond with water but carry no full charge at pH 7.4. They are common on protein surfaces and in active sites.
+
+- **Serine and threonine** have hydroxyl groups, the main sites of phosphorylation by serine/threonine kinases and of O-linked glycosylation. Serine's hydroxyl is the nucleophile in serine proteases such as trypsin.
+- **Asparagine and glutamine** are the amide versions of aspartate and glutamate. Don't confuse the pairs: Asn and Gln are neutral, Asp and Glu are charged. Asparagine is the attachment site for N-linked glycosylation.
+- **Cysteine** has a thiol ($\ce{-SH}$). Two cysteines can be oxidized to a covalent **disulfide bond** ($\ce{-S-S-}$), and the linked pair is called cystine. Disulfides staple distant parts of a chain together or link separate chains; insulin's two chains are joined by two disulfides, with a third inside one chain. They are common in secreted proteins, which face an oxidizing environment, and rare in the cytosol, which is kept reducing by glutathione.
+
+### Acidic and Basic Side Chains
+
+**Aspartate and glutamate** carry a second carboxyl group that is deprotonated, and therefore negative, at pH 7.4. They form salt bridges with positive residues and coordinate metal ions such as $\ce{Ca^2+}$.
+
+**Lysine and arginine** carry nitrogen groups that are protonated, and therefore positive, at pH 7.4. Arginine's guanidinium group spreads its positive charge over three nitrogens by resonance, making it the most basic side chain. Histones are rich in lysine and arginine, whose positive charges bind DNA's phosphate backbone.
+
+**Histidine** is the odd one out. Its imidazole side chain has a pKa near 6, close enough to physiological pH that small changes in its environment decide whether it is protonated. That makes histidine the residue of choice for three jobs:
+
+- **Catalysis:** it accepts a proton at one step and donates one at the next, as in the Ser–His–Asp catalytic triad of serine proteases.
+- **Buffering:** the many histidines of hemoglobin absorb and release protons near pH 7.4.
+- **Metal binding:** imidazole nitrogens coordinate metals, including the heme iron of hemoglobin and the zinc of zinc-finger proteins.
+
+<Callout type="mnemonic" title="The one-letter codes that don't match">
+
+Eleven amino acids use their first letter (G, A, V, L, I, P, M, S, T, C, H). For the other nine:
+
+- **F**: "**F**enylalanine." **Y**: t**Y**rosine. **W**: t**W**o rings in tryptophan's indole.
+- **R**: a**R**ginine. **K**: lysine is a **K**ation, and K sits just before L.
+- **D** and **E**: aci**D**ic, with aspartate before glutamate just as D comes before E.
+- **N**: asparagi**N**e. **Q**: "**Q**-tamine" for glutamine.
+
+</Callout>
+
+<Question id="bb-aminos-02" />
+
+## Acid–Base Behavior and the Isoelectric Point
+
+### Zwitterions
+
+Every amino acid has at least two ionizable groups: the α-carboxyl group (pKa near 2) and the α-amino group (pKa near 9 to 9.5). At pH 7.4, the carboxyl has lost its proton and is negative, while the amino group still holds its proton and is positive. An amino acid in neutral water is therefore a **zwitterion**, with both charges and no net charge: $\ce{H3N+-CHR-COO-}$. That's why amino acids behave like salts: very water-soluble, poorly soluble in nonpolar solvents, and high-melting.
+
+The α-carboxyl pKa of about 2 is much lower than that of acetic acid (about 4.8) because the neighboring ammonium group withdraws electron density and stabilizes the carboxylate.
+
+### Side-Chain pKa Values
+
+Seven side chains are ionizable in the biological range. Know the approximate pKa values and, more importantly, the charge of each group on either side of its pKa.
+
+| Group | Approximate pKa | Charge when protonated | Charge when deprotonated |
+|---|---|---|---|
+| α-Carboxyl | 2 | 0 | −1 |
+| Aspartate side chain | 3.9 | 0 | −1 |
+| Glutamate side chain | 4.2 | 0 | −1 |
+| Histidine side chain | 6.0 | +1 | 0 |
+| Cysteine side chain | 8.3 | 0 | −1 |
+| α-Amino | 9–9.5 | +1 | 0 |
+| Tyrosine side chain | 10.1 | 0 | −1 |
+| Lysine side chain | 10.5 | +1 | 0 |
+| Arginine side chain | 12.5 | +1 | 0 |
+
+Two rules let you work out any charge state.
+
+1. **Below a group's pKa it is mostly protonated; above its pKa it is mostly deprotonated.** At pH = pKa the two forms are equal.
+2. **Acidic groups (carboxyl, thiol, phenol) go from neutral to negative when they lose a proton. Basic groups (amines, guanidinium, imidazole) go from positive to neutral.**
+
+Published values differ by a few tenths between sources, and inside a folded protein the local environment can shift a pKa by several units. When an MCAT question needs precise values, it supplies them.
+
+### Calculating the Isoelectric Point
+
+The **isoelectric point (pI)** is the pH at which a molecule carries no net charge on average, so it doesn't migrate in an electric field. To find it, list the charge states from most to least protonated, find the species with zero net charge, and average the two pKa values on either side of it:
+
+$$
+\text{pI} = \frac{\text{p}K_a(\text{below neutral form}) + \text{p}K_a(\text{above neutral form})}{2}
+$$
+
+That gives three shortcuts. For a **neutral** side chain, average the α-carboxyl and α-amino pKa values. For an **acidic** side chain, average the two lowest. For a **basic** side chain, average the two highest.
+
+**Worked example: glycine.** With $\text{p}K_{a1} = 2.34$ and $\text{p}K_{a2} = 9.60$, glycine goes from +1 (fully protonated) to 0 (zwitterion) to −1. The neutral form sits between the two pKa values:
+
+$$
+\text{pI} = \frac{2.34 + 9.60}{2} = \frac{11.94}{2} = 5.97
+$$
+
+**Worked example: glutamate.** Glutamate has $\text{p}K_a$ values of 2.19 (α-carboxyl), 4.25 (side-chain carboxyl) and 9.67 (α-amino). Track the charges:
+
+| pH range | α-COOH | Side-chain COOH | α-NH₃⁺ | Net charge |
+|---|---|---|---|---|
+| Below 2.19 | 0 | 0 | +1 | +1 |
+| 2.19 to 4.25 | −1 | 0 | +1 | 0 |
+| 4.25 to 9.67 | −1 | −1 | +1 | −1 |
+| Above 9.67 | −1 | −1 | 0 | −2 |
+
+$$
+\text{pI} = \frac{2.19 + 4.25}{2} = \frac{6.44}{2} = 3.22
+$$
+
+The amino pKa plays no part: the molecule has already passed through zero net charge before that group ionizes.
+
+**Worked example: lysine.** Lysine has $\text{p}K_a$ values of 2.18 (α-carboxyl), 8.95 (α-amino) and 10.53 (side-chain amine). Fully protonated lysine is +2, and the charges run +2, +1, 0, −1 as protons leave. The neutral form lies between 8.95 and 10.53:
+
+$$
+\text{pI} = \frac{8.95 + 10.53}{2} = \frac{19.48}{2} = 9.74
+$$
+
+Histidine works the same way: with $\text{p}K_a$ values of 1.82, 6.00 and 9.17, its pI is the average of 6.00 and 9.17, or 7.59. In general, acidic amino acids have pI values near 3, neutral ones roughly 5 to 6.5, and basic ones from about 7.6 (histidine) to nearly 11 (arginine). Never average all three pKa values; that number has no physical meaning.
+
+### Titration Curves and Net Charge
+
+Titrate fully protonated glycine (pH 1) with NaOH and plot pH against equivalents of base. At **0.5 equivalents**, half the carboxyls are deprotonated, pH = $\text{p}K_{a1}$, and the curve is flattest because buffering is best. At **1.0 equivalent**, nearly every molecule is a zwitterion, pH = pI, and the curve rises steeply because there is almost no buffering. At **1.5 equivalents**, pH = $\text{p}K_{a2}$, and at **2.0 equivalents** the titration is complete. Each ionizable group adds one plateau and consumes one equivalent of base, so amino acids with ionizable side chains need three. Glutamate (starting at +1) reaches its pI after one equivalent; lysine (starting at +2) after two.
+
+The same bookkeeping works for peptides. Count the free α-amino group at the N-terminus, the free α-carboxyl at the C-terminus, and the ionizable side chains; interior α groups are tied up in peptide bonds. For Lys–Arg–Glu–Gly at pH 7.4, the N-terminus, Lys and Arg are +1 each, while Glu and the C-terminus are −1 each, for a net charge of +1. At pH 1, the three amines are +1 and both carboxyls are neutral, for +3.
+
+Histidine deserves its own calculation. At pH 7.4,
+
+$$
+\frac{[\text{His}]}{[\text{HisH}^+]} = 10^{\,7.4 - 6.0} = 10^{1.4} \approx 25
+$$
+
+so only about 1 side chain in 26, roughly 4%, is protonated. At pH 6.0, inside an endosome, half are. That steep change across the physiological range is why histidine serves as a proton shuttle and pH sensor.
+
+Net charge also governs movement in an electric field. Above its pI, a protein is net negative and migrates toward the anode (+); below its pI it migrates toward the cathode (−). Isoelectric focusing exploits this, letting each protein migrate through a pH gradient until it stops at its own pI.
+
+<Callout type="connection" title="Side chains are weak acids" to="/cp/acids-and-bases">
+
+Everything in this section is the Henderson–Hasselbalch equation, $\text{pH} = \text{p}K_a + \log \frac{[\ce{A-}]}{[\ce{HA}]}$, applied to specific functional groups. A group buffers best within about one pH unit of its pKa, which is why histidine, the only side chain with a pKa near 7, lets histidine-rich proteins like hemoglobin help buffer blood. Review weak-acid equilibria and buffer capacity in the chemistry chapter on acids and bases.
+
+</Callout>
+
+<Question id="bb-aminos-03" />
+
+## The Peptide Bond
+
+### Formation and Hydrolysis
+
+A **peptide bond** is an amide linkage between the carboxyl group of one amino acid and the amino group of the next. Its formation is a condensation (dehydration) reaction that releases one water molecule:
+
+$$
+\ce{R-COOH + H2N-R^\prime -> R-CO-NH-R^\prime + H2O}
+$$
+
+A chain has direction: the free amino end is the **N-terminus** and the free carboxyl end the **C-terminus**. Sequences are written and numbered from N to C, the same direction ribosomes build them. Each amino acid unit in a chain is a **residue**.
+
+The reverse reaction, **hydrolysis**, adds water across the bond. In water, hydrolysis is the thermodynamically favored direction (negative ΔG), so cells can't simply condense amino acids. They pay for each peptide bond by first activating amino acids as aminoacyl-tRNAs at the cost of ATP, a process covered in the upcoming chapter on gene expression.
+
+Yet proteins don't fall apart, because uncatalyzed hydrolysis is extraordinarily slow: at neutral pH, a peptide bond lasts on the order of years or longer. Breaking peptide bonds on a laboratory time scale takes either harsh conditions (concentrated acid at high temperature for many hours) or enzymes. Proteases are selective: **trypsin** cuts on the C-terminal side of lysine and arginine, and **chymotrypsin** on the C-terminal side of the aromatic residues phenylalanine, tyrosine and tryptophan.
+
+### Resonance and Planarity
+
+The lone pair on the amide nitrogen is delocalized into the adjacent carbonyl, so the peptide bond is a **resonance hybrid** of a form with C=O and C–N and a form with C–O⁻ and C=N⁺. The C–N bond has **partial double-bond character**, roughly 40%, with several testable consequences.
+
+- **No free rotation** about the C–N bond.
+- **Planarity.** Six atoms lie in one plane: the α carbon of one residue, its carbonyl C and O, the amide N and H, and the next α carbon. A polypeptide is a chain of flat peptide planes hinged at the α carbons.
+- **Short bond length**, about 1.33 Å, between a typical C–N single bond (1.47 Å) and a C=N double bond.
+- **Trans geometry.** The two α carbons almost always sit on opposite sides of the bond. Bonds to proline are the exception, because proline's ring crowds the trans form too, so a noticeable minority of X–Pro bonds are cis.
+- **A non-basic nitrogen.** The amide lone pair is tied up in resonance, so backbone nitrogens don't protonate. Only the termini and side chains contribute to a chain's charge.
+
+All of the backbone's flexibility comes from rotation around the two single bonds flanking each α carbon, the N–Cα bond (angle φ) and the Cα–C bond (angle ψ). Steric clashes forbid many φ/ψ combinations, and the allowed regions correspond to the α helix and β sheet.
+
+<Callout type="high-yield" title="Stable in two different senses">
+
+Peptide bonds are **thermodynamically unstable** in water (hydrolysis has a negative ΔG) but **kinetically stable** (hydrolysis has a very high activation energy). Choices saying "peptide bond formation is spontaneous in water" or "proteases make hydrolysis more favorable" are both wrong: proteases speed up a reaction that was already favorable without changing its ΔG.
+
+</Callout>
+
+<Question id="bb-aminos-04" />
+
+## The Four Levels of Protein Structure
+
+Protein structure is described at four levels, each built on the one before and each held together by a characteristic set of interactions. Knowing which forces belong to which level is one of the most reliably tested skills in this topic.
+
+| Level | What it describes | Main stabilizing interactions |
+|---|---|---|
+| Primary | Amino acid sequence, N to C | Covalent peptide bonds |
+| Secondary | Local backbone shapes: α helices, β sheets, turns | Hydrogen bonds between backbone C=O and N–H |
+| Tertiary | 3-D fold of one polypeptide | Side-chain interactions: hydrophobic effect, hydrogen bonds, salt bridges, van der Waals forces, disulfides |
+| Quaternary | Arrangement of multiple subunits | The same interactions, acting between chains |
+
+### Primary Structure
+
+The **primary structure** is the amino acid sequence, encoded by the gene and held together by peptide bonds. Because the sequence determines how the chain folds, it ultimately determines every higher level and the protein's function. In sickle cell disease, the sixth residue of β-globin is valine instead of glutamate. Swapping a charged surface residue for a hydrophobic one creates a sticky patch that lets deoxygenated hemoglobin polymerize into fibers, distorting red cells into sickles.
+
+### Secondary Structure
+
+**Secondary structure** describes local, repeating backbone conformations stabilized by hydrogen bonds between backbone carbonyl oxygens and amide hydrogens. Side chains are not involved.
+
+In an **α helix**, the backbone coils into a right-handed spiral. The C=O of each residue hydrogen-bonds to the N–H of the residue four positions along, so the hydrogen bonds run roughly parallel to the helix axis. There are 3.6 residues per turn, each turn rises about 5.4 Å, and side chains point outward. Many helices are amphipathic, with hydrophobic side chains along the face that packs against the core. A membrane-spanning helix of about 20 hydrophobic residues is just long enough to cross a bilayer. Proline breaks helices; glycine destabilizes them because holding such a flexible residue in one conformation costs entropy.
+
+In a **β-pleated sheet**, extended strands lie side by side and hydrogen-bond to each other, running either in the same direction (parallel) or opposite directions (antiparallel, with straighter, slightly stronger hydrogen bonds). Side chains alternate above and below the pleated sheet. Antiparallel strands are often joined by tight **β turns**, which frequently contain glycine and proline.
+
+### Tertiary Structure
+
+**Tertiary structure** is the complete three-dimensional shape of one polypeptide, determined mainly by side-chain interactions: **hydrophobic interactions** that bury nonpolar groups in the core (the dominant driving force), **hydrogen bonds** among polar groups, **salt bridges** between opposite charges such as lysine and aspartate, **van der Waals forces** in the tightly packed core, and covalent **disulfide bonds** between cysteines. A water-soluble globular protein has a hydrophobic core and a polar surface; the membrane-spanning region of an integral membrane protein inverts that rule. Large proteins often fold into several **domains**, compact units that fold semi-independently and often perform a specific job, such as binding a nucleotide.
+
+### Quaternary Structure
+
+**Quaternary structure** exists only in proteins with more than one polypeptide chain, and describes how the subunits fit together. The same noncovalent forces hold them, sometimes reinforced by interchain disulfides. Hemoglobin is a tetramer of two α and two β subunits ($\alpha_2\beta_2$); single-chain myoglobin has no quaternary structure. Multiple subunits allow cooperativity, in which binding at one site changes binding at the others, and allow regulation by changing how subunits interact.
+
+<Callout type="trap" title="Backbone versus side chains">
+
+Secondary structure is held together by hydrogen bonds between **backbone** atoms only. Hydrogen bonds between side chains count as tertiary or quaternary interactions, so "α helices are stabilized by side-chain hydrogen bonds" is wrong. Disulfide bonds are covalent, but because they form as the chain folds, MCAT-style questions treat them as stabilizing tertiary or quaternary structure. Either way, they are not peptide bonds.
+
+</Callout>
+
+## Protein Folding and the Hydrophobic Effect
+
+### The Thermodynamics of Burial
+
+Why does a floppy polypeptide fold into one compact shape? Start with
+
+$$
+\Delta G = \Delta H - T\Delta S
+$$
+
+Folding seems to fight entropy: an unfolded chain can adopt an enormous number of conformations, while a folded protein adopts essentially one. The missing piece is the solvent. Water next to a nonpolar side chain can't hydrogen-bond with it, so it arranges itself into an ordered, cage-like shell, which lowers its entropy. When nonpolar side chains cluster in the core, the caged water is released into the bulk solvent and the **entropy of the water rises** substantially.
+
+This is the **hydrophobic effect**: less an attraction between nonpolar groups than water pushing them together to maximize its own entropy. The gain in solvent entropy outweighs the loss in chain entropy, so ΔG for folding is negative. Hydrogen bonds and salt bridges inside the protein help too, though much of their enthalpy is offset because the unfolded chain was already hydrogen-bonded to water.
+
+Folded proteins are therefore only marginally stable, with a net ΔG of folding of a few tens of kJ/mol, comparable to a handful of hydrogen bonds. That margin lets proteins flex when they bind ligands, and it explains why modest heating or a single destabilizing mutation can unfold them. Nor is folding a random search through every conformation: chains collapse quickly around a hydrophobic core, local helices and turns form, and the structure settles step by step toward its lowest-energy state.
+
+### Anfinsen's Experiment
+
+The principle that sequence determines structure comes from experiments on ribonuclease A, a small enzyme with four disulfide bonds. Christian Anfinsen treated it with concentrated urea, which disrupts noncovalent interactions, and β-mercaptoethanol, which reduces disulfides. It unfolded and lost all activity. When he removed both reagents and let air reoxidize the cysteines, the enzyme regained nearly full activity: with no template, the chain found its native fold and its correct four disulfides. When he instead removed the reducing agent first while urea was still present, the cysteines paired randomly, and the "scrambled" enzyme had only about 1% of normal activity.
+
+The conclusion: **a protein's amino acid sequence contains the information needed to specify its three-dimensional structure.**
+
+### Chaperones and Misfolding
+
+Folding inside a cell is harder. The cytosol is crowded, and a chain emerging from the ribosome exposes hydrophobic segments before the rest of the protein exists to bury them, so chains tend to stick together into aggregates. **Molecular chaperones** prevent this. Many are heat shock proteins, made in greater amounts after heat stress. Some bind exposed hydrophobic segments and release them in ATP-driven cycles; others, the chaperonins, form a chamber where one chain can fold in isolation. Chaperones don't contain information about the final shape. They only prevent wrong interactions, giving the sequence the chance to fold as Anfinsen's experiment predicts.
+
+Misfolded proteins are usually tagged with ubiquitin and destroyed by the proteasome. When quality control fails, disease can follow. The most common cystic fibrosis mutation (deletion of phenylalanine 508 in the CFTR chloride channel) makes the protein misfold, and most of it is degraded before reaching the membrane. In Alzheimer disease and other amyloid diseases, misfolded proteins stack into insoluble, β-sheet-rich fibrils. In prion diseases, a misfolded prion protein converts normal copies into the misfolded form.
+
+<Callout type="high-yield" title="It's the water's entropy">
+
+The hydrophobic effect is driven by an **increase in the entropy of water** when nonpolar groups are buried, not by strong attractions between nonpolar groups, and not by an increase in the protein's own entropy (which decreases on folding). The same principle drives phospholipids into bilayers and detergents into micelles.
+
+</Callout>
+
+<Question id="bb-aminos-05" />
+
+## Denaturation
+
+**Denaturation** is the loss of a protein's native secondary, tertiary and quaternary structure, and with it, its function. The primary structure survives: denaturing agents disrupt noncovalent interactions (and, for reducing agents, disulfide bonds), but they don't hydrolyze peptide bonds. That's why a denatured protein can, in principle, refold.
+
+| Agent | What it disrupts | Notes |
+|---|---|---|
+| Heat | Hydrogen bonds and hydrophobic interactions, through increased molecular motion | Often irreversible because unfolded chains aggregate (a cooked egg white) |
+| Extreme pH | Side-chain ionization, breaking salt bridges and adding like-charge repulsion | Proteins adapted to extremes, like pepsin, are exceptions |
+| Urea, guanidinium chloride | Hydrogen bonds; also make water a better solvent for nonpolar groups | Often reversible on removal |
+| Detergents (e.g., SDS) | The hydrophobic core, by coating nonpolar regions | SDS also gives proteins a uniform negative charge |
+| Reducing agents (β-mercaptoethanol, DTT) | Disulfide bonds, reduced to free thiols | Covalent bonds, but not peptide bonds |
+| Organic solvents (e.g., ethanol) | Hydrophobic interactions and hydrogen bonds | One reason alcohol disinfects |
+| Heavy metal ions ($\ce{Hg^2+}$, $\ce{Pb^2+}$) | Bind thiols and other side chains | Part of their toxicity |
+
+A few of these deserve a closer look. **Heat** adds kinetic energy until the weak interactions can no longer hold the fold; many human proteins unfold at temperatures only modestly above body temperature, which is part of why very high fevers are dangerous. **Lowering the pH** protonates carboxylates, so salt bridges with lysine and arginine disappear and a protein carrying mostly positive charges begins to repel itself. **SDS** inserts its nonpolar tail into hydrophobic regions and coats the protein with negative charge, giving every protein a similar charge-to-mass ratio, so in SDS-PAGE proteins separate by size alone. Running the gel with and without a reducing agent reveals whether subunits are linked by disulfides.
+
+Not everything that takes a protein out of solution denatures it. High concentrations of salts such as ammonium sulfate cause **salting out**: the salt competes for water, the protein precipitates, and it usually redissolves in its native, active form. That makes salting out a gentle early step in protein purification.
+
+<Callout type="trap" title="Denatured is not digested">
+
+After denaturation the amino acid sequence is unchanged. Heat, pH extremes, urea and SDS don't break peptide bonds; only hydrolysis (by proteases, or by strong acid with prolonged heating) does. If a question asks what survives boiling or urea treatment, the answer is the primary structure.
+
+</Callout>
+
+## Fibrous and Globular Proteins
+
+Proteins fall into two broad shape classes. **Fibrous proteins** are long and extended, with repetitive sequences and one dominant secondary structure; they are usually insoluble and structural. **Globular proteins** are compact, with mixed helices, sheets and loops around a hydrophobic core. They are usually water-soluble and do the dynamic work of the cell: catalysis, transport, regulation and defense.
+
+### Fibrous Proteins: Collagen and Keratin
+
+**Collagen** is the most abundant protein in mammals and the main structural protein of skin, tendon, cartilage and bone matrix. Its sequence is a repeating Gly–X–Y triplet, where X is often proline and Y often hydroxyproline. Each chain forms a narrow, left-handed helix (not an α helix), and three chains wind into a right-handed **triple helix**. Every third residue faces the crowded center, where only glycine fits; mutations replacing one of those glycines cause forms of osteogenesis imperfecta.
+
+Hydroxyproline and hydroxylysine are made after translation by enzymes that need **vitamin C** to keep their iron cofactor reduced. The added hydroxyl groups hydrogen-bond and stabilize the triple helix. Without vitamin C, collagen is weak, producing **scurvy**: bleeding gums, easy bruising and poor wound healing.
+
+**α-Keratin**, the protein of hair and nails, is built from α helices wound into coiled coils and crosslinked by many disulfide bonds. A permanent wave reduces those disulfides, reshapes the hair, and reoxidizes the cysteines in new positions. Other structural proteins include elastin, which lets arteries and lungs recoil, and the cytoskeletal proteins actin and tubulin, whose globular subunits polymerize into filaments and microtubules.
+
+### Globular Proteins: Hemoglobin and Antibodies
+
+**Hemoglobin** carries oxygen in red blood cells. Each of its four mostly α-helical subunits holds a heme group in a hydrophobic pocket, which helps keep the iron in the $\ce{Fe^2+}$ state needed to bind oxygen; a histidine coordinates the iron from below. Because the subunits communicate, hemoglobin binds oxygen cooperatively and produces a sigmoidal binding curve, while single-chain myoglobin produces a hyperbolic one.
+
+**Antibodies** (immunoglobulins) are the globular proteins of adaptive immunity. An IgG molecule is Y-shaped, made of two identical heavy chains and two identical light chains joined by disulfide bonds, and built from repeated immunoglobulin domains, compact sandwiches of two β sheets. At the tip of each arm, the **variable regions** of one heavy and one light chain form an antigen-binding site, so each IgG binds two antigen copies. Hypervariable loops in those regions account for specificity, while the **constant region** of the stem (Fc) determines what happens after binding, such as recruiting phagocytes or activating complement.
+
+### Other Non-Enzymatic Roles
+
+- **Motor proteins** turn ATP hydrolysis into movement: myosin walks along actin in muscle, and kinesin and dynein carry cargo along microtubules.
+- **Binding and transport proteins** carry molecules through the body; serum albumin carries fatty acids, hormones and many drugs in blood.
+- **Cell adhesion molecules** attach cells to each other and to the matrix: calcium-dependent cadherins between similar cells, integrins to matrix proteins, and selectins for the rolling attachment of white blood cells to vessel walls.
+- **Receptors, channels and pumps** transmit signals and move ions across membranes.
+
+<Callout type="connection" title="From structure to catalysis" to="/bb/enzymes-and-kinetics">
+
+The side-chain chemistry from this chapter makes catalysis possible: serine provides a nucleophile, histidine shuttles protons, aspartate and glutamate stabilize positive charges. Hemoglobin's cooperative oxygen binding returns as the model for allosteric enzymes in the next chapter.
+
+</Callout>

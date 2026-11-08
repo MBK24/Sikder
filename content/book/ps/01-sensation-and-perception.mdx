@@ -1,0 +1,407 @@
+---
+title: "Sensation and Perception"
+summary: "How sensory receptors turn light, sound, pressure and chemicals into neural signals, and how the brain organizes those signals into a stable, meaningful picture of the world."
+estReadMinutes: 27
+difficulty: core
+access: free
+status: published
+aamc: ["6A", "6B"]
+---
+
+Every experience of the outside world begins as energy: photons striking the back of the eye, pressure waves rattling the bones of the middle ear, molecules dissolving in the mucus of the nose. None of that energy can enter the brain directly. It must first be converted into the electrical and chemical signals of neurons, and then the brain must work out what those signals mean.
+
+The MCAT splits this story in two. AAMC category 6A, *sensing the environment*, covers the receptors and pathways that detect stimuli. Category 6B, *making sense of the environment*, covers how the brain interprets that input. This chapter follows the same order: general principles first, then each sensory system, then perception. Along the way, pay attention to the classic studies, because the exam often rebuilds them with new details and asks which concept explains the result.
+
+## Sensation, Perception, and Transduction
+
+**Sensation** is the detection of physical energy by sensory receptors and its conversion into neural signals. **Perception** is the brain's organization and interpretation of those signals into meaningful experience. Sensation is the raw data; perception is what you make of it.
+
+The two can come apart. When you stare at an ambiguous figure, the input does not change but your perception flips back and forth. A person with damage to a particular region of the temporal lobe may have normal eyes and still be unable to recognize faces, a condition called **prosopagnosia**. Sensation is intact; perception is not.
+
+### Transduction
+
+**Transduction** is the conversion of a physical stimulus into a change in the membrane potential of a receptor cell. A photon changes the shape of a pigment molecule in the retina; a pressure wave bends the stereocilia of a hair cell; an odorant binds a receptor protein in the nose.
+
+The immediate result is a **receptor potential** (generator potential), a graded voltage change whose size reflects stimulus intensity. If it is large enough, it triggers action potentials. Because action potentials are all-or-none, a stronger stimulus is coded by a higher *frequency* of firing and by recruitment of more neurons, not by bigger action potentials. For most senses the signal then passes through the **thalamus** on its way to a primary sensory area of the cortex. Smell is the famous exception.
+
+### Sensory receptors by type
+
+| Receptor type | Stimulus | Examples |
+|---|---|---|
+| Photoreceptors | Light | Rods and cones of the retina |
+| Mechanoreceptors | Pressure, vibration, stretch, fluid movement | Cochlear and vestibular hair cells, Pacinian and Meissner corpuscles |
+| Chemoreceptors | Dissolved or airborne chemicals | Taste cells, olfactory neurons, carotid body cells sensing blood gases |
+| Thermoreceptors | Temperature change | Warm and cold receptors in the skin |
+| Nociceptors | Actual or potential tissue damage | Free nerve endings |
+| Osmoreceptors | Solute concentration of the blood | Hypothalamic neurons that regulate thirst and ADH release |
+| Proprioceptors | Body position and muscle state | Muscle spindles (length), Golgi tendon organs (tension) |
+
+Several of these monitor the internal environment. Osmoreceptors never produce a conscious experience the way vision does, but they still transduce a stimulus and count as sensory receptors.
+
+<Callout type="high-yield" title="The doctrine of specific nerve energies">
+The *kind* of sensation you experience depends on which pathway is activated, not on what activated it. Press gently on a closed eyelid and you "see" a flash of light, because the brain interprets any signal from the retina as visual. The same logic explains why electrically stimulating different cortical areas produces different experiences.
+</Callout>
+
+## Thresholds, Signal Detection, and Adaptation
+
+**Psychophysics** studies how the physical properties of a stimulus relate to the experience it produces. Its central questions: how faint can a stimulus be and still be noticed, and how much must it change before the change is noticed?
+
+### Absolute threshold
+
+The **absolute threshold** is the minimum stimulus intensity detected 50 percent of the time. The 50 percent criterion exists because detection is never perfectly sharp; as intensity increases, the probability of detection climbs along an S-shaped curve, and the threshold is set at its midpoint. Stimuli below the absolute threshold are **subliminal**. They can still be processed to some degree, for instance speeding later recognition of related words, but claims of dramatic behavioral effects from subliminal advertising have not held up.
+
+### The difference threshold and Weber's law
+
+The **difference threshold**, or **just-noticeable difference (JND)**, is the smallest change in a stimulus that can be detected 50 percent of the time. Ernst Weber's insight was that the JND is not a fixed amount but a fixed *proportion* of the original stimulus:
+
+$$
+\frac{\Delta I}{I} = k
+$$
+
+Here $I$ is the original intensity, $\Delta I$ is the JND, and $k$ is the **Weber fraction**, a constant for a given sense and type of judgment.
+
+**Worked example.** A participant holding a 200 g weight can just detect that a second weight is heavier when it weighs 204 g. The JND is 4 g, so
+
+$$
+k = \frac{4\ \text{g}}{200\ \text{g}} = 0.02
+$$
+
+Hand the same participant a 1,000 g weight, and Weber's law predicts a JND of $0.02 \times 1000\ \text{g} = 20\ \text{g}$. Adding 4 g to a kilogram would go unnoticed. This is why one candle transforms a dark room but makes no visible difference in a sunlit one. Weber's law holds well across the middle range of intensities and less well at the extremes.
+
+A related principle, **Fechner's law**, states that perceived magnitude grows with the logarithm of physical intensity, the logic behind logarithmic scales such as decibels.
+
+<Callout type="trap" title="Absolute change versus proportional change">
+When a question gives a JND for one stimulus and asks about another, compute the Weber fraction first, then multiply. The tempting wrong answer is the original JND carried over unchanged. The JND scales with the starting intensity; the Weber fraction is what stays constant.
+</Callout>
+
+<Question id="ps-sensation-01" />
+
+### Signal detection theory
+
+Threshold measurements assume detection depends only on stimulus strength. **Signal detection theory** recognizes that it also depends on the observer's expectations, motivation and willingness to say "yes." Each trial is a decision made under uncertainty against background noise. A faint stimulus is present on some trials and absent on others (*catch trials*), producing four outcomes:
+
+| | Participant says "yes" | Participant says "no" |
+|---|---|---|
+| **Signal present** | Hit | Miss |
+| **Signal absent** | False alarm | Correct rejection |
+
+Two independent quantities come out of this table.
+
+- **Sensitivity** (often written $d'$) is how well the observer actually distinguishes signal from noise. It depends on stimulus strength and sensory acuity. Higher sensitivity means more hits *and* fewer false alarms.
+- **Response bias** (the *criterion*) is the tendency to say "yes" or "no" when uncertain. A **liberal** criterion yields more hits but more false alarms; a **conservative** criterion yields fewer false alarms but more misses.
+
+Bias shifts with costs and rewards. A security screener told that missing a weapon is catastrophic adopts a liberal criterion and flags many harmless bags. The diagnostic pattern: if hits and false alarms rise *together*, the criterion has shifted and sensitivity is unchanged. If hits rise while false alarms fall, sensitivity has improved.
+
+<Question id="ps-sensation-02" />
+
+### Sensory adaptation
+
+**Sensory adaptation** is a decrease in receptor responsiveness to a constant, unchanging stimulus. You stop feeling your watch; a kitchen's smell fades after a few minutes; pool water soon feels neutral. Adaptation frees the system to respond to *changes*, which carry more information than steady states. It occurs at the receptor or early in the pathway and cannot be overridden simply by paying attention.
+
+Vision adapts in both directions. In **dark adaptation**, sensitivity rises gradually after you enter a dark room; cones finish within several minutes, while rods take roughly 20 to 30 minutes as their pigment regenerates. **Light adaptation** is much faster.
+
+<Callout type="connection" title="Adaptation versus habituation" to="/ps/learning-and-memory#habituation-sensitization-and-dishabituation">
+Sensory adaptation is a change in the *receptors*. Habituation, covered in the next chapter, is a learned decrease in a *behavioral response*, produced in the central nervous system, and it can be reversed instantly by a novel stimulus. If a question says a person "stops noticing" a stimulus, ask whether the explanation is receptor firing or learning.
+</Callout>
+
+## Vision
+
+### Anatomy of the eye
+
+Light passes through several structures before reaching a photoreceptor.
+
+1. The **cornea**, the clear front surface, does most of the eye's refraction because of the large change in refractive index between air and tissue.
+2. The **aqueous humor**, produced by the ciliary body and drained through the canal of Schlemm, fills the front chamber. Impaired drainage raises intraocular pressure and can damage the optic nerve (**glaucoma**).
+3. The **iris** controls the size of the **pupil**. Parasympathetic input constricts it; sympathetic input dilates it.
+4. The **lens** fine-tunes focus. In **accommodation** for near objects, the ciliary muscle contracts, the suspensory ligaments slacken, and the lens rounds up and becomes more strongly converging.
+5. The **vitreous humor**, a clear gel, fills the large chamber behind the lens.
+6. The **retina** contains the photoreceptors and the neurons that begin processing their output. Behind it lie the vascular **choroid** and the tough white **sclera**.
+
+### The retina: rods, cones, and their circuitry
+
+The retina seems built backward. Light passes through layers of **ganglion cells** and **bipolar cells** before reaching the **photoreceptors** at the back. Signals then flow the other way: photoreceptors to bipolar cells to ganglion cells, whose axons exit the eye as the **optic nerve**. **Horizontal** and **amacrine cells** connect neighbors sideways and sharpen contrast. Where the optic nerve leaves, there are no photoreceptors: this is the **optic disc**, or **blind spot**, which you don't notice because the brain fills in the gap.
+
+| Feature | Rods | Cones |
+|---|---|---|
+| Number per retina | About 120 million | About 6 million |
+| Location | Periphery; absent from the fovea | Concentrated in the fovea |
+| Light conditions | Dim light (scotopic) | Bright light (photopic) |
+| Color | None; one pigment, rhodopsin | Three types with different photopsins |
+| Sensitivity | Very high | Lower |
+| Acuity | Low | High |
+| Convergence | Many rods per ganglion cell | Few cones per ganglion cell, often one-to-one in the fovea |
+
+The **fovea**, at the center of the **macula**, contains only densely packed cones, which is why you look directly at things you want to see in detail. Convergence explains the trade-off. When many rods feed one ganglion cell, their weak signals sum and the cell fires in dim light, but the brain cannot tell which rod was stimulated. When one cone feeds one ganglion cell, detail is preserved but more light is required.
+
+The three cone types are short-, medium- and long-wavelength cones (S, M and L, loosely "blue," "green" and "red"), with peak sensitivities near 420, 530 and 560 nm and heavily overlapping response curves.
+
+<Callout type="mnemonic" title="Rods and cones">
+
+- **R**ods work in **R**educed light, around the **R**im (periphery).
+- **C**ones see **C**olor and **C**risp detail at the **C**enter (fovea).
+
+</Callout>
+
+### Phototransduction
+
+Rhodopsin consists of a protein, opsin, bound to **retinal**, a light-absorbing molecule derived from vitamin A. In the dark, retinal is in the bent **11-*cis*** form. Absorbing a photon isomerizes it to **all-*trans*-retinal**, and that shape change activates the opsin.
+
+The surprising part is the direction of the response. In the dark, photoreceptors are relatively *depolarized*, because cGMP-gated sodium channels stay open (the "dark current"), and they release glutamate continuously. Activated rhodopsin, a G protein-coupled receptor, activates the G protein **transducin**, which activates **phosphodiesterase**, which breaks down cGMP. The sodium channels close, the cell **hyperpolarizes**, and glutamate release *decreases*. Bipolar cells read that decrease as a signal and pass it to ganglion cells, which fire action potentials.
+
+So light turns the photoreceptor *off*. Because each step activates many molecules downstream, the cascade amplifies the signal enough that a dark-adapted rod can respond to a single photon.
+
+<Callout type="connection" title="Retinal, lysine and photon energy" to="/bb/amino-acids-and-proteins">
+Retinal is covalently attached to a lysine side chain of opsin through a Schiff base (an imine). Photon absorption, which C/P treats in terms of $E = hf$, isomerizes one double bond from *cis* to *trans*. Vision links protein chemistry, stereochemistry and the physics of light.
+</Callout>
+
+### The visual pathway and the optic chiasm
+
+The two optic nerves (cranial nerve II) meet at the **optic chiasm**, just above the pituitary gland. Fibers from the **nasal** half of each retina cross; fibers from the **temporal** half stay on the same side. Beyond the chiasm the bundles are called **optic tracts**.
+
+The logic follows from the fact that the lens inverts the image: the nasal retina sees the *temporal* (outer) part of the visual field. Crossing the nasal fibers sends everything from the left visual field to the right hemisphere and everything from the right visual field to the left.
+
+The optic tracts synapse in the **lateral geniculate nucleus (LGN)** of the thalamus, and **optic radiations** carry the signal to the **primary visual cortex (V1)** in the occipital lobe. Smaller branches reach the **superior colliculus** (reflexive eye and head movements), the pretectal area (pupillary light reflex), and the **suprachiasmatic nucleus** of the hypothalamus (circadian rhythms).
+
+Lesions produce characteristic patterns:
+
+- Damage to one **optic nerve** blinds that eye.
+- Compression of the **optic chiasm**, classically by a pituitary tumor, destroys the crossing nasal fibers and causes loss of both temporal visual fields (**bitemporal hemianopia**).
+- Damage to one **optic tract** or one occipital lobe causes loss of the opposite visual field in both eyes (**homonymous hemianopia**).
+
+<Question id="ps-sensation-03" />
+
+### Feature detection and parallel processing
+
+Beginning in the late 1950s, David Hubel and Torsten Wiesel recorded from single neurons in the visual cortex of cats and monkeys while presenting simple stimuli. They found **feature detectors**: neurons that fire selectively for a line at a particular orientation, an edge, or movement in a particular direction. **Simple cells** respond to a bar at one orientation in one location; **complex cells** respond to that orientation anywhere within a larger region, often when it moves. Higher areas combine these features into increasingly complex representations, up to regions such as the fusiform face area that respond strongly to faces.
+
+The visual system analyzes color, form, motion and depth simultaneously in separate streams, a strategy called **parallel processing**.
+
+- The **parvocellular** pathway carries color and fine detail (high spatial resolution, slower). The **magnocellular** pathway carries motion and coarse form (high temporal resolution, low spatial resolution, largely color-blind).
+- Beyond V1, a **ventral stream** into the temporal lobe identifies *what* an object is, while a **dorsal stream** into the parietal lobe determines *where* it is and how to act on it.
+
+The brain must then bind these separate analyses into unified objects.
+
+### Theories of color vision
+
+The **trichromatic theory** (Young–Helmholtz) proposed three types of receptors, each most sensitive to a different range of wavelengths, with every color coded as a ratio of their activity. That is exactly what the three cone types do. It explains why three primary lights can be mixed to match nearly any hue and why losing one cone type produces a specific color deficiency. Red-green deficiency is the most common; the M and L pigment genes are on the X chromosome, so it is far more common in males.
+
+The **opponent-process theory** (Hering) proposed that color is coded in opposing pairs: red versus green, blue versus yellow, black versus white. This explains why you can see reddish-yellow (orange) but never reddish-green, and it explains **negative afterimages**. Stare at a green square, look at a white wall, and you see a red square, because the green-signaling side of the pair has fatigued and its opponent briefly dominates.
+
+Both theories are correct at different levels. Trichromatic coding happens in the cones; opponent coding happens afterward, in retinal ganglion cells and the LGN.
+
+<Callout type="high-yield" title="Which theory explains what">
+
+- **Trichromatic:** three cone types, color mixing, most color blindness. Level: receptors.
+- **Opponent-process:** negative afterimages, no "reddish-green." Level: ganglion cells, LGN, cortex.
+
+A question describing an afterimage is pointing at opponent-process theory.
+
+</Callout>
+
+## Hearing
+
+Sound is a pressure wave. Its **frequency** (in hertz) is perceived as **pitch** and its **amplitude** as **loudness**, measured on the logarithmic decibel scale. Young humans hear roughly 20 to 20,000 Hz, and the upper limit falls with age.
+
+### Anatomy of the ear
+
+The **outer ear** collects sound: the **pinna** funnels it down the **external auditory canal** to the **tympanic membrane** (eardrum).
+
+The air-filled **middle ear** contains the three **ossicles**, the **malleus**, **incus** and **stapes**, which carry the eardrum's vibrations to the **oval window** of the inner ear. Because the eardrum is much larger than the oval window and the ossicles act as a lever, the middle ear concentrates force onto a small area and raises pressure. Without this amplification, most sound energy would reflect off the fluid of the inner ear. The **Eustachian tube** links the middle ear to the throat and equalizes pressure across the eardrum, which is why yawning clears your ears on a descending plane.
+
+The **inner ear** lies in the temporal bone. The snail-shaped **cochlea** handles hearing; the vestibule and semicircular canals handle balance. The cochlea has three parallel ducts: the scala vestibuli and scala tympani contain **perilymph**, and the scala media between them contains potassium-rich **endolymph**. The **round window** bulges outward to relieve pressure each time the stapes pushes the oval window in.
+
+<Callout type="connection" title="Physics of the middle and inner ear">
+Pressure equals force divided by area, so delivering the eardrum's force onto the much smaller oval window raises pressure many times over. The cochlea is a fluid-filled chamber carrying waves through a nearly incompressible liquid. Both draw on the C/P treatment of sound intensity, decibels and fluid pressure.
+</Callout>
+
+### Hair cells and transduction
+
+On the **basilar membrane** of the cochlear duct sits the **organ of Corti**, which contains the auditory receptors, the **hair cells**. Each has a bundle of stiff **stereocilia** whose tips touch or sit just below the overlying **tectorial membrane**. When sound moves the cochlear fluid, the basilar membrane vibrates and the stereocilia bend. Bending one way pulls open mechanically gated channels at the stereocilia tips; potassium flows in from the endolymph and **depolarizes** the cell, which releases neurotransmitter onto auditory nerve fibers.
+
+A single row of **inner hair cells** sends most of the information that reaches the brain. Three rows of **outer hair cells** change length in response to sound and act as an amplifier that sharpens tuning. Mammalian hair cells do not regenerate, so loud noise causes permanent **sensorineural hearing loss**, distinct from **conductive hearing loss** caused by problems in the outer or middle ear, such as a perforated eardrum.
+
+### Place theory, frequency theory and the volley principle
+
+According to **place theory**, associated with Georg von Békésy, different frequencies cause maximal vibration at different places along the basilar membrane. The membrane is narrow and stiff at its **base**, near the oval window, and wide and floppy at its **apex**. High frequencies peak near the base; low frequencies peak near the apex. This mapping of position to frequency, **tonotopic organization**, is preserved all the way to the auditory cortex.
+
+Place coding works poorly for low frequencies, which vibrate the membrane broadly. **Frequency theory** (temporal theory) proposes that neurons fire in step with the sound wave, so a 100 Hz tone produces 100 action potentials per second. Because a single neuron cannot fire much faster than about 1,000 times per second, the **volley principle** adds that groups of neurons fire in staggered rotation, so their combined output tracks frequencies up to several thousand hertz.
+
+The modern synthesis: low frequencies are coded mainly by firing rate, high frequencies mainly by place, and the middle range by both.
+
+<Question id="ps-sensation-04" />
+
+### The auditory pathway
+
+Hair cells synapse onto the **vestibulocochlear nerve** (cranial nerve VIII). The signal then ascends:
+
+1. **Cochlear nuclei** in the medulla.
+2. **Superior olivary complex** in the pons, the first site where input from both ears converges. It localizes sound by comparing differences in arrival time and intensity between the ears.
+3. **Inferior colliculus** in the midbrain, involved in orienting to sounds and the startle reflex.
+4. **Medial geniculate nucleus (MGN)** of the thalamus.
+5. **Primary auditory cortex** in the temporal lobe.
+
+Because each ear's input reaches both hemispheres early, damage to one auditory cortex does not cause deafness in one ear.
+
+<Callout type="mnemonic" title="Thalamic relay nuclei">
+**M**edial geniculate for **M**usic (hearing); **L**ateral geniculate for **L**ight (vision).
+</Callout>
+
+## The Vestibular Sense and Somatosensation
+
+### The vestibular system
+
+The **vestibular sense** monitors head position and movement. Its receptors are hair cells, housed in two kinds of inner-ear structures.
+
+The three **semicircular canals** are fluid-filled loops at roughly right angles to one another. Each widens into an **ampulla**, where hair cells project into a gelatinous **cupula**. When the head rotates, the endolymph lags behind because of inertia, pushes the cupula and bends the hair cells. The canals detect **rotational (angular) acceleration**. Spin in a chair and the endolymph eventually catches up; stop suddenly and it keeps moving, bending the cupula the other way, so you feel as if you are spinning in the opposite direction.
+
+The **otolith organs**, the **utricle** and **saccule**, detect **linear acceleration** and head tilt relative to gravity. Their hair cells sit in a gel layer topped with calcium carbonate crystals (otoliths). When you tilt your head or an elevator starts moving, the heavy crystals shift and bend the hair cells.
+
+Vestibular signals travel through cranial nerve VIII to the brainstem and cerebellum. The **vestibulo-ocular reflex** moves the eyes opposite to head movement so gaze stays steady. **Motion sickness** is thought to arise from conflict between vestibular and visual input, as when you read in a moving car.
+
+### Touch
+
+**Somatosensation** covers touch, pressure, vibration, temperature, pain and body position.
+
+| Receptor | Best stimulus | Adaptation |
+|---|---|---|
+| Meissner corpuscles | Light touch, low-frequency flutter | Rapid |
+| Pacinian corpuscles | Deep pressure, high-frequency vibration | Rapid |
+| Merkel discs | Sustained pressure, texture, edges | Slow |
+| Ruffini endings | Skin stretch | Slow |
+| Free nerve endings | Pain and temperature | Varies |
+
+Rapidly adapting receptors signal change, which is why you feel your clothes when you put them on and soon stop. The **two-point threshold**, the smallest separation at which two touches feel distinct, is a few millimeters on the fingertips and several centimeters on the back. Regions with low thresholds have dense receptors and large representations in the **somatosensory cortex** of the parietal lobe's postcentral gyrus, mapped as the distorted sensory homunculus.
+
+Fine touch, vibration and proprioception ascend in the **dorsal column–medial lemniscus** pathway, which crosses in the medulla. Pain and temperature ascend in the **spinothalamic** pathway, which crosses almost immediately in the spinal cord.
+
+### Temperature and pain
+
+**Thermoreceptors** form separate populations for warmth and cold. Some are ion channels that also respond to chemicals, which is why capsaicin feels hot and menthol feels cool.
+
+**Nociceptors** signal actual or threatened tissue damage. Thin, myelinated **A-delta fibers** conduct quickly and carry sharp, well-localized "first pain." Unmyelinated **C fibers** conduct slowly and carry the dull, aching "second pain" that follows.
+
+Pain is not a simple readout of damage; attention, emotion and expectation all change it. The **gate control theory of pain**, proposed by Ronald Melzack and Patrick Wall in 1965, offers a mechanism: a neural "gate" in the **dorsal horn of the spinal cord** that can pass or block pain signals on their way to the brain.
+
+- Activity in small-diameter pain fibers tends to open the gate.
+- Activity in large-diameter touch and pressure fibers excites inhibitory interneurons that close it, which is why rubbing a stubbed toe helps.
+- Descending signals from the brain can also close the gate. Brainstem regions such as the periaqueductal gray engage endogenous opioids (endorphins) that suppress pain transmission.
+
+The theory helps explain why soldiers sometimes report little pain from serious wounds during battle, and why anxiety can make a minor injury feel worse.
+
+<Callout type="trap" title="The gate is in the spinal cord">
+Because the theory involves top-down influences, students often place the "gate" in the thalamus or cortex. The gate itself is in the **dorsal horn of the spinal cord**. Descending signals from the brain act on it, but gating happens before the signal ascends.
+</Callout>
+
+### Proprioception and kinesthesia
+
+**Proprioception** is the sense of body position; **kinesthesia** is the sense of body movement. **Muscle spindles** detect changes in muscle length, and **Golgi tendon organs** detect muscle tension. Together with joint receptors, they let you touch your nose with your eyes closed.
+
+## Taste and Smell
+
+Taste and smell are the **chemical senses**. Together they produce **flavor**, which is mostly smell; a blocked nose makes food taste bland even though taste buds work normally.
+
+### Taste
+
+**Gustation** relies on **taste buds**, clusters of receptor cells located mostly in the **papillae** of the tongue. Humans recognize five basic tastes. **Sweet**, **bitter** and **umami** (savory, signaling glutamate) are detected by G protein-coupled receptors; **salty** and **sour** are detected mainly through ion channels for sodium and hydrogen ions. Sweet and umami flag nutrients, salty a needed mineral, and bitter and sour possible toxins or spoilage. The "tongue map" assigning tastes to regions is a myth; every taste-sensitive region detects all five.
+
+Taste signals travel through cranial nerves VII, IX and X to the **nucleus of the solitary tract** in the medulla, then through the thalamus to the **gustatory cortex** in the insula and frontal operculum.
+
+### Smell
+
+**Olfaction** begins in the **olfactory epithelium** in the roof of the nasal cavity. **Olfactory receptor neurons** carry G protein-coupled odorant receptors; humans have roughly 400 functional types. Each neuron expresses one type, but each odorant binds several types to different degrees, so a smell is coded by the *pattern* of receptors activated. This combinatorial code lets a few hundred receptors distinguish an enormous number of odors.
+
+The receptor neurons' axons pass through the cribriform plate to the **olfactory bulb**, where axons from all neurons expressing the same receptor converge on the same glomerulus. Bulb output neurons project along the olfactory tract directly to the **olfactory (piriform) cortex** and to limbic structures, including the **amygdala** and the entorhinal cortex, the gateway to the hippocampus. Olfactory receptor neurons are also among the few neurons replaced throughout adult life.
+
+<Callout type="high-yield" title="Smell bypasses the thalamus">
+Olfaction is the only sense whose signals reach the cortex without an obligatory relay in the thalamus. Its direct links to the amygdala and the entorhinal–hippocampal system help explain why odors can trigger unusually vivid, emotional memories.
+</Callout>
+
+Many mammals detect **pheromones**, chemical signals that affect the behavior or physiology of others of the same species, through a separate vomeronasal organ. In humans that organ is vestigial, and the role of pheromones in human behavior is uncertain.
+
+## Perception: Organizing Sensory Input
+
+Receptors deliver fragments: edges, wavelengths, frequencies, pressures. **Perception** assembles them into objects and scenes, and it is shaped both by incoming data and by what the perceiver already knows.
+
+### Bottom-up and top-down processing
+
+**Bottom-up processing** is data-driven, building from simple features to complex representations, as Hubel and Wiesel's feature detectors do. It dominates when you encounter something unfamiliar. **Top-down processing** is concept-driven, using knowledge, expectation and context to interpret input. It lets you read messy handwriting or follow a conversation in a noisy restaurant.
+
+Real perception combines both. A character that could be read as the letter B or the number 13 reads as B between A and C, and as 13 between 12 and 14. The bottom-up input is identical; top-down context decides.
+
+### Gestalt principles
+
+The **Gestalt** psychologists argued that the whole is different from the sum of its parts. We perceive organized wholes, not collections of dots and lines, and the brain groups elements by predictable rules.
+
+| Principle | What it says | Example |
+|---|---|---|
+| Figure–ground | We separate an object from its background | A vase that can also be seen as two facing profiles |
+| Proximity | Nearby elements are grouped | Six dots in three pairs look like three groups |
+| Similarity | Similar-looking elements are grouped | Alternating rows of circles and squares look like rows |
+| Continuity | We prefer smooth, continuous paths | Two crossing lines look like two lines, not four segments |
+| Closure | We fill gaps to perceive complete figures | A circle drawn with small gaps still looks like a circle |
+| Common fate | Elements moving together are grouped | A flock of birds flying the same direction |
+| Prägnanz | We see the simplest, most stable organization | Overlapping outlines are seen as a circle on a square, not one irregular shape |
+
+<Question id="ps-sensation-05" />
+
+### Depth perception
+
+The retina is two-dimensional, yet we perceive a three-dimensional world. **Binocular cues** require both eyes:
+
+- **Retinal disparity:** the two eyes receive slightly different images, and the difference is greater for closer objects. This is the principle behind 3-D movies.
+- **Convergence:** the eyes rotate inward to fixate a near object, and the degree of rotation signals distance at short range.
+
+**Monocular cues** work with one eye, and painters use them to suggest depth on a flat canvas:
+
+- **Relative size:** of two objects assumed to be the same size, the one with the smaller retinal image looks farther away.
+- **Interposition (occlusion):** an object blocking part of another looks closer.
+- **Relative height:** objects higher in the visual field, nearer the horizon, look farther away.
+- **Linear perspective:** parallel lines, like railroad tracks, appear to converge in the distance.
+- **Texture gradient:** texture is coarse up close and fine and dense far away.
+- **Shading:** patterns of light and shadow imply shape, usually assuming light from above.
+- **Motion parallax:** as you move, near objects sweep past quickly while distant ones move slowly.
+
+<Callout type="trap" title="Motion parallax is monocular">
+Because it involves movement, students often lump motion parallax with binocular cues. It needs only one eye. The only binocular cues the MCAT expects you to know are **retinal disparity** and **convergence**.
+</Callout>
+
+### Perceptual constancy
+
+**Perceptual constancy** is the tendency to perceive objects as stable despite changes in the retinal image.
+
+- **Size constancy:** a friend walking away casts a shrinking image but does not seem to shrink.
+- **Shape constancy:** an opening door projects a trapezoid onto the retina, but you still see a rectangle.
+- **Color and lightness constancy:** a white shirt looks white under bluish daylight and yellowish lamplight alike.
+
+Constancy relies on context, especially distance cues, and illusions exploit this. In the **Ponzo illusion**, two identical horizontal lines are drawn between converging lines that look like railroad tracks. The upper line looks longer, because linear perspective signals that it is farther away and the brain scales up its size.
+
+### Perceptual set
+
+A **perceptual set** is a mental predisposition to perceive one thing and not another, shaped by expectation, context, motivation, emotion and culture. Hungry people identify food-related words faster. Participants first shown an unambiguous version of a figure that could be either a young woman or an old woman tend to see the ambiguous version the same way. People raised among rectangular buildings are more susceptible to some geometric illusions, such as the **Müller-Lyer illusion**, than people raised in environments with few straight lines and corners. Perceptual set is top-down processing in action, and it matters wherever people must judge ambiguous input: eyewitnesses, radiologists, airport screeners.
+
+## Classic Experiments in Sensation and Perception
+
+P/S questions often describe a study in a few sentences and ask what it demonstrates. These designs recur, sometimes with the species, stimulus or numbers changed.
+
+| Study | Manipulation | Result | Concept |
+|---|---|---|---|
+| Psychophysical threshold testing | Stimuli of varying intensity presented many times | Detection probability rises gradually; threshold at 50 percent | Absolute threshold, JND, Weber's law |
+| Signal detection experiments | Signal present on some trials, absent on catch trials; payoffs varied | Payoffs shift hits and false alarms together | Response bias versus sensitivity |
+| Hubel and Wiesel's recordings | Bars of different orientations shown while recording single V1 neurons | Individual neurons fire for specific orientations | Feature detection |
+| Selective rearing of kittens | Kittens see only vertical (or only horizontal) stripes early in life | Cortical neurons later respond poorly to the orientation never seen | Critical periods in sensory development |
+| The visual cliff (Gibson and Walk) | Crawling infants placed on glass over a visible "drop" | Most refuse to cross the deep side | Depth perception present by crawling age |
+| Ambiguous figures in context | Same stimulus shown after different primes or contexts | Interpretation follows the prime or context | Top-down processing, perceptual set |
+
+A few interpretive points come up repeatedly.
+
+The **visual cliff** shows that depth perception is present by the time infants crawl, but not that it is innate, because crawling infants already have months of visual experience. Animals that walk at birth, such as chicks and goats, also avoid the deep side, which is stronger evidence for an innate component.
+
+**Selective-rearing** studies show that early experience shapes the developing visual cortex: neurons deprived of their preferred input during a sensitive period lose responsiveness. The same logic explains why a childhood cataract or misaligned eye must be treated early to prevent permanent impairment.
+
+In **signal detection** designs, ask whether the manipulation changed the stimulus or the stakes. A brighter signal changes sensitivity; a bonus for hits or a penalty for false alarms changes the criterion.
+
+<Callout type="note" title="Reading a study question">
+Before looking at the choices, summarize the study in three parts: what was manipulated, what was measured, and what happened. Then name the concept yourself. This protects you from choices that use the right vocabulary to describe the wrong mechanism.
+</Callout>
+
+Sensation and perception are the front door to the rest of the P/S section. Attention, memory, emotion and social judgment all begin with information that has passed through these systems. The next chapter asks how experience changes behavior in the first place, through learning and memory.

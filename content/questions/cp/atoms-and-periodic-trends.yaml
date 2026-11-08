@@ -1,0 +1,347 @@
+chapter: atoms-and-periodic-trends
+questions:
+  - id: cp-atoms-01
+    usage: inline
+    topic: 4E
+    difficulty: intro
+    stem: |
+      Fluorine-18, the radioactive label in the PET tracer FDG, decays by positron emission. Which nucleus is produced?
+    choices:
+      A: '$\ce{^{18}_{10}Ne}$'
+      B: '$\ce{^{18}_{8}O}$'
+      C: '$\ce{^{14}_{7}N}$'
+      D: '$\ce{^{17}_{8}O}$'
+    answer: B
+    explanation: |
+      In positron ($\beta^+$) emission a proton becomes a neutron, so the atomic number falls by one while the mass number stays the same. Fluorine-18 ($Z = 9$, $A = 18$) becomes a nucleus with $Z = 8$ and $A = 18$, which is oxygen-18.
+    whyWrong:
+      A: "Raising Z by one is what beta-minus decay does, not positron emission."
+      C: "Losing 4 from A and 2 from Z describes alpha decay."
+      D: "Mass number does not change in positron emission; no nucleon leaves the nucleus."
+
+  - id: cp-atoms-02
+    usage: inline
+    topic: 4E
+    difficulty: core
+    stem: |
+      In the Bohr model of hydrogen, $E_n = -13.6\ \text{eV}/n^2$. Which electron transition emits the photon with the **shortest** wavelength?
+    choices:
+      A: '$n = 3 \to n = 2$'
+      B: '$n = 4 \to n = 2$'
+      C: '$n = 5 \to n = 3$'
+      D: '$n = 2 \to n = 1$'
+    answer: D
+    explanation: |
+      Shortest wavelength means highest photon energy, because $E = hc/\lambda$. The gaps are largest near the nucleus: the $2 \to 1$ drop releases $13.6(1 - \tfrac{1}{4}) = 10.2$ eV, compared with 1.89 eV for $3 \to 2$, 2.55 eV for $4 \to 2$ and about 0.97 eV for $5 \to 3$.
+    whyWrong:
+      A: "This releases only 1.89 eV, a visible red photon at 656 nm."
+      B: "This releases 2.55 eV; a larger change in n does not beat a transition that ends at n = 1."
+      C: "This releases under 1 eV, an infrared photon with a long wavelength."
+
+  - id: cp-atoms-03
+    usage: inline
+    topic: 4E
+    difficulty: core
+    stem: |
+      In methemoglobin, the heme iron has been oxidized to $\ce{Fe^3+}$ and can no longer bind oxygen. What is the ground-state electron configuration of $\ce{Fe^3+}$? (Iron has $Z = 26$.)
+    choices:
+      A: '$[\ce{Ar}]\,3d^5$'
+      B: '$[\ce{Ar}]\,4s^2\,3d^3$'
+      C: '$[\ce{Ar}]\,4s^1\,3d^4$'
+      D: '$[\ce{Ar}]\,3d^6$'
+    answer: A
+    explanation: |
+      Neutral iron is $[\ce{Ar}]\,4s^2\,3d^6$. Transition metals lose their 4s electrons before their 3d electrons, so removing three electrons takes both 4s electrons and one 3d electron, leaving $[\ce{Ar}]\,3d^5$, a half-filled d subshell.
+    whyWrong:
+      B: "This removes 3d electrons first; cations lose electrons from the highest-n subshell (4s) first."
+      C: "This keeps one 4s electron while removing 3d electrons, which reverses the removal order."
+      D: "This is Fe2+ (ferrous iron), the form that binds oxygen in normal hemoglobin."
+
+  - id: cp-atoms-04
+    usage: inline
+    topic: 4E
+    difficulty: core
+    stem: |
+      Which of the following period 2 elements has the highest first ionization energy?
+    choices:
+      A: "Boron"
+      B: "Carbon"
+      C: "Nitrogen"
+      D: "Oxygen"
+    answer: C
+    explanation: |
+      Ionization energy generally rises across a period as effective nuclear charge increases, but oxygen is an exception. Nitrogen's three 2p electrons are unpaired, while oxygen's fourth 2p electron shares an orbital and is pushed out more easily by electron–electron repulsion. Nitrogen (about 1402 kJ/mol) therefore beats oxygen (about 1314 kJ/mol).
+    whyWrong:
+      A: "Boron has the lowest value of these four; its lone 2p electron is shielded by the 2s pair."
+      B: "Carbon has a smaller effective nuclear charge than nitrogen and a lower ionization energy."
+      D: "Oxygen sits to the right of nitrogen, but its paired 2p electron makes it easier to ionize."
+
+  - id: cp-atoms-05
+    usage: inline
+    topic: 4E
+    difficulty: core
+    stem: |
+      An element has the successive ionization energies shown below (kJ/mol). Which element is it most likely to be?
+
+      | IE1 | IE2 | IE3 | IE4 |
+      |---|---|---|---|
+      | 738 | 1451 | 7733 | 10543 |
+    choices:
+      A: "Sodium"
+      B: "Magnesium"
+      C: "Aluminum"
+      D: "Chlorine"
+    answer: B
+    explanation: |
+      The huge jump comes between the second and third ionization energies (from 1451 to 7733 kJ/mol), which means the third electron must come from a filled core shell. The atom therefore has two valence electrons and belongs to group 2. A first ionization energy of 738 kJ/mol fits magnesium, which forms $\ce{Mg^2+}$, the ion that pairs with ATP in cells.
+    whyWrong:
+      A: "Sodium has one valence electron, so its big jump would come between IE1 and IE2."
+      C: "Aluminum has three valence electrons; its big jump would come after IE3."
+      D: "Chlorine has seven valence electrons and a much higher first ionization energy."
+
+  - id: cp-atoms-06
+    usage: quiz
+    topic: 4E
+    difficulty: intro
+    stem: |
+      Potassium ions carry most of the positive charge inside a resting neuron. How many protons, neutrons and electrons does $\ce{^{39}_{19}K+}$ contain?
+    choices:
+      A: "19 protons, 20 neutrons, 18 electrons"
+      B: "19 protons, 20 neutrons, 20 electrons"
+      C: "20 protons, 19 neutrons, 18 electrons"
+      D: "19 protons, 39 neutrons, 18 electrons"
+    answer: A
+    explanation: |
+      The atomic number gives 19 protons. Neutrons are $A - Z = 39 - 19 = 20$. A $+1$ charge means one electron has been lost, so the ion has $19 - 1 = 18$ electrons.
+    whyWrong:
+      B: "A positive ion has lost an electron; 20 electrons would make it an anion."
+      C: "This swaps protons and neutrons; the atomic number (19) is the proton count."
+      D: "39 is the mass number, the sum of protons and neutrons, not the neutron count."
+
+  - id: cp-atoms-07
+    usage: quiz
+    topic: 4E
+    difficulty: intro
+    stem: |
+      Naturally occurring boron is about 20% boron-10 (10.01 amu) and 80% boron-11 (11.01 amu). What is the atomic mass of boron?
+    choices:
+      A: "10.21 amu"
+      B: "10.51 amu"
+      C: "10.81 amu"
+      D: "11.01 amu"
+    answer: C
+    explanation: |
+      Atomic mass is a weighted average: $(0.20)(10.01) + (0.80)(11.01) = 2.00 + 8.81 = 10.81$ amu. Because boron-11 is four times as common, the average sits much closer to 11 than to 10.
+    whyWrong:
+      A: "This swaps the weights, treating boron-10 as the 80% isotope."
+      B: "This is the simple unweighted average of the two isotope masses."
+      D: "This ignores boron-10 entirely; the average must lie between the two masses."
+
+  - id: cp-atoms-08
+    usage: quiz
+    topic: 4E
+    difficulty: advanced
+    stem: |
+      Thorium-232 ($Z = 90$) decays through a series of steps to the stable isotope lead-208 ($Z = 82$). How many alpha and beta-minus decays does the series include?
+    choices:
+      A: "4 alpha and 6 beta-minus"
+      B: "6 alpha and 0 beta-minus"
+      C: "12 alpha and 4 beta-minus"
+      D: "6 alpha and 4 beta-minus"
+    answer: D
+    explanation: |
+      Only alpha decay changes the mass number: $232 - 208 = 24$, and $24 / 4 = 6$ alpha decays. Six alpha decays lower $Z$ by 12, from 90 to 78. Lead has $Z = 82$, so four beta-minus decays (each raising $Z$ by one) are needed. Check: $90 - 12 + 4 = 82$.
+    whyWrong:
+      A: "This reverses the counts; the mass change of 24 requires six alpha decays."
+      B: "Six alpha decays alone would give Z = 78, not lead's 82."
+      C: "This divides the mass change by 2 instead of 4; an alpha particle carries four nucleons."
+
+  - id: cp-atoms-09
+    usage: quiz
+    topic: 4E
+    difficulty: core
+    stem: |
+      A patient receives a bone scan agent labeled with technetium-99m ($t_{1/2} = 6.0$ hours) with an activity of 800 MBq at 7:00 a.m. Assuming no excretion, what is the remaining activity at 7:00 a.m. the next day?
+    choices:
+      A: "200 MBq"
+      B: "50 MBq"
+      C: "100 MBq"
+      D: "25 MBq"
+    answer: B
+    explanation: |
+      Twenty-four hours is $24 / 6 = 4$ half-lives. The activity falls by a factor of $2^4 = 16$: $800 / 16 = 50$ MBq.
+    whyWrong:
+      A: "This divides by 4 (the number of half-lives) instead of halving four times."
+      C: "This is three half-lives, or 18 hours."
+      D: "This is five half-lives, or 30 hours."
+
+  - id: cp-atoms-10
+    usage: quiz
+    topic: 4E
+    difficulty: core
+    stem: |
+      A researcher characterizing a new imaging isotope finds that it decays only by electron capture, and that X-rays are released as outer electrons drop into the vacancy left behind. Compared with the parent nucleus, the daughter nucleus has:
+    choices:
+      A: "the same atomic number and a mass number lower by 1"
+      B: "an atomic number higher by 1 and the same mass number"
+      C: "an atomic number lower by 1 and the same mass number"
+      D: "an atomic number lower by 2 and a mass number lower by 4"
+    answer: C
+    explanation: |
+      In electron capture, an inner electron combines with a proton to form a neutron. One proton is replaced by one neutron, so $Z$ falls by one while the total number of nucleons, $A$, is unchanged. The X-rays come from the electron cloud rearranging, not from the nucleus.
+    whyWrong:
+      A: "The captured electron converts a proton to a neutron; no nucleon is lost, so A cannot change."
+      B: "An increase in Z describes beta-minus decay, where a neutron becomes a proton."
+      D: "These changes describe alpha decay."
+
+  - id: cp-atoms-11
+    usage: quiz
+    topic: 4E
+    difficulty: core
+    stem: |
+      In a photoelectric experiment, light with a frequency above the threshold frequency ejects electrons from a metal plate. If the light's intensity is doubled while its wavelength is held constant, what happens?
+    choices:
+      A: "The number of ejected electrons per second doubles; their maximum kinetic energy is unchanged."
+      B: "The maximum kinetic energy of the ejected electrons doubles; their number is unchanged."
+      C: "Both the number of ejected electrons and their maximum kinetic energy double."
+      D: "Nothing changes, because only the work function controls electron ejection."
+    answer: A
+    explanation: |
+      Each electron is ejected by a single photon, and its maximum kinetic energy is $hf - \Phi$, which depends only on frequency. Doubling the intensity at the same wavelength doubles the number of photons arriving per second, so twice as many electrons are ejected, each with the same maximum kinetic energy.
+    whyWrong:
+      B: "Kinetic energy depends on photon energy (frequency), not on how many photons arrive."
+      C: "Intensity changes the photon count only; it does not change the energy of each photon."
+      D: "The work function sets the threshold, but intensity still controls how many electrons are freed."
+
+  - id: cp-atoms-12
+    usage: quiz
+    topic: 4E
+    difficulty: core
+    stem: |
+      Which set of quantum numbers $(n, l, m_l, m_s)$ describes an allowed state for an electron?
+    choices:
+      A: '$(3,\ 3,\ 0,\ +\tfrac{1}{2})$'
+      B: '$(2,\ 1,\ 2,\ -\tfrac{1}{2})$'
+      C: '$(1,\ 0,\ 0,\ +1)$'
+      D: '$(4,\ 2,\ -2,\ +\tfrac{1}{2})$'
+    answer: D
+    explanation: |
+      For $n = 4$, $l$ may be 0 to 3, so $l = 2$ (a 4d orbital) is allowed. For $l = 2$, $m_l$ may be any integer from $-2$ to $+2$, and $m_s$ must be $\pm\tfrac{1}{2}$. Every value in D falls within its allowed range.
+    whyWrong:
+      A: "l must be less than n; for n = 3 the largest allowed l is 2."
+      B: "m_l cannot exceed l in magnitude; for l = 1 it can only be -1, 0 or +1."
+      C: "Spin quantum number can only be +1/2 or -1/2."
+
+  - id: cp-atoms-13
+    usage: quiz
+    topic: 4E
+    difficulty: core
+    stem: |
+      A biochemist uses a magnetic measurement to tell metal ions apart in a protein sample. Which of the following ions is diamagnetic?
+    choices:
+      A: '$\ce{Fe^2+}$'
+      B: '$\ce{Zn^2+}$'
+      C: '$\ce{Cu^2+}$'
+      D: '$\ce{Mn^2+}$'
+    answer: B
+    explanation: |
+      A diamagnetic species has all of its electrons paired. $\ce{Zn^2+}$ is $[\ce{Ar}]\,3d^{10}$: a completely filled d subshell with no unpaired electrons. That is also why zinc(II) compounds are colorless.
+    whyWrong:
+      A: 'Fe2+ is $[\ce{Ar}]\,3d^6$, which has four unpaired electrons in a free ion.'
+      C: 'Cu2+ is $[\ce{Ar}]\,3d^9$, which leaves one unpaired electron.'
+      D: 'Mn2+ is $[\ce{Ar}]\,3d^5$, with five unpaired electrons.'
+
+  - id: cp-atoms-14
+    usage: quiz
+    topic: 4E
+    difficulty: core
+    stem: |
+      Copper ($Z = 29$) is a cofactor in cytochrome c oxidase. What is the ground-state electron configuration of a neutral copper atom?
+    choices:
+      A: '$[\ce{Ar}]\,4s^1\,3d^{10}$'
+      B: '$[\ce{Ar}]\,4s^2\,3d^9$'
+      C: '$[\ce{Ar}]\,3d^{10}$'
+      D: '$[\ce{Ar}]\,4s^2\,3d^{10}$'
+    answer: A
+    explanation: |
+      Copper is one of the two first-row exceptions to the Aufbau order. Moving one electron from 4s into 3d gives a completely filled d subshell, which is lower in energy overall. The configuration is $[\ce{Ar}]\,4s^1\,3d^{10}$, which still accounts for all 29 electrons.
+    whyWrong:
+      B: "This is the configuration predicted by the simple filling order, but copper prefers a filled 3d subshell."
+      C: "This has only 28 electrons; it is the configuration of the Cu+ ion."
+      D: "This has 30 electrons; it is the configuration of zinc."
+
+  - id: cp-atoms-15
+    usage: quiz
+    topic: 4E
+    difficulty: core
+    stem: |
+      The ions $\ce{S^2-}$, $\ce{Cl-}$, $\ce{K+}$ and $\ce{Ca^2+}$ all have the same electron configuration as argon. Which of them has the largest radius?
+    choices:
+      A: '$\ce{Ca^2+}$'
+      B: '$\ce{K+}$'
+      C: '$\ce{S^2-}$'
+      D: '$\ce{Cl-}$'
+    answer: C
+    explanation: |
+      All four ions have 18 electrons, so the deciding factor is nuclear charge. Sulfide has the fewest protons (16), so its electrons are held least tightly and its cloud is the largest. Calcium, with 20 protons, pulls the same 18 electrons in the tightest and is the smallest.
+    whyWrong:
+      A: "Calcium has the most protons of the four and is the smallest ion in this series."
+      B: "Potassium has 19 protons pulling on 18 electrons, more than either anion."
+      D: "Chloride is large, but it has one more proton than sulfide to hold the same electrons."
+
+  - id: cp-atoms-16
+    usage: quiz
+    topic: 5B
+    difficulty: intro
+    stem: |
+      Based on electronegativity, which bond found in biological molecules is the most polar?
+    choices:
+      A: "C–H"
+      B: "N–H"
+      C: "S–H"
+      D: "O–H"
+    answer: D
+    explanation: |
+      Polarity scales with the electronegativity difference between the bonded atoms. Oxygen (3.44) differs from hydrogen (2.20) by about 1.2, more than nitrogen (about 0.8), sulfur (about 0.4) or carbon (about 0.35). That large difference is why O–H groups are such strong hydrogen-bond donors.
+    whyWrong:
+      A: "Carbon and hydrogen differ by only about 0.35, so C–H is nearly nonpolar."
+      B: "N–H is polar, but nitrogen is less electronegative than oxygen."
+      C: "Sulfur's electronegativity is close to carbon's, so S–H is only weakly polar."
+
+  - id: cp-atoms-17
+    usage: quiz
+    topic: 4E
+    difficulty: core
+    stem: |
+      After a nuclear reactor accident, public health officials monitor strontium-90 because it accumulates in children's bones. Which property best explains this accumulation?
+    choices:
+      A: "Strontium is in the same group as calcium and forms a similar 2+ ion."
+      B: "Strontium-90 emits alpha particles that bind to bone mineral."
+      C: "Strontium is more electronegative than calcium and binds phosphate covalently."
+      D: "The strontium ion is much smaller than the calcium ion and fits into bone."
+    answer: A
+    explanation: |
+      Elements in the same group share a valence configuration and behave alike chemically. Strontium, like calcium, is an alkaline earth metal that forms a $+2$ ion, so the body incorporates it into bone mineral in place of calcium. Once there, its radiation damages nearby marrow for years.
+    whyWrong:
+      B: "Strontium-90 is a beta-minus emitter, and the type of radiation does not determine where an element is stored."
+      C: "Strontium is less electronegative than calcium (it lies lower in the group) and forms ionic, not covalent, bonds."
+      D: "Strontium lies below calcium, so its 2+ ion is larger, not smaller."
+
+  - id: cp-atoms-18
+    usage: quiz
+    topic: 4E
+    difficulty: core
+    stem: |
+      In a PET scan using $\ce{^{18}F}$-FDG, a ring of detectors around the patient records only pairs of photons that arrive at the same instant on opposite sides of the ring. Why does this design locate the tracer?
+    choices:
+      A: "Fluorine-18 nuclei release two gamma rays in random directions as they decay."
+      B: "Phosphorylated FDG fluoresces and emits two visible photons at once."
+      C: "Each positron annihilates with an electron, giving two 511 keV photons in opposite directions."
+      D: "The beta-minus electrons from fluorine-18 travel straight out of the body to the detectors."
+    answer: C
+    explanation: |
+      Fluorine-18 decays by positron emission. The positron travels about a millimeter, meets an electron, and the pair annihilate into two 511 keV photons emitted nearly back to back. Two simultaneous hits on opposite sides of the ring define a line through the point of annihilation, and many such lines pinpoint where the tracer has accumulated.
+    whyWrong:
+      A: "The photons come from annihilation, not the nucleus, and they travel in opposite directions, not randomly."
+      B: "FDG is detected by its radioactivity; it is not a fluorescent molecule."
+      D: "Fluorine-18 is a positron emitter, not a beta-minus emitter, and charged particles travel only millimeters in tissue."

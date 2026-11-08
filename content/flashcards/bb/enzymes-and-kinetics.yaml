@@ -1,0 +1,116 @@
+deck:
+  title: "Enzymes and Kinetics"
+  description: "Enzyme function, cofactors, EC classes, Michaelis–Menten and Lineweaver–Burk analysis, inhibition, allostery and regulation."
+cards:
+  - id: bb-enzymes-fc-01
+    front: 'Which quantities does an enzyme change, and which does it leave alone?'
+    back: 'It lowers $E_a$ and speeds forward and reverse reactions equally. It does not change ΔG, ΔH, $K_\text{eq}$ or the equilibrium concentrations.'
+    tags: [basics]
+  - id: bb-enzymes-fc-02
+    front: 'How does the induced-fit model differ from the lock-and-key model?'
+    back: 'In induced fit, substrate binding causes a conformational change that closes the active site around the substrate (e.g., hexokinase). Lock and key pictures a rigid, preformed site.'
+    tags: [active-site]
+  - id: bb-enzymes-fc-03
+    front: 'Why are transition-state analogs potent inhibitors?'
+    back: 'Active sites bind the transition state more tightly than the substrate, so a stable mimic of the transition state binds very tightly.'
+    tags: [active-site]
+  - id: bb-enzymes-fc-04
+    front: 'What are an apoenzyme and a holoenzyme?'
+    back: 'An apoenzyme is the inactive protein without its cofactor; the holoenzyme is the active enzyme with its cofactor bound.'
+    tags: [cofactors]
+  - id: bb-enzymes-fc-05
+    front: 'What is a prosthetic group?'
+    back: 'A cofactor bound tightly or covalently that stays on the enzyme, such as heme in hemoglobin or FAD in succinate dehydrogenase.'
+    tags: [cofactors]
+  - id: bb-enzymes-fc-06
+    front: 'Which vitamins give rise to $\ce{NAD+}$ and FAD?'
+    back: '$\ce{NAD+}$ comes from niacin (B3); FAD comes from riboflavin (B2). Both carry electrons in redox reactions.'
+    tags: [cofactors, vitamins]
+  - id: bb-enzymes-fc-07
+    front: 'Which coenzyme is derived from vitamin B6, and what reactions does it support?'
+    back: 'Pyridoxal phosphate (PLP), used in transamination and other amino acid reactions.'
+    tags: [cofactors, vitamins]
+  - id: bb-enzymes-fc-08
+    front: 'Which reaction type requires biotin, and which requires thiamine pyrophosphate?'
+    back: 'Biotin (B7): carboxylations, such as pyruvate carboxylase. TPP (B1): decarboxylation of α-keto acids, such as pyruvate dehydrogenase.'
+    tags: [cofactors, vitamins]
+  - id: bb-enzymes-fc-09
+    front: 'What are the six EC enzyme classes, in order?'
+    back: '1 Oxidoreductases, 2 Transferases, 3 Hydrolases, 4 Lyases, 5 Isomerases, 6 Ligases.'
+    tags: [classes]
+  - id: bb-enzymes-fc-10
+    front: 'To which classes do kinases and phosphatases belong?'
+    back: 'Kinases are transferases (move phosphate from ATP). Phosphatases are hydrolases (remove phosphate with water).'
+    tags: [classes]
+  - id: bb-enzymes-fc-11
+    front: 'How does a synthetase differ from a synthase?'
+    back: 'A synthetase is a ligase that uses ATP to join molecules. A synthase usually joins molecules without ATP and is typically a lyase.'
+    tags: [classes]
+  - id: bb-enzymes-fc-12
+    front: 'What is the Michaelis–Menten equation?'
+    back: '$v_0 = \frac{V_\text{max}[\text{S}]}{K_m + [\text{S}]}$'
+    tags: [michaelis-menten]
+  - id: bb-enzymes-fc-13
+    front: 'What does $K_m$ represent?'
+    back: 'The substrate concentration at which $v_0 = \frac{1}{2}V_\text{max}$. A lower $K_m$ means higher apparent affinity. It does not depend on enzyme concentration.'
+    tags: [michaelis-menten]
+  - id: bb-enzymes-fc-14
+    front: 'How are $V_\text{max}$, $k_\text{cat}$ and total enzyme related?'
+    back: '$V_\text{max} = k_\text{cat}[\text{E}]_T$. Doubling the enzyme doubles $V_\text{max}$; $k_\text{cat}$ is the turnover number per active site per second.'
+    tags: [michaelis-menten]
+  - id: bb-enzymes-fc-15
+    front: 'What substrate concentration gives 90% of $V_\text{max}$?'
+    back: '$[\text{S}] = 9K_m$, since $\frac{9K_m}{K_m + 9K_m} = 0.90$.'
+    tags: [michaelis-menten]
+  - id: bb-enzymes-fc-16
+    front: 'What does $\frac{k_\text{cat}}{K_m}$ measure, and what limits it?'
+    back: 'Catalytic efficiency (the specificity constant), the effective rate constant at low [S]. It is capped by diffusion at about $10^8$ to $10^9\ \text{M}^{-1}\text{s}^{-1}$.'
+    tags: [michaelis-menten]
+  - id: bb-enzymes-fc-17
+    front: 'On a Lineweaver–Burk plot, what are the intercepts and slope?'
+    back: 'y-intercept $= \frac{1}{V_\text{max}}$, x-intercept $= -\frac{1}{K_m}$, slope $= \frac{K_m}{V_\text{max}}$.'
+    tags: [lineweaver-burk]
+  - id: bb-enzymes-fc-18
+    front: 'Competitive inhibition: effect on apparent $K_m$, $V_\text{max}$ and the Lineweaver–Burk plot?'
+    back: '$K_m$ increases, $V_\text{max}$ is unchanged; lines intersect on the y-axis. Overcome by high [S].'
+    tags: [inhibition]
+  - id: bb-enzymes-fc-19
+    front: 'Noncompetitive inhibition: effect on apparent $K_m$, $V_\text{max}$ and the Lineweaver–Burk plot?'
+    back: '$K_m$ unchanged, $V_\text{max}$ decreases; lines intersect on the x-axis. The inhibitor binds E and ES equally.'
+    tags: [inhibition]
+  - id: bb-enzymes-fc-20
+    front: 'Uncompetitive inhibition: effect on apparent $K_m$, $V_\text{max}$ and the Lineweaver–Burk plot?'
+    back: 'Both $K_m$ and $V_\text{max}$ decrease by the same factor; lines are parallel. The inhibitor binds only ES.'
+    tags: [inhibition]
+  - id: bb-enzymes-fc-21
+    front: 'Mixed inhibition: effect on apparent $K_m$ and $V_\text{max}$?'
+    back: '$V_\text{max}$ decreases. $K_m$ increases if the inhibitor prefers free E, or decreases if it prefers ES. Lines intersect left of the y-axis, off the x-axis.'
+    tags: [inhibition]
+  - id: bb-enzymes-fc-22
+    front: 'How does aspirin inhibit cyclooxygenase, and why does its antiplatelet effect last for days?'
+    back: 'It irreversibly acetylates a serine in the COX active-site channel. Platelets lack a nucleus, so they cannot make new COX.'
+    tags: [inhibition]
+  - id: bb-enzymes-fc-23
+    front: 'What does a Hill coefficient greater than 1, equal to 1, or less than 1 indicate?'
+    back: 'n > 1: positive cooperativity (sigmoidal). n = 1: no cooperativity (hyperbolic). n less than 1: negative cooperativity.'
+    tags: [allostery]
+  - id: bb-enzymes-fc-24
+    front: 'How do allosteric activators and inhibitors shift a sigmoidal velocity curve?'
+    back: 'Activators stabilize the high-affinity R state and shift the curve left (lower $K_{0.5}$). Inhibitors stabilize the T state and shift it right.'
+    tags: [allostery]
+  - id: bb-enzymes-fc-25
+    front: 'How is trypsinogen activated, and what does trypsin then do?'
+    back: 'Enteropeptidase in the duodenal brush border cleaves it to trypsin. Trypsin activates more trypsinogen and the other pancreatic zymogens.'
+    tags: [zymogens]
+  - id: bb-enzymes-fc-26
+    front: 'How is pepsinogen activated?'
+    back: 'Secreted by gastric chief cells, it cleaves itself in the acid made by parietal cells; pepsin then activates more pepsinogen.'
+    tags: [zymogens]
+  - id: bb-enzymes-fc-27
+    front: 'What is feedback inhibition?'
+    back: 'The end product of a pathway inhibits an early, usually committed, step, often allosterically. Example: CTP inhibits aspartate transcarbamoylase.'
+    tags: [regulation]
+  - id: bb-enzymes-fc-28
+    front: 'What are the approximate pH optima of pepsin and trypsin?'
+    back: 'Pepsin: about 2 (stomach). Trypsin: about 8 (small intestine).'
+    tags: [regulation]

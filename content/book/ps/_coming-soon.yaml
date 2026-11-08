@@ -1,0 +1,7 @@
+chapters:
+  - { title: "Cognition, Consciousness, and Language", aamc: ["6B"] }
+  - { title: "Emotion and Stress", aamc: ["6C"] }
+  - { title: "Identity and Personality", aamc: ["7A", "8A"] }
+  - { title: "Social Behavior and Social Thinking", aamc: ["7B", "8B", "8C"] }
+  - { title: "Social Structure and Culture", aamc: ["9A"] }
+  - { title: "Demographics and Social Inequality", aamc: ["9B", "10A"] }

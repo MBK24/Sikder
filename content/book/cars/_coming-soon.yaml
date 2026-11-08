@@ -1,0 +1,5 @@
+chapters:
+  - { title: "Humanities Passages", aamc: ["CARS-FC"] }
+  - { title: "Social Science Passages", aamc: ["CARS-FC"] }
+  - { title: "Reasoning Beyond the Text", aamc: ["CARS-RBT"] }
+  - { title: "Timing and Pacing", aamc: [] }

@@ -1,0 +1,124 @@
+deck:
+  title: "Learning and Memory"
+  description: "Conditioning, observational learning, memory stages, retrieval, forgetting and the neuroscience of memory."
+cards:
+  - id: ps-learning-fc-01
+    front: "What is dishabituation, and why does it matter experimentally?"
+    back: "The recovery of a habituated response after a novel or strong stimulus. It shows that habituation is learning, not fatigue."
+    tags: [non-associative]
+  - id: ps-learning-fc-02
+    front: "Which neurotransmitter mediates sensitization of the gill-withdrawal reflex in Aplysia?"
+    back: "Serotonin, released by interneurons onto the sensory neuron's terminals."
+    tags: [non-associative, neuroscience]
+  - id: ps-learning-fc-03
+    front: "In classical conditioning, what is a conditioned stimulus?"
+    back: "A formerly neutral stimulus that triggers a learned response after being paired with an unconditioned stimulus."
+    tags: [classical]
+  - id: ps-learning-fc-04
+    front: "What is extinction in classical conditioning?"
+    back: "The weakening of a conditioned response when the CS is repeatedly presented without the UCS."
+    tags: [classical]
+  - id: ps-learning-fc-05
+    front: "What does spontaneous recovery show about extinction?"
+    back: "That extinction suppresses the conditioned response with new learning rather than erasing the original association."
+    tags: [classical]
+  - id: ps-learning-fc-06
+    front: "What is second-order conditioning?"
+    back: "Using an established CS as if it were a UCS to condition a new neutral stimulus."
+    tags: [classical]
+  - id: ps-learning-fc-07
+    front: "What two features make conditioned taste aversion unusual?"
+    back: "It can form after a single pairing, and it tolerates a delay of hours between the taste and the illness."
+    tags: [classical, preparedness]
+  - id: ps-learning-fc-08
+    front: "What is Thorndike's law of effect?"
+    back: "Behaviors followed by satisfying consequences are strengthened; behaviors followed by unpleasant consequences are weakened."
+    tags: [operant]
+  - id: ps-learning-fc-09
+    front: "What is negative reinforcement?"
+    back: "Removing an unpleasant stimulus to increase a behavior (e.g., taking a pill that relieves a headache)."
+    tags: [operant]
+  - id: ps-learning-fc-10
+    front: "What is negative punishment?"
+    back: "Removing a pleasant stimulus to decrease a behavior (e.g., taking away phone privileges)."
+    tags: [operant]
+  - id: ps-learning-fc-11
+    front: "Which reinforcement schedule produces the highest response rate and greatest resistance to extinction?"
+    back: "Variable ratio."
+    tags: [operant, schedules]
+  - id: ps-learning-fc-12
+    front: "Which reinforcement schedule produces a scalloped response pattern?"
+    back: "Fixed interval: responding is slow after reinforcement and accelerates as the next reinforcement time approaches."
+    tags: [operant, schedules]
+  - id: ps-learning-fc-13
+    front: "What is shaping?"
+    back: "Reinforcing successive approximations of a target behavior."
+    tags: [operant]
+  - id: ps-learning-fc-14
+    front: "How does escape learning differ from avoidance learning?"
+    back: "Escape ends an aversive stimulus that is already present; avoidance prevents it from occurring. Both are negatively reinforced."
+    tags: [operant]
+  - id: ps-learning-fc-15
+    front: "What is learned helplessness?"
+    back: "Failure to try to escape an aversive situation, even when escape is possible, after earlier exposure to uncontrollable aversive events."
+    tags: [operant]
+  - id: ps-learning-fc-16
+    front: "What are Bandura's four requirements for observational learning?"
+    back: "Attention, retention, reproduction and motivation."
+    tags: [observational]
+  - id: ps-learning-fc-17
+    front: "What are mirror neurons?"
+    back: "Neurons, first recorded in macaque premotor cortex, that fire both when performing an action and when observing someone else perform it."
+    tags: [observational, neuroscience]
+  - id: ps-learning-fc-18
+    front: "What is latent learning?"
+    back: "Learning that occurs without reinforcement and is not shown until there is an incentive to demonstrate it."
+    tags: [cognitive]
+  - id: ps-learning-fc-19
+    front: "How long does iconic memory last, and how long does echoic memory last?"
+    back: "Iconic: a fraction of a second. Echoic: about 3–4 seconds."
+    tags: [memory-stages]
+  - id: ps-learning-fc-20
+    front: "What are the four components of Baddeley's working memory model?"
+    back: "Central executive, phonological loop, visuospatial sketchpad and episodic buffer."
+    tags: [memory-stages]
+  - id: ps-learning-fc-21
+    front: "What are the two subtypes of explicit (declarative) memory?"
+    back: "Episodic memory (personal experiences) and semantic memory (general facts)."
+    tags: [memory-stages]
+  - id: ps-learning-fc-22
+    front: "According to levels-of-processing theory, which type of processing produces the best memory?"
+    back: "Semantic (meaning-based) processing, compared with phonemic or structural processing."
+    tags: [encoding]
+  - id: ps-learning-fc-23
+    front: "What is the spacing effect?"
+    back: "Information is retained better when study is distributed over time than when it is massed together."
+    tags: [encoding]
+  - id: ps-learning-fc-24
+    front: "What eliminates the recency effect in free recall but leaves primacy intact?"
+    back: "A delay of about 30 seconds filled with a distracting task, which clears short-term memory."
+    tags: [retrieval]
+  - id: ps-learning-fc-25
+    front: "What is state-dependent memory?"
+    back: "Better recall when one's internal physiological state at retrieval matches the state at encoding."
+    tags: [retrieval]
+  - id: ps-learning-fc-26
+    front: "What is the difference between proactive and retroactive interference?"
+    back: "Proactive: old information disrupts new. Retroactive: new information disrupts old."
+    tags: [forgetting]
+  - id: ps-learning-fc-27
+    front: "What is the misinformation effect?"
+    back: "The incorporation of misleading information presented after an event into one's memory of that event."
+    tags: [memory-errors]
+  - id: ps-learning-fc-28
+    front: "What causes Korsakoff syndrome, and what is its hallmark symptom besides amnesia?"
+    back: "Thiamine (vitamin B1) deficiency, usually from chronic alcohol use; confabulation."
+    tags: [neuroscience, amnesia]
+  - id: ps-learning-fc-29
+    front: "Why is the NMDA receptor called a coincidence detector?"
+    back: "It opens only when glutamate is bound and the postsynaptic membrane is depolarized (expelling Mg²⁺), so it signals simultaneous pre- and postsynaptic activity."
+    tags: [neuroscience, ltp]
+  - id: ps-learning-fc-30
+    front: "What are the two pathological hallmarks of Alzheimer's disease?"
+    back: "Extracellular beta-amyloid plaques and intracellular neurofibrillary tangles of tau protein."
+    tags: [neuroscience, dementia]

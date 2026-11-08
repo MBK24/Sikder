@@ -1,6 +1,6 @@
 # Phase 1 proposal: architecture, schema, routes
 
-Status: **awaiting approval**. Nothing gets scaffolded until you sign off.
+Status: **approved** (with the recommended defaults in §7). Phase 2 is implemented. Where the build differs from this proposal, the code and `content/AUTHORING.md` are authoritative.
 
 - The Prisma schema is in [`prisma/schema.prisma`](../prisma/schema.prisma). It has 40 models and passes `prisma validate` on Prisma 7.10.1.
 - Open decisions are collected in §7. Each one has a recommended default.
@@ -34,31 +34,12 @@ Status: **awaiting approval**. Nothing gets scaffolded until you sign off.
 ```
 .
 ├── content/                         # The "book": all study content lives here, in git
-│   ├── _meta/
-│   │   ├── parts.yaml               # Part titles, codes, order, intro blurbs
-│   │   └── topics.yaml              # AAMC content-category taxonomy (1A…10A)
-│   ├── 00-getting-started/
-│   │   ├── 01-how-the-mcat-is-scored.mdx
-│   │   ├── 02-building-a-study-schedule.mdx
-│   │   ├── 03-how-to-use-this-site.mdx
-│   │   └── 04-test-day.mdx
-│   ├── 01-chem-phys/
-│   │   ├── 01-atoms-and-periodic-trends.mdx
-│   │   ├── 02-acids-and-bases.mdx
-│   │   └── _coming-soon.yaml        # titles of planned chapters → "Coming soon" in sidebar
-│   ├── 02-cars/ …
-│   ├── 03-bio-biochem/ …
-│   ├── 04-psych-soc/ …
-│   ├── 99-appendix/
-│   │   ├── high-yield-equations.mdx
-│   │   ├── amino-acids.mdx
-│   │   ├── hormones.mdx
-│   │   └── lab-techniques.mdx
-│   ├── questions/                   # YAML question files, one per chapter, plus bank-only sets
-│   │   ├── cp/acids-and-bases.yaml
-│   │   └── passages/…
-│   └── flashcards/                  # built-in decks, one per chapter
-│       └── cp/acids-and-bases.yaml
+│   ├── AUTHORING.md                 # format spec; `pnpm content:check` enforces it
+│   ├── _meta/parts.yaml             # Part titles, codes, order, intro blurbs
+│   ├── book/<part>/NN-slug.mdx      # <part> ∈ getting-started, cp, cars, bb, ps, appendix
+│   ├── book/<part>/_coming-soon.yaml
+│   ├── questions/<part>/<slug>.yaml # inline / quiz / bank questions + CARS passages
+│   └── flashcards/<part>/<slug>.yaml
 │
 ├── prisma/
 │   ├── schema.prisma

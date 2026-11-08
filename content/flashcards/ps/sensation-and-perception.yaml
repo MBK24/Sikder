@@ -1,0 +1,124 @@
+deck:
+  title: "Sensation and Perception"
+  description: "Receptors, thresholds, the five senses and the organizing principles of perception."
+cards:
+  - id: ps-sensation-fc-01
+    front: "What is the difference between sensation and perception?"
+    back: "Sensation is the detection of physical energy by receptors and its conversion to neural signals; perception is the brain's organization and interpretation of those signals."
+    tags: [basics]
+  - id: ps-sensation-fc-02
+    front: "What is transduction?"
+    back: "The conversion of a physical stimulus into a change in a receptor cell's membrane potential (a receptor potential)."
+    tags: [basics]
+  - id: ps-sensation-fc-03
+    front: "How is the absolute threshold defined?"
+    back: "The minimum stimulus intensity that can be detected 50 percent of the time."
+    tags: [thresholds]
+  - id: ps-sensation-fc-04
+    front: "State Weber's law."
+    back: 'The just-noticeable difference is a constant proportion of the original stimulus: $\Delta I / I = k$.'
+    tags: [thresholds]
+  - id: ps-sensation-fc-05
+    front: "If the JND for a 50 g weight is 1 g, what is the JND for a 400 g weight?"
+    back: "8 g. The Weber fraction is 1/50 = 0.02, and 0.02 × 400 g = 8 g."
+    tags: [thresholds, calculation]
+  - id: ps-sensation-fc-06
+    front: "In signal detection theory, what pattern shows a shift to a more liberal criterion?"
+    back: "Hits and false alarms both increase, while sensitivity (d′) is unchanged."
+    tags: [signal-detection]
+  - id: ps-sensation-fc-07
+    front: "What is a false alarm in signal detection theory?"
+    back: "Responding \"yes, a signal is present\" on a trial when no signal was presented."
+    tags: [signal-detection]
+  - id: ps-sensation-fc-08
+    front: "How does sensory adaptation differ from habituation?"
+    back: "Adaptation is reduced receptor responsiveness to a constant stimulus; habituation is a learned, CNS-level decrease in behavioral response that dishabituation can reverse."
+    tags: [adaptation]
+  - id: ps-sensation-fc-09
+    front: "Which structure performs most of the eye's refraction?"
+    back: "The cornea. The lens fine-tunes focus through accommodation."
+    tags: [vision, anatomy]
+  - id: ps-sensation-fc-10
+    front: "What happens to the lens during accommodation for a near object?"
+    back: "The ciliary muscle contracts, the suspensory ligaments slacken, and the lens becomes rounder and more strongly converging."
+    tags: [vision, anatomy]
+  - id: ps-sensation-fc-11
+    front: "Why do rods give high sensitivity but low acuity?"
+    back: "Many rods converge on one ganglion cell, pooling weak signals so the cell fires in dim light but losing information about which rod was stimulated."
+    tags: [vision, retina]
+  - id: ps-sensation-fc-12
+    front: "What does light do to a photoreceptor's membrane potential and glutamate release?"
+    back: "It hyperpolarizes the photoreceptor and decreases its glutamate release."
+    tags: [vision, phototransduction]
+  - id: ps-sensation-fc-13
+    front: "What is the phototransduction cascade after rhodopsin absorbs light?"
+    back: "11-cis-retinal → all-trans-retinal → transducin activated → phosphodiesterase breaks down cGMP → cGMP-gated Na⁺ channels close → hyperpolarization."
+    tags: [vision, phototransduction]
+  - id: ps-sensation-fc-14
+    front: "Which retinal fibers cross at the optic chiasm?"
+    back: "Fibers from the nasal half of each retina, which carry the temporal visual fields."
+    tags: [vision, pathway]
+  - id: ps-sensation-fc-15
+    front: "What visual deficit does compression of the optic chiasm cause?"
+    back: "Bitemporal hemianopia: loss of both temporal (outer) visual fields."
+    tags: [vision, pathway]
+  - id: ps-sensation-fc-16
+    front: "What did Hubel and Wiesel discover?"
+    back: "Feature detectors: neurons in visual cortex that respond selectively to specific features such as line orientation or movement."
+    tags: [vision, feature-detection]
+  - id: ps-sensation-fc-17
+    front: "Which color theory explains negative afterimages?"
+    back: "Opponent-process theory (red–green, blue–yellow, black–white pairs), operating in ganglion cells and the LGN."
+    tags: [vision, color]
+  - id: ps-sensation-fc-18
+    front: "Where on the basilar membrane do high-frequency sounds cause maximal vibration?"
+    back: "At the base, near the oval window, where the membrane is narrow and stiff."
+    tags: [hearing]
+  - id: ps-sensation-fc-19
+    front: "What does the volley principle explain?"
+    back: "How groups of auditory neurons firing in staggered rotation can code frequencies above the firing limit of a single neuron (about 1,000 Hz)."
+    tags: [hearing]
+  - id: ps-sensation-fc-20
+    front: "Which brainstem structure first combines input from both ears to localize sound?"
+    back: "The superior olivary complex in the pons."
+    tags: [hearing, pathway]
+  - id: ps-sensation-fc-21
+    front: "Which thalamic nucleus relays auditory information?"
+    back: "The medial geniculate nucleus (MGN)."
+    tags: [hearing, pathway]
+  - id: ps-sensation-fc-22
+    front: "What do the semicircular canals detect, and what do the utricle and saccule detect?"
+    back: "Semicircular canals: rotational (angular) acceleration. Utricle and saccule: linear acceleration and head tilt relative to gravity."
+    tags: [vestibular]
+  - id: ps-sensation-fc-23
+    front: "According to gate control theory, where is the pain \"gate\" located?"
+    back: "In the dorsal horn of the spinal cord."
+    tags: [somatosensation, pain]
+  - id: ps-sensation-fc-24
+    front: "Which fibers carry fast, sharp pain, and which carry slow, aching pain?"
+    back: "Fast, sharp pain: myelinated A-delta fibers. Slow, aching pain: unmyelinated C fibers."
+    tags: [somatosensation, pain]
+  - id: ps-sensation-fc-25
+    front: "Which skin receptor responds best to deep pressure and high-frequency vibration?"
+    back: "The Pacinian corpuscle (rapidly adapting)."
+    tags: [somatosensation]
+  - id: ps-sensation-fc-26
+    front: "What are the five basic tastes?"
+    back: "Sweet, sour, salty, bitter and umami."
+    tags: [taste]
+  - id: ps-sensation-fc-27
+    front: "Which sense reaches the cortex without an obligatory relay in the thalamus?"
+    back: "Olfaction (smell)."
+    tags: [smell]
+  - id: ps-sensation-fc-28
+    front: "What are the two binocular depth cues?"
+    back: "Retinal disparity and convergence."
+    tags: [perception, depth]
+  - id: ps-sensation-fc-29
+    front: "Which Gestalt principle groups elements that move in the same direction?"
+    back: "Common fate."
+    tags: [perception, gestalt]
+  - id: ps-sensation-fc-30
+    front: "What is a perceptual set?"
+    back: "A predisposition, shaped by expectation, context, motivation or culture, to perceive a stimulus in a particular way; an example of top-down processing."
+    tags: [perception]

@@ -1,0 +1,352 @@
+chapter: enzymes-and-kinetics
+questions:
+  # ---------------------------------------------------------------- inline
+  - id: bb-enzymes-01
+    usage: inline
+    topic: 5E
+    difficulty: intro
+    stem: |
+      The reaction A ⇌ B has an equilibrium constant of 4.0 at 37 °C. An enzyme that catalyzes this reaction is added to a solution of A at 37 °C. Which statement is correct?
+    choices:
+      A: 'The enzyme raises the equilibrium constant above 4.0.'
+      B: 'The enzyme speeds the forward reaction but not the reverse.'
+      C: 'The enzyme makes ΔG° for the reaction more negative.'
+      D: 'Both directions speed up, and [B]/[A] still reaches 4.0.'
+    answer: D
+    explanation: |
+      An enzyme lowers the activation energy, and because the barrier is lowered from both sides, forward and reverse rates increase by the same factor. The energies of A and B are unchanged, so ΔG° and $K_\text{eq}$ are unchanged. The system reaches the same equilibrium ratio, [B]/[A] = 4.0, only faster.
+    whyWrong:
+      A: 'A catalyst cannot change $K_\text{eq}$, because $K_\text{eq}$ depends only on ΔG°.'
+      B: 'Lowering the transition-state energy lowers the barrier for the reverse reaction by the same amount.'
+      C: 'ΔG° depends only on the free energies of reactants and products, which the enzyme does not alter.'
+
+  - id: bb-enzymes-02
+    usage: inline
+    topic: 1A
+    difficulty: intro
+    stem: |
+      An enzyme catalyzes the reaction glucose + ATP → glucose 6-phosphate + ADP. To which enzyme class does it belong?
+    choices:
+      A: 'Ligase'
+      B: 'Transferase'
+      C: 'Hydrolase'
+      D: 'Isomerase'
+    answer: B
+    explanation: |
+      The enzyme moves a phosphate group from ATP onto glucose. Moving a functional group from one molecule to another defines a transferase, and enzymes that transfer phosphate from ATP are kinases (this one is hexokinase).
+    whyWrong:
+      A: 'Ligases join two molecules into one, using ATP hydrolysis only as an energy source; here ATP donates the phosphate itself.'
+      C: 'Hydrolases break bonds by adding water, and no water is a reactant here.'
+      D: 'Isomerases rearrange atoms within one molecule; this reaction involves two substrates and two products.'
+
+  - id: bb-enzymes-03
+    usage: inline
+    topic: 5E
+    difficulty: core
+    stem: |
+      An enzyme that follows Michaelis–Menten kinetics has $K_m = 4.0\ \mu\text{M}$ and $V_\text{max} = 120$ nmol/min. What is the initial velocity when the substrate concentration is 12 µM?
+    choices:
+      A: '30 nmol/min'
+      B: '60 nmol/min'
+      C: '90 nmol/min'
+      D: '108 nmol/min'
+    answer: C
+    explanation: |
+      Substitute into the Michaelis–Menten equation: $v_0 = \frac{120 \times 12}{4.0 + 12} = \frac{1440}{16} = 90$ nmol/min. Because [S] is three times $K_m$, the enzyme runs at 75% of $V_\text{max}$.
+    whyWrong:
+      A: 'This puts $K_m$ in the numerator instead of [S]: 120 × 4/16 = 30.'
+      B: 'Half of $V_\text{max}$ is reached only when [S] equals $K_m$ (4.0 µM).'
+      D: 'Ninety percent of $V_\text{max}$ requires [S] = 9$K_m$ = 36 µM.'
+
+  - id: bb-enzymes-04
+    usage: inline
+    topic: 5E
+    difficulty: core
+    stem: |
+      A Lineweaver–Burk plot for an enzyme has a y-intercept of 0.010 s/µM and an x-intercept of −0.25 µM⁻¹. What are $K_m$ and $V_\text{max}$?
+    choices:
+      A: '$K_m = 4.0\ \mu\text{M}$; $V_\text{max} = 100\ \mu\text{M/s}$'
+      B: '$K_m = 0.25\ \mu\text{M}$; $V_\text{max} = 0.010\ \mu\text{M/s}$'
+      C: '$K_m = -4.0\ \mu\text{M}$; $V_\text{max} = 100\ \mu\text{M/s}$'
+      D: '$K_m = 4.0\ \mu\text{M}$; $V_\text{max} = 0.010\ \mu\text{M/s}$'
+    answer: A
+    explanation: |
+      The y-intercept is $\frac{1}{V_\text{max}}$, so $V_\text{max} = \frac{1}{0.010} = 100$ µM/s. The x-intercept is $-\frac{1}{K_m}$, so $K_m = \frac{1}{0.25} = 4.0$ µM.
+    whyWrong:
+      B: 'This reads the intercepts directly instead of taking their reciprocals.'
+      C: 'The x-intercept is negative, but $K_m$, a concentration, is positive: the intercept equals $-\frac{1}{K_m}$.'
+      D: 'This finds $K_m$ correctly but reads the y-intercept as $V_\text{max}$ instead of $\frac{1}{V_\text{max}}$.'
+
+  - id: bb-enzymes-05
+    usage: inline
+    topic: 5E
+    difficulty: core
+    stem: |
+      In the presence of an inhibitor, an enzyme's apparent $V_\text{max}$ and apparent $K_m$ both fall to half their uninhibited values, and the Lineweaver–Burk lines with and without inhibitor are parallel. Which description of the inhibitor is most accurate?
+    choices:
+      A: 'It binds only free enzyme, at the active site.'
+      B: 'It binds free enzyme and the ES complex with equal affinity.'
+      C: 'It binds only the enzyme–substrate complex.'
+      D: 'It binds the active site covalently and irreversibly.'
+    answer: C
+    explanation: |
+      Lowering $K_m$ and $V_\text{max}$ by the same factor, which leaves the slope $\frac{K_m}{V_\text{max}}$ unchanged and gives parallel lines, is the signature of uncompetitive inhibition. An uncompetitive inhibitor binds only ES. Trapping ES lowers $V_\text{max}$ and pulls the binding equilibrium toward ES, which lowers the apparent $K_m$.
+    whyWrong:
+      A: 'An inhibitor that binds only free enzyme is competitive: it raises $K_m$ and leaves $V_\text{max}$ unchanged.'
+      B: 'Equal binding to E and ES is pure noncompetitive inhibition, which lowers $V_\text{max}$ but leaves $K_m$ unchanged.'
+      D: 'Irreversible inactivation removes enzyme, which lowers $V_\text{max}$ but leaves $K_m$ unchanged.'
+
+  # ---------------------------------------------------------------- quiz
+  - id: bb-enzymes-06
+    usage: quiz
+    topic: 5E
+    difficulty: intro
+    stem: |
+      For an enzyme that follows Michaelis–Menten kinetics, $K_m$ is best defined as:
+    choices:
+      A: 'the substrate concentration at which the enzyme is fully saturated.'
+      B: 'the substrate concentration at which $v_0$ equals half of $V_\text{max}$.'
+      C: 'the maximum number of substrate molecules converted per second per active site.'
+      D: 'the reaction velocity when substrate is present at a concentration of 1 M.'
+    answer: B
+    explanation: |
+      Setting [S] = $K_m$ in the Michaelis–Menten equation gives $v_0 = \frac{V_\text{max}K_m}{2K_m} = \frac{V_\text{max}}{2}$. $K_m$ has units of concentration, and a lower $K_m$ indicates higher apparent affinity for the substrate.
+    whyWrong:
+      A: 'An enzyme approaches saturation only as [S] becomes much larger than $K_m$; at [S] = $K_m$ it is half saturated.'
+      C: 'This describes the turnover number, $k_\text{cat}$.'
+      D: '$K_m$ is a concentration, not a velocity, and it is not defined at any fixed substrate concentration.'
+
+  - id: bb-enzymes-07
+    usage: quiz
+    topic: 5E
+    difficulty: intro
+    stem: |
+      A researcher repeats a kinetics experiment using twice as much purified enzyme, keeping every other condition the same. Compared with the original experiment, how do $V_\text{max}$ and $K_m$ change?
+    choices:
+      A: '$V_\text{max}$ doubles; $K_m$ is unchanged.'
+      B: '$V_\text{max}$ doubles; $K_m$ is halved.'
+      C: '$V_\text{max}$ is unchanged; $K_m$ is halved.'
+      D: 'Both $V_\text{max}$ and $K_m$ double.'
+    answer: A
+    explanation: |
+      $V_\text{max} = k_\text{cat}[\text{E}]_T$, so doubling the enzyme doubles $V_\text{max}$. $K_m = \frac{k_{-1} + k_\text{cat}}{k_1}$ depends only on rate constants, which are properties of the enzyme–substrate pair and the conditions, not on how much enzyme is present.
+    whyWrong:
+      B: 'Adding more of the same enzyme does not change its affinity for substrate.'
+      C: '$V_\text{max}$ is proportional to total enzyme, so it must increase.'
+      D: '$K_m$ is independent of enzyme concentration.'
+
+  - id: bb-enzymes-08
+    usage: quiz
+    topic: 5E
+    difficulty: core
+    stem: |
+      An enzyme can act on two substrates. For substrate 1, $k_\text{cat} = 300\ \text{s}^{-1}$ and $K_m = 3.0$ mM. For substrate 2, $k_\text{cat} = 30\ \text{s}^{-1}$ and $K_m = 0.10$ mM. When both substrates are present at equal, low concentrations, which is converted faster?
+    choices:
+      A: 'Substrate 1, because its turnover number is ten times higher.'
+      B: 'Substrate 1, because its higher $K_m$ indicates tighter binding.'
+      C: 'Neither, because at low concentrations both reactions run at $V_\text{max}$.'
+      D: 'Substrate 2, because its catalytic efficiency is three times higher.'
+    answer: D
+    explanation: |
+      At low [S], the rate is $\frac{k_\text{cat}}{K_m}[\text{E}][\text{S}]$, so catalytic efficiency decides. Substrate 1: $\frac{300}{3.0 \times 10^{-3}} = 1.0 \times 10^5\ \text{M}^{-1}\text{s}^{-1}$. Substrate 2: $\frac{30}{1.0 \times 10^{-4}} = 3.0 \times 10^5\ \text{M}^{-1}\text{s}^{-1}$. Substrate 2 is converted three times faster.
+    whyWrong:
+      A: '$k_\text{cat}$ governs the rate only at saturating substrate; at low [S], $\frac{k_\text{cat}}{K_m}$ governs.'
+      B: 'A higher $K_m$ indicates weaker, not tighter, apparent binding.'
+      C: 'At low substrate concentrations the enzyme is far from saturated, so velocity is well below $V_\text{max}$.'
+
+  - id: bb-enzymes-09
+    usage: quiz
+    topic: 5E
+    difficulty: core
+    stem: |
+      A researcher measures initial velocities for an enzyme with and without 10 µM of compound X.
+
+      | Condition | Apparent $K_m$ | Apparent $V_\text{max}$ |
+      |---|---|---|
+      | No inhibitor | 2.0 mM | 80 µmol/min |
+      | Compound X | 6.0 mM | 80 µmol/min |
+
+      Which conclusion is best supported by these data?
+    choices:
+      A: 'X binds free enzyme, likely at the active site, and high [S] overcomes it.'
+      B: 'X binds only the ES complex, so it is most effective when [S] is high.'
+      C: 'X binds an allosteric site on both E and ES with equal affinity.'
+      D: 'X covalently inactivates two-thirds of the enzyme molecules.'
+    answer: A
+    explanation: |
+      $V_\text{max}$ is unchanged while $K_m$ triples, the signature of competitive inhibition. A competitive inhibitor binds free enzyme, usually at the active site because it resembles the substrate. At saturating substrate, substrate outcompetes the inhibitor and the same $V_\text{max}$ is reached.
+    whyWrong:
+      B: 'An inhibitor that binds only ES (uncompetitive) would lower both $K_m$ and $V_\text{max}$.'
+      C: 'Equal binding to E and ES (noncompetitive) would lower $V_\text{max}$ and leave $K_m$ unchanged.'
+      D: 'Inactivating enzyme would lower $V_\text{max}$ and leave $K_m$ unchanged.'
+
+  - id: bb-enzymes-10
+    usage: quiz
+    topic: 5E
+    difficulty: advanced
+    stem: |
+      An enzyme is incubated with compound Y for 30 minutes. Its apparent $V_\text{max}$ falls to 40% of the control value, while its apparent $K_m$ is unchanged. The sample is then dialyzed extensively to remove free compound Y, and the kinetics are measured again with the same results. Which interpretation is best supported?
+    choices:
+      A: 'Y is a reversible competitive inhibitor that binds the active site.'
+      B: 'Y is a reversible uncompetitive inhibitor that binds only the ES complex.'
+      C: 'Y irreversibly inactivated about 60% of the enzyme molecules.'
+      D: 'Y is a mixed inhibitor that binds ES more tightly than free enzyme.'
+    answer: C
+    explanation: |
+      A lower $V_\text{max}$ with an unchanged $K_m$ means fewer working enzyme molecules, while the remaining ones bind substrate normally. Because the effect survives dialysis, Y did not simply dissociate; it most likely modified the enzyme covalently. Losing 60% of active enzyme leaves 40% of the original $V_\text{max}$.
+    whyWrong:
+      A: 'A competitive inhibitor raises $K_m$, leaves $V_\text{max}$ unchanged, and would be removed by dialysis.'
+      B: 'An uncompetitive inhibitor lowers $K_m$ too, and a reversible inhibitor would be removed by dialysis.'
+      D: 'A mixed inhibitor favoring ES would lower $K_m$, and a reversible inhibitor would be removed by dialysis.'
+
+  - id: bb-enzymes-11
+    usage: quiz
+    topic: 1A
+    difficulty: core
+    stem: |
+      A single low dose of aspirin suppresses thromboxane production by a patient's platelets for several days, whereas a dose of ibuprofen, a reversible cyclooxygenase (COX) inhibitor, suppresses it for only a few hours. Which explanation accounts for the difference?
+    choices:
+      A: 'Aspirin is a competitive inhibitor with a much lower $K_I$ than ibuprofen.'
+      B: 'Aspirin permanently lowers the $K_m$ of COX for arachidonic acid.'
+      C: 'Aspirin is cleared from the blood much more slowly than ibuprofen.'
+      D: 'Aspirin acetylates COX covalently, and platelets cannot make new COX.'
+    answer: D
+    explanation: |
+      Aspirin transfers an acetyl group to a serine in the active-site channel of COX, inactivating it irreversibly. Most cells replace the enzyme by synthesizing more, but platelets have no nucleus and cannot. The inhibition therefore lasts for the remaining life of each platelet, about a week to ten days, long after the drug itself is gone.
+    whyWrong:
+      A: 'Any reversible inhibitor, however tight-binding, stops working once the drug is cleared; aspirin''s effect outlasts the drug.'
+      B: 'Lowering $K_m$ would make COX bind substrate better and would not suppress thromboxane production.'
+      C: 'Aspirin is cleared from the blood within hours; its long effect comes from covalent modification of the enzyme.'
+
+  - id: bb-enzymes-12
+    usage: quiz
+    topic: 1A
+    difficulty: core
+    stem: |
+      An enzyme built from four identical subunits gives a sigmoidal plot of initial velocity against substrate concentration, with a Hill coefficient of 2.5. Which statement is correct?
+    choices:
+      A: 'Each enzyme molecule has only 2.5 functional active sites.'
+      B: 'Binding at one subunit raises the affinity of the other subunits.'
+      C: 'The enzyme shows negative cooperativity among its four subunits.'
+      D: 'The enzyme follows Michaelis–Menten kinetics with a $K_m$ of 2.5.'
+    answer: B
+    explanation: |
+      A Hill coefficient greater than 1 indicates positive cooperativity: binding at one site makes binding at the others easier, producing a sigmoidal curve. The coefficient is an empirical measure of how strongly sites interact, and it is always less than or equal to the number of sites (here 4).
+    whyWrong:
+      A: 'The Hill coefficient is not a count of sites; it measures the degree of cooperativity and is at most the number of sites.'
+      C: 'Negative cooperativity gives a Hill coefficient less than 1.'
+      D: 'Michaelis–Menten enzymes give hyperbolic curves (Hill coefficient of 1), and the Hill coefficient is not a $K_m$.'
+
+  - id: bb-enzymes-13
+    usage: quiz
+    topic: 1A
+    difficulty: advanced
+    stem: |
+      Enzyme E catalyzes the first committed step in the synthesis of compound P. E has separate catalytic and regulatory subunits and shows sigmoidal kinetics with $K_{0.5} = 5$ mM. Adding P, which does not resemble E's substrate, raises $K_{0.5}$ to 12 mM without changing $V_\text{max}$. P binds only to isolated regulatory subunits. Which conclusion is best supported?
+    choices:
+      A: 'P is a feedback inhibitor that stabilizes the T state of E.'
+      B: 'P is a competitive inhibitor that binds the active site of E.'
+      C: 'P is an allosteric activator that shifts E toward the R state.'
+      D: 'P irreversibly inactivates a fraction of E''s catalytic subunits.'
+    answer: A
+    explanation: |
+      P is the end product of the pathway, it binds a regulatory site rather than the active site, and it shifts the sigmoidal curve to the right (higher $K_{0.5}$). That is allosteric feedback inhibition: P stabilizes the low-affinity T state, so more substrate is needed to reach half-maximal velocity, and the pathway slows when P accumulates.
+    whyWrong:
+      B: 'P binds the regulatory subunits, not the catalytic site, and it does not resemble the substrate.'
+      C: 'An activator would lower $K_{0.5}$ and shift the curve to the left.'
+      D: 'Irreversible inactivation would lower $V_\text{max}$, which did not change.'
+
+  - id: bb-enzymes-14
+    usage: quiz
+    topic: 1A
+    difficulty: core
+    stem: |
+      A child with a rare inherited deficiency of enteropeptidase (enterokinase) has severe protein malabsorption. Which process is most directly impaired?
+    choices:
+      A: 'Conversion of pepsinogen to pepsin in the stomach'
+      B: 'Activation of trypsinogen and the other pancreatic zymogens'
+      C: 'Secretion of hydrochloric acid by gastric parietal cells'
+      D: 'Phosphorylation of pancreatic proteases by intestinal kinases'
+    answer: B
+    explanation: |
+      Enteropeptidase, a brush-border enzyme of the duodenum, cleaves trypsinogen to trypsin. Trypsin then activates more trypsinogen as well as chymotrypsinogen, procarboxypeptidase and proelastase. Without enteropeptidase, this cascade cannot start efficiently, so most intestinal protein digestion fails.
+    whyWrong:
+      A: 'Pepsinogen is activated by stomach acid and by pepsin itself, not by enteropeptidase.'
+      C: 'Acid secretion by parietal cells does not depend on an intestinal protease.'
+      D: 'Pancreatic proteases are activated by proteolytic cleavage, not by phosphorylation.'
+
+  - id: bb-enzymes-15
+    usage: quiz
+    topic: 1A
+    difficulty: intro
+    stem: |
+      Which statement about the regulation of enzymes by phosphorylation is correct?
+    choices:
+      A: 'Phosphatases add phosphate groups to enzymes using ATP.'
+      B: 'Phosphorylation always increases the activity of the target enzyme.'
+      C: 'Phosphorylating Ser, Thr or Tyr can shift conformation reversibly.'
+      D: 'Phosphorylation, like zymogen cleavage, cannot be reversed.'
+    answer: C
+    explanation: |
+      Kinases transfer a phosphate from ATP to the hydroxyl of a serine, threonine or tyrosine side chain. The added negative charge can rearrange salt bridges and shift the enzyme between active and inactive conformations. Phosphatases remove the phosphate by hydrolysis, so the modification is reversible.
+    whyWrong:
+      A: 'Kinases add phosphates from ATP; phosphatases remove them by hydrolysis.'
+      B: 'Phosphorylation activates some enzymes (glycogen phosphorylase) and inactivates others (glycogen synthase).'
+      D: 'Phosphorylation is reversed by phosphatases; only proteolytic activation, as of zymogens, is irreversible.'
+
+  - id: bb-enzymes-16
+    usage: quiz
+    topic: 1A
+    difficulty: advanced
+    stem: |
+      The activity of an enzyme is measured from pH 4 to pH 9. Activity is near zero at pH 4.5, rises steeply to half-maximal at pH 6.1, and reaches a plateau above pH 7.5. The enzyme is not denatured anywhere in this range. Replacing active-site His57 with alanine abolishes activity at every pH. Which interpretation is best supported?
+    choices:
+      A: 'His57 must be deprotonated to act as a general base.'
+      B: 'His57 must be protonated to act as a general acid.'
+      C: 'The enzyme denatures below pH 6 from charge repulsion.'
+      D: 'Low pH raises $V_\text{max}$ by protonating the substrate.'
+    answer: A
+    explanation: |
+      The activity curve has a midpoint near pH 6.1, close to the pKa of a histidine side chain, and activity rises as pH increases past it. So the enzyme is active when that group is deprotonated. The mutation shows the group is His57, which most likely acts as a general base, accepting a proton during catalysis.
+    whyWrong:
+      B: 'If His57 had to be protonated, activity would be highest below its pKa and would fall as pH rose.'
+      C: 'The stem states the enzyme is not denatured in this range, and the curve tracks a single pKa near 6.'
+      D: 'Activity is lowest at low pH, so low pH does not raise $V_\text{max}$.'
+
+  - id: bb-enzymes-17
+    usage: quiz
+    topic: 5E
+    difficulty: core
+    stem: |
+      A human enzyme is assayed at several temperatures. Its activity at 37 °C is about twice its activity at 27 °C. At 60 °C, activity drops to nearly zero and does not return when the sample is cooled back to 37 °C. Which explanation best accounts for these results?
+    choices:
+      A: 'Higher temperature lowers the equilibrium constant, stopping the reaction at 60 °C.'
+      B: 'Heating lets more molecules cross $E_a$ until the enzyme denatures.'
+      C: 'Higher temperature lowers $E_a$ until the active site is saturated at 60 °C.'
+      D: 'Heating to 60 °C hydrolyzes peptide bonds, so the enzyme cannot refold.'
+    answer: B
+    explanation: |
+      Raising temperature increases molecular kinetic energy, so a larger fraction of collisions exceed the activation energy and the rate rises, here roughly doubling over 10 °C. Above the optimum, thermal motion disrupts the noncovalent interactions that hold the enzyme's structure, and it denatures. Unfolded chains often aggregate, so activity does not return on cooling.
+    whyWrong:
+      A: 'A change in $K_\text{eq}$ would not stop the reaction or destroy the enzyme permanently.'
+      C: 'Temperature changes how many molecules can cross the barrier; the barrier height itself is set by the catalyzed pathway.'
+      D: 'Brief heating denatures proteins without hydrolyzing peptide bonds; irreversibility comes from misfolding and aggregation.'
+
+  - id: bb-enzymes-18
+    usage: quiz
+    topic: 5E
+    difficulty: advanced
+    stem: |
+      On a Lineweaver–Burk plot, the lines obtained with and without an inhibitor intersect to the left of the y-axis and above the x-axis. How does the inhibitor affect the apparent kinetic constants?
+    choices:
+      A: '$K_m$ is unchanged and $V_\text{max}$ decreases.'
+      B: '$K_m$ increases and $V_\text{max}$ is unchanged.'
+      C: '$K_m$ and $V_\text{max}$ both decrease by the same factor.'
+      D: '$K_m$ increases and $V_\text{max}$ decreases.'
+    answer: D
+    explanation: |
+      Lines meeting off both axes indicate mixed inhibition, so $V_\text{max}$ decreases (higher y-intercept). An intersection above the x-axis means the inhibitor binds free enzyme more tightly than ES, which raises the apparent $K_m$ (the x-intercept moves toward the origin).
+    whyWrong:
+      A: 'An unchanged $K_m$ (pure noncompetitive inhibition) gives lines that meet on the x-axis.'
+      B: 'An unchanged $V_\text{max}$ (competitive inhibition) gives lines that meet on the y-axis.'
+      C: 'Equal decreases in both (uncompetitive inhibition) give parallel lines that never intersect.'

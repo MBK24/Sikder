@@ -1,0 +1,13 @@
+chapters:
+  - { title: "Carbohydrate Metabolism", aamc: ["1D"] }
+  - { title: "Lipid and Amino Acid Metabolism", aamc: ["1D"] }
+  - { title: "DNA, Replication, and Gene Expression", aamc: ["1B"] }
+  - { title: "Cell Structure and Membranes", aamc: ["2A"] }
+  - { title: "Genetics and Evolution", aamc: ["1C"] }
+  - { title: "Prokaryotes and Viruses", aamc: ["2B"] }
+  - { title: "The Nervous System", aamc: ["3A"] }
+  - { title: "The Endocrine System", aamc: ["3A"] }
+  - { title: "Cardiovascular and Respiratory Systems", aamc: ["3B"] }
+  - { title: "Renal and Digestive Systems", aamc: ["3B"] }
+  - { title: "The Immune System", aamc: ["3B"] }
+  - { title: "Reproduction and Development", aamc: ["2C"] }

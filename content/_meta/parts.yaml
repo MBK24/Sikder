@@ -1,0 +1,37 @@
+parts:
+  - code: getting-started
+    label: "Part 0"
+    title: "Getting Started"
+    short: "Start"
+    prefix: ""
+    intro: "How the MCAT is built and scored, how to plan your months of preparation, and how to get the most out of this book."
+  - code: cp
+    label: "Part 1"
+    title: "Chemical and Physical Foundations of Biological Systems"
+    short: "C/P"
+    prefix: "CP"
+    intro: "General chemistry, organic chemistry, physics, and the biochemistry that ties them to living systems: always in a biological context, the way the exam tests them."
+  - code: cars
+    label: "Part 2"
+    title: "Critical Analysis and Reasoning Skills"
+    short: "CARS"
+    prefix: "CARS"
+    intro: "No outside content, just reading. These chapters teach a repeatable method for humanities and social-science passages and every question type the section uses."
+  - code: bb
+    label: "Part 3"
+    title: "Biological and Biochemical Foundations of Living Systems"
+    short: "B/B"
+    prefix: "BB"
+    intro: "Biomolecules, cells, genetics, and organ systems, plus the biochemistry the exam leans on most heavily."
+  - code: ps
+    label: "Part 4"
+    title: "Psychological, Social, and Biological Foundations of Behavior"
+    short: "P/S"
+    prefix: "PS"
+    intro: "Introductory psychology and sociology with the biological basis of behavior: the most vocabulary-heavy section, and the one where structured review pays off fastest."
+  - code: appendix
+    label: "Appendix"
+    title: "Appendix"
+    short: "Ref"
+    prefix: ""
+    intro: "Quick-reference tables to keep open while you study."

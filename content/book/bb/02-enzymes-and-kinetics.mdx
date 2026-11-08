@@ -1,0 +1,416 @@
+---
+title: "Enzymes and Kinetics"
+summary: "How enzymes speed reactions without changing their equilibria, how Michaelis–Menten and Lineweaver–Burk analysis describe that speed, and how inhibitors, allostery and covalent modification control it."
+estReadMinutes: 24
+difficulty: core
+access: premium
+status: published
+aamc: ["1A", "5E"]
+---
+
+Left to itself, almost every reaction in your metabolism would be far too slow to keep you alive. Glucose sits in air for years without burning, and a peptide bond in water lasts years before it hydrolyzes. Enzymes make these reactions happen in milliseconds, and just as importantly, they let the cell decide which reactions happen, where, and when.
+
+This chapter covers what enzymes do (and the things they never do), how they bind substrates and stabilize transition states, the small molecules many of them need, and the quantitative core of the topic: Michaelis–Menten kinetics, Lineweaver–Burk plots and the four kinds of reversible inhibition. We finish with the ways cells regulate enzymes, from allosteric effectors to protein phosphorylation to zymogen activation. The MCAT tests enzyme kinetics heavily in passages, usually by showing you a graph or a table and asking you to infer what an inhibitor or mutation did. Every section here is aimed at that skill.
+
+## What Enzymes Do and Don't Do
+
+An **enzyme** is a biological catalyst, almost always a protein (a few catalytic RNAs, called ribozymes, also exist, including the peptidyl transferase of the ribosome). Like any catalyst, an enzyme speeds up a reaction without being consumed. Enzymes are unusually powerful and unusually selective: they commonly accelerate reactions by factors of a million or more, and each one typically acts on one substrate or a small family of closely related substrates.
+
+Enzymes work by **lowering the activation energy** ($E_a$), the energy barrier between reactants and the transition state. On a reaction coordinate diagram, the enzyme lowers the peak of the hill but leaves the starting and ending energies exactly where they were. Several consequences follow.
+
+- **ΔG is unchanged.** The free energy difference between reactants and products depends only on those states, not on the path between them. An enzyme cannot make an unfavorable reaction favorable. Cells drive unfavorable reactions by coupling them to favorable ones, such as ATP hydrolysis.
+- **$K_\text{eq}$ is unchanged.** Because $\Delta G^\circ = -RT\ln K_\text{eq}$, a catalyst that leaves ΔG° alone also leaves the equilibrium constant alone.
+- **Forward and reverse rates rise by the same factor.** Lowering the barrier lowers it from both sides, so the enzyme helps the system reach equilibrium faster without shifting where equilibrium lies.
+- **The enzyme is regenerated** at the end of each catalytic cycle.
+
+Enzymes also do not change whether a reaction is exothermic or endothermic (ΔH), and they don't alter the concentration of products at equilibrium. What they change is **kinetics**, not **thermodynamics**.
+
+<Callout type="trap" title="Faster is not more favorable">
+
+If an answer choice says an enzyme "shifts the equilibrium toward products," "makes ΔG more negative," or "increases the yield," eliminate it. Enzymes change only the rate at which equilibrium is reached. A reaction with $K_\text{eq} = 0.01$ still has $K_\text{eq} = 0.01$ with an enzyme present; you just get there sooner.
+
+</Callout>
+
+<Question id="bb-enzymes-01" />
+
+## Active Sites and Substrate Binding
+
+### Lock and Key Versus Induced Fit
+
+Catalysis happens in the **active site**, a pocket or cleft lined with side chains that bind the substrate and carry out the chemistry. Usually only a handful of residues participate directly, but the rest of the protein holds them in exactly the right positions.
+
+The **lock-and-key model** pictures the active site as a rigid, preformed shape that matches the substrate exactly. It explains specificity but not the fact that many enzymes change shape when they bind. The **induced-fit model** pictures the active site as flexible: substrate binding triggers a conformational change that closes the site around the substrate and positions catalytic groups. Hexokinase is the classic example. When glucose binds, the two lobes of the enzyme clamp together, excluding water from the active site, so the phosphate from ATP is transferred to glucose instead of being wasted by hydrolysis. Induced fit is the better general description, and it is the model the MCAT expects you to favor.
+
+### Stabilizing the Transition State
+
+The deepest reason enzymes work is that their active sites bind the **transition state** more tightly than they bind the substrate. That preferential binding lowers the energy of the transition state relative to the enzyme–substrate complex, which is exactly what lowering $E_a$ means. The same idea explains why **transition-state analogs**, stable molecules that mimic the transition state's geometry and charge, are often extremely potent inhibitors.
+
+Active sites use a few recurring strategies:
+
+- **Proximity and orientation:** holding two substrates close together in the right geometry.
+- **Acid–base catalysis:** side chains such as histidine, aspartate and glutamate donate or accept protons.
+- **Covalent catalysis:** a nucleophilic side chain, such as the serine of serine proteases, forms a temporary covalent bond with the substrate.
+- **Metal ion catalysis:** bound metals stabilize negative charges or activate water.
+- **Electrostatic stabilization:** positioned charges or hydrogen-bond donors stabilize charged intermediates, as the "oxyanion hole" of serine proteases does.
+
+<Callout type="connection" title="Side chains at work" to="/bb/amino-acids-and-proteins">
+
+The catalytic triad of chymotrypsin is a tour of side-chain chemistry. Aspartate orients histidine, histidine (pKa near 6) pulls a proton from serine, and the activated serine attacks the substrate's carbonyl carbon. Review the side-chain properties that make this possible in the chapter on amino acids and proteins.
+
+</Callout>
+
+## Cofactors, Coenzymes, and Vitamins
+
+Many enzymes need a non-protein helper, a **cofactor**, to be active. An enzyme without its cofactor is an **apoenzyme** and is inactive; with it, the **holoenzyme** is active. Cofactors come in two kinds.
+
+- **Inorganic cofactors** are usually metal ions: $\ce{Zn^2+}$ in carbonic anhydrase, $\ce{Mg^2+}$ bound to ATP in kinase reactions, iron and copper in the electron-transport chain.
+- **Coenzymes** are small organic molecules, many derived from vitamins. Some, like $\ce{NAD+}$, bind loosely, leave the enzyme after each reaction, and are regenerated by another enzyme; they behave almost like second substrates (cosubstrates). Others, called **prosthetic groups**, bind tightly or covalently and stay put, such as the heme of hemoglobin or the FAD of succinate dehydrogenase.
+
+Most water-soluble vitamins are coenzyme precursors, which is why their deficiencies show up as failures of specific enzymes.
+
+| Vitamin | Coenzyme form | Typical reaction |
+|---|---|---|
+| B1 (thiamine) | Thiamine pyrophosphate (TPP) | Decarboxylation of α-keto acids (pyruvate dehydrogenase) |
+| B2 (riboflavin) | FAD, FMN | Oxidation–reduction (succinate dehydrogenase) |
+| B3 (niacin) | $\ce{NAD+}$, $\ce{NADP+}$ | Oxidation–reduction (lactate dehydrogenase) |
+| B5 (pantothenic acid) | Coenzyme A | Acyl-group transfer (acetyl-CoA) |
+| B6 (pyridoxine) | Pyridoxal phosphate (PLP) | Transamination and other amino acid reactions |
+| B7 (biotin) | Biotin | Carboxylation (pyruvate carboxylase) |
+| B9 (folate) | Tetrahydrofolate | One-carbon transfers (nucleotide synthesis) |
+| B12 (cobalamin) | Cobalamin coenzymes | Methyl transfer and rearrangements (methionine synthase) |
+| C (ascorbate) | Ascorbate itself | Keeps iron reduced in prolyl and lysyl hydroxylases (collagen) |
+
+Of the fat-soluble vitamins (A, D, E and K), vitamin K is the clearest cofactor: it is required for the carboxylation of glutamate residues in several clotting factors, which is why the anticoagulant warfarin works by blocking vitamin K recycling.
+
+<Callout type="high-yield" title="Three coenzymes worth knowing cold">
+
+$\ce{NAD+}$ (from niacin) and FAD (from riboflavin) carry electrons in oxidation–reduction reactions. Coenzyme A (from pantothenic acid) carries acyl groups. These three appear throughout metabolism, and questions about dehydrogenases nearly always involve one of the electron carriers.
+
+</Callout>
+
+## The Six Enzyme Classes
+
+The Enzyme Commission (EC) system sorts enzymes by the type of reaction they catalyze. The MCAT expects you to classify a reaction from its equation.
+
+| EC | Class | Reaction type | Examples |
+|---|---|---|---|
+| 1 | Oxidoreductases | Transfer electrons (oxidation–reduction), often with NAD⁺ or FAD | Dehydrogenases, oxidases, reductases |
+| 2 | Transferases | Move a functional group from one molecule to another | Kinases (phosphate from ATP), aminotransferases |
+| 3 | Hydrolases | Break a bond by adding water | Proteases, lipases, phosphatases, nucleases |
+| 4 | Lyases | Break (or form) bonds without water or redox, often forming a double bond or ring | Aldolase, decarboxylases, carbonic anhydrase |
+| 5 | Isomerases | Rearrange atoms within one molecule | Triose phosphate isomerase, mutases, epimerases |
+| 6 | Ligases | Join two molecules using energy from ATP or another nucleoside triphosphate | DNA ligase, aminoacyl-tRNA synthetases, pyruvate carboxylase |
+
+A few naming conventions make classification faster. **Kinases** are transferases (they move a phosphate from ATP onto a substrate), while **phosphatases** are hydrolases (they remove a phosphate with water). A **synthase** is usually a lyase running in the joining direction without ATP, whereas a **synthetase** is a ligase that consumes ATP. Lyases can also run in reverse, adding a group across a double bond.
+
+In 2018 the Enzyme Commission added a seventh class, translocases, for enzymes that move ions or molecules across membranes. Most MCAT materials still teach the original six.
+
+<Callout type="mnemonic" title="The classes in EC order">
+
+"**O**ver **T**he **H**ill, **L**izards **I**nherit **L**and": Oxidoreductases, Transferases, Hydrolases, Lyases, Isomerases, Ligases. Knowing the order lets you decode an EC number: an enzyme numbered 3.4.21.4 is a hydrolase, and in fact it is trypsin.
+
+</Callout>
+
+<Question id="bb-enzymes-02" />
+
+## Michaelis–Menten Kinetics
+
+### The Model and Its Assumptions
+
+The simplest model of an enzyme-catalyzed reaction has two steps. Enzyme and substrate bind reversibly to form an enzyme–substrate complex, which then converts substrate to product and releases it:
+
+$$
+\mathrm{E} + \mathrm{S} \underset{k_{-1}}{\overset{k_1}{\rightleftharpoons}} \mathrm{ES} \xrightarrow{k_\text{cat}} \mathrm{E} + \mathrm{P}
+$$
+
+The rate law usually taught for this scheme combines Leonor Michaelis and Maud Menten's 1913 analysis with the steady-state refinement of George Briggs and J.B.S. Haldane. It rests on three assumptions.
+
+1. **Initial rates.** We measure the velocity ($v_0$) before much product accumulates, so the reverse reaction can be ignored.
+2. **Substrate in excess.** $[\text{S}]$ is much larger than total enzyme, $[\text{E}]_T$, so binding to enzyme doesn't noticeably deplete free substrate.
+3. **Steady state.** Shortly after mixing, [ES] stops changing: it forms as fast as it breaks down.
+
+### Deriving the Equation
+
+The steady-state condition says the rate of forming ES equals the rate of losing it, either back to E + S or forward to product. Free enzyme is whatever isn't bound, $[\text{E}] = [\text{E}]_T - [\text{ES}]$:
+
+$$
+k_1([\text{E}]_T - [\text{ES}])[\text{S}] = (k_{-1} + k_\text{cat})[\text{ES}]
+$$
+
+Define the **Michaelis constant**, $K_m = \frac{k_{-1} + k_\text{cat}}{k_1}$. Dividing both sides by $k_1$ and solving for [ES]:
+
+$$
+[\text{ES}] = \frac{[\text{E}]_T[\text{S}]}{K_m + [\text{S}]}
+$$
+
+The velocity is the rate of the catalytic step, $v_0 = k_\text{cat}[\text{ES}]$. The fastest possible rate, when every enzyme molecule is occupied, is $V_\text{max} = k_\text{cat}[\text{E}]_T$. Substituting gives the **Michaelis–Menten equation**:
+
+$$
+v_0 = \frac{V_\text{max}[\text{S}]}{K_m + [\text{S}]}
+$$
+
+You will not be asked to reproduce the derivation, but the logic matters: velocity is proportional to the fraction of enzyme in the ES complex, and that fraction is set by how [S] compares with $K_m$.
+
+### Reading the Equation
+
+A plot of $v_0$ against [S] is a **rectangular hyperbola**. Three regions are worth recognizing.
+
+- **Low substrate ($[\text{S}] \ll K_m$).** The denominator is roughly $K_m$, so $v_0 \approx \frac{V_\text{max}}{K_m}[\text{S}]$. Velocity is proportional to [S]: the reaction is **first order** in substrate.
+- **$[\text{S}] = K_m$.** Then $v_0 = \frac{V_\text{max}K_m}{2K_m} = \frac{V_\text{max}}{2}$. This is the operational definition of $K_m$: **the substrate concentration that gives half-maximal velocity.**
+- **High substrate ($[\text{S}] \gg K_m$).** The denominator is roughly [S], so $v_0 \approx V_\text{max}$. The enzyme is **saturated**, and adding more substrate barely helps. The reaction is **zero order** in substrate.
+
+### What Km and Vmax Mean
+
+$V_\text{max}$ depends on how much enzyme is present: double $[\text{E}]_T$ and you double $V_\text{max}$. $K_m$ does not depend on enzyme concentration; it is a property of a particular enzyme with a particular substrate under particular conditions (temperature, pH, ionic strength).
+
+When the catalytic step is slow compared with dissociation ($k_\text{cat} \ll k_{-1}$), $K_m$ approaches $\frac{k_{-1}}{k_1}$, the dissociation constant of ES. That's why $K_m$ is treated as an inverse measure of affinity: **a low $K_m$ means the enzyme reaches half-maximal velocity at a low substrate concentration, which indicates high apparent affinity.**
+
+Hexokinase and glucokinase show why this matters physiologically. Hexokinase, found in most tissues, has a $K_m$ for glucose below 0.1 mM, far below normal blood glucose (about 5 mM), so it works near $V_\text{max}$ and keeps tissues supplied even during fasting. Liver glucokinase half-saturates near 8 to 10 mM, so its activity rises and falls with blood glucose, letting the liver take up glucose mainly after a meal.
+
+**Worked example: velocity at different [S].** An enzyme has $K_m = 2.0$ mM and $V_\text{max} = 100\ \mu\text{mol/min}$. Find $v_0$ at 2.0, 6.0 and 18 mM substrate.
+
+$$
+v_0(2.0) = \frac{100 \times 2.0}{2.0 + 2.0} = 50\ \mu\text{mol/min}
+$$
+
+$$
+v_0(6.0) = \frac{100 \times 6.0}{2.0 + 6.0} = 75\ \mu\text{mol/min}
+$$
+
+$$
+v_0(18) = \frac{100 \times 18}{2.0 + 18} = 90\ \mu\text{mol/min}
+$$
+
+Tripling [S] from $K_m$ to $3K_m$ raises velocity only from 50% to 75% of $V_\text{max}$, and reaching 90% takes $9K_m$. This diminishing return is saturation in numbers.
+
+### Turnover Number and Catalytic Efficiency
+
+The **turnover number**, $k_\text{cat}$, is the maximum number of substrate molecules one active site converts to product per second when saturated:
+
+$$
+k_\text{cat} = \frac{V_\text{max}}{[\text{E}]_T}
+$$
+
+Values range from below 1 per second to about a million per second for carbonic anhydrase, one of the fastest enzymes known.
+
+Neither $k_\text{cat}$ nor $K_m$ alone tells you how good an enzyme is at the low substrate concentrations common in cells. The ratio $\frac{k_\text{cat}}{K_m}$, the **catalytic efficiency** or specificity constant, does. At low [S], $v_0 \approx \frac{k_\text{cat}}{K_m}[\text{E}]_T[\text{S}]$, so this ratio is the effective second-order rate constant for enzyme meeting substrate. Its upper limit is the rate at which molecules diffuse together in water, roughly $10^8$ to $10^9\ \text{M}^{-1}\text{s}^{-1}$. Enzymes near that limit, such as triose phosphate isomerase and acetylcholinesterase, are sometimes called catalytically perfect: almost every encounter with substrate leads to product.
+
+**Worked example: kcat and efficiency.** A solution containing 10 nM enzyme has $V_\text{max} = 5.0\ \mu\text{M/s}$ and $K_m = 50\ \mu\text{M}$.
+
+$$
+k_\text{cat} = \frac{5.0 \times 10^{-6}\ \text{M/s}}{1.0 \times 10^{-8}\ \text{M}} = 500\ \text{s}^{-1}
+$$
+
+$$
+\frac{k_\text{cat}}{K_m} = \frac{500\ \text{s}^{-1}}{5.0 \times 10^{-5}\ \text{M}} = 1.0 \times 10^{7}\ \text{M}^{-1}\text{s}^{-1}
+$$
+
+The same ratio also tells you which of two competing substrates an enzyme prefers. If substrate 1 has $k_\text{cat} = 100\ \text{s}^{-1}$ and $K_m = 1.0$ mM, its efficiency is $1.0 \times 10^5\ \text{M}^{-1}\text{s}^{-1}$. If substrate 2 has $k_\text{cat} = 20\ \text{s}^{-1}$ and $K_m = 0.050$ mM, its efficiency is $4.0 \times 10^5\ \text{M}^{-1}\text{s}^{-1}$. Substrate 2 is turned over more slowly once bound, but the enzyme binds it so much better that it is the preferred substrate at low concentrations.
+
+<Callout type="high-yield" title="The Michaelis–Menten essentials">
+
+- $K_m$ = [S] at $\frac{1}{2}V_\text{max}$. Lower $K_m$ means higher apparent affinity. $K_m$ is independent of enzyme concentration.
+- $V_\text{max} = k_\text{cat}[\text{E}]_T$. More enzyme raises $V_\text{max}$ but leaves $K_m$ unchanged.
+- At $[\text{S}] = 3K_m$, $v_0 = 0.75V_\text{max}$; at $9K_m$, $v_0 = 0.90V_\text{max}$.
+- $\frac{k_\text{cat}}{K_m}$ measures catalytic efficiency, capped by diffusion near $10^8$ to $10^9\ \text{M}^{-1}\text{s}^{-1}$.
+
+</Callout>
+
+<Question id="bb-enzymes-03" />
+
+## Lineweaver–Burk Plots
+
+A hyperbola is hard to read precisely, because $V_\text{max}$ is approached only at infinite [S]. Taking the reciprocal of both sides of the Michaelis–Menten equation turns it into a straight line:
+
+$$
+\frac{1}{v_0} = \frac{K_m}{V_\text{max}} \cdot \frac{1}{[\text{S}]} + \frac{1}{V_\text{max}}
+$$
+
+This is the **Lineweaver–Burk** (double-reciprocal) plot: $\frac{1}{v_0}$ on the y-axis against $\frac{1}{[\text{S}]}$ on the x-axis. It has the form $y = mx + b$, so:
+
+| Feature | Value |
+|---|---|
+| y-intercept | $\frac{1}{V_\text{max}}$ |
+| x-intercept | $-\frac{1}{K_m}$ |
+| Slope | $\frac{K_m}{V_\text{max}}$ |
+
+The x-intercept is found by extending the line to the left of the y-axis, past the region where data exist (there is no such thing as a negative substrate concentration), and setting $\frac{1}{v_0} = 0$.
+
+Points far to the right on this plot come from the lowest substrate concentrations, where velocities are smallest and measurement errors largest, so the plot exaggerates the least reliable data. Researchers now usually fit the hyperbola directly with software. The double-reciprocal plot survives in textbooks and on the MCAT because it makes changes in $K_m$ and $V_\text{max}$ visible at a glance, which is exactly what you need for diagnosing inhibitors.
+
+**Worked example: reading intercepts.** A Lineweaver–Burk plot has a y-intercept of $0.020\ \text{min}/\mu\text{mol}$ and an x-intercept of $-0.50\ \text{mM}^{-1}$.
+
+$$
+V_\text{max} = \frac{1}{0.020\ \text{min}/\mu\text{mol}} = 50\ \mu\text{mol/min}
+\qquad
+K_m = \frac{1}{0.50\ \text{mM}^{-1}} = 2.0\ \text{mM}
+$$
+
+As a check, the slope should be $\frac{K_m}{V_\text{max}} = \frac{2.0}{50} = 0.040$ min·mM/µmol, which also equals the y-intercept divided by the distance from the origin to the x-intercept, $\frac{0.020}{0.50} = 0.040$.
+
+<Callout type="trap" title="Signs and reciprocals">
+
+The x-intercept is $-\frac{1}{K_m}$, so a point **farther left** (more negative) means a **smaller** $K_m$, and a point closer to the origin means a larger $K_m$. Likewise, a **higher** y-intercept means a **lower** $V_\text{max}$. Students who read the intercepts directly as $K_m$ and $V_\text{max}$ get every inhibition question backward.
+
+</Callout>
+
+<Question id="bb-enzymes-04" />
+
+## Enzyme Inhibition
+
+A **reversible inhibitor** binds an enzyme noncovalently and can dissociate; removing it (by dilution or dialysis) restores activity. Reversible inhibitors are classified by **what they bind**: free enzyme (E), the enzyme–substrate complex (ES), or both. Each pattern produces a characteristic change in apparent $K_m$ and $V_\text{max}$.
+
+A compact way to see all four is to define two factors, $\alpha = 1 + \frac{[\text{I}]}{K_I}$ for binding to E and $\alpha^\prime = 1 + \frac{[\text{I}]}{K_I^\prime}$ for binding to ES. With inhibitor present, the rate law becomes
+
+$$
+v_0 = \frac{V_\text{max}[\text{S}]}{\alpha K_m + \alpha^\prime[\text{S}]}
+$$
+
+so the apparent constants are $V_\text{max}^\text{app} = \frac{V_\text{max}}{\alpha^\prime}$ and $K_m^\text{app} = \frac{\alpha}{\alpha^\prime}K_m$.
+
+### Competitive Inhibition
+
+A **competitive inhibitor** binds only free enzyme, usually at the active site, often because it resembles the substrate. Inhibitor and substrate compete for the same site, so a high enough substrate concentration outcompetes the inhibitor.
+
+- **$V_\text{max}$ is unchanged** ($\alpha^\prime = 1$): at saturating [S], substrate wins.
+- **$K_m$ increases** (by the factor α): more substrate is needed to reach half-maximal velocity.
+- **Lineweaver–Burk:** lines with and without inhibitor **intersect on the y-axis**. The inhibited line is steeper, and its x-intercept moves toward the origin.
+
+Methotrexate, a folate analog that competes with dihydrofolate at dihydrofolate reductase, is a clinical example.
+
+### Noncompetitive Inhibition
+
+A pure **noncompetitive inhibitor** binds an allosteric site, away from the active site, and binds E and ES equally well ($\alpha = \alpha^\prime$). It doesn't affect substrate binding, but enzyme with inhibitor bound can't make product. In effect, it removes a fraction of the working enzyme.
+
+- **$V_\text{max}$ decreases**, and adding substrate cannot overcome it.
+- **$K_m$ is unchanged**, because the enzyme molecules that remain active bind substrate normally.
+- **Lineweaver–Burk:** the lines **intersect on the x-axis**. The inhibited line has a higher y-intercept.
+
+### Uncompetitive Inhibition
+
+An **uncompetitive inhibitor** binds only the ES complex, at a site created or exposed by substrate binding ($\alpha = 1$).
+
+- **$V_\text{max}$ decreases**, because some ES is trapped as an inactive ESI complex.
+- **$K_m$ decreases by the same factor.** By tying up ES, the inhibitor pulls the binding equilibrium $\ce{E + S <=> ES}$ toward ES (Le Châtelier's principle), so the enzyme appears to bind substrate more tightly.
+- **Lineweaver–Burk:** the slope $\frac{K_m}{V_\text{max}}$ is unchanged, so the lines are **parallel**. The inhibited line is shifted up, with a higher y-intercept and a more negative x-intercept.
+
+Because it needs ES to bind, an uncompetitive inhibitor becomes more effective as substrate concentration rises, the opposite of a competitive inhibitor.
+
+### Mixed Inhibition
+
+A **mixed inhibitor** binds both E and ES, but with different affinities ($\alpha \neq \alpha^\prime$). Pure noncompetitive inhibition is the special case in which the two affinities are equal.
+
+- **$V_\text{max}$ always decreases.**
+- **$K_m$ increases** if the inhibitor prefers free enzyme ($\alpha > \alpha^\prime$) and **decreases** if it prefers ES ($\alpha^\prime > \alpha$).
+- **Lineweaver–Burk:** the lines **intersect to the left of the y-axis**, above the x-axis when the inhibitor prefers E and below it when the inhibitor prefers ES.
+
+### Summary
+
+| Inhibitor type | Binds | Apparent $K_m$ | Apparent $V_\text{max}$ | Lineweaver–Burk pattern | Overcome by more substrate? |
+|---|---|---|---|---|---|
+| Competitive | E only (active site) | Increases | Unchanged | Lines meet on the y-axis | Yes |
+| Noncompetitive | E and ES equally | Unchanged | Decreases | Lines meet on the x-axis | No |
+| Uncompetitive | ES only | Decreases | Decreases | Parallel lines | No |
+| Mixed | E and ES unequally | Increases or decreases | Decreases | Lines meet left of the y-axis, off the x-axis | No |
+
+### Irreversible Inhibition
+
+An **irreversible inhibitor** binds so tightly, usually by forming a covalent bond with an active-site residue, that it never effectively dissociates. Activity returns only when the cell makes new enzyme. Kinetically, irreversible inhibition removes enzyme from the pool: $V_\text{max}$ falls (because effective $[\text{E}]_T$ falls) while $K_m$ for the remaining enzyme is unchanged, so the data can look like noncompetitive inhibition. The giveaways are that inhibition grows with time of exposure and that dialysis doesn't reverse it.
+
+**Aspirin** is the textbook case. It transfers its acetyl group to a serine residue in the active-site channel of cyclooxygenase (COX), blocking the enzyme's access to arachidonic acid and therefore the synthesis of prostaglandins and thromboxanes. Most cells simply make new COX, but platelets have no nucleus and cannot. A single dose of aspirin therefore suppresses platelet thromboxane production, and platelet aggregation, for the platelet's remaining lifespan of about a week to ten days. Reversible COX inhibitors such as ibuprofen act only while the drug is present. Other covalent inhibitors include penicillin, which acylates the active-site serine of the bacterial transpeptidases that crosslink peptidoglycan, and organophosphate nerve agents, which phosphorylate the active-site serine of acetylcholinesterase.
+
+<Callout type="trap" title="Noncompetitive versus uncompetitive">
+
+The names sound alike, but the kinetics differ. **Noncompetitive** inhibitors leave $K_m$ alone (lines meet on the x-axis). **Uncompetitive** inhibitors lower $K_m$ and $V_\text{max}$ together (parallel lines). A useful anchor: only **competitive** inhibition leaves $V_\text{max}$ unchanged, and only **uncompetitive** inhibition (or mixed inhibition favoring ES) lowers $K_m$.
+
+</Callout>
+
+<Question id="bb-enzymes-05" />
+
+## Cooperativity and Allosteric Regulation
+
+### Sigmoidal Kinetics
+
+Many regulatory enzymes are built from several subunits, each with its own active site, and don't follow Michaelis–Menten kinetics. In **positive cooperativity**, substrate binding at one site increases the affinity of the other sites. A plot of $v_0$ against [S] is then **sigmoidal** (S-shaped) rather than hyperbolic. Because $K_m$ is defined for Michaelis–Menten enzymes, the substrate concentration giving half-maximal velocity for a cooperative enzyme is written $K_{0.5}$.
+
+Two models describe how subunits communicate. In the **concerted** model, every subunit of the enzyme switches together between a low-affinity **T (tense)** state and a high-affinity **R (relaxed)** state, and substrate binding shifts the population toward R. In the **sequential** model, each subunit changes shape as it binds substrate, and the change makes its neighbors more likely to change too. Real enzymes often show features of both.
+
+Hemoglobin, though it is a transport protein rather than an enzyme, is the classic illustration. Its four subunits bind oxygen cooperatively, so its saturation curve is sigmoidal with half-saturation near 26 mmHg, while single-subunit myoglobin gives a hyperbola with half-saturation near 3 mmHg. The steep middle of hemoglobin's curve lets it load oxygen fully in the lungs and release a large fraction in the tissues, a switch-like response a hyperbolic binder cannot provide.
+
+### The Hill Coefficient
+
+The **Hill equation** describes cooperative binding with an empirical exponent, the **Hill coefficient** $n$:
+
+$$
+\theta = \frac{[\text{S}]^n}{K_{0.5}^n + [\text{S}]^n}
+$$
+
+where θ is the fraction of sites occupied (or fraction of $V_\text{max}$ reached).
+
+- **$n > 1$:** positive cooperativity (sigmoidal curve).
+- **$n = 1$:** no cooperativity (hyperbolic curve, like Michaelis–Menten).
+- **$n \lt 1$:** negative cooperativity, where binding at one site lowers affinity at the others.
+
+The Hill coefficient cannot exceed the number of binding sites, and in practice it is lower. Hemoglobin, with four sites, has $n$ of about 2.8 to 3.
+
+**Worked example: why cooperativity sharpens a response.** Rearranging the Hill equation gives $\frac{\theta}{1-\theta} = \left(\frac{[\text{S}]}{K_{0.5}}\right)^n$. At 90% occupancy the left side is 9, and at 10% it is $\frac{1}{9}$, so the ratio of substrate concentrations needed to go from 10% to 90% is
+
+$$
+\frac{[\text{S}]_{90}}{[\text{S}]_{10}} = 81^{1/n}
+$$
+
+For $n = 1$ that is an 81-fold increase. For $n = 4$, it is only $81^{1/4} = 3$-fold. A highly cooperative enzyme turns from mostly off to mostly on over a narrow concentration range.
+
+### Allosteric Effectors
+
+**Allosteric regulators** bind at a site distinct from the active site (allo, "other"; steric, "shape") and change activity by shifting the enzyme's conformational balance. **Allosteric activators** stabilize the R state and shift the curve to the left, lowering $K_{0.5}$. **Allosteric inhibitors** stabilize the T state and shift it to the right. When the substrate itself is the effector, as with cooperative binding, the effect is called **homotropic**; when another molecule is the effector, it is **heterotropic**.
+
+Two enzymes illustrate the logic. **Aspartate transcarbamoylase**, which catalyzes the committed step in pyrimidine synthesis, is inhibited by CTP (an end product of the pathway) and activated by ATP (a purine, signaling that the cell needs pyrimidines to balance it). **Phosphofructokinase-1**, the main control point of glycolysis, is inhibited by ATP and citrate, which signal plentiful energy, and activated by AMP and fructose 2,6-bisphosphate, which signal a need for glycolysis. Hemoglobin's heterotropic regulators work the same way: $\ce{H+}$, $\ce{CO2}$ and 2,3-bisphosphoglycerate all stabilize the T state and shift its curve right, helping it unload oxygen in active tissue.
+
+<Callout type="connection" title="Hemoglobin as the model allosteric protein" to="/bb/amino-acids-and-proteins#globular-proteins-hemoglobin-and-antibodies">
+
+Hemoglobin's quaternary structure ($\alpha_2\beta_2$) is what makes its cooperativity possible: subunits that touch can pass conformational changes to each other. A single-chain protein like myoglobin has no partner to signal. The cardiovascular and respiratory chapter (coming soon) returns to the oxygen dissociation curve in physiological detail.
+
+</Callout>
+
+## Covalent Modification, Zymogens, and Environmental Effects
+
+### Phosphorylation and Other Covalent Modifications
+
+Cells also regulate enzymes by attaching or removing chemical groups. The most important is **phosphorylation**. A **kinase** transfers a phosphate group from ATP to the hydroxyl of a serine, threonine or tyrosine side chain; a **phosphatase** removes it by hydrolysis. The added phosphate carries about two negative charges at physiological pH, which can create new salt bridges, break old ones, and shift the enzyme between active and inactive conformations.
+
+Phosphorylation doesn't always activate. In liver and muscle, phosphorylation triggered by glucagon or epinephrine **activates** glycogen phosphorylase, which breaks glycogen down, and **inactivates** glycogen synthase, which builds it. One signal flips both enzymes in the same physiological direction, mobilizing glucose. Because kinases and phosphatases both act continuously, phosphorylation is fast and fully reversible, which suits it to hormonal control. Other covalent modifications include glycosylation, acetylation, methylation and ubiquitination, which usually marks a protein for destruction by the proteasome.
+
+### Zymogens
+
+Some enzymes are made as inactive precursors called **zymogens** (or proenzymes), often named with the suffix -ogen or the prefix pro-. They are activated by cutting specific peptide bonds, which lets the chain rearrange and opens the active site. Unlike phosphorylation, this activation is irreversible. Zymogens let cells make dangerous enzymes, especially proteases, without digesting themselves.
+
+- **Pepsinogen** is secreted by the chief cells of the stomach. In the acid produced by parietal cells, pepsinogen cleaves itself to form pepsin, and pepsin then activates more pepsinogen.
+- **Trypsinogen** is secreted by the pancreas into the duodenum, where **enteropeptidase** (enterokinase), an enzyme of the intestinal brush border, cleaves it to trypsin. Trypsin then activates more trypsinogen and the other pancreatic zymogens, including chymotrypsinogen, procarboxypeptidase and proelastase.
+
+Because trypsin sits at the top of that cascade, its premature activation inside the pancreas leads to self-digestion of the gland, a central event in acute pancreatitis. Zymogen cascades also run blood clotting (prothrombin is cleaved to thrombin) and apoptosis (procaspases are cleaved to caspases).
+
+### Feedback Inhibition
+
+In **feedback inhibition**, the end product of a pathway inhibits an enzyme near the start of that pathway, usually the first committed step and usually allosterically. When product accumulates, the pathway slows; when product is used up, inhibition lifts. Isoleucine, for example, inhibits threonine deaminase, the first enzyme on the route from threonine to isoleucine, and CTP inhibits aspartate transcarbamoylase. The opposite pattern, **feedforward activation**, also occurs: fructose 1,6-bisphosphate, made early in glycolysis, activates pyruvate kinase near its end.
+
+### Temperature and pH
+
+**Temperature** affects enzyme activity in two opposing ways. Raising temperature increases the fraction of molecules with enough energy to cross the activation barrier, so rates rise, often roughly doubling for each 10 °C. But above some point the enzyme begins to denature, and activity collapses. The result is an asymmetric curve that rises gradually to an **optimum** and then falls steeply. Most human enzymes work best near body temperature, 37 °C. Enzymes from heat-loving organisms have much higher optima; Taq polymerase from a hot-spring bacterium works well near 72 °C, which is why PCR uses it.
+
+**pH** affects enzymes mainly through ionizable groups. An active-site histidine acting as a general base must be deprotonated; an aspartate stabilizing a positive charge must be ionized; the substrate itself may need a particular charge. Away from the optimum, those groups take the wrong protonation state, and at extremes the protein denatures. Optima match each enzyme's environment:
+
+| Enzyme | Location | Approximate pH optimum |
+|---|---|---|
+| Pepsin | Stomach | 2 |
+| Lysosomal hydrolases | Lysosome | 5 |
+| Most cytosolic enzymes | Cytosol, blood | 7 to 7.4 |
+| Trypsin, pancreatic lipase | Small intestine | 8 |
+
+The low optimum of lysosomal enzymes is also a safety feature: if they leak into the cytosol (pH about 7.2), they work poorly.
+
+<Callout type="connection" title="Protonation states set the rate" to="/cp/acids-and-bases">
+
+A pH–activity curve is often a map of active-site pKa values. If activity rises steeply around pH 6, a group with a pKa near 6, probably histidine, must be deprotonated for catalysis. The Henderson–Hasselbalch equation tells you what fraction of enzyme molecules have that group in the right state at any pH. Review the underlying equilibria in the chemistry chapter on acids and bases.
+
+</Callout>

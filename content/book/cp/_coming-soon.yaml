@@ -1,0 +1,11 @@
+chapters:
+  - { title: "Kinematics and Forces", aamc: ["4A"] }
+  - { title: "Work, Energy, and Momentum", aamc: ["4A"] }
+  - { title: "Fluids", aamc: ["4B"] }
+  - { title: "Electrostatics and Circuits", aamc: ["4C"] }
+  - { title: "Light, Sound, and Optics", aamc: ["4D"] }
+  - { title: "Thermochemistry and Thermodynamics", aamc: ["5E"] }
+  - { title: "Kinetics and Equilibrium", aamc: ["5E"] }
+  - { title: "Electrochemistry", aamc: ["4C"] }
+  - { title: "Organic Reactions of Biological Molecules", aamc: ["5D"] }
+  - { title: "Separations and Spectroscopy", aamc: ["5C"] }

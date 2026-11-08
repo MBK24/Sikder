@@ -1,0 +1,116 @@
+deck:
+  title: "Atoms and Periodic Trends"
+  description: "Atomic structure, nuclear decay, electron configurations and periodic trends."
+cards:
+  - id: cp-atoms-fc-01
+    front: "What is the difference between mass number and atomic mass?"
+    back: "Mass number is the integer count of protons plus neutrons in one isotope. Atomic mass is the weighted average mass of an element's natural isotopes, in amu."
+    tags: [atomic-structure]
+  - id: cp-atoms-fc-02
+    front: "How do you find the number of neutrons in a nucleus?"
+    back: '$N = A - Z$ (mass number minus atomic number)'
+    tags: [atomic-structure]
+  - id: cp-atoms-fc-03
+    front: "Why do isotopes of an element have essentially the same chemistry?"
+    back: "They have the same number of protons and electrons; only the neutron count differs."
+    tags: [atomic-structure]
+  - id: cp-atoms-fc-04
+    front: "What is the mass defect of a nucleus?"
+    back: 'The difference between the mass of the separate nucleons and the mass of the nucleus, converted to binding energy by $E = mc^2$ (1 amu = 931.5 MeV).'
+    tags: [nuclear]
+  - id: cp-atoms-fc-05
+    front: "How does alpha decay change A and Z?"
+    back: 'A decreases by 4 and Z decreases by 2 (a $\ce{^{4}_{2}He}$ nucleus is emitted).'
+    tags: [nuclear, decay]
+  - id: cp-atoms-fc-06
+    front: "What happens inside the nucleus during beta-minus decay?"
+    back: "A neutron becomes a proton, and an electron and an antineutrino are emitted. Z increases by 1; A is unchanged."
+    tags: [nuclear, decay]
+  - id: cp-atoms-fc-07
+    front: "Which two decay modes both lower Z by 1 without changing A?"
+    back: "Positron (beta-plus) emission and electron capture. Both convert a proton into a neutron."
+    tags: [nuclear, decay]
+  - id: cp-atoms-fc-08
+    front: "Which decay mode does a neutron-rich nucleus usually undergo?"
+    back: "Beta-minus decay, which converts a neutron into a proton."
+    tags: [nuclear, decay]
+  - id: cp-atoms-fc-09
+    front: "What fraction of a radioactive sample remains after n half-lives?"
+    back: '$(1/2)^n$'
+    tags: [nuclear, half-life]
+  - id: cp-atoms-fc-10
+    front: "What is the relationship between the decay constant and half-life?"
+    back: '$k = \ln 2 / t_{1/2} \approx 0.693 / t_{1/2}$'
+    tags: [nuclear, half-life]
+  - id: cp-atoms-fc-11
+    front: "Why does a PET scanner look for pairs of photons arriving at the same time?"
+    back: "A positron annihilates with an electron to produce two 511 keV photons traveling in nearly opposite directions."
+    tags: [nuclear, medicine]
+  - id: cp-atoms-fc-12
+    front: "Why is 18F-FDG trapped in metabolically active cells?"
+    back: "It enters through glucose transporters and is phosphorylated by hexokinase, but the product cannot continue through glycolysis."
+    tags: [nuclear, medicine]
+  - id: cp-atoms-fc-13
+    front: "What is the energy of level n in the Bohr model of hydrogen?"
+    back: '$E_n = -13.6\ \text{eV}/n^2$'
+    tags: [bohr]
+  - id: cp-atoms-fc-14
+    front: "What shortcut converts a photon wavelength in nm to energy in eV?"
+    back: '$E = 1240 / \lambda$, using $hc \approx 1240$ eV·nm'
+    tags: [bohr, photons]
+  - id: cp-atoms-fc-15
+    front: "In the photoelectric effect, what does increasing light intensity (above threshold) change?"
+    back: "The number of ejected electrons. Their maximum kinetic energy depends only on frequency."
+    tags: [photoelectric]
+  - id: cp-atoms-fc-16
+    front: "What values can the azimuthal quantum number l take for a given n?"
+    back: 'Integers from 0 to $n - 1$ (s, p, d, f for l = 0, 1, 2, 3)'
+    tags: [quantum-numbers]
+  - id: cp-atoms-fc-17
+    front: "What is the maximum number of electrons in shell n?"
+    back: '$2n^2$'
+    tags: [quantum-numbers]
+  - id: cp-atoms-fc-18
+    front: "What does the Pauli exclusion principle state?"
+    back: "No two electrons in an atom can have the same four quantum numbers, so an orbital holds at most two electrons of opposite spin."
+    tags: [quantum-numbers]
+  - id: cp-atoms-fc-19
+    front: "What does Hund's rule say about filling degenerate orbitals?"
+    back: "Electrons occupy separate orbitals with parallel spins before any pairing occurs."
+    tags: [electron-configuration]
+  - id: cp-atoms-fc-20
+    front: "What are the ground-state configurations of chromium and copper?"
+    back: 'Cr: $[\ce{Ar}]\,4s^1\,3d^5$. Cu: $[\ce{Ar}]\,4s^1\,3d^{10}$.'
+    tags: [electron-configuration, exceptions]
+  - id: cp-atoms-fc-21
+    front: "When a transition metal forms a cation, which electrons leave first?"
+    back: 'The 4s electrons, before any 3d electrons. Example: $\ce{Fe^2+}$ is $[\ce{Ar}]\,3d^6$.'
+    tags: [electron-configuration]
+  - id: cp-atoms-fc-22
+    front: "What makes an atom or ion paramagnetic?"
+    back: "At least one unpaired electron. Species with all electrons paired are diamagnetic."
+    tags: [electron-configuration]
+  - id: cp-atoms-fc-23
+    front: "How does effective nuclear charge change across a period and down a group?"
+    back: "It rises across a period (same shell, poor shielding). Down a group it changes little, but the valence shell gets farther away."
+    tags: [periodic-trends]
+  - id: cp-atoms-fc-24
+    front: "Why is the first ionization energy of oxygen lower than that of nitrogen?"
+    back: "Oxygen's fourth 2p electron is paired in an orbital, and the added repulsion makes it easier to remove."
+    tags: [periodic-trends, exceptions]
+  - id: cp-atoms-fc-25
+    front: "In an isoelectronic series, which ion is largest?"
+    back: 'The one with the fewest protons. Example: $\ce{O^2-} > \ce{F-} > \ce{Na+} > \ce{Mg^2+}$.'
+    tags: [periodic-trends]
+  - id: cp-atoms-fc-26
+    front: "Which halogen releases the most energy when it gains an electron?"
+    back: "Chlorine (about 349 kJ/mol), slightly more than fluorine, whose small 2p subshell causes extra repulsion."
+    tags: [periodic-trends, exceptions]
+  - id: cp-atoms-fc-27
+    front: "What are the approximate intracellular and extracellular concentrations of free Ca2+?"
+    back: "About 100 nM inside the cytosol and about 1 to 2 mM outside the cell, roughly a 10,000-fold gradient."
+    tags: [groups, biology]
+  - id: cp-atoms-fc-28
+    front: "Which oxidation state of heme iron binds oxygen in hemoglobin?"
+    back: 'Ferrous iron, $\ce{Fe^2+}$. Ferric $\ce{Fe^3+}$ (methemoglobin) cannot carry oxygen.'
+    tags: [groups, biology]
