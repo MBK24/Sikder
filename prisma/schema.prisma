@@ -1,0 +1,1056 @@
+// =============================================================================
+// MCAT Prep Platform — Prisma schema (PROPOSAL, Phase 1)
+// Target: Prisma 7.x, PostgreSQL (Neon). Connection URL lives in prisma.config.ts.
+//
+// Conventions
+//   - ids: cuid() strings; timestamps: createdAt / updatedAt everywhere it matters
+//   - Postgres full-text search uses generated tsvector columns + GIN indexes that
+//     Prisma can't express natively. They're declared as Unsupported("tsvector")
+//     and created in a hand-written SQL migration (see docs/PROPOSAL.md §3.4).
+//   - Body text of the book lives in /content/*.mdx. The DB stores an index of
+//     chapters (for access flags, progress, search, admin toggles), not the prose.
+// =============================================================================
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// -----------------------------------------------------------------------------
+// Enums
+// -----------------------------------------------------------------------------
+
+enum Role {
+  STUDENT
+  TUTOR // "Verified Tutor"
+  EXPERT
+  MODERATOR
+  ADMIN
+}
+
+/// Top-level "Parts" of the book.
+enum Part {
+  GETTING_STARTED // Part 0
+  CP // Chemical & Physical Foundations
+  CARS // Critical Analysis & Reasoning Skills
+  BB // Biological & Biochemical Foundations
+  PS // Psychological, Social & Biological Foundations
+  APPENDIX
+}
+
+enum ChapterStatus {
+  DRAFT
+  COMING_SOON
+  PUBLISHED
+}
+
+/// Minimum plan needed to read the full chapter.
+enum AccessLevel {
+  FREE
+  PREMIUM
+}
+
+enum Difficulty {
+  INTRO
+  CORE
+  ADVANCED
+}
+
+enum Tier {
+  FREE
+  PREMIUM
+  PREMIUM_TUTORING
+}
+
+enum BillingInterval {
+  MONTH
+  YEAR
+}
+
+/// Mirrors Stripe's subscription.status values.
+enum SubscriptionStatus {
+  TRIALING
+  ACTIVE
+  PAST_DUE
+  UNPAID
+  CANCELED
+  INCOMPLETE
+  INCOMPLETE_EXPIRED
+  PAUSED
+}
+
+enum QuestionSource {
+  CONTENT // synced from /content/questions/*.yaml — sync script owns it
+  ADMIN // created in /admin or via CSV import — sync script never touches it
+}
+
+enum AttemptContext {
+  INLINE
+  QUIZ
+  PRACTICE
+  TEST
+}
+
+enum PracticeMode {
+  CHAPTER_QUIZ
+  CUSTOM // configurable length, optional timer
+  SECTION_TEST // real MCAT per-section question count + time limit
+}
+
+enum PracticeStatus {
+  IN_PROGRESS
+  SUBMITTED
+  ABANDONED
+}
+
+enum QuestionResult {
+  UNSEEN
+  CORRECT
+  INCORRECT
+}
+
+enum DeckKind {
+  BUILT_IN // one per chapter, synced from content
+  USER
+}
+
+enum ForumPostStatus {
+  OPEN
+  LOCKED
+  HIDDEN // hidden by moderator; visible to author + mods
+  DELETED
+}
+
+enum VoteValue {
+  UP
+}
+
+enum ReportTarget {
+  POST
+  REPLY
+  USER
+}
+
+enum ReportStatus {
+  OPEN
+  RESOLVED
+  DISMISSED
+}
+
+enum ReputationReason {
+  POST_UPVOTED
+  REPLY_UPVOTED
+  ANSWER_ACCEPTED
+  ACCEPTED_AN_ANSWER
+  VOTE_REMOVED // negative delta that reverses an earlier upvote
+  MODERATOR_ADJUSTMENT
+}
+
+enum NotificationType {
+  REPLY_TO_POST
+  ANSWER_ACCEPTED
+  POST_UPVOTED_MILESTONE
+  MENTION
+  TUTORING_REQUEST
+  TUTORING_MESSAGE
+  TUTORING_STATUS
+  VERIFICATION_DECISION
+  SUBSCRIPTION
+  MODERATION
+}
+
+enum TutoringStatus {
+  PENDING
+  ACCEPTED
+  DECLINED
+  SCHEDULED
+  COMPLETED
+  CANCELED
+}
+
+enum VerificationKind {
+  TUTOR
+  EXPERT
+}
+
+enum VerificationStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+enum ModerationActionType {
+  HIDE_POST
+  UNHIDE_POST
+  LOCK_POST
+  UNLOCK_POST
+  HIDE_REPLY
+  UNHIDE_REPLY
+  BAN_USER
+  UNBAN_USER
+  CHANGE_ROLE
+  GRANT_BADGE
+  REVOKE_BADGE
+  RESOLVE_REPORT
+}
+
+// -----------------------------------------------------------------------------
+// Auth (Better Auth core schema + admin plugin fields).
+// If we stay on Auth.js v5 instead, these four models swap for the Auth.js
+// adapter shape (Account/Session/VerificationToken) — the rest is unaffected.
+// -----------------------------------------------------------------------------
+
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  emailVerified Boolean   @default(false)
+  name          String?
+  image         String?
+  role          Role      @default(STUDENT)
+  banned        Boolean   @default(false)
+  banReason     String?
+  banExpires    DateTime?
+
+  stripeCustomerId String?   @unique
+  /// Set once a user has used a free trial, so trials can't be repeated.
+  trialUsedAt      DateTime?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  sessions Session[]
+  accounts Account[]
+  profile  Profile?
+
+  subscriptions     Subscription[]
+  chapterProgress   ChapterProgress[]
+  attempts          QuestionAttempt[]
+  questionStatuses  UserQuestionStatus[]
+  practiceSets      PracticeSet[]
+  decks             FlashcardDeck[]
+  flashcardReviews  FlashcardReview[]
+  flashcardLogs     FlashcardReviewLog[]
+  studyDays         StudyDay[]
+  badges            UserBadge[]
+  posts             ForumPost[]
+  replies           ForumReply[]
+  votes             Vote[]
+  reportsFiled      Report[]              @relation("ReportReporter")
+  reportsAgainst    Report[]              @relation("ReportTargetUser")
+  reportsResolved   Report[]              @relation("ReportResolver")
+  notifications     Notification[]
+  reputationEvents  ReputationEvent[]     @relation("RepRecipient")
+  reputationCaused  ReputationEvent[]     @relation("RepActor")
+  tutoringAsStudent TutoringRequest[]     @relation("TutoringStudent")
+  tutoringAsTutor   TutoringRequest[]     @relation("TutoringTutor")
+  tutoringMessages  TutoringMessage[]
+  verificationReqs  VerificationRequest[] @relation("VerificationApplicant")
+  verificationsDone VerificationRequest[] @relation("VerificationReviewer")
+  modActionsTaken   ModerationAction[]    @relation("ModActor")
+  modActionsAgainst ModerationAction[]    @relation("ModTargetUser")
+  uploads           Upload[]
+  authoredQuestions Question[]
+
+  @@index([role])
+  @@index([createdAt])
+}
+
+model Session {
+  id             String   @id @default(cuid())
+  token          String   @unique
+  userId         String
+  expiresAt      DateTime
+  ipAddress      String?
+  userAgent      String?
+  impersonatedBy String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model Account {
+  id                    String    @id @default(cuid())
+  userId                String
+  providerId            String // "credential" | "google"
+  accountId             String
+  accessToken           String?
+  refreshToken          String?
+  idToken               String?
+  accessTokenExpiresAt  DateTime?
+  refreshTokenExpiresAt DateTime?
+  scope                 String?
+  /// Password hash for the "credential" provider (argon2id / scrypt).
+  password              String?
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([providerId, accountId])
+  @@index([userId])
+}
+
+/// Email verification + password-reset tokens (hashed values only).
+model Verification {
+  id         String   @id @default(cuid())
+  identifier String
+  value      String
+  expiresAt  DateTime
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@index([identifier])
+}
+
+// -----------------------------------------------------------------------------
+// Profile, badges
+// -----------------------------------------------------------------------------
+
+model Profile {
+  userId         String    @id
+  username       String    @unique // forum handle, /u/[username]
+  displayName    String?
+  bio            String? // Markdown, sanitized on render
+  targetTestDate DateTime? @db.Date
+  targetScore    Int? // 472–528
+  timezone       String    @default("America/New_York")
+  reputation     Int       @default(0) // cached sum of ReputationEvent.delta
+
+  // Tutor-facing fields (only shown when role >= TUTOR)
+  tutorHeadline     String?
+  tutorSubjects     Part[]
+  tutorAvailability String? // free text in v1
+  acceptingRequests Boolean @default(false)
+
+  // Notification preferences
+  emailOnReply    Boolean @default(true)
+  emailOnAccepted Boolean @default(true)
+  emailOnTutoring Boolean @default(true)
+  emailDigest     Boolean @default(false)
+
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([reputation(sort: Desc)])
+}
+
+/// Visible badges, e.g. "515+ Scorer", "MD", "PhD", "Content Author".
+/// Role drives permissions; badges are display-only.
+model Badge {
+  id          String  @id @default(cuid())
+  slug        String  @unique
+  label       String
+  description String?
+  color       String  @default("blue") // token name, not raw hex
+
+  users UserBadge[]
+}
+
+model UserBadge {
+  userId    String
+  badgeId   String
+  grantedAt DateTime @default(now())
+  grantedBy String?
+
+  user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  badge Badge @relation(fields: [badgeId], references: [id], onDelete: Cascade)
+
+  @@id([userId, badgeId])
+}
+
+model VerificationRequest {
+  id          String             @id @default(cuid())
+  applicantId String
+  kind        VerificationKind
+  status      VerificationStatus @default(PENDING)
+  /// e.g. score, credentials, institution, years tutoring
+  details     Json
+  evidenceId  String? // Upload (score report, CV); private bucket
+  reviewerId  String?
+  reviewNote  String?
+  createdAt   DateTime           @default(now())
+  reviewedAt  DateTime?
+
+  applicant User    @relation("VerificationApplicant", fields: [applicantId], references: [id], onDelete: Cascade)
+  reviewer  User?   @relation("VerificationReviewer", fields: [reviewerId], references: [id])
+  evidence  Upload? @relation(fields: [evidenceId], references: [id])
+
+  @@index([status, createdAt])
+  @@index([applicantId])
+}
+
+// -----------------------------------------------------------------------------
+// Billing
+// -----------------------------------------------------------------------------
+
+/// One row per Stripe subscription, kept in sync by webhooks.
+/// Access checks read this table (see lib/entitlements.ts), never Stripe.
+model Subscription {
+  id                 String             @id // Stripe subscription id (sub_...)
+  userId             String
+  tier               Tier
+  interval           BillingInterval
+  status             SubscriptionStatus
+  stripePriceId      String
+  currentPeriodStart DateTime
+  currentPeriodEnd   DateTime
+  cancelAtPeriodEnd  Boolean            @default(false)
+  trialEnd           DateTime?
+  canceledAt         DateTime?
+  /// First time we saw PAST_DUE in this cycle; grace window is computed from it.
+  pastDueSince       DateTime?
+  createdAt          DateTime           @default(now())
+  updatedAt          DateTime           @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, status])
+  @@index([status, tier])
+}
+
+/// Webhook idempotency: every processed Stripe event id is recorded.
+model StripeEvent {
+  id          String   @id // evt_...
+  type        String
+  processedAt DateTime @default(now())
+}
+
+/// Small key/value table for admin toggles (e.g. "checkout.allowPromotionCodes").
+model AppSetting {
+  key       String   @id
+  value     Json
+  updatedAt DateTime @updatedAt
+  updatedBy String?
+}
+
+// -----------------------------------------------------------------------------
+// Book content index
+// -----------------------------------------------------------------------------
+
+/// Synced from MDX frontmatter by `pnpm content:sync` (runs in build).
+/// Frontmatter seeds `access` and `status` on first insert; after that the DB
+/// (i.e. the admin toggle) is authoritative and the sync won't overwrite them.
+model Chapter {
+  id               String        @id @default(cuid())
+  slug             String        @unique // "acids-and-bases"
+  part             Part
+  number           Int // number within its Part → displayed "CP 4", sections "CP 4.2"
+  order            Int // sort key within Part (usually == number)
+  title            String
+  summary          String?
+  estReadMinutes   Int
+  difficulty       Difficulty    @default(CORE)
+  access           AccessLevel   @default(PREMIUM)
+  status           ChapterStatus @default(DRAFT)
+  /// Premium+Tutoring members can read before this date; everyone with `access` after.
+  earlyAccessUntil DateTime?
+  contentHash      String? // detects content changes between syncs
+  publishedAt      DateTime?
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+
+  sections     ContentSection[]
+  progress     ChapterProgress[]
+  questions    Question[]
+  quizItems    ChapterQuizItem[]
+  decks        FlashcardDeck[]
+  forumPosts   ForumPost[]
+  practiceSets PracticeSet[]
+
+  @@unique([part, number])
+  @@index([part, order])
+  @@index([status])
+}
+
+/// One row per H2/H3 section — powers site search and deep links.
+model ContentSection {
+  id        String  @id @default(cuid())
+  chapterId String
+  anchor    String // heading id, e.g. "henderson-hasselbalch"
+  number    String // "4.2"
+  heading   String
+  text      String // plain text, markup stripped
+  /// true if this section falls inside the free preview
+  inPreview Boolean @default(false)
+  order     Int
+
+  /// GENERATED ALWAYS AS (setweight(to_tsvector('english', heading), 'A') ||
+  ///                      setweight(to_tsvector('english', text), 'B')) STORED
+  searchVector Unsupported("tsvector")?
+
+  chapter Chapter @relation(fields: [chapterId], references: [id], onDelete: Cascade)
+
+  @@unique([chapterId, anchor])
+  @@index([searchVector], type: Gin)
+}
+
+model ChapterProgress {
+  userId         String
+  chapterId      String
+  completed      Boolean   @default(false)
+  completedAt    DateTime?
+  /// 0–1 furthest scroll depth reached
+  maxScrollPct   Float     @default(0)
+  /// anchor of the last section in view, to resume reading
+  lastAnchor     String?
+  secondsReading Int       @default(0)
+  lastVisitedAt  DateTime  @default(now())
+
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  chapter Chapter @relation(fields: [chapterId], references: [id], onDelete: Cascade)
+
+  @@id([userId, chapterId])
+  @@index([userId, lastVisitedAt(sort: Desc)])
+}
+
+// -----------------------------------------------------------------------------
+// Questions
+// -----------------------------------------------------------------------------
+
+/// Taxonomy aligned with the AAMC content outline (e.g. CP "4E", BB "1A", PS "7B").
+model Topic {
+  id       String  @id @default(cuid())
+  part     Part
+  code     String // AAMC content category, e.g. "5D"
+  slug     String  @unique
+  name     String
+  parentId String?
+
+  parent    Topic?     @relation("TopicTree", fields: [parentId], references: [id])
+  children  Topic[]    @relation("TopicTree")
+  questions Question[]
+
+  @@unique([part, code])
+}
+
+/// MCAT questions are mostly passage-based; passages are shared across questions.
+model Passage {
+  id        String         @id @default(cuid())
+  key       String         @unique
+  part      Part
+  title     String?
+  body      String // MDX-lite (Markdown + KaTeX), sanitized
+  source    QuestionSource @default(CONTENT)
+  createdAt DateTime       @default(now())
+  updatedAt DateTime       @updatedAt
+
+  questions Question[]
+}
+
+model Question {
+  id           String         @id @default(cuid())
+  /// Stable human key referenced from MDX: <Question id="cp-acids-01" />
+  key          String         @unique
+  part         Part
+  topicId      String?
+  chapterId    String?
+  passageId    String?
+  passageOrder Int?
+  difficulty   Difficulty     @default(CORE)
+  stem         String // Markdown + KaTeX
+  /// [{ id: "A", text: "...", explanation?: "..." }, ...] — validated by zod
+  choices      Json
+  correct      String // choice id, e.g. "C"
+  explanation  String // Markdown + KaTeX
+  /// Part of the filterable question bank (vs. inline-only)
+  inBank       Boolean        @default(true)
+  /// Counts toward the Free tier's 50 bank questions
+  isFree       Boolean        @default(false)
+  published    Boolean        @default(true)
+  source       QuestionSource @default(CONTENT)
+  authorId     String?
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+
+  topic   Topic?   @relation(fields: [topicId], references: [id])
+  chapter Chapter? @relation(fields: [chapterId], references: [id])
+  passage Passage? @relation(fields: [passageId], references: [id])
+  author  User?    @relation(fields: [authorId], references: [id])
+
+  attempts      QuestionAttempt[]
+  userStatuses  UserQuestionStatus[]
+  quizItems     ChapterQuizItem[]
+  practiceItems PracticeSetItem[]
+
+  @@index([part, topicId, difficulty])
+  @@index([inBank, published, part])
+  @@index([isFree])
+  @@index([chapterId])
+  @@index([passageId, passageOrder])
+}
+
+/// The ordered 10–15 question end-of-chapter quiz.
+model ChapterQuizItem {
+  chapterId  String
+  questionId String
+  order      Int
+
+  chapter  Chapter  @relation(fields: [chapterId], references: [id], onDelete: Cascade)
+  question Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+
+  @@id([chapterId, questionId])
+  @@index([chapterId, order])
+}
+
+/// Append-only log of every answer.
+model QuestionAttempt {
+  id            String         @id @default(cuid())
+  userId        String
+  questionId    String
+  selected      String? // null = skipped / timed out
+  correct       Boolean
+  timeSpentMs   Int
+  context       AttemptContext
+  practiceSetId String?
+  createdAt     DateTime       @default(now())
+
+  user        User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  question    Question     @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  practiceSet PracticeSet? @relation(fields: [practiceSetId], references: [id], onDelete: SetNull)
+
+  @@index([userId, createdAt])
+  @@index([userId, questionId])
+  @@index([questionId, correct]) // "most-missed questions" admin metric
+  @@index([practiceSetId])
+}
+
+/// Denormalized latest state per user × question — makes the
+/// unseen/correct/incorrect/flagged filters a single indexed lookup.
+model UserQuestionStatus {
+  userId        String
+  questionId    String
+  lastResult    QuestionResult @default(UNSEEN)
+  attempts      Int            @default(0)
+  flagged       Boolean        @default(false)
+  note          String?
+  lastAttemptAt DateTime?
+
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  question Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+
+  @@id([userId, questionId])
+  @@index([userId, lastResult])
+  @@index([userId, flagged])
+}
+
+model PracticeSet {
+  id             String         @id @default(cuid())
+  userId         String
+  mode           PracticeMode
+  status         PracticeStatus @default(IN_PROGRESS)
+  part           Part?
+  chapterId      String?
+  /// filters used to build a CUSTOM set: { topics, difficulty, status, count }
+  config         Json?
+  timeLimitSec   Int? // null = untimed
+  startedAt      DateTime       @default(now())
+  submittedAt    DateTime?
+  /// remaining time when paused / on reload (server is source of truth for deadline)
+  deadlineAt     DateTime?
+  scoreCorrect   Int?
+  scoreTotal     Int?
+  /// rough scaled-score estimate for SECTION_TEST (118–132), clearly labeled as an estimate
+  scaledEstimate Int?
+
+  user     User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  chapter  Chapter?          @relation(fields: [chapterId], references: [id])
+  items    PracticeSetItem[]
+  attempts QuestionAttempt[]
+
+  @@index([userId, startedAt(sort: Desc)])
+  @@index([userId, mode, status])
+}
+
+model PracticeSetItem {
+  practiceSetId   String
+  questionId      String
+  order           Int
+  selected        String?
+  markedForReview Boolean @default(false)
+  timeSpentMs     Int     @default(0)
+
+  practiceSet PracticeSet @relation(fields: [practiceSetId], references: [id], onDelete: Cascade)
+  question    Question    @relation(fields: [questionId], references: [id], onDelete: Cascade)
+
+  @@id([practiceSetId, questionId])
+  @@index([practiceSetId, order])
+}
+
+// -----------------------------------------------------------------------------
+// Flashcards (SM-2)
+// -----------------------------------------------------------------------------
+
+model FlashcardDeck {
+  id          String   @id @default(cuid())
+  kind        DeckKind
+  /// null for BUILT_IN decks
+  ownerId     String?
+  chapterId   String?
+  /// stable key for built-in decks, e.g. "deck-acids-and-bases"
+  key         String?  @unique
+  title       String
+  description String?
+  isPublic    Boolean  @default(false) // reserved: shareable user decks later
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  owner   User?       @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  chapter Chapter?    @relation(fields: [chapterId], references: [id])
+  cards   Flashcard[]
+
+  @@index([ownerId])
+  @@index([kind, chapterId])
+}
+
+model Flashcard {
+  id        String   @id @default(cuid())
+  deckId    String
+  key       String?  @unique // built-in cards only
+  front     String // Markdown + KaTeX
+  back      String
+  tags      String[]
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  deck    FlashcardDeck        @relation(fields: [deckId], references: [id], onDelete: Cascade)
+  reviews FlashcardReview[]
+  logs    FlashcardReviewLog[]
+
+  @@index([deckId, order])
+}
+
+/// Current SM-2 scheduling state for one user × card.
+model FlashcardReview {
+  userId         String
+  cardId         String
+  easeFactor     Float     @default(2.5)
+  intervalDays   Int       @default(0)
+  repetitions    Int       @default(0)
+  lapses         Int       @default(0)
+  dueAt          DateTime  @default(now())
+  lastReviewedAt DateTime?
+  suspended      Boolean   @default(false)
+
+  user User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  card Flashcard @relation(fields: [cardId], references: [id], onDelete: Cascade)
+
+  @@id([userId, cardId])
+  @@index([userId, dueAt])
+}
+
+/// History of every review, for analytics and algorithm tuning.
+model FlashcardReviewLog {
+  id           String   @id @default(cuid())
+  userId       String
+  cardId       String
+  grade        Int // SM-2 quality 0–5 (UI exposes Again/Hard/Good/Easy → 1/3/4/5)
+  prevInterval Int
+  newInterval  Int
+  newEase      Float
+  durationMs   Int?
+  reviewedAt   DateTime @default(now())
+
+  user User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  card Flashcard @relation(fields: [cardId], references: [id], onDelete: Cascade)
+
+  @@index([userId, reviewedAt])
+}
+
+// -----------------------------------------------------------------------------
+// Analytics rollup
+// -----------------------------------------------------------------------------
+
+/// One row per user per local calendar day with any study activity.
+/// Makes streaks and the activity heatmap cheap.
+model StudyDay {
+  userId            String
+  date              DateTime @db.Date
+  secondsReading    Int      @default(0)
+  questionsAnswered Int      @default(0)
+  questionsCorrect  Int      @default(0)
+  cardsReviewed     Int      @default(0)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([userId, date])
+}
+
+// -----------------------------------------------------------------------------
+// Forum
+// -----------------------------------------------------------------------------
+
+model ForumCategory {
+  id          String  @id @default(cuid())
+  slug        String  @unique // "chem-phys", "cars", "study-strategy", ...
+  name        String
+  description String?
+  /// set for the four section categories, null for Study Strategy / Test Day / Applications
+  part        Part?
+  order       Int
+
+  posts ForumPost[]
+}
+
+model Tag {
+  id          String  @id @default(cuid())
+  slug        String  @unique
+  name        String
+  description String?
+
+  posts ForumPostTag[]
+}
+
+model ForumPostTag {
+  postId String
+  tagId  String
+
+  post ForumPost @relation(fields: [postId], references: [id], onDelete: Cascade)
+  tag  Tag       @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([postId, tagId])
+  @@index([tagId])
+}
+
+/// A thread / question.
+model ForumPost {
+  id              String          @id @default(cuid())
+  authorId        String
+  categoryId      String
+  chapterId       String? // set when created from "Discuss this chapter"
+  /// anchor within the chapter, if the question is about a specific section
+  chapterAnchor   String?
+  title           String
+  body            String // raw Markdown + LaTeX; rendered + sanitized server-side
+  status          ForumPostStatus @default(OPEN)
+  /// Premium+Tutoring members' questions; surfaced first in the tutor queue
+  isPriority      Boolean         @default(false)
+  acceptedReplyId String?         @unique
+  // Cached counters (updated transactionally with votes/replies)
+  score           Int             @default(0)
+  replyCount      Int             @default(0)
+  viewCount       Int             @default(0)
+  /// true once a TUTOR/EXPERT has replied — drives "answered by tutor" filter
+  hasTutorAnswer  Boolean         @default(false)
+  lastActivityAt  DateTime        @default(now())
+  editedAt        DateTime?
+  createdAt       DateTime        @default(now())
+
+  /// GENERATED ALWAYS AS (setweight(to_tsvector('english', title), 'A') ||
+  ///                      setweight(to_tsvector('english', body), 'B')) STORED
+  searchVector Unsupported("tsvector")?
+
+  author           User               @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  category         ForumCategory      @relation(fields: [categoryId], references: [id])
+  chapter          Chapter?           @relation(fields: [chapterId], references: [id])
+  acceptedReply    ForumReply?        @relation("AcceptedReply", fields: [acceptedReplyId], references: [id])
+  replies          ForumReply[]       @relation("PostReplies")
+  tags             ForumPostTag[]
+  votes            Vote[]
+  reports          Report[]
+  reputationEvents ReputationEvent[]
+  modActions       ModerationAction[]
+
+  @@index([categoryId, lastActivityAt(sort: Desc)])
+  @@index([chapterId, lastActivityAt(sort: Desc)])
+  @@index([isPriority, hasTutorAnswer, createdAt])
+  @@index([authorId, createdAt])
+  @@index([status])
+  @@index([searchVector], type: Gin)
+}
+
+/// An answer to a thread.
+model ForumReply {
+  id         String          @id @default(cuid())
+  postId     String
+  authorId   String
+  body       String
+  status     ForumPostStatus @default(OPEN)
+  score      Int             @default(0)
+  /// snapshot of author role at post time >= TUTOR; drives highlight + sort
+  byVerified Boolean         @default(false)
+  editedAt   DateTime?
+  createdAt  DateTime        @default(now())
+
+  post             ForumPost          @relation("PostReplies", fields: [postId], references: [id], onDelete: Cascade)
+  author           User               @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  acceptedFor      ForumPost?         @relation("AcceptedReply")
+  votes            Vote[]
+  reports          Report[]
+  reputationEvents ReputationEvent[]
+  modActions       ModerationAction[]
+
+  // Sort: accepted → byVerified → score → createdAt
+  @@index([postId, byVerified, score(sort: Desc)])
+  @@index([authorId, createdAt])
+}
+
+/// Exactly one of postId / replyId is set (CHECK constraint in SQL migration).
+model Vote {
+  id        String    @id @default(cuid())
+  userId    String
+  postId    String?
+  replyId   String?
+  value     VoteValue @default(UP)
+  createdAt DateTime  @default(now())
+
+  user            User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  post            ForumPost?       @relation(fields: [postId], references: [id], onDelete: Cascade)
+  reply           ForumReply?      @relation(fields: [replyId], references: [id], onDelete: Cascade)
+  reputationEvent ReputationEvent?
+
+  @@unique([userId, postId])
+  @@unique([userId, replyId])
+}
+
+model ReputationEvent {
+  id        String           @id @default(cuid())
+  userId    String // recipient
+  actorId   String?
+  delta     Int
+  reason    ReputationReason
+  postId    String?
+  replyId   String?
+  /// a vote can generate at most one reputation event
+  voteId    String?          @unique
+  createdAt DateTime         @default(now())
+
+  user  User        @relation("RepRecipient", fields: [userId], references: [id], onDelete: Cascade)
+  actor User?       @relation("RepActor", fields: [actorId], references: [id], onDelete: SetNull)
+  post  ForumPost?  @relation(fields: [postId], references: [id], onDelete: SetNull)
+  reply ForumReply? @relation(fields: [replyId], references: [id], onDelete: SetNull)
+  vote  Vote?       @relation(fields: [voteId], references: [id], onDelete: SetNull)
+
+  @@index([userId, createdAt])
+}
+
+model Report {
+  id           String       @id @default(cuid())
+  reporterId   String
+  target       ReportTarget
+  postId       String?
+  replyId      String?
+  targetUserId String?
+  reason       String // "spam" | "harassment" | "incorrect" | "cheating" | "other"
+  details      String?
+  status       ReportStatus @default(OPEN)
+  resolvedById String?
+  resolution   String?
+  createdAt    DateTime     @default(now())
+  resolvedAt   DateTime?
+
+  reporter   User        @relation("ReportReporter", fields: [reporterId], references: [id], onDelete: Cascade)
+  post       ForumPost?  @relation(fields: [postId], references: [id], onDelete: Cascade)
+  reply      ForumReply? @relation(fields: [replyId], references: [id], onDelete: Cascade)
+  targetUser User?       @relation("ReportTargetUser", fields: [targetUserId], references: [id], onDelete: Cascade)
+  resolvedBy User?       @relation("ReportResolver", fields: [resolvedById], references: [id])
+
+  @@index([status, createdAt])
+}
+
+/// Audit trail for everything a moderator/admin does.
+model ModerationAction {
+  id           String               @id @default(cuid())
+  actorId      String
+  type         ModerationActionType
+  postId       String?
+  replyId      String?
+  targetUserId String?
+  reason       String?
+  meta         Json?
+  createdAt    DateTime             @default(now())
+
+  actor      User        @relation("ModActor", fields: [actorId], references: [id])
+  post       ForumPost?  @relation(fields: [postId], references: [id], onDelete: SetNull)
+  reply      ForumReply? @relation(fields: [replyId], references: [id], onDelete: SetNull)
+  targetUser User?       @relation("ModTargetUser", fields: [targetUserId], references: [id], onDelete: SetNull)
+
+  @@index([createdAt])
+  @@index([targetUserId])
+}
+
+model Notification {
+  id        String           @id @default(cuid())
+  userId    String
+  type      NotificationType
+  title     String
+  body      String?
+  href      String? // in-app link
+  data      Json?
+  readAt    DateTime?
+  emailedAt DateTime?
+  createdAt DateTime         @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, readAt, createdAt(sort: Desc)])
+}
+
+/// Images attached to forum posts, verification evidence, avatars.
+/// Uploaded directly to object storage via short-lived signed URLs.
+model Upload {
+  id          String   @id @default(cuid())
+  ownerId     String
+  storageKey  String   @unique
+  contentType String
+  sizeBytes   Int
+  /// private uploads (verification evidence) are only served via signed GET URLs
+  isPrivate   Boolean  @default(false)
+  createdAt   DateTime @default(now())
+
+  owner         User                  @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  verifications VerificationRequest[]
+
+  @@index([ownerId])
+}
+
+// -----------------------------------------------------------------------------
+// Tutoring requests (scheduling + messaging, no video in v1)
+// -----------------------------------------------------------------------------
+
+model TutoringRequest {
+  id               String         @id @default(cuid())
+  studentId        String
+  tutorId          String
+  status           TutoringStatus @default(PENDING)
+  part             Part?
+  topic            String
+  message          String
+  /// student-proposed windows: [{ start, end }] ISO strings in student's tz
+  proposedTimes    Json
+  scheduledFor     DateTime?
+  durationMin      Int?
+  meetingLink      String? // tutor-provided external link (Zoom/Meet)
+  /// billing period this request counts against (for the 2/month quota)
+  quotaPeriodStart DateTime
+  createdAt        DateTime       @default(now())
+  updatedAt        DateTime       @updatedAt
+
+  student  User              @relation("TutoringStudent", fields: [studentId], references: [id], onDelete: Cascade)
+  tutor    User              @relation("TutoringTutor", fields: [tutorId], references: [id], onDelete: Cascade)
+  messages TutoringMessage[]
+
+  @@index([studentId, quotaPeriodStart])
+  @@index([tutorId, status])
+}
+
+model TutoringMessage {
+  id        String   @id @default(cuid())
+  requestId String
+  senderId  String
+  body      String
+  createdAt DateTime @default(now())
+
+  request TutoringRequest @relation(fields: [requestId], references: [id], onDelete: Cascade)
+  sender  User            @relation(fields: [senderId], references: [id], onDelete: Cascade)
+
+  @@index([requestId, createdAt])
+}
