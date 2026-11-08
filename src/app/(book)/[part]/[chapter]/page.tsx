@@ -3,7 +3,9 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { allChapterParams, getChapter, getChapterQuizInfo } from "@/server/content/book";
 import { ChapterQuizCard } from "@/components/book/ChapterQuizCard";
-import { renderChapter } from "@/server/content/render";
+import { Suspense } from "react";
+import { chapterSplit, extractToc, renderChapter, renderMdx } from "@/server/content/render";
+import { GatedRest, PaywallSkeleton } from "@/components/book/Paywall";
 import { Toc } from "@/components/book/Toc";
 import { ReadingProgress } from "@/components/book/ReadingProgress";
 import { ChapterActions } from "@/components/book/ChapterActions";
@@ -38,7 +40,13 @@ export default async function ChapterPage({ params }: { params: Promise<Params> 
   const { part, chapter } = await params;
   const c = getChapter(part, chapter);
   if (!c || c.nav.status === "draft") notFound();
-  const { content, toc } = await renderChapter(c.file, Boolean(c.part.prefix));
+  const chapterNumber = c.part.prefix ? c.file.number : undefined;
+  // Premium chapters: only the preview is prerendered; the rest is rendered per request after an access check.
+  const split = c.nav.access === "premium" ? chapterSplit(c.file) : null;
+  const gated = Boolean(split?.rest);
+  const { content } = gated ? await renderMdx(split!.preview, { chapterNumber }) : await renderChapter(c.file, Boolean(c.part.prefix));
+  const toc = extractToc(c.file.body, chapterNumber);
+  const remaining = gated ? toc.slice(toc.findIndex((t) => t.id === split!.gateAnchor)) : [];
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -80,6 +88,13 @@ export default async function ChapterPage({ params }: { params: Promise<Params> 
           <Toc toc={toc} variant="inline" />
 
           <div className="book-prose prose">{content}</div>
+          {gated ? (
+            <div className="paywalled">
+              <Suspense fallback={<PaywallSkeleton />}>
+                <GatedRest part={part} slug={chapter} remaining={remaining} />
+              </Suspense>
+            </div>
+          ) : null}
 
           <ChapterQuizCard href={`${c.nav.href}/quiz`} count={getChapterQuizInfo(part, chapter).count} />
           <ChapterActions part={part} slug={chapter} title={c.nav.title} />

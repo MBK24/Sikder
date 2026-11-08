@@ -7,6 +7,21 @@ import { bumpStudyDay } from "@/server/study-day";
 import { getContentQuestion } from "@/server/content/book";
 import { markdownToHtml } from "@/lib/content/markdown";
 import { can, getEntitlement } from "@/server/entitlements";
+import { getChapter } from "@/server/content/book";
+import { chapterSplit } from "@/server/content/render";
+import { PART_CODES, PART_ENUM } from "@/lib/content/schema";
+
+const ENUM_TO_CODE = Object.fromEntries(PART_CODES.map((c) => [PART_ENUM[c], c]));
+
+/** Inline questions in the gated part of a premium chapter can only be graded by readers with access. */
+async function inlineQuestionAllowed(chapterId: string | null, key: string) {
+  if (!chapterId) return true;
+  const chapter = await db.chapter.findUnique({ where: { id: chapterId }, select: { access: true, part: true, slug: true } });
+  if (!chapter || chapter.access === "FREE") return true;
+  if (can(await getEntitlement(), "content.premium")) return true;
+  const c = getChapter(ENUM_TO_CODE[chapter.part], chapter.slug);
+  return Boolean(c && chapterSplit(c.file).preview.includes(`id="${key}"`));
+}
 
 const input = z.object({
   key: z.string().min(1).max(100),
@@ -33,11 +48,14 @@ export async function answerInlineQuestion(raw: z.input<typeof input>): Promise<
 
   const dbq = await db.question.findUnique({
     where: { key },
-    select: { id: true, correct: true, explanation: true, choices: true, published: true, inBank: true, isFree: true },
+    select: { id: true, correct: true, explanation: true, choices: true, published: true, inBank: true, isFree: true, chapterId: true },
   });
   if (context === "INLINE" && dbq?.inBank) {
     // Inline grading is only for questions embedded in chapters; bank/quiz questions go through practice sets.
     throw new Error("Question not found");
+  }
+  if (context === "INLINE" && dbq && !(await inlineQuestionAllowed(dbq.chapterId, key))) {
+    throw new Error("Upgrade required");
   }
   if (context === "PRACTICE") {
     // Single-question practice from the bank: same access rules as the bank itself.

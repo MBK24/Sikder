@@ -2,7 +2,7 @@
 
 An online MCAT textbook in the style of [R for Data Science](https://r4ds.hadley.nz/), with inline practice questions, a question bank, spaced-repetition flashcards, analytics, and a tutor-backed forum.
 
-> **Status:** Phase 4 of 6. Done: the reading experience, auth, database, seed content, question bank, practice sets and section tests, quizzes, flashcards, analytics, and the forum (roles, reputation, notifications, moderation, tutoring requests). Still to come: Stripe payments and paywall, the full admin dashboard, end-to-end tests, and deploy docs. See [docs/PROPOSAL.md](docs/PROPOSAL.md) for the architecture and phase plan.
+> **Status:** Phase 5 of 6. Done: the reading experience, auth, database, seed content, question bank, practice and section tests, quizzes, flashcards, analytics, the forum and tutoring, and Stripe subscriptions with the chapter paywall. Still to come: the full admin dashboard, end-to-end tests, and deploy docs. See [docs/PROPOSAL.md](docs/PROPOSAL.md) for the architecture and phase plan.
 
 ## Stack
 
@@ -55,6 +55,35 @@ Forum image uploads turn on when `BLOB_READ_WRITE_TOKEN` (Vercel Blob) is set. W
 
 Google sign-in turns on automatically when `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` are set. The authorized redirect URI is `{BETTER_AUTH_URL}/api/auth/callback/google`.
 
+## Payments (Stripe test mode)
+
+Prices, the trial length, the failed-payment grace period, and what each tier includes all live in `src/config/pricing.ts`.
+
+1. Create a Stripe account and copy your **test** secret key (`sk_test_…`) from Dashboard → Developers → API keys into `STRIPE_SECRET_KEY` in `.env`.
+2. Create the products, prices (monthly + annual for each paid tier) and the Customer Portal configuration:
+
+   ```bash
+   pnpm stripe:setup
+   ```
+
+   It is safe to re-run. After changing a price in `pricing.ts`, run it again: Stripe prices can't be edited, so the script creates a new price and moves the lookup key to it.
+3. Forward webhooks to your machine with the [Stripe CLI](https://docs.stripe.com/stripe-cli):
+
+   ```bash
+   stripe listen --forward-to localhost:3000/api/stripe/webhook
+   ```
+
+   Put the `whsec_…` value it prints into `STRIPE_WEBHOOK_SECRET`, then restart `pnpm dev`.
+4. On `/pricing`, start a trial with the test card `4242 4242 4242 4242` (any future expiry date, any CVC). To try a failed payment, update the card in the billing portal to `4000 0000 0000 0341`.
+
+How it fits together:
+
+- Checkout starts a subscription with a 7-day trial (card required, one trial per account).
+- Webhooks keep the `Subscription` table in sync, and access checks read only that table.
+- `/account/billing` opens the Stripe Customer Portal for upgrades, downgrades, switching between monthly and annual, and cancellation.
+- Failed payments keep access for `PAYMENT_GRACE_DAYS` while Stripe retries.
+- Promotion codes can be switched on in `/admin/settings`.
+
 ## Scripts
 
 | Command | What it does |
@@ -64,6 +93,7 @@ Google sign-in turns on automatically when `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT
 | `pnpm content:check [filter]` | Validate all MDX/YAML in /content (math, components, ids, schemas) |
 | `pnpm content:sync` | Upsert /content into the DB (chapters, search index, questions, flashcards) |
 | `pnpm db:seed` | Reference data + demo users + content sync |
+| `pnpm stripe:setup [--webhook https://site]` | Create/update Stripe products, prices, portal (and webhook endpoint) |
 | `pnpm test` | Unit tests (Vitest) |
 | `pnpm lint` / `pnpm typecheck` | ESLint / TypeScript |
 

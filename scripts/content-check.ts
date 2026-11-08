@@ -186,6 +186,11 @@ async function main() {
       if (quiz < 10 || quiz > 15) warnings.push(`${where}: has ${quiz} quiz questions (want 10–15)`);
       if (!fFiles.find((f) => f.slug === entry.slug && f.part === entry.part)) warnings.push(`${where}: no flashcard deck`);
     }
+    if (chapter.frontmatter.previewEndsBefore) {
+      const { splitForPreview } = await import("../src/lib/content/preview");
+      if (splitForPreview(chapter.body, chapter.frontmatter.previewEndsBefore).gateAnchor !== chapter.frontmatter.previewEndsBefore)
+        errors.push(`${where}: previewEndsBefore "${chapter.frontmatter.previewEndsBefore}" doesn't match any H2 anchor`);
+    }
     const words = chapter.body.split(/\s+/).length;
     if (chapter.frontmatter.status === "published") {
       const expected = Math.round(words / 200);

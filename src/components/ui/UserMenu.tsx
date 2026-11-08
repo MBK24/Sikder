@@ -67,6 +67,7 @@ export function UserMenu() {
           </div>
           {[
             ["/account", "Account & profile"],
+            ["/account/billing", "Billing"],
             ["/analytics", "My progress"],
             ["/tutoring", "Tutoring sessions"],
             ["/notifications", "Notifications"],

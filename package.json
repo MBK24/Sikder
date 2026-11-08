@@ -19,7 +19,9 @@
     "db:migrate": "prisma migrate dev",
     "db:deploy": "prisma migrate deploy",
     "db:seed": "tsx prisma/seed.ts",
-    "db:studio": "prisma studio"
+    "db:studio": "prisma studio",
+    "stripe:setup": "tsx scripts/stripe-setup.ts",
+    "stripe:listen": "stripe listen --forward-to localhost:3000/api/stripe/webhook"
   },
   "dependencies": {
     "@mdx-js/mdx": "^3.1.1",
@@ -48,6 +50,7 @@
     "remark-parse": "^11.0.0",
     "remark-rehype": "^11.1.2",
     "server-only": "^0.0.1",
+    "stripe": "23.1.0",
     "unified": "^11.0.5",
     "unist-util-visit": "^5.2.0",
     "vfile": "^6.0.3",

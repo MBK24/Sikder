@@ -3,6 +3,7 @@ import Link from "next/link";
 const LINKS = [
   ["/admin/moderation", "Moderation"],
   ["/admin/verifications", "Verifications"],
+  ["/admin/settings", "Settings"],
 ] as const;
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {

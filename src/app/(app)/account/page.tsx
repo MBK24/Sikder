@@ -57,7 +57,13 @@ async function AccountContent() {
       </section>
       <section className="mt-12 border-t border-[var(--c-border)] pt-8">
         <h2 className="font-sans text-xl font-semibold">Plan</h2>
-        <p className="mt-2 text-muted">You&apos;re on the Free plan. Billing and upgrades will appear here.</p>
+        <p className="mt-2 text-muted">
+          See your plan, renewal date, and invoices, or change plans, on the{" "}
+          <Link href="/account/billing" className="text-[var(--c-accent)] underline">
+            Billing
+          </Link>{" "}
+          page.
+        </p>
       </section>
     </>
   );

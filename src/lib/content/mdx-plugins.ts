@@ -87,6 +87,10 @@ export interface TocEntry {
 export interface HeadingOptions {
   /** Chapter number, e.g. 2. Omit for unnumbered parts (Getting Started, Appendix). */
   chapterNumber?: number;
+  /** H2 sections that came before this fragment (for the gated part of a chapter). */
+  startH2?: number;
+  /** Slugs already used earlier in the chapter, so anchors stay unique across fragments. */
+  seedSlugs?: string[];
   /** Receives the table of contents as a side-channel. */
   onToc?: (toc: TocEntry[]) => void;
 }
@@ -94,8 +98,9 @@ export interface HeadingOptions {
 export function remarkSectionHeadings(options: HeadingOptions = {}) {
   return (tree: MdastRoot) => {
     const slugger = new GithubSlugger();
+    for (const s of options.seedSlugs ?? []) slugger.slug(s);
     const toc: TocEntry[] = [];
-    let h2 = 0;
+    let h2 = options.startH2 ?? 0;
     let h3 = 0;
     visit(tree, "heading", (node: Heading) => {
       if (node.depth !== 2 && node.depth !== 3) return;

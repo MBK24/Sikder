@@ -24,6 +24,7 @@ import { listChapterFiles, readChapterFile, readQuestionFiles, readFlashcardFile
 import { PART_ENUM } from "../src/lib/content/schema";
 import { TOPICS, topicSlug } from "../src/lib/content/topics";
 import { FREE_QBANK_QUESTIONS } from "../src/config/pricing";
+import { splitForPreview } from "../src/lib/content/preview";
 
 const db = new PrismaClient({ adapter: new PrismaPg({ connectionString: process.env.DATABASE_URL! }) });
 
@@ -115,10 +116,13 @@ async function main() {
 
     const { intro, sections } = sectionsOf(file.body, numbered ? entry.number : undefined);
     const rows = [{ anchor: "introduction", number: "", heading: fm.title, text: intro, order: 0 }, ...sections];
+    // Search shows full snippets only for sections inside the free preview.
+    const split = splitForPreview(file.body, fm.previewEndsBefore);
+    const gateAt = split.gateAnchor ? rows.findIndex((r) => r.anchor === split.gateAnchor) : -1;
     await db.$transaction([
       db.contentSection.deleteMany({ where: { chapterId: chapter.id } }),
       db.contentSection.createMany({
-        data: rows.map((s) => ({ ...s, chapterId: chapter.id, inPreview: chapter.access === "FREE" })),
+        data: rows.map((s, i) => ({ ...s, chapterId: chapter.id, inPreview: chapter.access === "FREE" || gateAt === -1 || i < gateAt })),
       }),
     ]);
   }
