@@ -37,6 +37,7 @@ const DEMO_USERS: { email: string; name: string; username: string; role: Role; b
   { email: "expert@example.com", name: "Dr. Sam Expert", username: "drsam", role: "EXPERT", badges: ["expert", "content-author"] },
   { email: "student@example.com", name: "Riley Student", username: "riley", role: "STUDENT", badges: [] },
   { email: "free@example.com", name: "Frankie Free", username: "frankie", role: "STUDENT", badges: [] },
+  { email: "plus@example.com", name: "Pat Plus", username: "patplus", role: "STUDENT", badges: [] },
 ];
 const DEMO_PASSWORD = "password1234";
 
@@ -95,6 +96,26 @@ async function main() {
         currentPeriodEnd: new Date(now.getTime() + 30 * 86_400_000),
       },
       update: { currentPeriodEnd: new Date(now.getTime() + 30 * 86_400_000), status: "ACTIVE" },
+    });
+    // Demo Premium + Tutoring subscription (priority questions, tutoring requests).
+    const plus = await db.user.findUniqueOrThrow({ where: { email: "plus@example.com" } });
+    await db.subscription.upsert({
+      where: { id: "sub_demo_plus" },
+      create: {
+        id: "sub_demo_plus",
+        userId: plus.id,
+        tier: "PREMIUM_TUTORING",
+        interval: "YEAR",
+        status: "ACTIVE",
+        stripePriceId: "price_demo",
+        currentPeriodStart: now,
+        currentPeriodEnd: new Date(now.getTime() + 365 * 86_400_000),
+      },
+      update: { status: "ACTIVE" },
+    });
+    await db.profile.updateMany({
+      where: { userId: (await db.user.findUniqueOrThrow({ where: { email: "tutor@example.com" } })).id },
+      data: { tutorHeadline: "519 scorer · 4 years tutoring Chem/Phys and CARS", tutorSubjects: ["CP", "CARS"], tutorAvailability: "Weeknights after 6pm ET", acceptingRequests: true },
     });
     console.log(`seed: demo users ready (${DEMO_USERS.map((u) => u.email).join(", ")}), password "${DEMO_PASSWORD}"`);
   }

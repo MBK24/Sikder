@@ -2,7 +2,7 @@
 
 An online MCAT textbook in the style of [R for Data Science](https://r4ds.hadley.nz/), with inline practice questions, a question bank, spaced-repetition flashcards, analytics, and a tutor-backed forum.
 
-> **Status:** Phase 3 of 6. Done: the reading experience, auth, database, seed content, question bank, practice sets and section tests, end-of-chapter quizzes, spaced-repetition flashcards and analytics. Still to come: the forum, payments and admin. See [docs/PROPOSAL.md](docs/PROPOSAL.md) for the architecture and phase plan.
+> **Status:** Phase 4 of 6. Done: the reading experience, auth, database, seed content, question bank, practice sets and section tests, quizzes, flashcards, analytics, and the forum (roles, reputation, notifications, moderation, tutoring requests). Still to come: Stripe payments and paywall, the full admin dashboard, end-to-end tests, and deploy docs. See [docs/PROPOSAL.md](docs/PROPOSAL.md) for the architecture and phase plan.
 
 ## Stack
 
@@ -47,8 +47,11 @@ Open http://localhost:3000.
 | expert@example.com | Expert |
 | student@example.com | Student with a demo Premium subscription |
 | free@example.com | Student on the Free plan |
+| plus@example.com | Student with a demo Premium + Tutoring subscription (priority questions, session requests) |
 
 When `RESEND_API_KEY` is not set, emails (verification, password reset, welcome) are printed to the dev-server console. Click the links from there.
+
+Forum image uploads turn on when `BLOB_READ_WRITE_TOKEN` (Vercel Blob) is set. Without it, posts are text, Markdown and LaTeX only.
 
 Google sign-in turns on automatically when `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` are set. The authorized redirect URI is `{BETTER_AUTH_URL}/api/auth/callback/google`.
 
@@ -85,7 +88,7 @@ src/server/       server-only: db, auth, content rendering, actions, search, ema
 src/lib/content/  content schemas + MDX/Markdown pipeline (shared by app and scripts)
 src/lib/srs/      SM-2 spaced-repetition scheduler
 src/lib/scoring.ts exam-style ordering, scaled estimate, streaks, readiness (unit-tested)
-src/config/       site name, MCAT constants, pricing + tier boundaries (pricing.ts)
+src/config/       site name, MCAT constants, pricing + tier boundaries (pricing.ts), reputation rules (reputation.ts)
 tests/unit/       Vitest
 ```
 

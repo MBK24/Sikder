@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Suspense } from "react";
 import { requireUser } from "@/server/auth";
 import { db } from "@/server/db";
@@ -39,6 +40,21 @@ async function AccountContent() {
           emailOnAccepted: profile.emailOnAccepted,
         }}
       />
+      <section className="mt-12 border-t border-[var(--c-border)] pt-8">
+        <h2 className="font-sans text-xl font-semibold">Community</h2>
+        <ul className="mt-2 space-y-1 text-sm">
+          <li>
+            <Link className="text-[var(--c-accent)] underline" href={`/u/${profile.username}`}>
+              View your public profile
+            </Link>
+          </li>
+          <li>
+            <Link className="text-[var(--c-accent)] underline" href="/account/verify">
+              Apply to become a Verified Tutor or Expert
+            </Link>
+          </li>
+        </ul>
+      </section>
       <section className="mt-12 border-t border-[var(--c-border)] pt-8">
         <h2 className="font-sans text-xl font-semibold">Plan</h2>
         <p className="mt-2 text-muted">You&apos;re on the Free plan. Billing and upgrades will appear here.</p>

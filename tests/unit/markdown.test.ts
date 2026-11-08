@@ -13,9 +13,15 @@ describe("userMarkdownToHtml (untrusted input)", () => {
     expect(html).not.toMatch(/javascript:/i);
   });
 
-  it("only allows https images", () => {
-    expect(userMarkdownToHtml("![a](http://evil.test/x.png)")).not.toMatch(/src="http:/);
-    expect(userMarkdownToHtml("![a](https://ok.test/x.png)")).toMatch(/src="https:\/\/ok\.test\/x\.png"/);
+  it("only allows images from our upload store", () => {
+    expect(userMarkdownToHtml("![a](http://evil.test/x.png)")).not.toMatch(/<img/);
+    expect(userMarkdownToHtml("![pixel](https://tracker.test/x.png)")).toContain("[image: pixel]");
+    const ok = "https://abc123.public.blob.vercel-storage.com/forum/u/x.png";
+    expect(userMarkdownToHtml(`![a](${ok})`)).toContain(`src="${ok}"`);
+  });
+
+  it("marks user links nofollow and opens them safely", () => {
+    expect(userMarkdownToHtml("[x](https://example.com)")).toMatch(/rel="nofollow ugc noopener noreferrer"/);
   });
 
   it("still renders math after sanitizing", () => {

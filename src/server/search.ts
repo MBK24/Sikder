@@ -43,3 +43,32 @@ export async function searchBook(q: string, limit = 30): Promise<BookHit[]> {
     };
   });
 }
+
+export interface ForumHit {
+  href: string;
+  title: string;
+  snippet: string;
+  replies: number;
+  accepted: boolean;
+}
+
+/** Full-text search over visible forum questions. */
+export async function searchForum(q: string, limit = 20): Promise<ForumHit[]> {
+  const query = q.trim().slice(0, 200);
+  if (query.length < 2) return [];
+  const rows = await db.$queryRaw<{ id: string; title: string; replyCount: number; acceptedReplyId: string | null; snippet: string }[]>`
+    SELECT p.id, p.title, p."replyCount", p."acceptedReplyId",
+           ts_headline('english', p.body, websearch_to_tsquery('english', ${query}),
+                       'StartSel=<mark>, StopSel=</mark>, MaxWords=30, MinWords=12, MaxFragments=1') AS snippet
+    FROM "ForumPost" p
+    WHERE p.status IN ('OPEN', 'LOCKED') AND p."searchVector" @@ websearch_to_tsquery('english', ${query})
+    ORDER BY ts_rank(p."searchVector", websearch_to_tsquery('english', ${query})) DESC, p.score DESC
+    LIMIT ${limit}`;
+  return rows.map((r) => ({
+    href: `/forum/p/${r.id}`,
+    title: r.title,
+    snippet: r.snippet,
+    replies: r.replyCount,
+    accepted: !!r.acceptedReplyId,
+  }));
+}

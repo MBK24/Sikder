@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
-import { searchBook } from "@/server/search";
+import { searchBook, searchForum } from "@/server/search";
 
 export const metadata: Metadata = { title: "Search", robots: { index: false } };
 
@@ -42,13 +42,15 @@ function SearchForm({ q }: { q: string }) {
 
 async function Results({ searchParams }: { searchParams: Promise<{ q?: string }> }) {
   const q = (await searchParams).q ?? "";
-  const hits = q ? await searchBook(q) : [];
+  const [hits, forum] = q ? await Promise.all([searchBook(q), searchForum(q)]) : [[], []];
   return (
     <>
       <SearchForm q={q} />
       {q ? (
         <p className="mt-6 font-sans text-sm text-muted" role="status">
-          {hits.length ? `${hits.length} result${hits.length === 1 ? "" : "s"} in the book` : `No results for “${q}”.`}
+          {hits.length || forum.length
+            ? `${hits.length} result${hits.length === 1 ? "" : "s"} in the book · ${forum.length} in the forum`
+            : `No results for “${q}”.`}
         </p>
       ) : null}
       <ol className="mt-4 divide-y divide-[var(--c-border)]">
@@ -66,6 +68,29 @@ async function Results({ searchParams }: { searchParams: Promise<{ q?: string }>
           </li>
         ))}
       </ol>
+      {forum.length ? (
+        <section className="mt-10" aria-labelledby="forum-results">
+          <h2 id="forum-results" className="font-sans text-lg font-semibold">
+            In the forum
+          </h2>
+          <ol className="mt-2 divide-y divide-[var(--c-border)]">
+            {forum.map((f) => (
+              <li key={f.href} className="py-4">
+                <Link href={f.href} className="group block">
+                  <span className="block font-sans font-semibold group-hover:text-[var(--c-accent)]">
+                    {f.accepted ? <span className="mr-1 text-[var(--c-ok)]">✓</span> : null}
+                    {f.title}
+                  </span>
+                  <span className="search-snippet mt-1 block font-serif text-[0.98rem] text-muted" dangerouslySetInnerHTML={{ __html: safeSnippet(f.snippet) }} />
+                  <span className="font-sans text-xs text-muted">
+                    {f.replies} answer{f.replies === 1 ? "" : "s"}
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ol>
+        </section>
+      ) : null}
     </>
   );
 }

@@ -587,6 +587,50 @@ body {
     text-align: right;
     font-variant-numeric: tabular-nums;
   }
+  /* Forum */
+  .role-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.05rem 0.45rem;
+    border-radius: 999px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    border: 1px solid currentColor;
+  }
+  .role-tutor {
+    color: var(--c-conn);
+    background: var(--c-conn-bg);
+  }
+  .role-expert {
+    color: var(--c-mnem);
+    background: var(--c-mnem-bg);
+  }
+  .role-mod {
+    color: var(--c-fg-muted);
+  }
+  .vote-btn {
+    display: grid;
+    place-items: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 999px;
+    border: 1px solid var(--c-border);
+    color: var(--c-fg-muted);
+  }
+  .vote-btn:hover:not(:disabled),
+  .vote-btn.is-voted {
+    color: var(--c-accent);
+    border-color: var(--c-accent);
+  }
+  .answer-verified {
+    border-left: 3px solid var(--c-conn);
+    background: linear-gradient(90deg, var(--c-conn-bg), transparent 60%);
+  }
+  .answer-accepted {
+    border-left: 3px solid var(--c-ok);
+  }
 }
 
 /* Reading column (outside the components layer so it beats @tailwindcss/typography defaults) */

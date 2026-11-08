@@ -5,7 +5,40 @@ import remarkMath from "remark-math";
 import remarkRehype from "remark-rehype";
 import rehypeSanitize, { defaultSchema, type Options as SanitizeSchema } from "rehype-sanitize";
 import rehypeStringify from "rehype-stringify";
+import { visit } from "unist-util-visit";
+import type { Root as HastRoot, Element } from "hast";
 import { rehypeKatexMhchem } from "./mdx-plugins";
+
+/** Hosts user images may load from: our Vercel Blob store (+ any extra hosts in NEXT_PUBLIC_UPLOAD_HOSTS). */
+function allowedImageHost(src: string) {
+  try {
+    const u = new URL(src);
+    if (u.protocol !== "https:") return false;
+    const extra = (process.env.NEXT_PUBLIC_UPLOAD_HOSTS ?? "").split(",").map((h) => h.trim()).filter(Boolean);
+    return u.hostname.endsWith(".public.blob.vercel-storage.com") || extra.includes(u.hostname);
+  } catch {
+    return false;
+  }
+}
+
+/** Replaces images from other hosts with their alt text, and makes links safe to open. */
+function rehypeUserContentPolicy() {
+  return (tree: HastRoot) => {
+    visit(tree, "element", (node: Element, index, parent) => {
+      if (node.tagName === "img") {
+        const src = String(node.properties?.src ?? "");
+        if (!allowedImageHost(src) && parent && index !== undefined) {
+          parent.children[index] = { type: "text", value: `[image: ${String(node.properties?.alt ?? "external image")}]` };
+        } else {
+          node.properties = { ...node.properties, loading: "lazy", decoding: "async" };
+        }
+      }
+      if (node.tagName === "a") {
+        node.properties = { ...node.properties, rel: ["nofollow", "ugc", "noopener", "noreferrer"], target: "_blank" };
+      }
+    });
+  };
+}
 
 /**
  * Sanitization schema for user-generated Markdown (forum, profiles).
@@ -40,6 +73,7 @@ const untrusted = unified()
   .use(remarkMath)
   .use(remarkRehype) // raw HTML in Markdown is dropped (allowDangerousHtml is off)
   .use(rehypeSanitize, userSchema)
+  .use(rehypeUserContentPolicy)
   .use(rehypeKatexMhchem)
   .use(rehypeStringify);
 

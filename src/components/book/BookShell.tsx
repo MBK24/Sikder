@@ -7,6 +7,7 @@ import clsx from "clsx";
 import type { NavPart } from "@/server/content/book";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { UserMenu } from "@/components/ui/UserMenu";
+import { NotificationBell } from "@/components/ui/NotificationBell";
 import { useSession } from "@/lib/auth-client";
 
 const ProgressContext = createContext<{ completed: Set<string>; setCompleted: (key: string, done: boolean) => void }>({
@@ -16,7 +17,7 @@ const ProgressContext = createContext<{ completed: Set<string>; setCompleted: (k
 export const useBookProgress = () => useContext(ProgressContext);
 
 const TOP_NAV = [
-  { href: "/", label: "Book", match: (p: string) => !/^\/(practice|flashcards|forum|pricing|analytics|account)/.test(p) },
+  { href: "/", label: "Book", match: (p: string) => /^\/($|(getting-started|cp|cars|bb|ps|appendix)(\/|$))/.test(p) },
   { href: "/practice", label: "Practice", match: (p: string) => p.startsWith("/practice") },
   { href: "/flashcards", label: "Flashcards", match: (p: string) => p.startsWith("/flashcards") },
   { href: "/forum", label: "Forum", match: (p: string) => p.startsWith("/forum") },
@@ -102,6 +103,7 @@ export function BookShell({
               </svg>
             </Link>
             <ThemeToggle />
+            <NotificationBell />
             <div className="ml-1">
               <UserMenu />
             </div>

@@ -75,7 +75,8 @@ export const auth = betterAuth({
     : {},
   account: { accountLinking: { enabled: true, trustedProviders: ["google"] } },
   rateLimit: {
-    enabled: true,
+    // On in production; off in local dev. AUTH_RATE_LIMIT=1/0 overrides (e.g. =0 for end-to-end test runs).
+    enabled: process.env.AUTH_RATE_LIMIT ? process.env.AUTH_RATE_LIMIT === "1" : process.env.NODE_ENV === "production",
     storage: "database",
     modelName: "rateLimit",
     window: 60,

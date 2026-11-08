@@ -37,6 +37,12 @@ export function UserMenu() {
     );
   }
   const user = data.user;
+  const role = (user as { role?: string }).role ?? "STUDENT";
+  const staffLinks: [string, string][] = [
+    ...(["TUTOR", "EXPERT", "MODERATOR", "ADMIN"].includes(role) ? [["/tutor", "Tutor workspace"] as [string, string]] : []),
+    ...(["MODERATOR", "ADMIN"].includes(role) ? [["/admin/moderation", "Moderation"] as [string, string]] : []),
+    ...(role === "ADMIN" ? [["/admin/verifications", "Verifications"] as [string, string]] : []),
+  ];
   const initial = (user.name || user.email).slice(0, 1).toUpperCase();
   return (
     <div className="relative" ref={ref}>
@@ -62,6 +68,9 @@ export function UserMenu() {
           {[
             ["/account", "Account & profile"],
             ["/analytics", "My progress"],
+            ["/tutoring", "Tutoring sessions"],
+            ["/notifications", "Notifications"],
+            ...staffLinks,
           ].map(([href, label]) => (
             <Link key={href} role="menuitem" href={href} className="block px-3 py-2 hover:bg-[var(--c-bg-subtle)]" onClick={() => setOpen(false)}>
               {label}
