@@ -41,7 +41,7 @@ export function UserMenu() {
   const staffLinks: [string, string][] = [
     ...(["TUTOR", "EXPERT", "MODERATOR", "ADMIN"].includes(role) ? [["/tutor", "Tutor workspace"] as [string, string]] : []),
     ...(["MODERATOR", "ADMIN"].includes(role) ? [["/admin/moderation", "Moderation"] as [string, string]] : []),
-    ...(role === "ADMIN" ? [["/admin/verifications", "Verifications"] as [string, string]] : []),
+    ...(role === "ADMIN" ? [["/admin", "Admin"] as [string, string]] : []),
   ];
   const initial = (user.name || user.email).slice(0, 1).toUpperCase();
   return (

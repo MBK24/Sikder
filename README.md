@@ -2,11 +2,11 @@
 
 An online MCAT textbook in the style of [R for Data Science](https://r4ds.hadley.nz/), with inline practice questions, a question bank, spaced-repetition flashcards, analytics, and a tutor-backed forum.
 
-> **Status:** Phase 5 of 6. Done: the reading experience, auth, database, seed content, question bank, practice and section tests, quizzes, flashcards, analytics, the forum and tutoring, and Stripe subscriptions with the chapter paywall. Still to come: the full admin dashboard, end-to-end tests, and deploy docs. See [docs/PROPOSAL.md](docs/PROPOSAL.md) for the architecture and phase plan.
+> **Status:** all six build phases are complete. [docs/PROPOSAL.md](docs/PROPOSAL.md) has the architecture, and the sections below cover running, testing, and deploying.
 
 ## Stack
 
-Next.js 16 (App Router, Cache Components) · TypeScript · Tailwind CSS v4 · PostgreSQL + Prisma 7 · Better Auth · MDX + KaTeX/mhchem · Vitest
+Next.js 16 (App Router, Cache Components) · TypeScript · Tailwind CSS v4 · PostgreSQL + Prisma 7 · Better Auth · Stripe · Resend · Vercel Blob · MDX + KaTeX/mhchem · Vitest · Playwright + axe
 
 ## Local setup
 
@@ -38,7 +38,7 @@ pnpm dev
 
 Open http://localhost:3000.
 
-**Demo accounts** (development only, password `password1234`):
+**Demo accounts** (password `password1234`). The seed creates these only when `DATABASE_URL` points at a local database, or when `SEED_DEMO_USERS=1` is set:
 
 | Email | Role |
 | --- | --- |
@@ -95,6 +95,7 @@ How it fits together:
 | `pnpm db:seed` | Reference data + demo users + content sync |
 | `pnpm stripe:setup [--webhook https://site]` | Create/update Stripe products, prices, portal (and webhook endpoint) |
 | `pnpm test` | Unit tests (Vitest) |
+| `pnpm test:e2e` | End-to-end + accessibility tests (Playwright) against a production build |
 | `pnpm lint` / `pnpm typecheck` | ESLint / TypeScript |
 
 ## Writing content
@@ -119,7 +120,90 @@ src/lib/content/  content schemas + MDX/Markdown pipeline (shared by app and scr
 src/lib/srs/      SM-2 spaced-repetition scheduler
 src/lib/scoring.ts exam-style ordering, scaled estimate, streaks, readiness (unit-tested)
 src/config/       site name, MCAT constants, pricing + tier boundaries (pricing.ts), reputation rules (reputation.ts)
-tests/unit/       Vitest
+tests/unit/       Vitest unit tests
+tests/e2e/        Playwright end-to-end + accessibility tests
+.github/          CI workflow
 ```
 
-Deployment instructions (Vercel + Neon + Stripe) arrive in phase 6.
+## Admin
+
+Admins can sign in and open `/admin`. To make an account an admin, add its email to `ADMIN_EMAILS`: new sign-ups with that email become admins, and `pnpm db:seed` promotes existing accounts.
+
+| Page | What it's for |
+| --- | --- |
+| `/admin` | Signups, paying subscribers and trials by tier, estimated MRR (list prices), studying today, most-missed questions |
+| `/admin/content` | Switch chapters between free and paid, publish or unpublish them, set an early-access window. Changes take effect immediately, with no redeploy. |
+| `/admin/questions` | Search, create, and edit questions; CSV import (validated as a dry run first, upserts by `key`) and export |
+| `/admin/users` | Search users; change roles; grant Verified Tutor; manage badges; view subscriptions; ban |
+| `/admin/moderation` | Reported posts and answers, hidden/locked threads, bans, moderator audit log (moderators can open this too) |
+| `/admin/verifications` | Review Verified Tutor / Expert applications |
+| `/admin/settings` | Promotion-code toggle for Stripe Checkout |
+
+Editing a question that came from `/content` makes it admin-owned, so later content syncs won't overwrite your edit.
+
+## Testing
+
+```bash
+pnpm test
+```
+
+That runs the unit tests: SM-2 scheduling, scoring, paywall split, billing mapping, Markdown sanitization, CSV import, and more. The end-to-end suite needs a seeded local database and a production build:
+
+```bash
+pnpm build
+```
+
+```bash
+pnpm test:e2e
+```
+
+The end-to-end suite covers:
+
+- **Signup → checkout → paid content:** includes the paywall leak check.
+- **Post a question → tutor replies:** includes notifications, the vote, and the accepted answer.
+- **Mobile navigation:** the chapter drawer at phone width.
+- **Accessibility:** WCAG 2.1 AA scans (axe) of key pages in light and dark mode.
+
+Without Stripe keys, checkout is simulated by delivering a correctly signed webhook, which is the same code path Stripe uses. Set `E2E_STRIPE=1` with test keys and `stripe listen` running to drive the real hosted Checkout.
+
+`.github/workflows/ci.yml` runs lint, typecheck, content validation, unit tests, and the end-to-end suite (with a Postgres service) on every push and pull request.
+
+## Deploying (Vercel + Neon)
+
+1. **Database.** Create a [Neon](https://neon.tech) project and copy the **pooled** connection string, which becomes `DATABASE_URL`. Neon branches can give preview deployments their own database.
+2. **Vercel project.** Import the GitHub repo into [Vercel](https://vercel.com/new). The framework is detected automatically. Vercel runs `pnpm vercel-build`, which:
+   - generates the Prisma client;
+   - applies migrations;
+   - validates and syncs `/content`;
+   - builds the site.
+3. **Environment variables** (Project → Settings → Environment Variables):
+
+   | Variable | Value |
+   | --- | --- |
+   | `NEXT_PUBLIC_SITE_URL`, `BETTER_AUTH_URL` | Your production URL, e.g. `https://example.com` |
+   | `DATABASE_URL` | Neon pooled connection string |
+   | `BETTER_AUTH_SECRET` | `openssl rand -base64 32` |
+   | `ADMIN_EMAILS` | Your email (comma-separated list) |
+   | `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET` | See step 5 |
+   | `RESEND_API_KEY`, `EMAIL_FROM` | See step 6 |
+   | `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET` | Optional, for Google sign-in (redirect URI `https://<domain>/api/auth/callback/google`) |
+   | `BLOB_READ_WRITE_TOKEN` | Optional: create a Vercel Blob store (Storage tab) to enable forum image uploads |
+
+4. **Seed reference data once** (forum categories, badges, tags, content). From your machine, with `DATABASE_URL` set to the production string:
+
+   ```bash
+   pnpm db:seed
+   ```
+
+   No demo accounts are created against a non-local database.
+5. **Stripe.** Set your final prices in `src/config/pricing.ts`. Then, with your live key:
+
+   ```bash
+   STRIPE_SECRET_KEY=sk_live_... pnpm stripe:setup --live --webhook https://example.com
+   ```
+
+   This creates the products, prices, and Customer Portal settings, plus the webhook endpoint. Put the printed `whsec_…` into `STRIPE_WEBHOOK_SECRET` and redeploy. Do a test-mode run first using a preview deployment's URL.
+6. **Email.** Verify your sending domain in [Resend](https://resend.com) and set `RESEND_API_KEY` and `EMAIL_FROM` (e.g. `"Your Brand <hello@example.com>"`).
+7. **Go live.** Sign up with your admin email and check `/admin`. Then buy a plan with a real card and refund it from Stripe, to confirm webhooks work end to end.
+
+Rename the product in `src/config/site.ts` (`name`, `tagline`, `description`).

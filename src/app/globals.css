@@ -422,7 +422,6 @@ body {
   }
   .sidebar-link.is-soon {
     color: var(--c-fg-muted);
-    opacity: 0.85;
     cursor: default;
   }
   .sidebar-num {

@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import type Stripe from "stripe";
 import { db } from "@/server/db";
+import Stripe from "stripe";
 import { getStripe } from "@/server/billing/stripe";
 import { syncSubscription } from "@/server/billing/sync";
 import { paymentFailedEmail, receiptEmail, trialEndingEmail } from "@/server/billing/emails";
@@ -9,6 +9,8 @@ import { paymentFailedEmail, receiptEmail, trialEndingEmail } from "@/server/bil
  * Stripe webhook. Keeps the Subscription table in sync; access checks read only that table.
  * Every event id is recorded first, so retries and duplicates are applied exactly once.
  */
+const verifier = new Stripe(process.env.STRIPE_SECRET_KEY || "sk_test_webhook_verification_only");
+
 export async function POST(req: Request) {
   const secret = process.env.STRIPE_WEBHOOK_SECRET;
   const signature = req.headers.get("stripe-signature");
@@ -17,7 +19,8 @@ export async function POST(req: Request) {
   const body = await req.text();
   let event: Stripe.Event;
   try {
-    event = await getStripe().webhooks.constructEventAsync(body, signature, secret);
+    // Signature verification needs only the webhook secret, not the API key.
+    event = await verifier.webhooks.constructEventAsync(body, signature, secret);
   } catch {
     return NextResponse.json({ error: "Invalid signature" }, { status: 400 });
   }

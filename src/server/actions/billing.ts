@@ -33,6 +33,19 @@ export async function startCheckout(form: FormData) {
   const ent = await getEntitlement();
   if (ent.tier !== "FREE" && !ent.staff) await openBillingPortal();
 
+  let url: string | null = null;
+  try {
+    url = await createCheckoutUrl(s.user, tier, interval);
+  } catch (err) {
+    // Stripe unreachable or misconfigured: return to pricing with a message instead of an error page.
+    console.error("[billing] checkout failed", err);
+    redirect("/pricing?error=checkout-failed");
+  }
+  redirect(url!);
+}
+
+async function createCheckoutUrl(sUser: { id: string; email: string; name?: string | null }, tier: "PREMIUM" | "PREMIUM_TUTORING", interval: "MONTH" | "YEAR") {
+  const s = { user: sUser };
   const [customer, price, user, promo] = await Promise.all([
     ensureCustomer(s.user),
     priceIdFor(tier, interval),
@@ -54,7 +67,7 @@ export async function startCheckout(form: FormData) {
     success_url: `${siteConfig.url}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
     cancel_url: `${siteConfig.url}/pricing?canceled=1`,
   });
-  redirect(session.url!);
+  return session.url!;
 }
 
 /** Opens the Stripe Customer Portal (upgrade, downgrade, cancel, payment method, invoices). */

@@ -5,18 +5,22 @@ import remarkParse from "remark-parse";
 import remarkMdx from "remark-mdx";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
-import { rehypeKatexMhchem, remarkSectionHeadings, type HeadingOptions, type TocEntry } from "@/lib/content/mdx-plugins";
+import { toHtml } from "hast-util-to-html";
+import type { Root as HastRoot } from "hast";
+import { rehypeHtmlChunks, rehypeKatexMhchem, remarkSectionHeadings, type HeadingOptions, type TocEntry } from "@/lib/content/mdx-plugins";
 import { splitForPreview, type PreviewSplit } from "@/lib/content/preview";
 import type { ChapterFile } from "@/lib/content/files";
 import { Callout } from "@/components/mdx/Callout";
 import { Figure } from "@/components/mdx/Figure";
 import { Question } from "@/components/mdx/Question";
 import { H2, H3 } from "@/components/mdx/Headings";
+import { HtmlChunk } from "@/components/mdx/HtmlChunk";
 
 const components = {
   Callout,
   Figure,
   Question,
+  HtmlChunk,
   h2: H2,
   h3: H3,
   table: (props: React.ComponentProps<"table">) => (
@@ -34,7 +38,7 @@ export async function renderMdx(source: string, headings: Omit<HeadingOptions, "
     options: {
       mdxOptions: {
         remarkPlugins: [remarkGfm, remarkMath, [remarkSectionHeadings, { ...headings, onToc: (t: TocEntry[]) => (toc = t) }]],
-        rehypePlugins: [rehypeKatexMhchem],
+        rehypePlugins: [rehypeKatexMhchem, [rehypeHtmlChunks, (nodes: unknown[]) => toHtml({ type: "root", children: nodes } as HastRoot)]],
       },
     },
     components,

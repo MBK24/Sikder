@@ -258,13 +258,15 @@ export function TestRunner({
                     name={`q-${item.questionId}`}
                     value={c.id}
                     checked={item.selected === c.id}
+                    aria-label={`Choice ${c.id}`}
+                    aria-describedby={`q-${item.questionId}-${c.id}`}
                     onChange={() => select(c.id)}
                     className="sr-only"
                   />
                   <span className="choice-letter" aria-hidden>
                     {c.id}
                   </span>
-                  <span className="choice-text font-serif" dangerouslySetInnerHTML={{ __html: c.html }} />
+                  <span id={`q-${item.questionId}-${c.id}`} className="choice-text font-serif" dangerouslySetInnerHTML={{ __html: c.html }} />
                 </label>
               ))}
             </fieldset>

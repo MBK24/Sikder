@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { allChapterParams, getChapter, getChapterQuizInfo } from "@/server/content/book";
+import { allChapterParams, getChapterQuizInfo, getLiveChapter } from "@/server/content/book";
 import { startChapterQuiz } from "@/server/actions/practice";
 import { TOPICS } from "@/lib/content/topics";
 
@@ -16,15 +16,15 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
   const { part, chapter } = await params;
-  const c = getChapter(part, chapter);
+  const c = await getLiveChapter(part, chapter);
   return c ? { title: `Quiz: ${c.nav.title}`, robots: { index: false } } : {};
 }
 
 export default async function QuizIntroPage({ params }: { params: Promise<Params> }) {
   const { part, chapter } = await params;
-  const c = getChapter(part, chapter);
+  const c = await getLiveChapter(part, chapter);
   const info = getChapterQuizInfo(part, chapter);
-  if (!c || !info.count) notFound();
+  if (!c || c.nav.status !== "published" || !info.count) notFound();
   return (
     <div className="mx-auto max-w-[680px] px-4 pb-24 pt-12 font-sans sm:px-6">
       <Link href={c.nav.href} className="text-sm text-muted hover:text-[var(--c-accent)]">

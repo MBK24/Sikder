@@ -88,6 +88,8 @@ export function QuestionCard({
                 name={name}
                 value={c.id}
                 checked={selected === c.id}
+                aria-label={`Choice ${c.id}`}
+                aria-describedby={`${name}-${c.id}`}
                 onChange={() => {
                   startedAt.current ??= performance.now();
                   setSelected(c.id);
@@ -97,7 +99,7 @@ export function QuestionCard({
               <span className="choice-letter" aria-hidden>
                 {c.id}
               </span>
-              <span className="choice-text" dangerouslySetInnerHTML={{ __html: c.html }} />
+              <span id={`${name}-${c.id}`} className="choice-text" dangerouslySetInnerHTML={{ __html: c.html }} />
               {isAnswer ? <span className="sr-only">(correct answer)</span> : null}
               {isWrongPick ? <span className="sr-only">(your answer, incorrect)</span> : null}
             </label>

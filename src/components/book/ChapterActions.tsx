@@ -27,7 +27,7 @@ export function ChapterActions({ part, slug, title }: { part: string; slug: stri
         </p>
       </div>
       <div className="flex flex-wrap gap-2">
-        <Link href={`/forum/chapter/${slug}`} className="btn btn-ghost" aria-label={`Discuss ${title} in the forum`}>
+        <Link href={`/forum/chapter/${slug}`} className="btn btn-ghost" title={`Questions and answers about ${title}`}>
           Discuss this chapter
         </Link>
         {session ? (

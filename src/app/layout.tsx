@@ -5,7 +5,7 @@ import "./globals.css";
 
 const serif = Source_Serif_4({ subsets: ["latin"], variable: "--font-source-serif", display: "swap" });
 const sans = Source_Sans_3({ subsets: ["latin"], variable: "--font-source-sans", display: "swap" });
-const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains", display: "swap" });
+const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains", display: "swap", preload: false });
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),

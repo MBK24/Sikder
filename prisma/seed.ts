@@ -1,7 +1,8 @@
 /**
  * Seeds reference data + demo accounts, then syncs /content.
  *   pnpm db:seed
- * Idempotent. Demo accounts are created only outside production (or with SEED_DEMO_USERS=1).
+ * Idempotent. Demo accounts (public password!) are created only when DATABASE_URL points at a local
+ * database, or with SEED_DEMO_USERS=1. SEED_DEMO_USERS=0 always skips them.
  */
 import "dotenv/config";
 import { execSync } from "node:child_process";
@@ -53,7 +54,19 @@ async function main() {
     update: {},
   });
 
-  if (process.env.NODE_ENV !== "production" || process.env.SEED_DEMO_USERS === "1") {
+  // Demo accounts have a public password, so they are only created on a LOCAL database
+  // (or when explicitly requested). Running the seed against production never creates them.
+  const dbHost = (() => {
+    try {
+      return new URL(process.env.DATABASE_URL ?? "").hostname;
+    } catch {
+      return "";
+    }
+  })();
+  const localDb = ["localhost", "127.0.0.1", "::1", "postgres", "db"].includes(dbHost);
+  const demo = process.env.SEED_DEMO_USERS ? process.env.SEED_DEMO_USERS === "1" : localDb && process.env.NODE_ENV !== "production";
+  if (!demo) console.log(`seed: skipping demo users (database host "${dbHost}"; set SEED_DEMO_USERS=1 to force)`);
+  if (demo) {
     const hash = await hashPassword(DEMO_PASSWORD);
     for (const u of DEMO_USERS) {
       const user = await db.user.upsert({

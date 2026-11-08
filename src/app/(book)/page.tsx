@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { getBook } from "@/server/content/book";
+import { getLiveBook } from "@/server/content/book";
 import { siteConfig } from "@/config/site";
 import { MCAT_SECTIONS } from "@/config/mcat";
 import { ContinueReading } from "@/components/book/ContinueReading";
 
-export default function WelcomePage() {
-  const book = getBook();
+export default async function WelcomePage() {
+  const book = await getLiveBook();
   const sections = book.filter((p) => p.prefix);
   const firstChapter = book[0]?.chapters[0];
   const published = book.reduce((n, p) => n + p.chapters.filter((c) => c.status === "published").length, 0);

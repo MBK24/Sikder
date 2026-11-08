@@ -158,3 +158,79 @@ export function remarkCollectJsx(onCollect: (usages: JsxUsage[]) => void) {
     onCollect(usages);
   };
 }
+
+// -----------------------------------------------------------------------------
+// Static HTML chunks: the biggest performance win for long chapters.
+// Runs of plain content (paragraphs, lists, tables, math, headings) are serialized
+// to one HTML string each and rendered via <HtmlChunk html="…">. React then hydrates
+// a handful of elements instead of thousands; only real components (Question,
+// Callout, Figure) stay as React.
+// -----------------------------------------------------------------------------
+
+type AnyNode = { type: string; tagName?: string; name?: string; children?: AnyNode[]; properties?: Record<string, unknown>; value?: string };
+
+function containsJsx(node: AnyNode): boolean {
+  if (node.type === "mdxJsxFlowElement" || node.type === "mdxJsxTextElement" || node.type.startsWith("mdx")) return true;
+  return (node.children ?? []).some(containsJsx);
+}
+
+/** Adds the section number span + anchor link to headings and wraps tables, all in hast. */
+function decorate(node: AnyNode) {
+  if (node.type === "element" && (node.tagName === "h2" || node.tagName === "h3")) {
+    const props = node.properties ?? {};
+    // hProperties pass through as-is, so the key may be "data-number" or the hast-normalized "dataNumber".
+    const number = (props.dataNumber ?? props["data-number"]) as string | undefined;
+    const id = props.id as string | undefined;
+    node.properties = { ...props, className: ["group", "scroll-mt-24"] };
+    delete (node.properties as Record<string, unknown>).dataNumber;
+    delete (node.properties as Record<string, unknown>)["data-number"];
+    node.children = [
+      ...(number ? [{ type: "element", tagName: "span", properties: { className: ["header-section-number"] }, children: [{ type: "text", value: number }] }] : []),
+      ...(node.children ?? []),
+      ...(id
+        ? [{ type: "element", tagName: "a", properties: { href: `#${id}`, className: ["anchor-link"], ariaLabel: "Link to this section" }, children: [{ type: "text", value: "#" }] }]
+        : []),
+    ];
+  }
+  for (const c of node.children ?? []) decorate(c);
+  if (node.children) {
+    node.children = node.children.map((c) =>
+      c.type === "element" && c.tagName === "table"
+        ? { type: "element", tagName: "div", properties: { className: ["table-wrap"] }, children: [c] }
+        : c,
+    );
+  }
+}
+
+export function rehypeHtmlChunks(toHtml: (nodes: AnyNode[]) => string) {
+  const chunk = (parent: AnyNode) => {
+    const out: AnyNode[] = [];
+    let run: AnyNode[] = [];
+    const flush = () => {
+      const meaningful = run.some((n) => !(n.type === "text" && !n.value?.trim()));
+      if (meaningful) {
+        out.push({
+          type: "mdxJsxFlowElement",
+          name: "HtmlChunk",
+          attributes: [{ type: "mdxJsxAttribute", name: "html", value: toHtml(run) }],
+          children: [],
+        } as unknown as AnyNode);
+      }
+      run = [];
+    };
+    for (const child of parent.children ?? []) {
+      if (containsJsx(child)) {
+        flush();
+        if (child.type === "element") chunk(child); // e.g. a <p> holding an inline component
+        else if (child.type === "mdxJsxFlowElement") chunk(child); // Callout children
+        out.push(child);
+      } else run.push(child);
+    }
+    flush();
+    parent.children = out;
+  };
+  return (tree: HastRoot) => {
+    decorate(tree as unknown as AnyNode);
+    chunk(tree as unknown as AnyNode);
+  };
+}

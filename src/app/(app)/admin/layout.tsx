@@ -1,6 +1,10 @@
 import Link from "next/link";
 
 const LINKS = [
+  ["/admin", "Overview"],
+  ["/admin/content", "Content"],
+  ["/admin/questions", "Questions"],
+  ["/admin/users", "Users"],
   ["/admin/moderation", "Moderation"],
   ["/admin/verifications", "Verifications"],
   ["/admin/settings", "Settings"],

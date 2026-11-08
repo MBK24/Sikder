@@ -134,6 +134,11 @@ async function Notices({ searchParams }: { searchParams: SP }) {
           Payments aren&apos;t set up on this site yet (no Stripe keys). See the README for Stripe test-mode setup.
         </p>
       ) : null}
+      {sp.error === "checkout-failed" ? (
+        <p role="alert" className="rounded-md border border-[var(--c-trap)] bg-[var(--c-trap-bg)] px-4 py-2">
+          We couldn&apos;t reach our payment provider. Please try again in a minute. You haven&apos;t been charged.
+        </p>
+      ) : null}
       {sp.canceled ? <p className="text-muted">Checkout canceled. You haven&apos;t been charged.</p> : null}
       {ent ? (
         <p className="mx-auto max-w-max rounded-full border border-[var(--c-border)] px-4 py-1.5">

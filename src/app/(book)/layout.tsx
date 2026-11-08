@@ -1,10 +1,10 @@
 import { BookShell } from "@/components/book/BookShell";
-import { getBook } from "@/server/content/book";
+import { getLiveBook } from "@/server/content/book";
 import { siteConfig } from "@/config/site";
 
-export default function BookLayout({ children }: { children: React.ReactNode }) {
+export default async function BookLayout({ children }: { children: React.ReactNode }) {
   return (
-    <BookShell nav={getBook()} siteName={siteConfig.name}>
+    <BookShell nav={await getLiveBook()} siteName={siteConfig.name}>
       {children}
     </BookShell>
   );

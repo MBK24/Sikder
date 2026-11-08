@@ -57,7 +57,7 @@ export function Toc({ toc, variant = "rail" }: { toc: TocEntry[]; variant?: "rai
               active === t.id ? "is-active" : "",
             )}
           >
-            {t.number ? <span className="mr-1.5 tabular-nums opacity-80">{t.number}</span> : null}
+            {t.number ? <span className="mr-1.5 tabular-nums">{t.number}</span> : null}
             {t.title}
           </a>
         </li>

@@ -1,6 +1,6 @@
 # Phase 1 proposal: architecture, schema, routes
 
-Status: **approved** (with the recommended defaults in §7). Phase 2 is implemented. Where the build differs from this proposal, the code and `content/AUTHORING.md` are authoritative.
+Status: **implemented**. All six phases are built, using the recommended defaults in §7. Where the build differs from this proposal, the code, the README, and `content/AUTHORING.md` are authoritative.
 
 - The Prisma schema is in [`prisma/schema.prisma`](../prisma/schema.prisma). It has 40 models and passes `prisma validate` on Prisma 7.10.1.
 - Open decisions are collected in §7. Each one has a recommended default.

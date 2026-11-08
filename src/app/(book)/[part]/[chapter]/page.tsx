@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { allChapterParams, getChapter, getChapterQuizInfo } from "@/server/content/book";
+import { allChapterParams, getChapterQuizInfo, getLiveChapter } from "@/server/content/book";
 import { ChapterQuizCard } from "@/components/book/ChapterQuizCard";
 import { Suspense } from "react";
 import { chapterSplit, extractToc, renderChapter, renderMdx } from "@/server/content/render";
 import { GatedRest, PaywallSkeleton } from "@/components/book/Paywall";
+import { ProseLinks } from "@/components/book/ProseLinks";
 import { Toc } from "@/components/book/Toc";
 import { ReadingProgress } from "@/components/book/ReadingProgress";
 import { ChapterActions } from "@/components/book/ChapterActions";
@@ -23,8 +24,8 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
   const { part, chapter } = await params;
-  const c = getChapter(part, chapter);
-  if (!c) return {};
+  const c = await getLiveChapter(part, chapter);
+  if (!c || c.nav.status !== "published") return {};
   const title = c.nav.label ? `${c.nav.label}: ${c.nav.title}` : c.nav.title;
   return {
     title,
@@ -38,8 +39,8 @@ const DIFFICULTY = { intro: "Introductory", core: "Core", advanced: "Advanced" }
 
 export default async function ChapterPage({ params }: { params: Promise<Params> }) {
   const { part, chapter } = await params;
-  const c = getChapter(part, chapter);
-  if (!c || c.nav.status === "draft") notFound();
+  const c = await getLiveChapter(part, chapter);
+  if (!c || c.nav.status !== "published") notFound();
   const chapterNumber = c.part.prefix ? c.file.number : undefined;
   // Premium chapters: only the preview is prerendered; the rest is rendered per request after an access check.
   const split = c.nav.access === "premium" ? chapterSplit(c.file) : null;
@@ -63,6 +64,7 @@ export default async function ChapterPage({ params }: { params: Promise<Params> 
   return (
     <>
       <ReadingProgress part={part} slug={chapter} />
+      <ProseLinks containerId="chapter-body" />
       <div className="mx-auto flex max-w-[1180px] gap-10 px-4 sm:px-6 lg:px-10">
         <article id="chapter-body" className="min-w-0 max-w-[760px] flex-1 pb-24 pt-10">
           <nav aria-label="Breadcrumb" className="mb-3 font-sans text-sm text-muted">

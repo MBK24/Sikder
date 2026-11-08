@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getBook, getPart } from "@/server/content/book";
+import { getBook, getLiveBook } from "@/server/content/book";
+
+async function livePart(code: string) {
+  return (await getLiveBook()).find((p) => p.code === code);
+}
 
 /** Fully prerendered per URL (static book content), so navigation waits for the page rather than showing a shell. */
 export const instant = false;
@@ -13,12 +17,12 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
-  const part = getPart((await params).part);
+  const part = await livePart((await params).part);
   return part ? { title: part.title, description: part.intro, alternates: { canonical: part.href } } : {};
 }
 
 export default async function PartPage({ params }: { params: Promise<Params> }) {
-  const part = getPart((await params).part);
+  const part = await livePart((await params).part);
   if (!part) notFound();
   const chapters = part.chapters.filter((c) => c.status !== "draft");
   return (

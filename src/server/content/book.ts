@@ -1,4 +1,6 @@
 import "server-only";
+import { cacheLife, cacheTag } from "next/cache";
+import { db } from "../db";
 import {
   listChapterFiles,
   readChapterFile,
@@ -120,4 +122,71 @@ export function getChapterQuizInfo(part: string, slug: string) {
   const file = readQuestionFiles().find((f) => f.part === part && (f.data.chapter ?? f.slug) === slug);
   const quiz = file?.data.questions.filter((q) => q.usage === "quiz") ?? [];
   return { count: quiz.length, topics: [...new Set(quiz.map((q) => q.topic))] };
+}
+
+// ---------------------------------------------------------------------------
+// Live overrides from the DB (admin toggles), cached and invalidated by tag.
+// Files describe the book; the Chapter table decides free/paid, published, early access.
+// ---------------------------------------------------------------------------
+
+export const CHAPTERS_TAG = "chapters";
+
+interface Override {
+  access: "free" | "premium";
+  status: "draft" | "coming-soon" | "published";
+  earlyAccessUntil: string | null;
+}
+
+async function getChapterOverrides(): Promise<Record<string, Override>> {
+  "use cache";
+  cacheTag(CHAPTERS_TAG);
+  // Hours, not "max": if the DB was unreachable (e.g. during a build), this heals on its own.
+  cacheLife("hours");
+  try {
+    const rows = await db.chapter.findMany({ select: { slug: true, access: true, status: true, earlyAccessUntil: true } });
+    return Object.fromEntries(
+      rows.map((r) => [
+        r.slug,
+        {
+          access: r.access === "FREE" ? "free" : "premium",
+          status: r.status === "PUBLISHED" ? "published" : r.status === "DRAFT" ? "draft" : "coming-soon",
+          earlyAccessUntil: r.earlyAccessUntil?.toISOString() ?? null,
+        } satisfies Override,
+      ]),
+    );
+  } catch (err) {
+    console.warn("[book] chapter overrides unavailable, using frontmatter", (err as Error).message);
+    return {};
+  }
+}
+
+/** The book with admin overrides applied. Use this for anything a reader sees. */
+export async function getLiveBook(): Promise<NavPart[]> {
+  const overrides = await getChapterOverrides();
+  return getBook().map((p) => ({
+    ...p,
+    chapters: p.chapters.map((c) => {
+      const o = overrides[c.slug];
+      if (!o) return c;
+      const early = o.earlyAccessUntil && new Date(o.earlyAccessUntil) > new Date() ? true : false;
+      return { ...c, access: early ? "premium" : o.access, status: o.status };
+    }),
+  }));
+}
+
+export async function getLiveChapter(part: string, slug: string) {
+  const base = getChapter(part, slug);
+  if (!base) return null;
+  const book = await getLiveBook();
+  const navPart = book.find((p) => p.code === part)!;
+  const nav = navPart.chapters.find((c) => c.slug === slug)!;
+  const linear = book.flatMap((p) => p.chapters.filter((c) => c.status === "published"));
+  const i = linear.findIndex((c) => c.part === part && c.slug === slug);
+  return {
+    file: base.file,
+    nav,
+    part: navPart,
+    prev: i > 0 ? linear[i - 1] : null,
+    next: i >= 0 && i < linear.length - 1 ? linear[i + 1] : null,
+  };
 }
