@@ -15,7 +15,7 @@ export function ChapterActions({ part, slug, title }: { part: string; slug: stri
   const [pending, startTransition] = useTransition();
 
   return (
-    <div className="no-print mt-14 flex flex-col gap-4 rounded-lg border border-[var(--c-border)] bg-[var(--c-bg-subtle)] p-5 font-sans sm:flex-row sm:items-center">
+    <div className="no-print mt-4 flex flex-col gap-4 rounded-lg border border-[var(--c-border)] bg-[var(--c-bg-subtle)] p-5 font-sans sm:flex-row sm:items-center">
       <div className="flex-1">
         <p className="font-semibold">{optimisticDone ? "Chapter complete" : "Finished this chapter?"}</p>
         <p className="text-sm text-muted">

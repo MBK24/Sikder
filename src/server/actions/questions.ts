@@ -6,11 +6,13 @@ import { getSession } from "@/server/auth";
 import { bumpStudyDay } from "@/server/study-day";
 import { getContentQuestion } from "@/server/content/book";
 import { markdownToHtml } from "@/lib/content/markdown";
+import { can, getEntitlement } from "@/server/entitlements";
 
 const input = z.object({
   key: z.string().min(1).max(100),
   selected: z.enum(["A", "B", "C", "D"]),
   timeSpentMs: z.number().int().min(0).max(60 * 60 * 1000),
+  context: z.enum(["INLINE", "PRACTICE"]).default("INLINE"),
 });
 
 export interface AnswerResult {
@@ -26,13 +28,22 @@ export interface AnswerResult {
  * after the reader commits to a choice. Signed-in readers have the attempt recorded.
  */
 export async function answerInlineQuestion(raw: z.input<typeof input>): Promise<AnswerResult> {
-  const { key, selected, timeSpentMs } = input.parse(raw);
+  const { key, selected, timeSpentMs, context } = input.parse(raw);
   const session = await getSession();
 
   const dbq = await db.question.findUnique({
     where: { key },
-    select: { id: true, correct: true, explanation: true, choices: true, published: true },
+    select: { id: true, correct: true, explanation: true, choices: true, published: true, inBank: true, isFree: true },
   });
+  if (context === "INLINE" && dbq?.inBank) {
+    // Inline grading is only for questions embedded in chapters; bank/quiz questions go through practice sets.
+    throw new Error("Question not found");
+  }
+  if (context === "PRACTICE") {
+    // Single-question practice from the bank: same access rules as the bank itself.
+    if (!dbq || !dbq.published || !dbq.inBank) throw new Error("Question not found");
+    if (!dbq.isFree && !can(await getEntitlement(), "qbank.full")) throw new Error("Upgrade required");
+  }
   const yamlq = getContentQuestion(key);
   if (!dbq && !yamlq) throw new Error("Question not found");
 
@@ -50,7 +61,7 @@ export async function answerInlineQuestion(raw: z.input<typeof input>): Promise<
     const userId = session.user.id;
     await db.$transaction([
       db.questionAttempt.create({
-        data: { userId, questionId: dbq.id, selected, correct, timeSpentMs, context: "INLINE" },
+        data: { userId, questionId: dbq.id, selected, correct, timeSpentMs, context },
       }),
       db.userQuestionStatus.upsert({
         where: { userId_questionId: { userId, questionId: dbq.id } },

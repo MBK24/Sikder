@@ -14,7 +14,9 @@ export function QuestionCard({
   passageHtml,
   passageTitle,
   choices,
+  context = "INLINE",
 }: {
+  context?: "INLINE" | "PRACTICE";
   questionKey: string;
   stemHtml: string;
   passageHtml?: string;
@@ -37,6 +39,7 @@ export function QuestionCard({
         const r = await answerInlineQuestion({
           key: questionKey,
           selected,
+          context,
           timeSpentMs: startedAt.current ? Math.round(performance.now() - startedAt.current) : 0,
         });
         setResult(r);

@@ -23,6 +23,7 @@ import { PrismaClient, type Prisma } from "../src/generated/prisma/client";
 import { listChapterFiles, readChapterFile, readQuestionFiles, readFlashcardFiles, readParts } from "../src/lib/content/files";
 import { PART_ENUM } from "../src/lib/content/schema";
 import { TOPICS, topicSlug } from "../src/lib/content/topics";
+import { FREE_QBANK_QUESTIONS } from "../src/config/pricing";
 
 const db = new PrismaClient({ adapter: new PrismaPg({ connectionString: process.env.DATABASE_URL! }) });
 
@@ -195,6 +196,26 @@ async function main() {
     data: { published: false },
   });
 
+  // Free-tier question set -------------------------------------------------
+  // Chosen once (when no question is marked free yet); admins curate it after that.
+  let freeMarked = 0;
+  if ((await db.question.count({ where: { isFree: true } })) === 0) {
+    const perSection = await Promise.all(
+      (["CP", "CARS", "BB", "PS"] as const).map((part) =>
+        db.chapterQuizItem.findMany({
+          where: { chapter: { part, access: "FREE" } },
+          orderBy: [{ chapter: { order: "asc" } }, { order: "asc" }],
+          select: { questionId: true },
+        }),
+      ),
+    );
+    const picked: string[] = [];
+    for (let i = 0; picked.length < FREE_QBANK_QUESTIONS && perSection.some((l) => i < l.length); i++) {
+      for (const list of perSection) if (list[i] && picked.length < FREE_QBANK_QUESTIONS) picked.push(list[i].questionId);
+    }
+    freeMarked = (await db.question.updateMany({ where: { id: { in: picked } }, data: { isFree: true } })).count;
+  }
+
   // Flashcards --------------------------------------------------------------
   let cardCount = 0;
   for (const f of readFlashcardFiles()) {
@@ -219,7 +240,7 @@ async function main() {
 
   console.log(
     `content:sync — ${chapterIds.size} chapters, ${qCount} questions${skippedAdmin ? ` (${skippedAdmin} admin-owned skipped)` : ""}, ` +
-      `${unpublished.count} unpublished, ${cardCount} flashcards, ${TOPICS.length} topics in ${((Date.now() - started) / 1000).toFixed(1)}s`,
+      `${unpublished.count} unpublished, ${freeMarked ? `${freeMarked} marked free, ` : ""}${cardCount} flashcards, ${TOPICS.length} topics in ${((Date.now() - started) / 1000).toFixed(1)}s`,
   );
 }
 

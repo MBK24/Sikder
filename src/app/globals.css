@@ -32,6 +32,18 @@
   --c-ok: #1a7f37;
   --c-ok-bg: #edf8f0;
 
+  /* Data viz (validated: series ≥3:1 on surface; heat ramp ordinal-safe, light end ≥2:1) */
+  --viz-series: #2a78d6;
+  --viz-series-wash: rgb(42 120 214 / 0.1);
+  --viz-track: #cde2fb;
+  --viz-grid: #e1e0d9;
+  --viz-axis: #c3c2b7;
+  --viz-heat-0: #f0efec;
+  --viz-heat-1: #86b6ef;
+  --viz-heat-2: #5598e7;
+  --viz-heat-3: #256abf;
+  --viz-heat-4: #104281;
+
   color-scheme: light;
 }
 
@@ -58,6 +70,17 @@
   --c-note-bg: #1a2530;
   --c-ok: #6fd08c;
   --c-ok-bg: #172a1d;
+
+  --viz-series: #3987e5;
+  --viz-series-wash: rgb(57 135 229 / 0.12);
+  --viz-track: #1d3556;
+  --viz-grid: #2c2c2a;
+  --viz-axis: #383835;
+  --viz-heat-0: #26292d;
+  --viz-heat-1: #184f95;
+  --viz-heat-2: #256abf;
+  --viz-heat-3: #3987e5;
+  --viz-heat-4: #86b6ef;
 
   color-scheme: dark;
 }
@@ -441,6 +464,129 @@ body {
   .pager:hover {
     border-color: var(--c-accent);
   }
+  /* Practice: question palette */
+  .palette-btn {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 6px;
+    border: 1px solid var(--c-border);
+    font-size: 0.85rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    background: var(--c-bg);
+    color: var(--c-fg-muted);
+    position: relative;
+  }
+  .palette-btn.is-answered {
+    background: var(--c-accent-soft);
+    color: var(--c-accent);
+    border-color: var(--c-accent);
+  }
+  .palette-btn.is-marked::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 7px;
+    height: 7px;
+    border-radius: 999px;
+    background: var(--c-hy);
+  }
+  .palette-btn.is-current {
+    outline: 2px solid var(--c-fg);
+    outline-offset: 1px;
+  }
+  .palette-btn.is-correct {
+    background: var(--c-ok-bg);
+    color: var(--c-ok);
+    border-color: var(--c-ok);
+  }
+  .palette-btn.is-incorrect {
+    background: var(--c-trap-bg);
+    color: var(--c-trap);
+    border-color: var(--c-trap);
+  }
+  /* Flashcards */
+  .flashcard {
+    display: block;
+    min-height: 14rem;
+    padding: 1.5rem 1.75rem;
+    border: 1px solid var(--c-border);
+    border-radius: 10px;
+    background: var(--c-bg);
+    box-shadow: 0 1px 2px rgb(0 0 0 / 0.04);
+  }
+  button.flashcard:hover {
+    border-color: var(--c-accent);
+  }
+  .flashcard-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--c-fg-muted);
+  }
+  .grade-btn {
+    flex-direction: column;
+    gap: 0.1rem;
+    border-color: var(--c-border);
+    background: var(--c-bg);
+    color: var(--c-fg);
+  }
+  .grade-again {
+    color: var(--c-trap);
+  }
+  .grade-hard {
+    color: var(--c-hy);
+  }
+  .grade-good {
+    color: var(--c-ok);
+  }
+  .grade-easy {
+    color: var(--c-accent);
+  }
+  .grade-btn:hover:not(:disabled) {
+    border-color: currentColor;
+    background: var(--c-bg-subtle);
+  }
+  /* Charts */
+  .viz-tooltip {
+    position: absolute;
+    z-index: 20;
+    pointer-events: none;
+    min-width: 8rem;
+    padding: 0.45rem 0.65rem;
+    border: 1px solid var(--c-border);
+    border-radius: 6px;
+    background: var(--c-bg);
+    box-shadow: 0 4px 14px rgb(0 0 0 / 0.12);
+    font-size: 0.8rem;
+    line-height: 1.35;
+    white-space: nowrap;
+  }
+  .viz-tooltip strong {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--c-fg);
+  }
+  .viz-table {
+    width: 100%;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+  }
+  .viz-table th,
+  .viz-table td {
+    padding: 0.3rem 0.5rem;
+    border-bottom: 1px solid var(--c-border);
+    text-align: left;
+  }
+  .viz-table td.num,
+  .viz-table th.num {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
 }
 
 /* Reading column (outside the components layer so it beats @tailwindcss/typography defaults) */
@@ -576,4 +722,24 @@ body {
   color: var(--c-fg);
   padding: 0 0.1em;
   border-radius: 2px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--c-border);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.chip:has(input:checked) {
+  border-color: var(--c-accent);
+  background: var(--c-accent-soft);
+  color: var(--c-accent);
+}
+.chip:has(input:focus-visible) {
+  outline: 2px solid var(--c-accent);
+  outline-offset: 1px;
 }

@@ -1,13 +1,17 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { allChapterParams, getChapter } from "@/server/content/book";
+import { allChapterParams, getChapter, getChapterQuizInfo } from "@/server/content/book";
+import { ChapterQuizCard } from "@/components/book/ChapterQuizCard";
 import { renderChapter } from "@/server/content/render";
 import { Toc } from "@/components/book/Toc";
 import { ReadingProgress } from "@/components/book/ReadingProgress";
 import { ChapterActions } from "@/components/book/ChapterActions";
 import { PrevNext } from "@/components/book/PrevNext";
 import { siteConfig } from "@/config/site";
+
+/** Fully prerendered per URL (static book content), so navigation waits for the page rather than showing a shell. */
+export const instant = false;
 
 type Params = { part: string; chapter: string };
 
@@ -77,6 +81,7 @@ export default async function ChapterPage({ params }: { params: Promise<Params> 
 
           <div className="book-prose prose">{content}</div>
 
+          <ChapterQuizCard href={`${c.nav.href}/quiz`} count={getChapterQuizInfo(part, chapter).count} />
           <ChapterActions part={part} slug={chapter} title={c.nav.title} />
           <PrevNext prev={c.prev} next={c.next} />
         </article>

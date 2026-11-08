@@ -3,6 +3,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getBook, getPart } from "@/server/content/book";
 
+/** Fully prerendered per URL (static book content), so navigation waits for the page rather than showing a shell. */
+export const instant = false;
+
 type Params = { part: string };
 
 export function generateStaticParams() {

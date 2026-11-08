@@ -114,3 +114,10 @@ export function getContentQuestion(id: string) {
   }
   return questionIndex.get(id) ?? null;
 }
+
+/** Topics + count of the end-of-chapter quiz, from content YAML (static). */
+export function getChapterQuizInfo(part: string, slug: string) {
+  const file = readQuestionFiles().find((f) => f.part === part && (f.data.chapter ?? f.slug) === slug);
+  const quiz = file?.data.questions.filter((q) => q.usage === "quiz") ?? [];
+  return { count: quiz.length, topics: [...new Set(quiz.map((q) => q.topic))] };
+}

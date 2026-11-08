@@ -2,7 +2,7 @@
 
 An online MCAT textbook in the style of [R for Data Science](https://r4ds.hadley.nz/), with inline practice questions, a question bank, spaced-repetition flashcards, analytics, and a tutor-backed forum.
 
-> **Status:** Phase 2 of 6. The reading experience, auth, database and seed content are done. The question bank, flashcards, forum, payments and admin are still in progress. See [docs/PROPOSAL.md](docs/PROPOSAL.md) for the architecture and phase plan.
+> **Status:** Phase 3 of 6. Done: the reading experience, auth, database, seed content, question bank, practice sets and section tests, end-of-chapter quizzes, spaced-repetition flashcards and analytics. Still to come: the forum, payments and admin. See [docs/PROPOSAL.md](docs/PROPOSAL.md) for the architecture and phase plan.
 
 ## Stack
 
@@ -45,7 +45,8 @@ Open http://localhost:3000.
 | admin@example.com | Admin |
 | tutor@example.com | Verified Tutor |
 | expert@example.com | Expert |
-| student@example.com | Student |
+| student@example.com | Student with a demo Premium subscription |
+| free@example.com | Student on the Free plan |
 
 When `RESEND_API_KEY` is not set, emails (verification, password reset, welcome) are printed to the dev-server console. Click the links from there.
 
@@ -82,7 +83,9 @@ src/app/          routes: (book) reading, (app) tools, (auth) sign-in
 src/components/   book chrome, MDX components, UI
 src/server/       server-only: db, auth, content rendering, actions, search, email
 src/lib/content/  content schemas + MDX/Markdown pipeline (shared by app and scripts)
-src/config/       site name, MCAT constants (pricing arrives in phase 5)
+src/lib/srs/      SM-2 spaced-repetition scheduler
+src/lib/scoring.ts exam-style ordering, scaled estimate, streaks, readiness (unit-tested)
+src/config/       site name, MCAT constants, pricing + tier boundaries (pricing.ts)
 tests/unit/       Vitest
 ```
 

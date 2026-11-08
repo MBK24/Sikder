@@ -36,6 +36,7 @@ const DEMO_USERS: { email: string; name: string; username: string; role: Role; b
   { email: "tutor@example.com", name: "Dana Tutor", username: "danatutor", role: "TUTOR", badges: ["verified-tutor", "515-plus"] },
   { email: "expert@example.com", name: "Dr. Sam Expert", username: "drsam", role: "EXPERT", badges: ["expert", "content-author"] },
   { email: "student@example.com", name: "Riley Student", username: "riley", role: "STUDENT", badges: [] },
+  { email: "free@example.com", name: "Frankie Free", username: "frankie", role: "STUDENT", badges: [] },
 ];
 const DEMO_PASSWORD = "password1234";
 
@@ -78,6 +79,23 @@ async function main() {
         });
       }
     }
+    // Demo Premium subscription for the student so paid features can be tried locally.
+    const student = await db.user.findUniqueOrThrow({ where: { email: "student@example.com" } });
+    const now = new Date();
+    await db.subscription.upsert({
+      where: { id: "sub_demo_student" },
+      create: {
+        id: "sub_demo_student",
+        userId: student.id,
+        tier: "PREMIUM",
+        interval: "MONTH",
+        status: "ACTIVE",
+        stripePriceId: "price_demo",
+        currentPeriodStart: now,
+        currentPeriodEnd: new Date(now.getTime() + 30 * 86_400_000),
+      },
+      update: { currentPeriodEnd: new Date(now.getTime() + 30 * 86_400_000), status: "ACTIVE" },
+    });
     console.log(`seed: demo users ready (${DEMO_USERS.map((u) => u.email).join(", ")}), password "${DEMO_PASSWORD}"`);
   }
 
